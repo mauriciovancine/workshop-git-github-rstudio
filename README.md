@@ -1,13 +1,15 @@
 # Introdução ao controle de versão com git, GitHub e RStudio
 
+## Apresentar os principais conceitos sobre o controle de versão usando git, GitHub e RStudio
+
 **Ministrante** <br>
 Prof. Maurício Humberto Vancine
 
-**Carga horário** <br>
+**Carga horária** <br>
 2 horas
 
-**Resumo** <br>
-Apresentar os principais conceitos sobre o controle de versão usando git, GitHub e RStudio.
+**Slides** <br>
+[Slides](https://mauriciovancine.github.io/short-course-git-github-rstudio/slides/pres_short_course_git_github_studio.html)
 
 ---
 
@@ -24,7 +26,7 @@ Para mais informações ou dúvidas, envie e-mail para Maurício Vancine (mauric
 Será necessário que todos usem seus notebooks
 
 **Softwares** <br>
-R, RStudio e git <br>
+R, RStudio e git
 
 1. Instalar a versão mais recente do [R (4.0.x)](https://www.r-project.org) e [RStudio (1.4.x)](https://www.rstudio.com)
 - [Vídeo de instalação do R e do RStudio](https://youtu.be/l1bWvZMNMCM)
@@ -54,11 +56,5 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 sudo apt install -y git
 ```
-
----
-
-## Slides
-
-[Slides](https://mauriciovancine.github.io/short-course-git-github-rstudio/slides/pres_short_course_git_github_studio.html)
 
 ---
