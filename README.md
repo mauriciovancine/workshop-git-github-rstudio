@@ -6,10 +6,10 @@
 Maurício Humberto Vancine
 
 **Carga horária** <br>
-2 horas
+3 horas
 
 **Slides** <br>
-[Slides](https://mauriciovancine.github.io/short-course-git-github-rstudio/slides/pres_short_course_git_github_studio.html)
+[Slides](https://mauriciovancine.github.io/short-course-git-github-rstudio/slides/pres_short_course_git_github_rstudio.html)
 
 ---
 
