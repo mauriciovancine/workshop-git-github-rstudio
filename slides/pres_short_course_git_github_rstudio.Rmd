@@ -830,7 +830,7 @@ background-position: 15% 22%, 50% 78%
 ---
 
 background-image: url(img/git_photo02.jpg), url(img/git_photo01.jpg), url(img/git_trees.png)
-background-size: 250px, 350px, 500px
+background-size: 240px, 350px, 500px
 background-position: 51.5% 22%, 15% 22%, 50% 78%
 
 # 1.9 Versionamento: git add, git commit e git status
@@ -1253,7 +1253,7 @@ Date:   Mon Mar 15 11:02:04 2021 -0300
 
 # 1.10 Histórico: git log e git show
 
-## **git log --online**: registro de todo o histórico de commits simplificado
+## **git log --oneline**: registro de todo o histórico de commits simplificado
 
 ```{bash eval=FALSE}
 git log --oneline
@@ -1626,9 +1626,9 @@ git reset [modo] [arquivo|commit]
 
 ---
 
-background-image: url(img/git_reset_modes.png)
-background-size: 400px
-background-position: 85% 90%
+background-image: url(img/git_reset_modes2.png), url(img/git_reset_modes.png)
+background-size: 500px, 400px
+background-position: 10% 90%, 85% 90%
 
 # 1.12 Desfazer: git revert e git reset
 
@@ -1907,13 +1907,6 @@ f9f2e9c (HEAD -> master) mod2 test.txt
 dcbd894 mod test.txt
 8b33bc5 add test.txt
 ```
-
----
-
-class: clear, inverse
-background-image: url(img/gif_cat_ohh.gif)
-background-size: 600px
-background-position: 50% 50%
 
 ---
 
@@ -2249,7 +2242,7 @@ background-position: 50% 60%
 
 ---
 
-background-image: url(img/git_push.jpg)
+background-image: url(img/git_push_code.jpg)
 background-size: 700px
 background-position: 50% 90%
 
@@ -2337,8 +2330,8 @@ background-position: 50% 60%
 ---
 
 background-image: url(img/github_repository_details.png)
-background-size: 800px
-background-position: 50% 90%
+background-size: 900px
+background-position: 50% 80%
 
 # 1.16 Detalhes do respositório do GitHub
 
@@ -2497,6 +2490,26 @@ devtools::install_github("r-lib/usethis")
 
 ---
 
+class: clear, inverse, middle, center
+
+# Últimas palavras
+
+---
+
+class: clear
+background-image: url(img/gif_bugcat_error.gif)
+background-size: 900px
+background-position: 50% 40%
+
+---
+
+class: clear
+background-image: url(img/gif_bugcat_sad.gif)
+background-size: 900px
+background-position: 50% 50%
+
+---
+
 # Mais informações
 
 ## Livros
@@ -2519,7 +2532,7 @@ devtools::install_github("r-lib/usethis")
 
 ### [Git e GitHub no RStudio](https://beatrizmilz.com/git_rstudio.html) - Beatriz Milz
 
-### [Torne-se um guru do git.](https://www.atlassian.com/br/git/tutorials)
+### [Torne-se um guru do git](https://www.atlassian.com/br/git/tutorials)
 
 ### [RStudio e Github no dia a dia](https://blog.curso-r.com/posts/2017-07-17-rstudio-e-github/)
 
