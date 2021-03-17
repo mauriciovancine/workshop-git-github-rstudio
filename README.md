@@ -3,7 +3,7 @@
 ## Apresentar os principais conceitos sobre o controle de versão usando git, GitHub e RStudio
 
 **Ministrante** <br>
-Prof. Maurício Humberto Vancine
+Maurício Humberto Vancine
 
 **Carga horária** <br>
 2 horas
