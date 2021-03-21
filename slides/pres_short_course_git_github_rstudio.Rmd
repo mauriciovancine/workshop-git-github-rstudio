@@ -21,10 +21,6 @@ options(htmltools.dir.version = FALSE, encoding = "UTF-8", crayon.enabled = TRUE
 knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
 ```
 
-class: clear
-background-image: url(img/github_octoca.jpg)
-background-size: 500px
-
 ---
 
 background-image: url(img/unesp_logo.jpg), url(img/person_mauricio_vancine.jpg),url(img/gif_frog.gif)
@@ -47,10 +43,10 @@ background-position: 90% 20%, 84% 80%, 60% 90%
 
 **Informações:**
   
-- `r icon::icon_style(icon::fontawesome(name = "envelope", style = "solid"), fill = "#23373b")` [mauricio.vancine@gmail.com]()
-- `r icon::icon_style(icon::fontawesome("twitter"), fill = "#23373b")` [@mauriciovancine](https://twitter.com/mauriciovancine)  
-- `r icon::icon_style(icon::fontawesome(name = "github"), fill = "#23373b")` [mauriciovancine](https://github.com/mauriciovancine)
-- `r icon::icon_style(icon::fontawesome(name = "link", style = "solid"), fill = "#23373b")` [mauriciovancine.github.io](https://mauriciovancine.github.io)
+- `r icons::icon_style(icons::fontawesome(name = "envelope", style = "solid"), fill = "#23373b")` [mauricio.vancine@gmail.com]()
+- `r icons::icon_style(icons::fontawesome("twitter"), fill = "#23373b")` [@mauriciovancine](https://twitter.com/mauriciovancine)  
+- `r icons::icon_style(icons::fontawesome(name = "github"), fill = "#23373b")` [mauriciovancine](https://github.com/mauriciovancine)
+- `r icons::icon_style(icons::fontawesome(name = "link", style = "solid"), fill = "#23373b")` [mauriciovancine.github.io](https://mauriciovancine.github.io)
 
 ---
 
@@ -142,7 +138,7 @@ background-position: 50% 60%
 
 # 1. Conferir os computadores
 
-## git (>2.30)
+## git (>2.31.x)
 
 ### https://git-scm.com/
 
@@ -283,7 +279,7 @@ background-position: 7% 67%, 50% 67%, 88% 73%
 
 ## **GitHub**: repositório remoto
 
-### **Plataforma de hospedagem** de códigos com controle de versão usando o git
+### **Plataforma de hospedagem** de códigos com controle de versão
 
 ---
 
@@ -381,7 +377,7 @@ background-position: 15% 50%, 50% 85%, 85% 85%
 
 background-image: url(img/git_folder_project.png), url(img/git_github_workflow.png)
 background-size: 33px, 900px 
-background-position: 60.3% 80%, 50% 50%
+background-position: 60.3% 79%, 50% 50%
 
 # 4. Funcionamento do controle de versão
 
@@ -829,6 +825,12 @@ Repository URL: `git@github.com:mauriciovancine/short-course-git-github-rstudio.
 Project directory name: `preenchimento automático`
 
 Create project as subdirectory of: `/home/mude/data/github`
+
+---
+
+class: inverse, center, middle
+
+# Se uma janela aparecer, basta digitar "yes" para criar uma autentificação
 
 ---
 
@@ -1570,7 +1572,7 @@ index f5201c0..71f35ef 100644
 
 # 11. Diferenças: git diff
 
-## **git diff --staged**: mostra as diferenças dos arquivos no *staged area*
+## **git diff --staged**: mostra as diferenças dos arquivos na *staged area*
 
 ```{bash eval=FALSE}
 git diff --staged
@@ -2831,7 +2833,7 @@ class: inverse, center, middle
 class: clear, middle
 background-image: url(img/gif_frog.gif),url(img/gif_frogs.gif), url(img/package_xaringan.png)
 background-size: 250px, 500px, 130px
-background-position: 35% 50%, 90% 70%, 5% 86%
+background-position: 35% 50%, 90% 55%, 5% 86%
 
 ## Maurício Vancine
 
@@ -2839,11 +2841,11 @@ background-position: 35% 50%, 90% 70%, 5% 86%
 
 Contatos:
 
-`r icon::icon_style(icon::fontawesome(name = "envelope", style = "solid"), fill = "#23373b")` [mauricio.vancine@gmail.com]()  
-`r icon::icon_style(icon::fontawesome("twitter"), fill = "#23373b")` [@mauriciovancine](https://twitter.com/mauriciovancine)  
-`r icon::icon_style(icon::fontawesome(name = "github"), fill = "#23373b")` [mauriciovancine](https://github.com/mauriciovancine)
-`r icon::icon_style(icon::fontawesome(name = "link", style = "solid"), fill = "#23373b")` [mauriciovancine.github.io](https://mauriciovancine.github.io)
+`r icons::icon_style(icons::fontawesome(name = "envelope", style = "solid"), fill = "#23373b")` [mauricio.vancine@gmail.com]()  
+`r icons::icon_style(icons::fontawesome("twitter"), fill = "#23373b")` [@mauriciovancine](https://twitter.com/mauriciovancine)  
+`r icons::icon_style(icons::fontawesome(name = "github"), fill = "#23373b")` [mauriciovancine](https://github.com/mauriciovancine)
+`r icons::icon_style(icons::fontawesome(name = "link", style = "solid"), fill = "#23373b")` [mauriciovancine.github.io](https://mauriciovancine.github.io)
 
 <br><br><br><br><br>
 
-Slides criados via pacote [xaringan](https://github.com/yihui/xaringan) e tema [Metropolis](https://github.com/pat-s/xaringan-metropolis)
+Slides criados via pacote [xaringan](https://github.com/yihui/xaringan) e tema [Metropolis](https://github.com/pat-s/xaringan-metropolis). Animação dos sapos por [@probzz](https://twitter.com/probzz/status/1367613720294170627).
