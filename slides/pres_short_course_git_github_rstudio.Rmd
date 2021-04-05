@@ -3,7 +3,7 @@ title: "Introdução ao controle de versão com git, GitHub e RStudio <br><br><b
 subtitle: "Maurício H. Vancine"
 institute: "UNESP - Rio Claro"
 author: ""
-date: "17/03/2021"
+date: "17/03/2021 (Atualização: 05/04/2021)"
 output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts, custom.css]
@@ -13,13 +13,17 @@ output:
       highlightLines: false
       highlightSpans: true
       countIncrementalSlides: false
-      ratio: '16:9'
+      ratio: "16:9"
 ---
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE, encoding = "UTF-8", crayon.enabled = TRUE)
 knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
 ```
+
+class: clear
+background-image: url(img/git_work.png)
+background-size: 400px
 
 ---
 
@@ -81,7 +85,9 @@ background-position: 95% 95%
 [15. Remoto: git remote, git push e git pull](#15.) <br>
 [16. GitHub: Pull request](#16.) <br>
 [17. Detalhes do respositório do GitHub](#17.) <br>
-[18. Interface gráfica do RStudio](#18.)
+[18. Interface gráfica do RStudio](#18.) <br>
+[19. Últimas palavras](#19.) <br>
+[20. Mais informações](#20.)
 ]
 
 ---
@@ -391,25 +397,11 @@ background-position: 50% 50%
 
 ---
 
-background-image: url(img/git_fork_clone_flow.png), url(img/git_folder_project.png), url(img/git_logo.png)
-background-size: 450px, 150px, 250px
-background-position: 50% 50%, 15% 90%, 90% 90%
-
-# 4. Funcionamento do controle de versão
-
----
-
 background-image: url(img/git_fork_clone_flow.png), url(img/github_logo.png), url(img/git_folder_project.png), url(img/git_logo.png)
 background-size: 450px, 300px, 150px, 250px
-background-position: 50% 50%, 10% 20%, 15% 90%, 90% 72%
+background-position: 50% 50%, 10% 20%, 15% 90%, 90% 90%
 
 # 4. Funcionamento do controle de versão
-
----
-
-class: clear, inverse
-background-image: url(img/git_work.png)
-background-size: 400px
 
 ---
 
@@ -1306,6 +1298,93 @@ nothing to commit, working tree clean
 
 class: inverse, center, middle
 
+# E se houver arquivos que eu não quero versionar?
+
+---
+
+class: inverse, clear
+background-image: url(img/gitignore.jpg)
+background-size: 800px
+
+---
+
+name: 10.
+
+class: inverse, center, middle
+
+# 10. Ignorando: .gitignore
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+# 10. Ignorando: .gitignore
+
+## Arquivo .gitignore
+
+### O **.gitignore** é um arquivo especial que indica ao git que determinados arquivos ou pastas devem ser **ignorados e não comitados**
+
+--
+
+### É um **arquivo de texto simples** em que cada linha especifica um padrão de arquivos ou diretórios a serem ignorados
+
+--
+
+### Geralmente colocado no **diretório raiz** de um repositório
+
+--
+
+### Atentar para o **ponto**, pois é um arquivo oculto [**.gitignore**]
+
+---
+
+# 10. Ignorando: .gitignore
+
+## Arquivo .gitignore
+
+```{bash eval=FALSE}
+# criar um arquivo
+touch ~/.gitignore
+```
+
+### Nome de arquivos
+
+- raster.tif
+
+### Diretórios
+
+- temp/
+
+### Caracteres-curinga
+
+- Padrão: *.tif (todos com .tif)
+- Negação: !.tif (negar ignore)
+- Comentário: # (não negar)
+
+---
+
+class: inverse, center, middle
+
+# E se houver arquivos [enormes] que eu queira versionar?
+
+---
+
+background-image: url(img/gif_large_files.gif)
+background-size: 700px
+background-position: 50% 80%
+
+# Git Large File Storage (LFS)
+
+O [Git Large File Storage (LFS)](https://git-lfs.github.com/) substitui arquivos grandes como amostras de áudio, vídeos, conjuntos de dados e gráficos por ponteiros de texto dentro do git, enquanto armazena o conteúdo desses arquivos em um servidor remoto como GitHub.com ou GitHub Enterprise.
+
+---
+
+class: inverse, center, middle
+
 # Dúvidas?
 
 ---
@@ -1316,11 +1395,11 @@ class: inverse, center, middle
 
 ---
 
-name: 10.
+name: 11.
 
 class: inverse, center, middle
 
-# 10. Histórico: git log e git show
+# 11. Histórico: git log e git show
 
 .footnote[
 
@@ -1334,7 +1413,7 @@ background-image: url(img/git_log.png)
 background-size: 450px
 background-position: 90% 70%
 
-# 10. Histórico: git log e git show
+# 11. Histórico: git log e git show
 
 ## **git log**: mostra o registro de todo o histórico de commits
 
@@ -1352,7 +1431,7 @@ background-position: 90% 70%
 
 ---
 
-# 10. Histórico: git log e git show
+# 11. Histórico: git log e git show
 
 ## **git log**: mostra o registro de todo o histórico de commits
 
@@ -1375,7 +1454,7 @@ Date:   Mon Mar 15 11:02:04 2021 -0300
 
 ---
 
-# 10. Histórico: git log e git show
+# 11. Histórico: git log e git show
 
 ## **git log [arquivo]**: registro de todo o histórico de commits para arquivos
 
@@ -1398,7 +1477,7 @@ Date:   Mon Mar 15 11:02:04 2021 -0300
 
 ---
 
-# 10. Histórico: git log e git show
+# 11. Histórico: git log e git show
 
 ## **git log --oneline**: registro de todo o histórico de commits simplificado
 
@@ -1416,13 +1495,13 @@ background-image: url(img/git_log_cheatsheet.png)
 background-size: 650px
 background-position: 50% 70%
 
-# 10. Histórico: git log e git show
+# 11. Histórico: git log e git show
 
 ## **git log**: cheatsheet
 
 ---
 
-# 10. Histórico: git log e git show
+# 11. Histórico: git log e git show
 
 ## **git show**: visualização das alterações realizadas nos arquivos
 
@@ -1447,7 +1526,7 @@ index e69de29..f5201c0 100644
 
 ---
 
-# 10. Histórico: git log e git show
+# 11. Histórico: git log e git show
 
 ## **git show**: visualização das alterações realizadas nos arquivos
 
@@ -1468,11 +1547,11 @@ index 0000000..e69de29
 
 ---
 
-name: 11.
+name: 12.
 
 class: inverse, center, middle
 
-# 11. Diferenças: git diff
+# 12. Diferenças: git diff
 
 .footnote[
 
@@ -1486,7 +1565,7 @@ background-image: url(img/git_diff.png)
 background-size: 1000px
 background-position: 50% 70%
 
-# 11. Diferenças: git diff
+# 12. Diferenças: git diff
 
 ## **git diff**: mostra as diferenças dos arquivos no *working directory*
 
@@ -1496,7 +1575,7 @@ background-image: url(img/git_diff.png)
 background-size: 800px
 background-position: 50% 100%
 
-# 11. Diferenças: git diff
+# 12. Diferenças: git diff
 
 ## **git diff**: mostra as diferenças dos arquivos no *working directory*
 
@@ -1512,7 +1591,7 @@ background-image: url(img/general_bloco_notas.png)
 background-size: 250px
 background-position: 50% 80%
 
-# 11. Diferenças: git diff
+# 12. Diferenças: git diff
 
 ## **git diff**: mostra as diferenças dos arquivos no *working directory*
 
@@ -1524,7 +1603,7 @@ Outra linha
 
 ---
 
-# 11. Diferenças: git diff
+# 12. Diferenças: git diff
 
 ## **git diff**: mostra as diferenças dos arquivos no *working directory*
 
@@ -1547,7 +1626,7 @@ index f5201c0..71f35ef 100644
 
 ---
 
-# 11. Diferenças: git diff
+# 12. Diferenças: git diff
 
 ## **git diff [arquivo]**: mostra as diferenças para o arquivo no *working directory*
 
@@ -1570,7 +1649,7 @@ index f5201c0..71f35ef 100644
 
 ---
 
-# 11. Diferenças: git diff
+# 12. Diferenças: git diff
 
 ## **git diff --staged**: mostra as diferenças dos arquivos na *staged area*
 
@@ -1612,11 +1691,11 @@ background-position: 50% 50%
 
 ---
 
-name: 12.
+name: 13.
 
 class: inverse, center, middle
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 .footnote[
 
@@ -1630,7 +1709,7 @@ background-image: url(img/gif_delorean.gif), url(img/git_revert_reset.png)
 background-size: 400px, 500px
 background-position: 25% 80%, 95% 50%
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## Desfazendo operações no git
 
@@ -1639,7 +1718,7 @@ background-position: 25% 80%, 95% 50%
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
 
@@ -1666,7 +1745,7 @@ background-image: url(img/general_butterfly_effect.jpg)
 background-size: 500px
 background-position: 80% 95%
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
 
@@ -1678,7 +1757,7 @@ background-position: 80% 95%
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
 
@@ -1705,7 +1784,7 @@ dcbd894 mod test.txt
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
 
@@ -1730,7 +1809,7 @@ This reverts commit f9f2e9c867cfd549d0efcab1519a5ec9d86e7d0d.
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
 
@@ -1756,7 +1835,7 @@ nothing to commit, working tree clean
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
 
@@ -1778,7 +1857,7 @@ background-image: url(img/git_reset.png)
 background-size: 450px
 background-position: 87% 90%
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1805,7 +1884,7 @@ background-image: url(img/git_reset_modes2.png), url(img/git_reset_modes.png)
 background-size: 500px, 400px
 background-position: 10% 90%, 85% 90%
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1817,7 +1896,7 @@ background-position: 10% 90%, 85% 90%
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1837,7 +1916,7 @@ Reseta a *staging area* e o *working directory* para corresponder ao commit mais
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1853,7 +1932,7 @@ Move a versão para o commit indicado e reseta tanto a *staging area*, quanto o 
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1873,7 +1952,7 @@ background-image: url(img/general_bloco_notas.png)
 background-size: 250px
 background-position: 50% 80%
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1886,7 +1965,7 @@ Viagens no tempo podem ser perigosas...
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1907,7 +1986,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1922,7 +2001,7 @@ add 'test.txt'
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1940,7 +2019,7 @@ Changes to be committed:
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1958,7 +2037,7 @@ M	test.txt
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1979,7 +2058,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -1995,7 +2074,7 @@ Viagens no tempo podem ser perigosas...
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -2013,7 +2092,7 @@ dcbd894 mod test.txt
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -2038,7 +2117,7 @@ git commit -m "mod3 test.txt"
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -2057,7 +2136,7 @@ dcbd894 mod test.txt
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -2085,7 +2164,7 @@ dcbd894 mod test.txt
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -2109,7 +2188,7 @@ git commit -m "rem text.txt"
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -2127,7 +2206,7 @@ dcbd894 mod test.txt
 
 ---
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
 
@@ -2166,7 +2245,7 @@ background-image: url(img/general_butterfly_effect.jpg)
 background-size: 600px
 background-position: 50% 95%
 
-# 12. Desfazer: git revert e git reset
+# 13. Desfazer: git revert e git reset
 
 ## Desfazendo operações no git
 
@@ -2182,11 +2261,11 @@ background-size: 900px
 
 ---
 
-name: 13.
+name: 14.
 
 class: inverse, center, middle
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 .footnote[
 
@@ -2200,7 +2279,7 @@ background-image: url(img/git_branch.png)
 background-size: 600px
 background-position: 50% 70%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## **git branch**: cria uma ramificação (**linha independente**) de desenvolvimento
 
@@ -2210,7 +2289,7 @@ background-image: url(img/git_branch.png)
 background-size: 500px
 background-position: 50% 92%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## **git branch**: lista os branchs e verifica o branch de edição
 
@@ -2227,7 +2306,7 @@ background-image: url(img/git_branch.png)
 background-size: 450px
 background-position: 50% 95%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## **git branch**: cria uma ramificação
 
@@ -2248,7 +2327,7 @@ background-image: url(img/git_switch.png)
 background-size: 700px
 background-position: 50% 85%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## **git switch**: troca a raficação de edição
 
@@ -2265,7 +2344,7 @@ background-image: url(img/git_branch.png)
 background-size: 500px
 background-position: 50% 90%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## **git branch**: lista os branchs e verifica o branch de edição
 
@@ -2283,7 +2362,7 @@ background-image: url(img/general_bloco_notas.png)
 background-size: 250px
 background-position: 50% 80%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## Vamos criar um arquivo no diretório
 
@@ -2300,7 +2379,7 @@ background-image: url(img/git_branch.png)
 background-size: 500px
 background-position: 50% 70%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## **switch**: troca a raficação de edição
 
@@ -2314,7 +2393,7 @@ background-image: url(img/git_merge.png)
 background-size: 800px
 background-position: 50% 70%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
 
@@ -2324,7 +2403,7 @@ background-image: url(img/git_merge.png)
 background-size: 500px
 background-position: 50% 90%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
 
@@ -2345,7 +2424,7 @@ background-image: url(img/git_merge.png)
 background-size: 500px
 background-position: 50% 90%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
 
@@ -2365,7 +2444,7 @@ background-image: url(img/gif_git_merge.gif)
 background-size: 800px
 background-position: 50% 60%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## CUIDADO!
 
@@ -2375,7 +2454,7 @@ background-image: url(img/git_merge_warning.png)
 background-size: 500px
 background-position: 50% 70%
 
-# 13. Ramificações: git branch, git switch e git merge
+# 14. Ramificações: git branch, git switch e git merge
 
 ## CUIDADO!
 
@@ -2387,11 +2466,11 @@ background-size: 600px
 
 ---
 
-name: 14.
+name: 15.
 
 class: inverse, center, middle
 
-# 14. Remoto: git remote, git push e git pull
+# 15. Remoto: git remote, git push e git pull
 
 .footnote[
 
@@ -2405,7 +2484,7 @@ background-image: url(img/git_remote.png)
 background-size: 400px
 background-position: 50% 90%
 
-# 14. Remoto: git remote, git push e git pull
+# 15. Remoto: git remote, git push e git pull
 
 ## **git remote**: exibe os repositórios remotos (GitHub)
 
@@ -2423,7 +2502,7 @@ background-image: url(img/git_remote.png)
 background-size: 400px
 background-position: 50% 90%
 
-# 14. Remoto: git remote, git push e git pull
+# 15. Remoto: git remote, git push e git pull
 
 ## **git remote add**: faz a ligação com um repositório remoto (GitHub)
 
@@ -2439,7 +2518,7 @@ background-image: url(img/git_push.png)
 background-size: 800px
 background-position: 50% 60%
 
-# 14. Remoto: git remote, git push e git pull
+# 15. Remoto: git remote, git push e git pull
 
 ## **git push**: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
 
@@ -2449,13 +2528,13 @@ background-image: url(img/git_push_code.jpg)
 background-size: 700px
 background-position: 50% 90%
 
-# 14. Remoto: git remote, git push e git pull
+# 15. Remoto: git remote, git push e git pull
 
 ## **git push**: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
 
 ---
 
-# 14. Remoto: git remote, git push e git pull
+# 15. Remoto: git remote, git push e git pull
 
 ## **git push**: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
 
@@ -2480,7 +2559,7 @@ background-image: url(img/git_push_fire.png)
 background-size: 500px
 background-position: 50% 60%
 
-# 14. Remoto: git remote, git push e git pull
+# 15. Remoto: git remote, git push e git pull
 
 ## Em caso de incêndio...
 
@@ -2490,7 +2569,7 @@ background-image: url(img/git_push_force01.jpg),url(img/git_push_force02.jpg)
 background-size: 500px, 450px
 background-position: 15% 70%, 90% 70%
 
-# 14. Remoto: git remote, git push e git pull
+# 15. Remoto: git remote, git push e git pull
 
 ## CUIDADO!
 
@@ -2500,7 +2579,7 @@ background-image: url(img/git_pull.png)
 background-size: 800px
 background-position: 50% 60%
 
-# 14. Remoto: git remote, git push e git pull
+# 15. Remoto: git remote, git push e git pull
 
 ## **git pull**: puxa uma nova versão do repositório remoto (GitHub) para o repositório local
 
@@ -2512,11 +2591,11 @@ class: clean, inverse, center, middle
 
 ---
 
-name: 15.
+name: 16.
 
 class: inverse, center, middle
 
-# 15. GitHub: Pull request
+# 16. GitHub: Pull request
 
 .footnote[
 
@@ -2530,7 +2609,7 @@ background-image: url(img/git_push_pull_request.png)
 background-size: 650px
 background-position: 50% 80%
 
-# 15. GitHub: Pull request
+# 16. GitHub: Pull request
 
 ## **Pull Request**: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
 
@@ -2540,17 +2619,17 @@ background-image: url(img/git_pull_request.png)
 background-size: 1000px
 background-position: 50% 60%
 
-# 15. GitHub: Pull request
+# 16. GitHub: Pull request
 
 ## **Pull Request**: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
 
 ---
 
-name: 16.
+name: 17.
 
 class: inverse, center, middle
 
-# 16. Detalhes do respositório do GitHub
+# 17. Detalhes do respositório do GitHub
 
 .footnote[
 
@@ -2564,7 +2643,7 @@ background-image: url(img/github_repository_details.png)
 background-size: 900px
 background-position: 50% 80%
 
-# 16. Detalhes do respositório do GitHub
+# 17. Detalhes do respositório do GitHub
 
 ## Vamos detalhar alguns pontos dos repositórios no GitHub
 
@@ -2574,11 +2653,11 @@ background-position: 50% 80%
 
 ---
 
-name: 17.
+name: 18.
 
 class: inverse, center, middle
 
-# 17. Interface Gráfica do RStudio
+# 18. Interface Gráfica do RStudio
 
 .footnote[
 
@@ -2598,7 +2677,7 @@ background-image: url(img/rstudio_git_pane01.png)
 background-size: 700px
 background-position: 50% 80%
 
-# 17. Interface Gráfica do RStudio
+# 18. Interface Gráfica do RStudio
 
 ## Git Panel
 
@@ -2612,7 +2691,7 @@ background-image: url(img/rstudio_git_pane02.png)
 background-size: 800px
 background-position: 50% 60%
 
-# 17. Interface Gráfica do RStudio
+# 18. Interface Gráfica do RStudio
 
 ## Git Panel - Detalhes
 
@@ -2622,7 +2701,7 @@ background-image: url(img/rstudio_git_pane03.png)
 background-size: 800px
 background-position: 50% 60%
 
-# 17. Interface Gráfica do RStudio
+# 18. Interface Gráfica do RStudio
 
 ## Git Panel - Branches
 
@@ -2632,7 +2711,7 @@ background-image: url(img/rstudio_git_pane04.png)
 background-size: 800px
 background-position: 50% 60%
 
-# 17. Interface Gráfica do RStudio
+# 18. Interface Gráfica do RStudio
 
 ## Git Panel - Diff - Changes: Revisar mudanças
 
@@ -2642,7 +2721,7 @@ background-image: url(img/rstudio_git_pane05.png)
 background-size: 800px
 background-position: 50% 60%
 
-# 17. Interface Gráfica do RStudio
+# 18. Interface Gráfica do RStudio
 
 ## Git Panel - Diff - History: Histórico de mudanças
 
@@ -2652,7 +2731,7 @@ background-image: url(img/rstudio_git_pane06.png)
 background-size: 800px
 background-position: 50% 60%
 
-# 17. Interface Gráfica do RStudio
+# 18. Interface Gráfica do RStudio
 
 ## Git pane - Staged
 
@@ -2662,7 +2741,7 @@ background-image: url(img/rstudio_git_status.png),url(img/rstudio_git_pane06.png
 background-size: 250px, 800px
 background-position: 92% 20%,50% 60%
 
-# 17. Interface Gráfica do RStudio
+# 18. Interface Gráfica do RStudio
 
 ## Git pane - Staged e File status
 
@@ -2672,7 +2751,7 @@ background-image: url(img/rstudio_git_pane07.png)
 background-size: 800px
 background-position: 50% 60%
 
-# 17. Interface Gráfica do RStudio
+# 18. Interface Gráfica do RStudio
 
 ## Git pane - Commit
 
@@ -2682,7 +2761,7 @@ background-image: url(img/rstudio_git_pane08.png)
 background-size: 800px
 background-position: 50% 60%
 
-# 17. Interface Gráfica do RStudio
+# 18. Interface Gráfica do RStudio
 
 ## Git pane - Commit
 
@@ -2692,15 +2771,23 @@ background-image: url(img/rstudio_git_pane09.png)
 background-size: 1000px
 background-position: 50% 60%
 
-# 17. Interface Gráfica do RStudio
+# 18. Interface Gráfica do RStudio
 
 ## Git pane - Push e Pull
 
 ---
 
+name: 19.
+
 class: clear, inverse, middle, center
 
-# Últimas palavras
+# 19. Últimas palavras
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
 
 ---
 
@@ -2723,6 +2810,19 @@ background-image: url(img/gif_bugcat_sad.gif)
 background-size: 800px
 background-position: 50% 50%
 
+---
+
+name: 20.
+
+class: clear, inverse, middle, center
+
+# 20. Mais informações
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
 
 ---
 
@@ -2730,7 +2830,7 @@ background-image: url(img/cheatsheet_git.jpg)
 background-size: 350px
 background-position: 50% 55%
 
-# Mais informações
+# 20. Mais informações
 
 ## Git Cheat Sheets
 
@@ -2744,7 +2844,7 @@ background-image: url(img/package_usethis.png)
 background-size: 250px
 background-position: 50% 85%
 
-# Mais informações
+# 20. Mais informações
 
 ## Pacote [usethis](https://usethis.r-lib.org/)
 
@@ -2757,7 +2857,7 @@ devtools::install_github("r-lib/usethis")
 
 ---
 
-# Mais informações
+# 20. Mais informações
 
 ## Livros
 
@@ -2771,7 +2871,7 @@ devtools::install_github("r-lib/usethis")
 
 ---
 
-# Mais informações
+# 20. Mais informações
 
 ## Material
 
@@ -2785,7 +2885,7 @@ devtools::install_github("r-lib/usethis")
 
 ---
 
-# Mais informações
+# 20. Mais informações
 
 ## Material
 
@@ -2799,7 +2899,7 @@ devtools::install_github("r-lib/usethis")
 
 ---
 
-# Mais informações
+# 20. Mais informações
 
 ## Curso de Git - Bóson Treinamentos
 
@@ -2810,17 +2910,25 @@ devtools::install_github("r-lib/usethis")
 
 ---
 
-background-image: url(img/git_course.png)
-background-size: 900px
-background-position: 50% 55%
+# 20. Mais informações
 
-# Mais informações
+## Git e Github para iniciantes - Willian Justen de Vasconcellos
 
-## Git e Github para iniciantes - Udemy - Willian Justen de Vasconcellos
+<p align="center">
+<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/IBClN6VpJDw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+---
 
-[https://www.udemy.com/course/git-e-github-para-iniciantes/]
+# 20. Mais informações
+
+## Curso de Git -  Professor Aquino
+
+<p align="center">
+<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/udw3J335ZHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
 
 ---
 
