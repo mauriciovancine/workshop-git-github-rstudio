@@ -1360,11 +1360,11 @@ class: inverse, center, middle
 
 ## Arquivo .gitignore
 
-### O **.gitignore** é um arquivo especial que indica ao git que determinados arquivos ou pastas devem ser **ignorados e não comitados**
+### O **.gitignore** é um arquivo especial que indica ao git que determinados arquivos ou diretórios devem ser **ignorados e não comitados**
 
 --
 
-### É um **arquivo de texto simples** em que cada linha especifica um padrão de arquivos ou diretórios a serem ignorados
+### O **.gitignore** é um **arquivo de texto simples** em que cada linha especifica um padrão de arquivos ou diretórios a serem ignorados
 
 --
 
@@ -1386,13 +1386,19 @@ class: inverse, center, middle
 touch ~/.gitignore
 ```
 
+--
+
 ### Nome de arquivos
 
 - raster.tif
 
+--
+
 ### Diretórios
 
 - temp/
+
+--
 
 ### Caracteres-curinga
 
@@ -1408,13 +1414,43 @@ class: inverse, center, middle
 
 ---
 
+background-image: url(img/github_limit.png)
+background-size: 170px
+background-position: 95% 60%
+
+# 10. Ignorando: .gitignore
+
+## Limites
+
+### O tamanho máximo de arquivos é 25 Mb (browser)
+
+- Arquivos adicionados via browser é limitado a 25 Mb
+
+### O tamanho máximo de arquivos é 100 Mb (terminal)
+
+- Arquivos adicionados via terminal é limitado a 25 Mb
+- Se o arquivo exceder esse limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
+
+### O tamanho máximo de um repositório é 5 GB
+
+- O tamanho total do repositório é limitado a 5 Gb
+- Idealmente um repositório dever ser menor que 1 Gb
+- Mensagens de aviso informam que o tamanho do repositório se aproxima do limite
+- Se o repositório exceder o limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
+
+---
+
 background-image: url(img/gif_large_files.gif)
-background-size: 700px
-background-position: 50% 80%
+background-size: 500px
+background-position: 50% 90%
 
-# Git Large File Storage (LFS)
+# 10. Ignorando: .gitignore
 
-O [Git Large File Storage (LFS)](https://git-lfs.github.com/) substitui arquivos grandes como amostras de áudio, vídeos, conjuntos de dados e gráficos por ponteiros de texto dentro do git, enquanto armazena o conteúdo desses arquivos em um servidor remoto como GitHub.com ou GitHub Enterprise.
+## Git Large File Storage (LFS)
+
+### [Git Large File Storage (LFS)](https://git-lfs.github.com/) substitui arquivos grandes por ponteiros de texto dentro do git
+
+### Armazena o conteúdo desses arquivos em um servidor remoto como GitHub.com ou GitHub Enterprise
 
 ---
 
