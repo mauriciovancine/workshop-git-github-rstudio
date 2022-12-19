@@ -9,7 +9,7 @@ Maurício Humberto Vancine
 3 horas
 
 **Slides** <br>
-[Slides](https://mauriciovancine.github.io/short-course-git-github-rstudio/slides/pres_short_course_git_github_rstudio.html)
+[Slides](https://mauriciovancine.github.io/workshop-git-github-rstudio/slides/pres_short_course_git_github_rstudio.html)
 
 ---
 
