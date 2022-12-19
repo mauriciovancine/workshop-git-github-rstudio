@@ -1,0 +1,453 @@
+---
+title: "Controle de versão com git, GitHub e RStudio"
+author: "<br>[Maurício Vancine](https://mauriciovancine.github.io/) <br> [LEEC/Unesp](https://leec.eco.br/)"
+date: "Novembro de 2022"
+license: "Licença: [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR)"
+format: 
+  revealjs:
+    theme: [custom.scss]
+    slide-number: c/t
+    show-slide-number: all
+    hash-type: number
+    preview-links: false
+    chalkboard: true
+    logo: "https://git-scm.com/images/logos/downloads/Git-Logo-1788C.png"
+    execute:
+      echo: true
+      eval: true
+      warning: false
+      message: false
+---
+
+## Maurício Vancine 
+
+::: columns
+::: {.column width="40%"}
+<center>
+<br>
+![](img/avatar.png)
+[`r icons::icon_style(icons::fontawesome("link"), fill = "#ff453c")`](https://mauriciovancine.github.io/)
+[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#ff453c")`](mailto:mauricio.vancine@gmail.com)
+[`r icons::icon_style(icons::academicons("cv"), fill = "#ff453c")`](https://mauriciovancine.github.io/cv/cv-mauricio-vancine-pt-academic-complete.html)
+[`r icons::icon_style(icons::fontawesome("twitter"), fill = "#ff453c")`](https://twitter.com/mauriciovancine)
+[`r icons::icon_style(icons::fontawesome("github"), fill = "#ff453c")`](https://github.com/mauriciovancine)
+[`r icons::icon_style(icons::academicons("orcid"), fill = "#ff453c")`](https://orcid.org/0000-0001-9650-7575)
+[`r icons::icon_style(icons::academicons("lattes"), fill = "#ff453c")`](http://lattes.cnpq.br/9761288418931193)
+</center>
+:::
+
+::: {.column width="60%"}
+
+- Ecólogo (2014)
+
+- Doutorando em Ecologia (2020-?)
+
+- Ecologia Espacial
+
+- Modelagem Ecológica
+
+- Análise de Dados Ecológicos e Geoespaciais
+
+- Ecologia e Conservação de Anfíbios
+
+- *Open source* [R, QGIS, GRASS GIS, GNU/Linux, ...]
+
+:::
+:::
+
+## Quem são vocês?
+
+<br>
+
+1. Nome
+1. Formação
+1. O que faz ou pensa em fazer da vida?
+1. Conhece algo sobre geoprocessamento e QGIS?
+1. Como se sente em relação ao minicurso?
+
+## Minicurso
+
+::: {.incremental}
+- Carga horária bem enxuta: 09 horas
+
+- Talvez não vejamos todo o conteúdo
+
+- Meu principal objetivo é introduzir o tema de geoprocessamento
+
+- Vou indicar muito material para estudo
+
+- Cursos são ótimo para "quebrar o gelo", mas o aprendizado depende de vocês
+
+:::
+
+## Conteúdo{.smaller}
+
+::: panel-tabset
+## 1. Geoprocessamento
+
+::: columns
+::: {.column width="50%"}
+::: nonincremental
+- Geoprocessamento
+- Cartografia
+- *Global Positioning System* (GPS)
+- Sensoriamento Remoto
+- Sistema de Informação Geográfica (SIG)
+- Dados geoespaciais
+- Dados vetoriais
+:::
+:::
+
+::: {.column width="50%"}
+::: nonincremental
+- Dados matriciais (gride ou raster)
+- Conversão de dados geoespaciais (vetor-raster)
+- Banco de dados geoespaciais
+- Principais fontes de dados geoespaciais
+- Material para estudo sobre geoprocessamento
+:::
+:::
+:::
+
+## 2. QGIS
+
+::: nonincremental
+- Histórico e vantagens do QGIS
+- Instalação do QGIS 
+- Interface do QGIS
+- Complementos do QGIS
+- Ferramentas do QGIS
+- Projeto do QGIS
+:::
+
+## 3. Vetor
+
+::: nonincremental
+- Importar dados vetoriais
+- Propriedades de dados vetoriais
+- Tabela de atributos
+- Criar dados vetoriais
+- Editar dados vetoriais
+- Operações de dados vetoriais
+- Converter SRC de dados vetoriais
+- Exportar dados vetoriais
+:::
+
+## 4. Raster
+
+::: nonincremental
+- Importar dados matriciais
+- Propriedades de dados matriciais
+- Operações de dados vetoriais
+- Converter SRC de dados matriciais
+- Exportar dados matriciais
+:::
+
+## 5. Mapas
+
+::: columns
+::: {.column width="50%"}
+::: nonincremental
+- Principais elementos de um mapa
+- Mapa principal
+- Mapa secundário
+- Título
+- Legenda
+- Barra de escala
+:::
+:::
+
+::: {.column width="50%"}
+::: nonincremental
+- Indicador de orientação (Norte)
+- Grade de coordenadas
+- Descrição do SRC
+- Fonte dos dados
+- Compositor de mapas
+- Exportar mapa
+:::
+:::
+:::
+
+:::
+
+## Material
+
+Todo o material está disponível no [GitHub](https://github.com/mauriciovancine/workshop-qgis)
+
+<center>
+<img src="img/github.png" style="width:50%"/>
+</center>
+
+:::footer
+[GitHub](https://github.com/mauriciovancine/workshop-qgis)
+:::
+
+## Conferindo os computadores
+
+<center>
+<img src="img/general_hard_soft_bg.png" style="width:80%"/>
+</center>
+
+:::footer
+[Café com Código](https://www.instagram.com/cafecomcodigo/?hl=pt)
+:::
+
+## IMPORTANTE!!!
+
+**Estamos num espaço seguro e amigável**
+
+- Sintam-se à vontade para me interromper e tirar dúvidas
+
+<center>
+<img src="img/general_starwars_teamwork.png" style="width:50%"/>
+</center>
+
+# 1. Geoprocessamento
+
+## Definição
+
+Conjunto de técnicas computacionais que opera sobre bases de dados georreferenciados para transformá-los em informações relevantes
+
+<center>
+<img src="img/geo_geoprocessing.jpg" style="width:60%"/>
+</center>
+
+:::footer
+[Xavier-da-Silva (2001)](https://leitura.com.br/geoprocessamento-e-analise-ambiental-aplicacoes-L030-9788528610765),
+[Xavier-da-Silva (2009)](http://www.ufrrj.br/lga/tiagomarino/artigos/oqueegeoprocessamento.pdf),
+[Adeus a Jorge Xavier da Silva (2021)](https://ufrj.br/2021/07/adeus-a-jorge-xavier-da-silva/)
+:::
+
+## Aplicações {.smaller}
+
+Busca entender os padrões espaciais como o ambiente físico, fenômenos climáticos, humanos, sociais ou econômicos, a partir de dados dados espaciais para gerar informações espaciais
+
+. . . 
+
+1. Mapeamento temático (municípios, bacias hidrográficas, países, etc.)
+1. Zoneamento (ambiental, socioeconômico, turístico, etc.)
+1. Monitoramento de áreas de risco ou de proteção ambiental
+1. Avaliação e proteção de impacto ambiental
+1. Manejo e conservação de recursos naturais
+1. Ordenamento territorial
+1. Estruturação de redes de energia, água ou esgoto
+1. Estudos e modelagens de expansão urbana
+1. Controle de ocupações e construções irregulares
+1. Estabelicimento e/ou adequação de transporte
+
+![](img/geo_geoprocessamento.png){.absolute width=500 height=250 right=-150 top=400}
+
+:::footer
+[Fitz et al. (2008)](https://www.ofitexto.com.br/livro/geoprocessamento-sem-complicacao/),
+[O que é geoprocessamento - GeoAplicada (2018)](https://www.geoaplicada.com/geoinformatica-geoprocessamento-e-geotecnologias/o_que_e_geoprocessamento/)
+:::
+
+## Elementos
+
+1. Cartografia digital (CD)
+1. *Global Positioning System* (GPS)
+1. Sensoriamento Remoto (RS)
+1. Sistemas de Informações Geográficas (SIG)
+
+<center>
+<img src="img/geoprocessamento_elementos.png" style="width:100%"/>
+</center>
+
+:::footer
+[Xavier-da-Silva (2009)](http://www.ufrrj.br/lga/tiagomarino/artigos/oqueegeoprocessamento.pdf),
+[ESRI](https://www.esri.com/en-us/what-is-gis/overview)
+:::
+
+## Cartografia
+
+**Conceitos**
+
+1. Escala
+1. Sistemas de coordenadas 
+1. Datum
+1. Sistema de Referência de <br> Coordenadas (SRC)
+
+![](img/geo_cartografia.jpg){.absolute width=500 height=400 right=-100 top=250}
+
+## Escala
+
+Relação entre a medida gráfica (representado no papel ou computador) e a medida real (objeto ou lugar)
+
+<br>
+
+d (distância gráfica): 0.01 m (1 cm)
+
+D (distância real): 250 m
+
+E (escala) = d / D = 0.01 m / 250 m 
+
+E = 1/25000 ou 1:25000
+
+![](img/geo_scale_bar.png){.absolute width=400 height=150 right=-50 top=500}
+
+## Sistema de coordenadas
+
+**Sistema de coordenadas geográfico (graus)**
+
+1. Graus, minutos e segundos  
+Longitude: 42°42'42" O  
+Latitude: 23°23'23" S
+
+. . . 
+
+2. Graus decimais  
+Longitude: -42.71167  
+Latitude: -23.38972
+
+. . . 
+
+**Conversão**: 42 + (42/60) + (42/3600) = 42.71167 <br>
+**Conversão**: 23 + (23/60) + (23/3600) = 23.38972
+
+![](img/geo_coordenadas_geograficas.png){.absolute width=650 height=350 right=-100 top=200}
+
+:::footer
+[5 Themes of Geography](https://spark.adobe.com/page/WXwQFzH7DqYAw/)
+:::
+
+## Sistema de coordenadas 
+
+**Sistema de coordenadas projetado (metros)**
+
+![](img/geo_proj_families.png){.absolute width=500 height=400 right=550 top=200}
+![](img/geo_proj.png){.absolute width=500 height=450 right=0 top=170}
+
+:::footer
+[Guia do Usuário QGIS](https://docs.qgis.org/3.22/pt_BR/docs/gentle_gis_introduction/coordinate_reference_systems.html), [Tennekes & Nowosad (in prep.)](https://r-tmap.github.io/tmap-book/index.html)
+:::
+
+## Sistema de coordenadas 
+
+**Sistema de coordenadas projetado (metros)**
+
+Universal Transversa de Mercator (UTM)
+
+X UTM: 706832 m E
+
+Y UTM: 4344683 m N
+
+Zona: 10S
+
+![](img/geo_utm_zones.png){.absolute width=700 height=400 right=-100 top=250}
+
+:::footer
+[Guia do Usuário QGIS](https://docs.qgis.org/3.22/pt_BR/docs/gentle_gis_introduction/coordinate_reference_systems.html)
+:::
+
+## Datum
+
+Relação do sistema de coordenadas com a superfície da Terra
+
+<br>
+
+**1. Geocêntricos**
+
+WGS84
+
+SIRGAS2000
+
+<br>
+
+**2. Topocêntricos**
+
+SAD69
+
+Córrego Alegre
+
+![](img/geo_datum_bg.png){.absolute width=700 height=350 right=-70 top=250}
+
+:::footer
+[Cartografia para Geoprocessamento](http://www.geomatica.eng.uerj.br/docentes/araujo/cartografia_para_geoprocessamento)
+:::
+
+## Sistema de Referência de Coordenadas (SRC)
+
+Datum + Sistema de Coordenadas (geográfico ou projetado)
+
+<center>
+<img src="img/crs_bg.png" style="width:85%"/>
+</center>
+
+:::footer
+[5 Themes of Geography](https://express.adobe.com/page/WXwQFzH7DqYAw/), [Cartografia para Geoprocessamento](http://www.geomatica.eng.uerj.br/docentes/araujo/cartografia_para_geoprocessamento), [Guia do Usuário QGIS](https://docs.qgis.org/3.22/pt_BR/docs/gentle_gis_introduction/coordinate_reference_systems.html)
+:::
+
+## EPSG (*European Petroleum Survey Group*)
+
+<br>
+
+- EPSG: 4326 [WGS84 Geográfico](https://epsg.io/4326)
+- EPSG: 4674 [SIRGAS2000 Geográfico](https://epsg.io/4674)
+- EPSG: 32723 [WGS84 UTM23S](https://epsg.io/32723)
+- EPSG: 31983 [SIRGAS2000 UTM23S](https://epsg.io/31983)
+
+:::footer
+[epsg.io](https://epsg.io/)
+:::
+
+# Dúvidas?
+
+# Material de estudo
+
+## Livros
+
+- [ggplot2 (2016)](https://ggplot2.tidyverse.org/)
+
+- [R Graphics Cookbook (2018)](http://www.cookbook-r.com/Graphs/)
+
+- [R for Data Science (2017)](https://r4ds.had.co.nz/)
+
+- [Data Visualization with R (2018)](https://rkabacoff.github.io/datavis/)
+
+- [Fundamentals of Data Visualization (2019)](https://serialmentor.com/dataviz/)
+
+- [Interactive web-based data visualization with R, plotly, and shiny (2019)](https://plotly-r.com/)
+
+## Sites
+
+- [ggplot2: Reference](https://ggplot2.tidyverse.org/reference/)
+
+- [R Graph Gallery](https://www.r-graph-gallery.com/)
+
+- [from Data to Viz](https://www.data-to-viz.com/)
+
+- [The Data Visualisation Catalogue](https://datavizcatalogue.com/index.html)
+
+- [plotly](https://plotly.com)
+
+- [Statistical tools for high-throughput data analysis (STHDA)](http://www.sthda.com/english/)
+
+## Muito obrigado!
+
+::: columns
+::: {.column width="50%"}
+Agradecimentos:
+
+- [Prof. Miltinho](https://leec.eco.br/)
+
+:::
+
+::: {.column width="50%"}
+Contato:
+
+<center>
+[`r icons::icon_style(icons::fontawesome("link"), fill = "#ff453c")`](https://mauriciovancine.github.io/)
+[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#ff453c")`](mailto:mauricio.vancine@gmail.com)
+[`r icons::icon_style(icons::fontawesome("twitter"), fill = "#ff453c")`](https://twitter.com/mauriciovancine)
+[`r icons::icon_style(icons::fontawesome("github"), fill = "#ff453c")`](https://github.com/mauriciovancine)
+
+<img src="img/gif_frogs.gif" style="width:80%"/>
+</center>
+
+:::
+:::
+
+:::footer
+Slides por [Maurício Vancine](https://mauriciovancine.github.io/), feitos com [Quarto](https://quarto.org/). Código disponível no [GitHub](https://github.com/mauriciovancine/workshop-qgis/blob/master/01_slides/slides.qmd).
+:::

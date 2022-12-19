@@ -1,5 +1,5 @@
 ---
-title: "Introdução ao controle de versão com git, GitHub e RStudio <br><br><br>"
+title: "Introdução ao controle de versão com git, GitHub e RStudio"
 subtitle: "Maurício H. Vancine"
 institute: "UNESP - Rio Claro"
 author: ""
