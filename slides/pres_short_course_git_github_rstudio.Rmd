@@ -208,7 +208,7 @@ background-position: 50% 70%
 
 ---
 
-background-image: url(img/git_article.png), url(img/git_article_fig.png), url(img/git_article_table.png)
+background-image: 
 background-size: 500px, 580px, 500px
 background-position: 7% 20%, 95% 53%, 7% 75%
 
@@ -277,7 +277,7 @@ background-position: 30% 75%, 98% 96%
 
 ---
 
-background-image: url(img/github_logo_description.png), url(img/gitlab_logo_description.png), url(img/bitbucket_logo_description.png)
+background-image: 
 background-size: 350px, 200px, 280px
 background-position: 7% 67%, 50% 67%, 88% 73%
 
