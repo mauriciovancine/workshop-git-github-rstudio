@@ -104,21 +104,21 @@ lang: pt
 6. Detalhes do GitHub
 7. Funcionamento do controle de versão
 8. GitHub: Fork
-9. Configuração: `git config`
-10. Iniciando localmente: `git init`
-11. Iniciando remotamente: `git clone`
+9. Configuração: *git config*
+10. Iniciando localmente: *git init*
+11. Iniciando remotamente: *git clone*
 :::
 :::
 
 ::: {.column width="50%"}
 ::: nonincremental
-12. Versionamento: `git add`, `git commit` e `git status`
-13. Ignorando: `.gitignore`
-14. Histórico: `git log` e `git show`
-15. Diferenças: `git diff`
-16. Desfazer: `git revert` e `git reset`  
-17. Ramificações: `git branch`, `git switch` e `git merge`
-18. Remoto: `git remote`, `git push` e `git pull`
+12. Versionamento: *git add*, *git commit* e *git status*
+13. Ignorando: *.gitignore*
+14. Histórico: *git log* e *git show*
+15. Diferenças: *git diff*
+16. Desfazer: *git revert* e *git reset*  
+17. Ramificações: *git branch*, *git switch* e *git merge*
+18. Remoto: *git remote*, *git push* e *git pull*
 19. GitHub: Pull request
 20. Interface gráfica do RStudio  
 :::
@@ -270,27 +270,104 @@ Principal **ferramenta** utilizada em grandes projetos
 - **git**: software (app) que faz o controle de versão
 - **GitHub**: plataforma para hospedar arquivos versionados
 
-![](img/git_github_link.png){.absolute width=75% right=150 top=300}
+![](img/git_github_link.png){.absolute width=70% right=160 top=300}
 
-## Vamos criar uma conta no **GitHub**  
+## 5. git e GitHub
 
-![](img/github_logo.png){.absolute width=55% right=220 top=130}
+**GitHub**
+
+Vamos criar uma conta no GitHub (caso não possuam)
+
+![](img/github_logo.png){.absolute width=50% right=250 top=200}
 
 :::footer
 [GitHub](https://github.com)
 :::
 
----
+## 5. git e GitHub
 
-# Tudo bem até aqui?
+**GitHub**
 
----
+Salvem ou recuperem essas informações!
 
-# 4. Funcionamento do controle de versão
+<br><br>
 
----
+**username**: mauriciovancine  
+**email**: mauricio.vancine@gmail.com  
+**senha**: !@#$%¨&*+
+
+![](img/gif_gandalf.gif){.absolute width=40% right=-100 top=300}
+
+# 6. Detalhes do GitHub
+
+## 6. Detalhes do GitHub
+
+**Perfil**
+
+- **Overview**: suas informações (rede social)
+- **Repositories**: lista todos os repositórios
+- **Projects**: ferramentas de gerenciamento (Kanban e tarefas)
+- **Packages**: pacotes (bibliotecas) ou containers (Docker)
+- **Stars**: respositórios marcados com estrela
+- **Settings**: superior direito > foto do perfil > settings
+
+## 6. Detalhes do GitHub
+
+**Repositório**
+
+::: {style="font-size: 80%;"}
+- **Code**: arquivos, histórico, clone/download e README.md
+- **Issues**: rastrear bugs, sugestões de melhorias ou tarefas
+- **Pull requests**: gerencia propostas de alterações no código
+- **Actions**: gerencia fluxos de trabalho automatizados
+- **Projects**: ferramentas de gerenciamento visual (Kanban)
+- **Wiki**: documentação extensa e detalhada do projeto
+- **Security**: ajuda a gerenciar a segurança do código
+- **Insights**:  fornece análises detalhadas sobre o repositório
+- **Settings**: gerencia as configurações do repositório
+:::
+
+## 6. Detalhes do GitHub
+
+**README.md**
+
+- Arquivo de documentação principal de um repositório
+- Escrito em Markdown (formatação simples e amigável)
+- Aparece automaticamente na página inicial do repositório
+- Fornece informações essenciais sobre o projeto
+- Apresenta o propósito do projeto
+- Explica o conteúdo dos arquivos e pastas
+
+## Prática 1
+
+**Criar uma página inicial para o perfil do GitHub**
+
+![](https://www.alura.com.br/artigos/assets/como-criar-um-readme-para-seu-perfil-github/imagem1.gif)
+
+::: footer
+[Como criar um README para o seu perfil do GitHub](https://www.alura.com.br/artigos/como-criar-um-readme-para-seu-perfil-github?srsltid=AfmBOopGVNPqjqVMXQ42hTQpH0exadVwz6U8jsiiNDAyehD0k--sct7e)
+:::
+
+## Prática 1
+
+**Criar uma página inicial para o perfil do GitHub**
+
+1. Criem um repositório com o nome de usuário de vocês (e.g. `mauriciovancine`)
+1. Criem um arquivo `README.md`
+1. Preencham com algum conteúdo
+1. Comitem e voltem para a página de perfil
+
+::: footer
+[Como criar um README para o seu perfil do GitHub](https://www.alura.com.br/artigos/como-criar-um-readme-para-seu-perfil-github?srsltid=AfmBOopGVNPqjqVMXQ42hTQpH0exadVwz6U8jsiiNDAyehD0k--sct7e)
+:::
+
+
+# 7. Funcionamento do controle de versão
+
+## 7. Funcionamento do controle de versão
 
 ## Duas formas de trabalhar:  
+
 1. Localmente (com `git`)  
 2. A partir de um repositório remoto (`GitHub`)
 
@@ -368,27 +445,28 @@ Todo o material está disponível no [GitHub](https://github.com/mauriciovancine
 
 ::: columns
 ::: {.column width="50%"}
-Agradecimentos:
+**Agradecimentos**:
 
-- [Prof. Miltinho](https://leec.eco.br/)
+- [Beatriz Milz](https://beatrizmilz.com/)
 
+<center>
+<img src="img/fapesp.png" style="width:70%"/>
+</center>
 :::
 
 ::: {.column width="50%"}
-Contato:
+**Contato**:
+
+[mauricio.vancine@gmail.com]()
+[mauriciovancine.github.io](https://mauriciovancine.github.io/)
 
 <center>
-[`r icons::icon_style(icons::fontawesome("link"), fill = "#ff453c")`](https://mauriciovancine.github.io/)
-[`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#ff453c")`](mailto:mauricio.vancine@gmail.com)
-[`r icons::icon_style(icons::fontawesome("twitter"), fill = "#ff453c")`](https://twitter.com/mauriciovancine)
-[`r icons::icon_style(icons::fontawesome("github"), fill = "#ff453c")`](https://github.com/mauriciovancine)
-
-<img src="img/gif_frogs.gif" style="width:80%"/>
+<img src="img/gif_frogs.gif" style="width:75%"/>
 </center>
 
 :::
 :::
 
 :::footer
-Slides por [Maurício Vancine](https://mauriciovancine.github.io/), feitos com [Quarto](https://quarto.org/). Código disponível no [GitHub](https://github.com/mauriciovancine/workshop-qgis/blob/master/01_slides/slides.qmd).
+Slides por [Maurício Vancine](https://mauriciovancine.github.io), feitos com [Quarto](https://quarto.org/). Código disponível no [GitHub](https://github.com/mauriciovancine/workshop-git-github-rstudio).
 :::
