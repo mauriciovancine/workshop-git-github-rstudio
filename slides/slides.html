@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -387,16 +452,14 @@
 </section>
 <section class="slide level2">
 <h2>Workshop</h2>
-<div>
 <ul>
-<li class="fragment"><p>Carga horária bem enxuta: 06 h</p></li>
-<li class="fragment"><p>Parte teórica: 03 h (manhã)</p></li>
-<li class="fragment"><p>Parte prática: 03 h (tarde)</p></li>
-<li class="fragment"><p>Nosso principal <strong>objetivo</strong> é <strong>introduzir</strong> o tema de reprodutibilidade e controle de versão</p></li>
-<li class="fragment"><p>Vamos indicar muito <strong>material</strong> para estudo</p></li>
-<li class="fragment"><p>Cursos são ótimo para <strong>“quebrar o gelo”</strong>, mas o aprendizado depende de vocês</p></li>
+<li>Carga horária bem enxuta: 06 h</li>
+<li>Parte teórica: 03 h (manhã)</li>
+<li>Parte prática: 03 h (tarde)</li>
+<li>Nosso principal <strong>objetivo</strong> é <strong>introduzir</strong> o tema de reprodutibilidade e controle de versão</li>
+<li>Vamos indicar muito <strong>material</strong> para estudo</li>
+<li>Cursos são ótimo para <strong>“quebrar o gelo”</strong>, mas o aprendizado depende de vocês</li>
 </ul>
-</div>
 </section>
 <section class="slide level2 smaller">
 <h2>Conteúdo</h2>
@@ -410,7 +473,7 @@
 <li>Controle de versão</li>
 <li>git e GitHub</li>
 <li>Detalhes do GitHub</li>
-<li>Funcionamento do controle de versão</li>
+<li>Controle de versão na prática</li>
 <li>GitHub: Fork</li>
 <li>Configuração: <em>git config</em></li>
 <li>Iniciando localmente: <em>git init</em></li>
@@ -435,6 +498,19 @@
 </div>
 </div></div>
 </section>
+<section class="slide level2">
+<h2>IMPORTANTE!!!</h2>
+<p><strong>Estamos num espaço seguro e amigável</strong></p>
+<ul>
+<li>Sintam-se à vontade para me interromper e tirar dúvidas</li>
+</ul>
+<center>
+<img src="img/general_starwars_teamwork.png" style="width:50%">
+</center>
+<div class="footer">
+<p><a href="https://twitter.com/allison_horst">@allison_horst</a></p>
+</div>
+</section>
 <section>
 <section class="title-slide slide level1 center">
 <h1>1. Princípio FAIR</h1>
@@ -455,7 +531,10 @@
 <section class="title-slide slide level1 center">
 <h1></h1>
 
-<img data-src="img/general_hard_soft.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="img/general_hard_soft.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p><a href="https://www.instagram.com/cafecomcodigo/?hl=pt">Café com Código</a></p>
+</div>
+</section>
 <section class="slide level2">
 <h2>2. Conferindo os computadores</h2>
 <p><br> <strong>R (&gt;4.4.x)</strong><br>
@@ -489,7 +568,10 @@
 <h2>4. Controle de versão</h2>
 <p>Quem nunca…</p>
 
-<img data-src="img/git_file_version.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="img/git_file_version.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p><a href="https://phdcomics.com/">PhD Comics</a></p>
+</div>
+</section>
 <section class="slide level2">
 <h2>4. Controle de versão</h2>
 <p>Manejar projetos <strong>individualmente</strong></p>
@@ -504,7 +586,10 @@
 <h2>4. Controle de versão</h2>
 <p>Manejar projetos <strong>no tempo</strong></p>
 
-<img data-src="img/git_time.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="img/git_time.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p><a href="https://jmcglone.com/guides/github-pages/">Creating and Hosting a Personal Site on GitHub</a></p>
+</div>
+</section>
 <section class="slide level2">
 <h2>4. Controle de versão</h2>
 <p>Principal <strong>ferramenta</strong> utilizada em grandes projetos</p>
@@ -571,6 +656,9 @@
 <li><strong>GitHub</strong>: plataforma para hospedar arquivos versionados</li>
 </ul>
 <p><img data-src="img/git_github_diff.png" class="absolute" style="top: 300px; right: 150px; width: 75%; "></p>
+<div class="footer">
+<p><a href="https://jahya.net/blog/git-vs-github/">Is Git the Same Thing as Github!?</a></p>
+</div>
 </section>
 <section class="slide level2">
 <h2>5. git e GitHub</h2>
@@ -643,8 +731,11 @@
 <li>Aparece automaticamente na página inicial do repositório</li>
 <li>Fornece informações essenciais sobre o projeto</li>
 <li>Apresenta o propósito do projeto</li>
-<li>Explica o conteúdo dos arquivos e pastas</li>
+<li>Explica o conteúdo dos arquivos de códigos e diretórios</li>
 </ul>
+<div class="footer">
+<p><a href="https://daringfireball.net/projects/markdown/">Markdown</a>, <a href="https://www.markdownguide.org/">Markdown Guide</a></p>
+</div>
 </section>
 <section class="slide level2">
 <h2>Prática 1</h2>
@@ -659,8 +750,8 @@
 <p><strong>Criar uma página inicial para o perfil do GitHub</strong></p>
 <ol type="1">
 <li>Criem um repositório com o nome de usuário de vocês (e.g.&nbsp;<code>mauriciovancine</code>)</li>
-<li>Criem um arquivo <code>README.md</code></li>
-<li>Preencham com algum conteúdo</li>
+<li>Criem um arquivo <code>README.md</code> nesse repositório</li>
+<li>Preencham com algum conteúdo em Markdown</li>
 <li>Comitem e voltem para a página de perfil</li>
 </ol>
 <div class="footer">
@@ -669,56 +760,318 @@
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>7. Funcionamento do controle de versão</h1>
+<h1>7. Controle de versão na prática</h1>
 
 </section>
 <section class="slide level2">
-<h2>7. Funcionamento do controle de versão</h2>
-</section>
-<section class="slide level2">
-<h2>Duas formas de trabalhar:</h2>
+<h2>7. Controle de versão na prática</h2>
+<p><strong>Duas formas de trabalhar com o git e GitHub</strong></p>
+<div style="font-size: 80%;">
 <ol type="1">
-<li>Localmente (com <code>git</code>)<br>
-</li>
-<li>A partir de um repositório remoto (<code>GitHub</code>)</li>
+<li>Iniciando um projeto em nosso computador (git)</li>
+<li>Iniciando por um repositório remoto (GitHub)</li>
 </ol>
+</div>
+<p><img data-src="img/github_logo.png" class="absolute" style="top: 300px; right: 880px; width: 15%; "> <img data-src="img/git_operation.png" class="absolute" style="top: 260px; right: 330px; width: 52%; "> <img data-src="img/git_logo.png" class="absolute" style="top: 570px; right: 150px; width: 20%; "></p>
 </section>
 <section class="slide level2">
-
+<h2>7. Controle de versão na prática</h2>
+<p><img data-src="img/git_github_workflow.png" class="absolute" style="top: 100px; right: 0px; width: 100%; "> <img data-src="img/git_folder_project.png" class="absolute" style="top: 630px; right: 220px; width: 5%; "></p>
+</section>
+<section class="slide level2">
+<h2>7. Controle de versão na prática</h2>
+<p><img data-src="img/git_fork_clone_flow.png" class="absolute" style="top: 100px; right: 250px; width: 45%; "></p>
+</section>
+<section class="slide level2">
+<h2>7. Controle de versão na prática</h2>
+<p><img data-src="img/git_fork_clone_flow.png" class="absolute" style="top: 100px; right: 250px; width: 45%; "> <img data-src="img/github_logo.png" class="absolute" style="top: 150px; right: 700px; width: 30%; "> <img data-src="img/git_folder_project.png" class="absolute" style="top: 520px; right: 780px; width: 15%; "> <img data-src="img/git_logo.png" class="absolute" style="top: 550px; right: -50px; width: 25%; "></p>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>5. GitHub: Fork</h1>
+<h1>8. GitHub: Fork</h1>
 
 </section>
 <section class="slide level2">
-<h2>Material</h2>
-<p>Todo o material está disponível no <a href="https://github.com/mauriciovancine/workshop-qgis">GitHub</a></p>
-<center>
-<img src="img/github.png" style="width:50%">
-</center>
-<div class="footer">
-<p><a href="https://github.com/mauriciovancine/workshop-qgis">GitHub</a></p>
+<h2>8. GitHub: Fork</h2>
+<p><strong>Fork</strong>: cópia de um repositório remoto para o seu GitHub</p>
+<p><img data-src="img/git_fork.png" class="absolute" style="top: 150px; right: 250px; width: 45%; "></p>
+</section>
+<section class="slide level2">
+<h2>Prática 2</h2>
+<p>Forken o repositório do workshop</p>
+
+<img data-src="img/github_fork_site.png" class="r-stretch"><div class="footer">
+<p><a href="https://github.com/mauriciovancine/workshop-git-github-rstudio">https://github.com/mauriciovancine/workshop-git-github-rstudio</a></p>
 </div>
 </section>
 <section class="slide level2">
-<h2>Conferindo os computadores</h2>
-<center>
-<img src="img/general_hard_soft_bg.png" style="width:80%">
-</center>
-<div class="footer">
-<p><a href="https://www.instagram.com/cafecomcodigo/?hl=pt">Café com Código</a></p>
-</div>
+<h2>8. GitHub: Fork</h2>
+<p>Agora o repositório do workshop, que estava no meu GitHub, foi copiado (“garfado”) para o GitHub de vocês</p>
+<p><img data-src="img/gif_fork.gif" class="absolute" style="top: 220px; right: 200px; width: 70%; "></p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>9. Configurações: RStudio, git, GitHub</h1>
+
 </section>
 <section class="slide level2">
-<h2>IMPORTANTE!!!</h2>
-<p><strong>Estamos num espaço seguro e amigável</strong></p>
+<h2>9. Configurações</h2>
+<p><strong>RStudio</strong></p>
+<p><img data-src="img/rstudio.png" class="absolute" style="top: 150px; right: 0px; "></p>
+</section>
+<section class="slide level2">
+<h2>9. Configurações</h2>
+<p><strong>RStudio</strong></p>
+<div style="font-size: 80%;">
 <ul>
-<li>Sintam-se à vontade para me interromper e tirar dúvidas</li>
+<li>Tools &gt; Global Options &gt; Git/SVN</li>
 </ul>
-<center>
-<img src="img/general_starwars_teamwork.png" style="width:50%">
-</center>
+</div>
+<p><img data-src="img/rstudio_git_config01.png" class="absolute" style="top: 200px; right: 0px; width: 80%; "></p>
+</section>
+<section class="slide level2">
+<h2>9. Configurações</h2>
+<p><strong>RStudio</strong></p>
+<div style="font-size: 80%;">
+<ul>
+<li>Marque <strong>Enable version control interface…</strong></li>
+<li><strong>Git executable</strong>:</li>
+</ul>
+</div>
+<div style="font-size: 65%;">
+<ul>
+<li>Windows: <code>C:/Program Files/Git/bin/git.exe</code></li>
+<li>Ubuntu: <code>/usr/bin/git</code></li>
+<li>Mac: <code>???</code></li>
+</ul>
+</div>
+<p><img data-src="img/rstudio_git_config02.png" class="absolute" style="top: 180px; right: -100px; width: 50%; "></p>
+</section>
+<section class="slide level2">
+<h2>9. Configurações</h2>
+<p><strong>RStudio</strong></p>
+<p>Chave SSH</p>
+<div style="font-size: 80%;">
+<ol type="1">
+<li>Create RSA key</li>
+<li>View public key</li>
+<li>Copiar: Ctrl + C</li>
+</ol>
+</div>
+<p><img data-src="img/rstudio_git_config03.jpg" class="absolute" style="top: 180px; right: -100px; width: 50%; "> <img data-src="img/github_brave.jpg" class="absolute" style="top: 400px; right: 500px; width: 45%; "> <img data-src="img/general_key.png" class="absolute" style="top: 500px; right: 800px; width: 13%; "></p>
+</section>
+<section class="slide level2">
+<h2>9. Configurações</h2>
+<p><strong>GitHub</strong></p>
+<div style="font-size: 80%;">
+<ul>
+<li>Perfil &gt; Settings &gt; SSH and GPG keys &gt; New SSH key</li>
+</ul>
+</div>
+<p><img data-src="img/github_ssh_key.png" class="absolute" style="top: 220px; right: 0px; width: 100%; "></p>
+<div class="footer">
+<p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Add ao GitHub</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>9. Configurações</h2>
+<p><strong>GitHub</strong></p>
+<div style="font-size: 80%;">
+<ul>
+<li>Title: um nome qualquer (eu add por nome de PC ou notebook)</li>
+<li>Key: colar (Ctrl + V)</li>
+<li>Add SSH key</li>
+</ul>
+</div>
+<p><img data-src="img/github_ssh_key_add.png" class="absolute" style="top: 220px; right: -230px; width: 100%; "></p>
+<div class="footer">
+<p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Add ao GitHub</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>9. Configurações</h2>
+<p><strong>git</strong></p>
+<div style="font-size: 80%;">
+<ul>
+<li><code>git config</code>: definir as configurações de usuário do git</li>
+<li>Terminal (colar com <code>ctrl + shift + v</code>)</li>
+</ul>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># terminal</span></span>
+<span id="cb1-2"><a href=""></a>git config <span class="sc">--</span>list</span>
+<span id="cb1-3"><a href=""></a>git config <span class="sc">--</span>global user.name <span class="st">"meu nome"</span></span>
+<span id="cb1-4"><a href=""></a>git config <span class="sc">--</span>global user.email <span class="st">"email@dominio.com"</span></span>
+<span id="cb1-5"><a href=""></a>git config <span class="sc">--</span>list</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="img/git_config.png" class="absolute" style="top: 450px; right: 100px; width: 80%; "></p>
+</section></section>
+<section class="title-slide slide level1 center">
+<h1>Tudo certo até aqui?</h1>
+
+</section>
+
+<section class="title-slide slide level1 center">
+<h1>Agora sim, podemos começar o versionamento…</h1>
+
+</section>
+
+<section>
+<section class="title-slide slide level1 center">
+<h1>10. Iniciando localmente</h1>
+
+</section>
+<section class="slide level2">
+<h2>10. Iniciando localmente</h2>
+<ul>
+<li><code>git init</code>: inicia o versionamento de um repositório local</li>
+</ul>
+<p><img data-src="img/git_init.png" class="absolute" style="top: 180px; right: 550px; width: 40%; "> <img data-src="img/git_folder.png" class="absolute" style="top: 180px; right: -50px; width: 65%; "></p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>11. Iniciando remotamente</h1>
+
+</section>
+<section class="slide level2">
+<h2>11. Iniciando remotamente</h2>
+<ul>
+<li><code>git clone</code>: faz o download de um repositório remoto (e.g.&nbsp;GitHub) para o seu computador (repositório local)</li>
+</ul>
+<p><img data-src="img/git_clone.png" class="absolute" style="top: 210px; right: 260px; width: 50%; "></p>
+<div class="footer">
+<p><a href="https://www.neonscience.org/resources/learning-hub/tutorials/github-git-clone">Git 03: Git Clone - Work Locally On Your Computer</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>11. Iniciando remotamente</h2>
+</section>
+<section class="slide level2">
+<h2>Primeiro, vamos <strong>criar uma pasta</strong> chamada <code>github</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="st">".                               # raiz"</span></span>
+<span id="cb2-2"><a href=""></a><span class="st">"    ├── home/                   # home"</span></span>
+<span id="cb2-3"><a href=""></a><span class="st">"        ├── data/               # dados"</span> </span>
+<span id="cb2-4"><a href=""></a><span class="st">"            ├── github/         # todos os repositorios"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>class: inverse, center, middle</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>E como podemos fazer o clone?</h1>
+
+</section>
+<section class="slide level2">
+
+<p>background-image: url(img/github_clone_zip.png) background-size: 900px background-position: 50% 70%</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>8. Iniciando remotamente: git clone</h1>
+
+</section>
+<section class="slide level2">
+<h2>1. <strong>Download diretamente</strong> do repositório remoto no formato <strong>.zip</strong></h2>
+</section>
+<section class="slide level2">
+
+<p>background-image: url(img/github_clone_git.png) background-size: 900px background-position: 50% 80%</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>8. Iniciando remotamente: git clone</h1>
+
+</section>
+<section class="slide level2">
+<h2>2. Usando o <strong>terminal</strong> para clonar pelo <strong>SSH</strong> (configurado anteriormente)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="co"># terminal</span></span>
+<span id="cb3-2"><a href=""></a><span class="fu">git</span> clone git@github.com:mauriciovancine/short-course-git-github-rstudio.git</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>background-image: url(img/git_rstudio.jpg) background-size: 500px background-position: 55% 80%</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>8. Iniciando remotamente: git clone</h1>
+
+</section>
+<section class="slide level2">
+<h2>3. Usando o <strong>RStudio</strong> para clonar pelo <strong>SSH</strong> (configurado anteriormente)</h2>
+</section>
+<section class="slide level2">
+
+<p>background-image: url(img/rstudio_git_create01.png), url(img/rstudio_project_logo.png) background-size: 900px, 120px background-position: 50% 85%, 95% 10%</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>8. Iniciando remotamente: git clone</h1>
+
+</section>
+<section class="slide level2">
+<h2>Criar um <strong>Projeto R</strong> com controle de versão</h2>
+<p><code>File &gt; New Project &gt; Version Control</code></p>
+</section>
+<section class="slide level2">
+
+<p>background-image: url(img/rstudio_git_create02.png) background-size: 900px background-position: 50% 85%</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>8. Iniciando remotamente: git clone</h1>
+
+</section>
+<section class="slide level2">
+<h2>Escolher <strong>clonar repositório</strong> do GitHub</h2>
+<p><code>Git</code></p>
+</section>
+<section class="slide level2">
+
+<p>background-image: url(img/rstudio_git_create03.png) background-size: 750px background-position: 50% 90%</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>8. Iniciando remotamente: git clone</h1>
+
+</section>
+<h3>Preencher:</h3>
+<p>Repository URL: <code>git@github.com:mauriciovancine/short-course-git-github-rstudio.git</code></p>
+<p>Project directory name: <code>preenchimento automático</code></p>
+<p>Create project as subdirectory of: <code>/home/mude/data/github</code></p>
+<section class="slide level2">
+
+<p>class: inverse, center, middle</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Se uma janela aparecer, basta digitar “yes” para criar uma autentificação</h1>
+
+</section>
+<section class="slide level2">
+
+<p>class: inverse, center, middle</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Vamos aguardar o download…</h1>
+
+</section>
+<section class="slide level2">
+
+<p>class: inverse, center, middle</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Agora sim, vamos começar o versionamento propriamente dito</h1>
+
+</section>
+<section class="slide level2">
+
 </section></section>
 <section class="title-slide slide level1 center">
 <h1>Dúvidas?</h1>
@@ -992,6 +1345,82 @@
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
