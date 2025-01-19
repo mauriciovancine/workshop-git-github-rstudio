@@ -1,10 +1,8 @@
 ---
 title: "Controle de versão com git, GitHub e RStudio"
-subtitle: "<br> leb.exe - Unicamp"
-author: "[Maurício Vancine](https://mauriciovancine.github.io/)
-<br>
-Matheus Moroti"
-date: "03/11/2025"
+subtitle: "<br>Unicamp"
+author: "[Maurício Vancine](https://mauriciovancine.github.io/)<br>Matheus Moroti"
+date: "03/10/2025"
 date-format: long
 format: 
   revealjs:
@@ -21,8 +19,20 @@ format:
       warning: false
       message: false
 editor: source
-lang: pt
+lang: pt-br
 ---
+
+## Conteúdo
+
+- utilidade e importancia (exemplos - fair)
+- reprodutibilidade - ambiente virtual
+- controle de versao
+- git vs github
+- repositorio local e remoto 
+- readme.md
+- fluxo de trabalho com git
+- fork > clone > add/commmit/push > branch? > pull request 
+- show, log, diff, .gitignore, branch?, merge, checkout e switch
 
 ## Maurício Vancine 
 
