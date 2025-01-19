@@ -2,7 +2,7 @@
 title: "Controle de versão com git, GitHub e RStudio"
 subtitle: "<br>Unicamp"
 author: "[Maurício Vancine](https://mauriciovancine.github.io/)<br>Matheus Moroti"
-date: "03/10/2025"
+date: "03/11/2025"
 date-format: long
 format: 
   revealjs:
@@ -32,7 +32,7 @@ lang: pt-br
 - readme.md
 - fluxo de trabalho com git
 - fork > clone > add/commmit/push > branch? > pull request 
-- show, log, diff, .gitignore, branch?, merge, checkout e switch
+- show, log, diff, .gitignore, branch?, fetch, rebase, merge, checkout e switch
 
 ## Maurício Vancine 
 
@@ -528,7 +528,7 @@ Chave SSH
 - Add SSH key
 :::
 
-![](img/github_ssh_key_add.png){.absolute width=100% right=-230 top=220}
+![](img/github_ssh_key_add.png){.absolute width=90% right=-200 top=230}
 
 ::: footer
 [Add ao GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
