@@ -11,6 +11,7 @@ Matheus Moroti
 
 **Slides** <br>
 [Slides v01](https://mauriciovancine.github.io/workshop-git-github-rstudio/slides/pres_short_course_git_github_rstudio.html)
+<br>
 [Slides v02](https://mauriciovancine.github.io/workshop-git-github-rstudio/slides/slides.html#/)
 
 ---
