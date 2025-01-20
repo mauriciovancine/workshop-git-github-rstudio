@@ -22,7 +22,7 @@ editor: source
 lang: pt-br
 ---
 
-## Conteúdo
+## Conteúdo 
 
 - utilidade e importancia (exemplos - fair)
 - reprodutibilidade - ambiente virtual
@@ -32,7 +32,7 @@ lang: pt-br
 - readme.md
 - fluxo de trabalho com git
 - fork > clone > add/commmit/push > branch? > pull request 
-- show, log, diff, .gitignore, branch?, fetch, rebase, merge, checkout e switch
+- status, show, log, diff, .gitignore, branch?, fetch, rebase, merge, checkout e switch
 
 ## Maurício Vancine 
 
@@ -397,71 +397,15 @@ Salvem ou recuperem essas informações!
 [Como criar um README para o seu perfil do GitHub](https://www.alura.com.br/artigos/como-criar-um-readme-para-seu-perfil-github?srsltid=AfmBOopGVNPqjqVMXQ42hTQpH0exadVwz6U8jsiiNDAyehD0k--sct7e)
 :::
 
+# 7. Configurações: RStudio, git, GitHub
 
-# 7. Controle de versão na prática
-
-## 7. Controle de versão na prática
-
-**Duas formas de trabalhar com o git e GitHub**
-
-::: {style="font-size: 80%;"}
-1. Iniciando um projeto em nosso computador (git)
-1. Iniciando por um repositório remoto (GitHub)
-:::
-
-![](img/github_logo.png){.absolute width=15% right=880 top=300}
-![](img/git_operation.png){.absolute width=52% right=330 top=260}
-![](img/git_logo.png){.absolute width=20% right=150 top=570}
-
-## 7. Controle de versão na prática
-
-![](img/git_github_workflow.png){.absolute width=100% right=0 top=100}
-![](img/git_folder_project.png){.absolute width=5% right=220 top=630}
-
-## 7. Controle de versão na prática
-
-![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
-
-## 7. Controle de versão na prática
-
-![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
-![](img/github_logo.png){.absolute width=30% right=700 top=150}
-![](img/git_folder_project.png){.absolute width=15% right=780 top=520}
-![](img/git_logo.png){.absolute width=25% right=-50 top=550}
-
-# 8. GitHub: Fork
-
-## 8. GitHub: Fork
-
-**Fork**: cópia de um repositório remoto para o seu GitHub
-
-![](img/git_fork.png){.absolute width=45% right=250 top=150}
-
-## Prática 2
-
-Forken o repositório do workshop
-
-![](img/github_fork_site.png)
-
-::: footer
-[https://github.com/mauriciovancine/workshop-git-github-rstudio](https://github.com/mauriciovancine/workshop-git-github-rstudio)
-:::
-
-## 8. GitHub: Fork
-
-Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfado") para o GitHub de vocês
-
-![](img/gif_fork.gif){.absolute width=70% right=200 top=220}
-
-# 9. Configurações: RStudio, git, GitHub
-
-## 9. Configurações
+## 7. Configurações
 
 **RStudio**
 
 ![](img/rstudio.png){.absolute right=0 top=150}
 
-## 9. Configurações
+## 7. Configurações
 
 **RStudio**
 
@@ -471,7 +415,7 @@ Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfad
 
 ![](img/rstudio_git_config01.png){.absolute width=80% right=0 top=200}
 
-## 9. Configurações
+## 7. Configurações
 
 **RStudio**
 
@@ -488,7 +432,7 @@ Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfad
 
 ![](img/rstudio_git_config02.png){.absolute width=50% right=-100 top=180}
 
-## 9. Configurações
+## 7. Configurações
 
 **RStudio**
 
@@ -504,7 +448,7 @@ Chave SSH
 ![](img/github_brave.jpg){.absolute width=45% right=500 top=400}
 ![](img/general_key.png){.absolute width=13% right=800 top=500}
 
-## 9. Configurações
+## 7. Configurações
 
 **GitHub**
 
@@ -518,7 +462,7 @@ Chave SSH
 [Add ao GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 :::
 
-## 9. Configurações
+## 7. Configurações
 
 **GitHub**
 
@@ -534,7 +478,7 @@ Chave SSH
 [Add ao GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 :::
 
-## 9. Configurações
+## 7. Configurações
 
 **git**
 
@@ -556,6 +500,61 @@ git config --list
 # Tudo certo até aqui?
 
 # Agora sim, podemos começar o versionamento...
+
+# 8. Controle de versão na prática
+
+## 8. Controle de versão na prática
+
+**Duas formas de trabalhar com o git e GitHub**
+
+::: {style="font-size: 80%;"}
+1. Iniciando um projeto em nosso computador (git)
+1. Iniciando por um repositório remoto (GitHub)
+:::
+
+![](img/github_logo.png){.absolute width=15% right=800 top=300}
+![](img/git_operation.png){.absolute width=52% right=250 top=260}
+![](img/git_logo.png){.absolute width=20% right=70 top=570}
+
+## 8. Controle de versão na prática
+
+![](img/git_github_workflow.png){.absolute width=100% right=0 top=100}
+![](img/git_folder_project.png){.absolute width=5% right=220 top=630}
+
+## 8. Controle de versão na prática
+
+![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
+
+## 8. Controle de versão na prática
+
+![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
+![](img/github_logo.png){.absolute width=30% right=700 top=150}
+![](img/git_folder_project.png){.absolute width=15% right=780 top=520}
+![](img/git_logo.png){.absolute width=25% right=-50 top=550}
+
+# 9. GitHub: Fork
+
+## 9. GitHub: Fork
+
+**Fork**: cópia de um repositório remoto para o seu GitHub
+
+![](img/git_fork.png){.absolute width=45% right=250 top=150}
+
+## Prática 2
+
+Forken o repositório do workshop
+
+![](img/github_fork_site.png)
+
+::: footer
+[https://github.com/mauriciovancine/workshop-git-github-rstudio](https://github.com/mauriciovancine/workshop-git-github-rstudio)
+:::
+
+## 9. GitHub: Fork
+
+Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfado") para o GitHub de vocês
+
+![](img/gif_fork.gif){.absolute width=70% right=200 top=220}
 
 # 10. Iniciando localmente
 
