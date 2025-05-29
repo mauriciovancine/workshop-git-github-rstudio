@@ -6,10 +6,10 @@
 <script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-01c78b5cd655e4cd89133cf59d535862.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.36">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
 
-  <meta name="author" content="Maurício Vancine Matheus Moroti">
+  <meta name="author" content="Maurício Vancine ">
   <title>Controle de versão com git, GitHub e RStudio</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -200,12 +200,12 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://mauriciovancine.github.io/">Maurício Vancine</a><br>Matheus Moroti 
+<a href="https://mauriciovancine.github.io/">Maurício Vancine</a><br> 
 </div>
 </div>
 </div>
 
-  <p class="date">11 de março de 2025</p>
+  <p class="date">5 de junho de 2025</p>
 </section>
 <section class="slide level2">
 <h2>Conteúdo</h2>
@@ -222,55 +222,11 @@
 </ul>
 </section>
 <section class="slide level2">
-<h2>Maurício Vancine</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<center>
-<br> <img data-src="img/avatar_mhv.png">
-</center>
-</div><div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<p><br></p>
-<ul>
-<li>Ecólogo e Doutor em Ecologia</li>
-<li>Pós-Doutorado em Ecologia Espacial</li>
-<li>Ecologia Espacial</li>
-<li>Modelagem Ecológica</li>
-<li>Análise de Dados Ecológicos e Espaciais</li>
-<li>Ecologia e Conservação de Anfíbios</li>
-<li><em>Open source</em> (R, QGIS, GNU/Linux)</li>
-</ul>
-</div>
-</div></div>
-</section>
-<section class="slide level2">
-<h2>Matheus Moroti</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<center>
-<br> <img data-src="img/avatar.png">
-</center>
-</div><div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<p><br></p>
-<ul>
-<li>Ecólogo e Doutor em Ecologia</li>
-<li>Pós-Doutorado em Ecologia Espacial</li>
-<li>Ecologia Espacial</li>
-<li>Modelagem Ecológica</li>
-<li>Análise de Dados Ecológicos e Espaciais</li>
-<li>Ecologia e Conservação de Anfíbios</li>
-<li><em>Open source</em> (R, QGIS, GNU/Linux)</li>
-</ul>
-</div>
-</div></div>
-</section>
-<section class="slide level2">
 <h2>Workshop</h2>
 <ul>
 <li>Carga horária bem enxuta: 06 h</li>
-<li>Parte teórica: 03 h (manhã)</li>
-<li>Parte prática: 03 h (tarde)</li>
+<li>Parte teórica: 03 h (hoje)</li>
+<li>Parte prática: 03 h (amanhã)</li>
 <li>Nosso principal <strong>objetivo</strong> é <strong>introduzir</strong> o tema de reprodutibilidade e controle de versão</li>
 <li>Vamos indicar muito <strong>material</strong> para estudo</li>
 <li>Cursos são ótimo para <strong>“quebrar o gelo”</strong>, mas o aprendizado depende de vocês</li>
@@ -282,22 +238,19 @@
 <div class="column" style="width:50%;">
 <div>
 <ol type="1">
-<li>Princípio FAIR (<em>Findable</em>, <em>Accessible</em>, <em>Interoperable</em>, <em>Reusable</em>)</li>
 <li>Conferindo os computadores</li>
-<li>Ambiente virtual (<em>renv</em>)</li>
 <li>Controle de versão</li>
 <li>git e GitHub</li>
 <li>Detalhes do GitHub</li>
-<li>Controle de versão na prática</li>
-<li>GitHub: Fork</li>
 <li>Configuração: <em>git config</em></li>
+<li>Controle de versão na prática</li>
 <li>Iniciando localmente: <em>git init</em></li>
 <li>Iniciando remotamente: <em>git clone</em></li>
 </ol>
 </div>
 </div><div class="column" style="width:50%;">
 <div>
-<ol start="12" type="1">
+<ol start="10" type="1">
 <li>Versionamento: <em>git add</em>, <em>git commit</em> e <em>git status</em></li>
 <li>Ignorando: <em>.gitignore</em></li>
 <li>Histórico: <em>git log</em> e <em>git show</em></li>
@@ -326,19 +279,8 @@
 <p><a href="https://twitter.com/allison_horst">@allison_horst</a></p>
 </div>
 </section>
-<section>
 <section class="title-slide slide level1 center">
-<h1>1. Princípio FAIR</h1>
-
-</section>
-<section class="slide level2">
-<h2>1. Princípio FAIR</h2>
-<ul>
-<li><em>Findable</em>, <em>Accessible</em>, <em>Interoperable</em>, <em>Reusable</em></li>
-</ul>
-</section></section>
-<section class="title-slide slide level1 center">
-<h1>2. Conferindo os computadores</h1>
+<h1>1. Conferindo os computadores</h1>
 
 </section>
 
@@ -351,26 +293,18 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>2. Conferindo os computadores</h2>
-<p><br> <strong>R (&gt;4.4.x)</strong><br>
+<h2>1. Conferindo os computadores</h2>
+<p><br> <strong>R (&gt;4.5.x)</strong><br>
 <a href="https://www.r-project.org/">https://www.r-project.org/</a></p>
 <p><br></p>
-<p><strong>RStudio (&gt;2024.12.x)</strong><br>
+<p><strong>RStudio (&gt;2025.05.0)</strong><br>
 <a href="https://www.rstudio.com/">https://www.rstudio.com/</a></p>
 <p><br></p>
-<p><strong>git (&gt;2.48.x)</strong><br>
+<p><strong>git (&gt;2.34.x)</strong><br>
 <a href="https://git-scm.com/">https://git-scm.com/</a></p>
 </section></section>
-<section>
 <section class="title-slide slide level1 center">
-<h1>3. Ambiente virtual (<em>renv</em>)</h1>
-
-</section>
-<section class="slide level2">
-<h2>3. Ambiente virtual (<em>renv</em>)</h2>
-</section></section>
-<section class="title-slide slide level1 center">
-<h1>4. Controle de versão</h1>
+<h1>2. Controle de versão</h1>
 
 </section>
 
@@ -380,7 +314,7 @@
 
 <img data-src="img/git_work.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
-<h2>4. Controle de versão</h2>
+<h2>2. Controle de versão</h2>
 <p>Quem nunca…</p>
 
 <img data-src="img/git_file_version.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
@@ -388,17 +322,17 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>4. Controle de versão</h2>
+<h2>2. Controle de versão</h2>
 <p>Manejar projetos <strong>individualmente</strong></p>
 <p><br><br> <img data-src="img/git_one_brantch.png" class="absolute" style="top: 250px; right: 100px; width: 80%; "></p>
 </section>
 <section class="slide level2">
-<h2>4. Controle de versão</h2>
+<h2>2. Controle de versão</h2>
 <p>Manejar projetos <strong>compartilhados</strong></p>
 <p><img data-src="img/git_multi_brantch.png" class="absolute" style="top: 200px; right: 50px; width: 90%; "></p>
 </section>
 <section class="slide level2">
-<h2>4. Controle de versão</h2>
+<h2>2. Controle de versão</h2>
 <p>Manejar projetos <strong>no tempo</strong></p>
 
 <img data-src="img/git_time.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
@@ -406,7 +340,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>4. Controle de versão</h2>
+<h2>2. Controle de versão</h2>
 <p>Principal <strong>ferramenta</strong> utilizada em grandes projetos</p>
 <p><img data-src="img/git_article.png" class="absolute" style="top: 150px; right: 520px; width: 50%; "> <img data-src="img/git_article_fig.png" class="absolute" style="top: 150px; right: -150px; width: 60%; "> <img data-src="img/git_article_table.png" class="absolute" style="top: 400px; right: 520px; width: 50%; "></p>
 <div class="footer">
@@ -415,11 +349,11 @@
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>5. git e GitHub</h1>
+<h1>3. git e GitHub</h1>
 
 </section>
 <section class="slide level2">
-<h2>5. git e GitHub</h2>
+<h2>3. git e GitHub</h2>
 <p><strong>git</strong></p>
 <ul>
 <li>Software (app) que faz o <strong>controle de versão</strong></li>
@@ -431,7 +365,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>5. git e GitHub</h2>
+<h2>3. git e GitHub</h2>
 <p><strong>git</strong></p>
 <ul>
 <li>Criado por <strong>Linus Torvalds</strong> em 2005 para substituir o BitKeeper SCM no gerenciamento do Kernel Linux</li>
@@ -443,7 +377,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>5. git e GitHub</h2>
+<h2>3. git e GitHub</h2>
 <p><strong>git</strong></p>
 <p align="center">
 <iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/6Czd1Yetaac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
@@ -451,7 +385,7 @@
 </p>
 </section>
 <section class="slide level2">
-<h2>5. git e GitHub</h2>
+<h2>3. git e GitHub</h2>
 <p><strong>GitHub</strong></p>
 <ul>
 <li>Repositórios remotos<br>
@@ -464,7 +398,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>5. git e GitHub</h2>
+<h2>3. git e GitHub</h2>
 <p><strong>ATENÇÃO: dois conceitos!</strong></p>
 <ul>
 <li><strong>git</strong>: software (app) que faz o controle de versão</li>
@@ -476,7 +410,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>5. git e GitHub</h2>
+<h2>3. git e GitHub</h2>
 <p><strong>ATENÇÃO: dois conceitos!</strong></p>
 <ul>
 <li><strong>git</strong>: software (app) que faz o controle de versão</li>
@@ -485,7 +419,7 @@
 <p><img data-src="img/git_github_link.png" class="absolute" style="top: 300px; right: 160px; width: 70%; "></p>
 </section>
 <section class="slide level2">
-<h2>5. git e GitHub</h2>
+<h2>3. git e GitHub</h2>
 <p><strong>GitHub</strong></p>
 <p>Vamos criar uma conta no GitHub (caso não possuam)</p>
 <p><img data-src="img/github_logo.png" class="absolute" style="top: 200px; right: 250px; width: 50%; "></p>
@@ -494,7 +428,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>5. git e GitHub</h2>
+<h2>3. git e GitHub</h2>
 <p><strong>GitHub</strong></p>
 <p>Salvem ou recuperem essas informações!</p>
 <p><br><br></p>
@@ -505,11 +439,16 @@
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>6. Detalhes do GitHub</h1>
+<h1>4. Detalhes do GitHub</h1>
 
 </section>
 <section class="slide level2">
-<h2>6. Detalhes do GitHub</h2>
+<h2>4. Detalhes do GitHub</h2>
+<p><strong>Perfil</strong></p>
+
+<img data-src="img/github_profile.png" class="r-stretch"></section>
+<section class="slide level2">
+<h2>4. Detalhes do GitHub</h2>
 <p><strong>Perfil</strong></p>
 <ul>
 <li><strong>Overview</strong>: suas informações (rede social)</li>
@@ -521,7 +460,17 @@
 </ul>
 </section>
 <section class="slide level2">
-<h2>6. Detalhes do GitHub</h2>
+<h2>4. Detalhes do GitHub</h2>
+<p><strong>Perfil - Settings</strong></p>
+
+<img data-src="img/github_profile_settings.png" class="r-stretch"></section>
+<section class="slide level2">
+<h2>4. Detalhes do GitHub</h2>
+<p><strong>Repositório</strong></p>
+
+<img data-src="img/github_repository.png" class="r-stretch"></section>
+<section class="slide level2">
+<h2>4. Detalhes do GitHub</h2>
 <p><strong>Repositório</strong></p>
 <div style="font-size: 80%;">
 <ul>
@@ -538,7 +487,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>6. Detalhes do GitHub</h2>
+<h2>4. Detalhes do GitHub</h2>
 <p><strong>README.md</strong></p>
 <ul>
 <li>Arquivo de documentação principal de um repositório</li>
@@ -575,16 +524,16 @@
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>7. Configurações: RStudio, git, GitHub</h1>
+<h1>5. Configurações: RStudio, git, GitHub</h1>
 
 </section>
 <section class="slide level2">
-<h2>7. Configurações</h2>
+<h2>5. Configurações</h2>
 <p><strong>RStudio</strong></p>
 <p><img data-src="img/rstudio.png" class="absolute" style="top: 150px; right: 0px; "></p>
 </section>
 <section class="slide level2">
-<h2>7. Configurações</h2>
+<h2>5. Configurações</h2>
 <p><strong>RStudio</strong></p>
 <div style="font-size: 80%;">
 <ul>
@@ -594,7 +543,7 @@
 <p><img data-src="img/rstudio_git_config01.png" class="absolute" style="top: 200px; right: 0px; width: 80%; "></p>
 </section>
 <section class="slide level2">
-<h2>7. Configurações</h2>
+<h2>5. Configurações</h2>
 <p><strong>RStudio</strong></p>
 <div style="font-size: 80%;">
 <ul>
@@ -612,7 +561,7 @@
 <p><img data-src="img/rstudio_git_config02.png" class="absolute" style="top: 180px; right: -100px; width: 50%; "></p>
 </section>
 <section class="slide level2">
-<h2>7. Configurações</h2>
+<h2>5. Configurações</h2>
 <p><strong>RStudio</strong></p>
 <p>Chave SSH</p>
 <div style="font-size: 80%;">
@@ -625,7 +574,7 @@
 <p><img data-src="img/rstudio_git_config03.jpg" class="absolute" style="top: 180px; right: -100px; width: 50%; "> <img data-src="img/github_brave.jpg" class="absolute" style="top: 400px; right: 500px; width: 45%; "> <img data-src="img/general_key.png" class="absolute" style="top: 500px; right: 800px; width: 13%; "></p>
 </section>
 <section class="slide level2">
-<h2>7. Configurações</h2>
+<h2>5. Configurações</h2>
 <p><strong>GitHub</strong></p>
 <div style="font-size: 80%;">
 <ul>
@@ -638,7 +587,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>7. Configurações</h2>
+<h2>5. Configurações</h2>
 <p><strong>GitHub</strong></p>
 <div style="font-size: 80%;">
 <ul>
@@ -653,7 +602,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>7. Configurações</h2>
+<h2>5. Configurações</h2>
 <p><strong>git</strong></p>
 <div style="font-size: 80%;">
 <ul>
@@ -682,44 +631,77 @@
 
 <section>
 <section class="title-slide slide level1 center">
-<h1>8. Controle de versão na prática</h1>
+<h1>6. Controle de versão na prática</h1>
 
 </section>
 <section class="slide level2">
-<h2>8. Controle de versão na prática</h2>
+<h2>6. Controle de versão na prática</h2>
 <p><strong>Duas formas de trabalhar com o git e GitHub</strong></p>
 <div style="font-size: 80%;">
 <ol type="1">
-<li>Iniciando um projeto em nosso computador (git)</li>
-<li>Iniciando por um repositório remoto (GitHub)</li>
+<li>Iniciando um projeto em nosso computador - localmente (git)</li>
+<li>Iniciando por um repositório remoto - remotamente (GitHub)</li>
 </ol>
 </div>
 <p><img data-src="img/github_logo.png" class="absolute" style="top: 300px; right: 800px; width: 15%; "> <img data-src="img/git_operation.png" class="absolute" style="top: 260px; right: 250px; width: 52%; "> <img data-src="img/git_logo.png" class="absolute" style="top: 570px; right: 70px; width: 20%; "></p>
 </section>
 <section class="slide level2">
-<h2>8. Controle de versão na prática</h2>
+<h2>6. Controle de versão na prática</h2>
 <p><img data-src="img/git_github_workflow.png" class="absolute" style="top: 100px; right: 0px; width: 100%; "> <img data-src="img/git_folder_project.png" class="absolute" style="top: 630px; right: 220px; width: 5%; "></p>
 </section>
 <section class="slide level2">
-<h2>8. Controle de versão na prática</h2>
+<h2>6. Controle de versão na prática</h2>
 <p><img data-src="img/git_fork_clone_flow.png" class="absolute" style="top: 100px; right: 250px; width: 45%; "></p>
 </section>
 <section class="slide level2">
-<h2>8. Controle de versão na prática</h2>
+<h2>6. Controle de versão na prática</h2>
 <p><img data-src="img/git_fork_clone_flow.png" class="absolute" style="top: 100px; right: 250px; width: 45%; "> <img data-src="img/github_logo.png" class="absolute" style="top: 150px; right: 700px; width: 30%; "> <img data-src="img/git_folder_project.png" class="absolute" style="top: 520px; right: 780px; width: 15%; "> <img data-src="img/git_logo.png" class="absolute" style="top: 550px; right: -50px; width: 25%; "></p>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>9. GitHub: Fork</h1>
+<h1>7. Iniciando localmente</h1>
 
 </section>
 <section class="slide level2">
-<h2>9. GitHub: Fork</h2>
+<h2>7. Iniciando localmente</h2>
+<ul>
+<li><code>git init</code>: inicia o versionamento de um repositório local</li>
+</ul>
+<p><img data-src="img/git_init.png" class="absolute" style="top: 180px; right: 550px; width: 40%; "> <img data-src="img/git_folder.png" class="absolute" style="top: 180px; right: -50px; width: 65%; "></p>
+</section>
+<section class="slide level2">
+<h2>Prática 2</h2>
+<ol type="1">
+<li>Criem uma pasta qualquer</li>
+<li>Abram o RStudio e dentro desta pasta criem um <code>script.R</code></li>
+<li>Selecionem o caminho desta pasta</li>
+<li>Abram o <code>Terminal</code> do RStudio</li>
+<li>No <code>Terminal</code>, rodem: <code>cd caminho/pasta</code></li>
+<li>No <code>Terminal</code>, rodem: <code>git init</code></li>
+</ol>
+</section>
+<section class="slide level2">
+<h2>Prática 2</h2>
+<ol start="7" type="1">
+<li>No <code>Terminal</code>, rodem: <code>git add .</code></li>
+<li>No <code>Terminal</code>, rodem: <code>git commit -m 'add script.R'</code></li>
+<li>Deletem esse script, inclusive da lixeira</li>
+<li>No <code>Terminal</code>, rodem: <code>git restore .</code></li>
+<li>Testemunhem o poder do git…</li>
+</ol>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>8. Iniciando remotamente</h1>
+
+</section>
+<section class="slide level2">
+<h2>8. Iniciando remotamente</h2>
 <p><strong>Fork</strong>: cópia de um repositório remoto para o seu GitHub</p>
 <p><img data-src="img/git_fork.png" class="absolute" style="top: 150px; right: 250px; width: 45%; "></p>
 </section>
 <section class="slide level2">
-<h2>Prática 2</h2>
+<h2>Prática 3</h2>
 <p>Forken o repositório do workshop</p>
 
 <img data-src="img/github_fork_site.png" class="r-stretch"><div class="footer">
@@ -727,29 +709,12 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>9. GitHub: Fork</h2>
+<h2>8. Iniciando remotamente</h2>
 <p>Agora o repositório do workshop, que estava no meu GitHub, foi copiado (“garfado”) para o GitHub de vocês</p>
 <p><img data-src="img/gif_fork.gif" class="absolute" style="top: 220px; right: 200px; width: 70%; "></p>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>10. Iniciando localmente</h1>
-
 </section>
 <section class="slide level2">
-<h2>10. Iniciando localmente</h2>
-<ul>
-<li><code>git init</code>: inicia o versionamento de um repositório local</li>
-</ul>
-<p><img data-src="img/git_init.png" class="absolute" style="top: 180px; right: 550px; width: 40%; "> <img data-src="img/git_folder.png" class="absolute" style="top: 180px; right: -50px; width: 65%; "></p>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>11. Iniciando remotamente</h1>
-
-</section>
-<section class="slide level2">
-<h2>11. Iniciando remotamente</h2>
+<h2>8. Iniciando remotamente</h2>
 <ul>
 <li><code>git clone</code>: faz o download de um repositório remoto (e.g.&nbsp;GitHub) para o seu computador (repositório local)</li>
 </ul>
@@ -759,135 +724,78 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>11. Iniciando remotamente</h2>
-</section>
-<section class="slide level2">
-<h2>Primeiro, vamos <strong>criar uma pasta</strong> chamada <code>github</code></h2>
+<h2>8. Iniciando remotamente</h2>
+<p>Primeiro, vamos <strong>criar uma pasta</strong> chamada <code>github</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="st">".                               # raiz"</span></span>
 <span id="cb2-2"><a href=""></a><span class="st">"    ├── home/                   # home"</span></span>
 <span id="cb2-3"><a href=""></a><span class="st">"        ├── data/               # dados"</span> </span>
 <span id="cb2-4"><a href=""></a><span class="st">"            ├── github/         # todos os repositorios"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><img data-src="img/diretorio.png" class="absolute" style="top: 400px; right: 30px; width: 100%; "></p>
 </section>
 <section class="slide level2">
-
-<p>class: inverse, center, middle</p>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>E como podemos fazer o clone?</h1>
-
+<h2>8. Iniciando remotamente</h2>
+<ol type="1">
+<li><strong>Download diretamente</strong> do repositório no formato <strong>.zip</strong></li>
+</ol>
+<p><img data-src="img/github_clone_zip.png" class="absolute" style="top: 210px; right: 260px; width: 100%; "></p>
 </section>
 <section class="slide level2">
-
-<p>background-image: url(img/github_clone_zip.png) background-size: 900px background-position: 50% 70%</p>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>8. Iniciando remotamente: git clone</h1>
-
+<h2>8. Iniciando remotamente</h2>
+<ol type="1">
+<li><strong>Download diretamente</strong> do repositório no formato <strong>.zip</strong></li>
+</ol>
+<p><img data-src="img/github_clone_git.png" class="absolute" style="top: 210px; right: 260px; width: 50%; "></p>
 </section>
 <section class="slide level2">
-<h2>1. <strong>Download diretamente</strong> do repositório remoto no formato <strong>.zip</strong></h2>
-</section>
-<section class="slide level2">
-
-<p>background-image: url(img/github_clone_git.png) background-size: 900px background-position: 50% 80%</p>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>8. Iniciando remotamente: git clone</h1>
-
-</section>
-<section class="slide level2">
-<h2>2. Usando o <strong>terminal</strong> para clonar pelo <strong>SSH</strong> (configurado anteriormente)</h2>
+<h2>8. Iniciando remotamente</h2>
+<ol start="2" type="1">
+<li>Usando o <strong>terminal</strong> para clonar pelo <strong>SSH</strong> (configurado anteriormente)</li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="co"># terminal</span></span>
 <span id="cb3-2"><a href=""></a><span class="fu">git</span> clone git@github.com:mauriciovancine/short-course-git-github-rstudio.git</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
-
-<p>background-image: url(img/git_rstudio.jpg) background-size: 500px background-position: 55% 80%</p>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>8. Iniciando remotamente: git clone</h1>
-
+<h2>8. Iniciando remotamente</h2>
+<ol start="3" type="1">
+<li>Usando o <strong>RStudio</strong> para clonar pelo <strong>SSH</strong> (configurado anteriormente)</li>
+</ol>
+<p><img data-src="img/git_rstudio.jpg" class="absolute" style="top: 210px; right: 260px; width: 50%; "></p>
 </section>
 <section class="slide level2">
-<h2>3. Usando o <strong>RStudio</strong> para clonar pelo <strong>SSH</strong> (configurado anteriormente)</h2>
+<h2>8. Iniciando remotamente</h2>
+<p><img data-src="img/rstudio_git_create01.png" class="absolute" style="top: 210px; right: 260px; width: 50%; "> <img data-src="img/rstudio_project_logo.png" class="absolute" style="top: 210px; right: 260px; width: 50%; "></p>
 </section>
 <section class="slide level2">
-
-<p>background-image: url(img/rstudio_git_create01.png), url(img/rstudio_project_logo.png) background-size: 900px, 120px background-position: 50% 85%, 95% 10%</p>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>8. Iniciando remotamente: git clone</h1>
-
-</section>
-<section class="slide level2">
-<h2>Criar um <strong>Projeto R</strong> com controle de versão</h2>
+<h2>8. Iniciando remotamente</h2>
+<p>Criar um <strong>Projeto R</strong> com controle de versão</p>
 <p><code>File &gt; New Project &gt; Version Control</code></p>
+<p><img data-src="img/rstudio_git_create02.png" class="absolute" style="top: 210px; right: 260px; width: 50%; "></p>
 </section>
 <section class="slide level2">
-
-<p>background-image: url(img/rstudio_git_create02.png) background-size: 900px background-position: 50% 85%</p>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>8. Iniciando remotamente: git clone</h1>
-
-</section>
-<section class="slide level2">
-<h2>Escolher <strong>clonar repositório</strong> do GitHub</h2>
+<h2>8. Iniciando remotamente</h2>
+<p>Escolher <strong>clonar repositório</strong> do GitHub</p>
 <p><code>Git</code></p>
+<p><img data-src="img/rstudio_git_create03.png" class="absolute" style="top: 210px; right: 260px; width: 50%; "></p>
 </section>
 <section class="slide level2">
-
-<p>background-image: url(img/rstudio_git_create03.png) background-size: 750px background-position: 50% 90%</p>
+<h2>8. Iniciando remotamente</h2>
+<p>Preencher:</p>
+<ul>
+<li>Repository URL: <code>git@github.com:mauriciovancine/short-course-git-github-rstudio.git</code></li>
+<li>Project directory name: <code>preenchimento automático</code></li>
+<li>Create project as subdirectory of: <code>/home/mude/data/github</code></li>
+<li>Se uma janela aparecer, basta digitar “yes” para criar uma autentificação</li>
+</ul>
 </section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>8. Iniciando remotamente: git clone</h1>
-
-</section>
-<h3>Preencher:</h3>
-<p>Repository URL: <code>git@github.com:mauriciovancine/short-course-git-github-rstudio.git</code></p>
-<p>Project directory name: <code>preenchimento automático</code></p>
-<p>Create project as subdirectory of: <code>/home/mude/data/github</code></p>
-<section class="slide level2">
-
-<p>class: inverse, center, middle</p>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>Se uma janela aparecer, basta digitar “yes” para criar uma autentificação</h1>
-
-</section>
-<section class="slide level2">
-
-<p>class: inverse, center, middle</p>
-</section></section>
-<section>
 <section class="title-slide slide level1 center">
 <h1>Vamos aguardar o download…</h1>
 
 </section>
-<section class="slide level2">
 
-<p>class: inverse, center, middle</p>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>Agora sim, vamos começar o versionamento propriamente dito</h1>
-
-</section>
-<section class="slide level2">
-
-</section></section>
 <section class="title-slide slide level1 center">
 <h1>Dúvidas?</h1>
 

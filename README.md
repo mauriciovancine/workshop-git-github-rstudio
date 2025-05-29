@@ -4,7 +4,6 @@
 
 **Ministrante** <br>
 Maurício Humberto Vancine
-Matheus Moroti
 
 **Carga horária** <br>
 6 horas
@@ -31,10 +30,10 @@ Será necessário que todos usem seus notebooks
 **Softwares** <br>
 R, RStudio e git
 
-1. Instalar a versão mais recente do [R (4.4.x)](https://www.r-project.org) e [RStudio (2024.12.x)](https://www.rstudio.com)
+1. Instalar a versão mais recente do [R (4.5.x)](https://www.r-project.org) e [RStudio (2025.5.x)](https://www.rstudio.com)
 - [Vídeo de instalação do R e do RStudio](https://youtu.be/l1bWvZMNMCM)
 
-2. Instalar o [git (2.30)](https://git-scm.com/downloads)
+2. Instalar o [git (2.34)](https://git-scm.com/downloads)
 - [Vídeo de instalação do git](https://youtu.be/QSfHNEiBd2k)
 
 ---

@@ -1,8 +1,8 @@
 ---
 title: "Controle de versão com git, GitHub e RStudio"
 subtitle: "<br>Unicamp"
-author: "[Maurício Vancine](https://mauriciovancine.github.io/)<br>Matheus Moroti"
-date: "03/11/2025"
+author: "[Maurício Vancine](https://mauriciovancine.github.io/)<br>"
+date: "06/05/2025"
 date-format: long
 format: 
   revealjs:
@@ -34,61 +34,11 @@ lang: pt-br
 - fork > clone > add/commmit/push > branch? > pull request 
 - status, show, log, diff, .gitignore, branch?, fetch, rebase, merge, checkout e switch
 
-## Maurício Vancine 
-
-::: columns
-::: {.column width="50%"}
-<center>
-<br>
-![](img/avatar_mhv.png)
-</center>
-:::
-
-::: {.column width="50%"}
-::: {style="font-size: 80%;"}
-<br>
-
-- Ecólogo e Doutor em Ecologia
-- Pós-Doutorado em Ecologia Espacial
-- Ecologia Espacial
-- Modelagem Ecológica
-- Análise de Dados Ecológicos e Espaciais
-- Ecologia e Conservação de Anfíbios
-- *Open source* (R, QGIS, GNU/Linux)
-:::
-:::
-:::
-
-## Matheus Moroti
-
-::: columns
-::: {.column width="50%"}
-<center>
-<br>
-![](img/avatar.png)
-</center>
-:::
-
-::: {.column width="50%"}
-::: {style="font-size: 80%;"}
-<br>
-
-- Ecólogo e Doutor em Ecologia
-- Pós-Doutorado em Ecologia Espacial
-- Ecologia Espacial
-- Modelagem Ecológica
-- Análise de Dados Ecológicos e Espaciais
-- Ecologia e Conservação de Anfíbios
-- *Open source* (R, QGIS, GNU/Linux)
-:::
-:::
-:::
-
 ## Workshop
 
 - Carga horária bem enxuta: 06 h
-- Parte teórica: 03 h (manhã)
-- Parte prática: 03 h (tarde)
+- Parte teórica: 03 h (hoje)
+- Parte prática: 03 h (amanhã)
 - Nosso principal **objetivo** é **introduzir** o tema de reprodutibilidade e controle de versão
 - Vamos indicar muito **material** para estudo
 - Cursos são ótimo para **"quebrar o gelo"**, mas o aprendizado depende de vocês
@@ -98,31 +48,28 @@ lang: pt-br
 ::: columns
 ::: {.column width="50%"}
 ::: nonincremental
-1. Princípio FAIR (*Findable*, *Accessible*, *Interoperable*, *Reusable*)
-2. Conferindo os computadores
-3. Ambiente virtual (*renv*)
-4. Controle de versão
-5. git e GitHub 
-6. Detalhes do GitHub
-7. Controle de versão na prática
-8. GitHub: Fork
-9. Configuração: *git config*
-10. Iniciando localmente: *git init*
-11. Iniciando remotamente: *git clone*
+1. Conferindo os computadores
+2. Controle de versão
+3. git e GitHub 
+4. Detalhes do GitHub
+7. Configuração: *git config*
+6. Controle de versão na prática
+7. Iniciando localmente: *git init*
+8. Iniciando remotamente: *git clone*
 :::
 :::
 
 ::: {.column width="50%"}
 ::: nonincremental
-12. Versionamento: *git add*, *git commit* e *git status*
-13. Ignorando: *.gitignore*
-14. Histórico: *git log* e *git show*
-15. Diferenças: *git diff*
-16. Desfazer: *git revert* e *git reset*  
-17. Ramificações: *git branch*, *git switch* e *git merge*
-18. Remoto: *git remote*, *git push* e *git pull*
-19. GitHub: Pull request
-20. Interface gráfica do RStudio  
+10. Versionamento: *git add*, *git commit* e *git status*
+11. Ignorando: *.gitignore*
+12. Histórico: *git log* e *git show*
+13. Diferenças: *git diff*
+14. Desfazer: *git revert* e *git reset*  
+15. Ramificações: *git branch*, *git switch* e *git merge*
+16. Remoto: *git remote*, *git push* e *git pull*
+17. GitHub: Pull request
+28. Interface gráfica do RStudio  
 :::
 :::
 
@@ -142,13 +89,7 @@ lang: pt-br
 [\@allison_horst](https://twitter.com/allison_horst)
 :::
 
-# 1. Princípio FAIR 
-
-## 1. Princípio FAIR 
-
-- *Findable*, *Accessible*, *Interoperable*, *Reusable*
-
-# 2. Conferindo os computadores
+# 1. Conferindo os computadores
 
 # 
 ![](img/general_hard_soft.png){fig-align='center'}
@@ -157,34 +98,29 @@ lang: pt-br
 [Café com Código](https://www.instagram.com/cafecomcodigo/?hl=pt)
 :::
 
-## 2. Conferindo os computadores
+## 1. Conferindo os computadores
 
 <br>
-**R (>4.4.x)**  
+**R (>4.5.x)**  
 [https://www.r-project.org/](https://www.r-project.org/)
 
 <br>
 
-**RStudio (>2024.12.x)**  
+**RStudio (>2025.05.0)**  
 [https://www.rstudio.com/](https://www.rstudio.com/)
 
 <br>
 
-**git (>2.48.x)**  
+**git (>2.34.x)**  
 [https://git-scm.com/](https://git-scm.com/)
 
-# 3. Ambiente virtual (*renv*)
-
-## 3. Ambiente virtual (*renv*)
-
-
-# 4. Controle de versão
+# 2. Controle de versão
 
 # 
 ![](img/git_work.png){fig-align='center'}
 
 
-## 4. Controle de versão
+## 2. Controle de versão
 
 Quem nunca...
 
@@ -194,20 +130,20 @@ Quem nunca...
 [PhD Comics](https://phdcomics.com/)
 :::
 
-## 4. Controle de versão
+## 2. Controle de versão
 
 Manejar projetos **individualmente**
 
 <br><br>
 ![](img/git_one_brantch.png){.absolute width=80% right=100 top=250}
 
-## 4. Controle de versão
+## 2. Controle de versão
 
 Manejar projetos **compartilhados**
 
 ![](img/git_multi_brantch.png){.absolute width=90% right=50 top=200}
 
-## 4. Controle de versão
+## 2. Controle de versão
 
 Manejar projetos **no tempo**
 
@@ -217,7 +153,7 @@ Manejar projetos **no tempo**
 [Creating and Hosting a Personal Site on GitHub](https://jmcglone.com/guides/github-pages/)
 :::
 
-## 4. Controle de versão
+## 2. Controle de versão
 
 Principal **ferramenta** utilizada em grandes projetos
 
@@ -229,9 +165,9 @@ Principal **ferramenta** utilizada em grandes projetos
 [Perez-Riverol et al. (2016)](https://doi.org/10.1371/journal.pcbi.1004947)
 :::
 
-# 5. git e GitHub
+# 3. git e GitHub
 
-## 5. git e GitHub
+## 3. git e GitHub
 
 **git**
 
@@ -244,7 +180,7 @@ Principal **ferramenta** utilizada em grandes projetos
 [git](https://git-scm.com/)
 :::
 
-## 5. git e GitHub
+## 3. git e GitHub
 
 **git**
 
@@ -258,7 +194,7 @@ Principal **ferramenta** utilizada em grandes projetos
 [kernel](https://www.kernel.org/)
 :::
 
-## 5. git e GitHub
+## 3. git e GitHub
 
 **git**
 
@@ -267,7 +203,7 @@ Principal **ferramenta** utilizada em grandes projetos
 </iframe>
 </p>
 
-## 5. git e GitHub
+## 3. git e GitHub
 
 **GitHub**
 
@@ -282,7 +218,7 @@ Principal **ferramenta** utilizada em grandes projetos
 [GitHub](https://www.kernel.org/), [GitLab](https://www.kernel.org/), [Bitbucket](https://bitbucket.org/)
 :::
 
-## 5. git e GitHub
+## 3. git e GitHub
 
 **ATENÇÃO: dois conceitos!**  
 
@@ -295,7 +231,7 @@ Principal **ferramenta** utilizada em grandes projetos
 [Is Git the Same Thing as Github!?](https://jahya.net/blog/git-vs-github/)
 :::
 
-## 5. git e GitHub
+## 3. git e GitHub
 
 **ATENÇÃO: dois conceitos!**  
 
@@ -304,7 +240,7 @@ Principal **ferramenta** utilizada em grandes projetos
 
 ![](img/git_github_link.png){.absolute width=70% right=160 top=300}
 
-## 5. git e GitHub
+## 3. git e GitHub
 
 **GitHub**
 
@@ -316,7 +252,7 @@ Vamos criar uma conta no GitHub (caso não possuam)
 [GitHub](https://github.com)
 :::
 
-## 5. git e GitHub
+## 3. git e GitHub
 
 **GitHub**
 
@@ -330,9 +266,15 @@ Salvem ou recuperem essas informações!
 
 ![](img/gif_gandalf.gif){.absolute width=40% right=-100 top=300}
 
-# 6. Detalhes do GitHub
+# 4. Detalhes do GitHub
 
-## 6. Detalhes do GitHub
+## 4. Detalhes do GitHub
+
+**Perfil**
+
+![](img/github_profile.png)
+
+## 4. Detalhes do GitHub
 
 **Perfil**
 
@@ -343,7 +285,19 @@ Salvem ou recuperem essas informações!
 - **Stars**: respositórios marcados com estrela
 - **Settings**: superior direito > foto do perfil > settings
 
-## 6. Detalhes do GitHub
+## 4. Detalhes do GitHub
+
+**Perfil - Settings**
+
+![](img/github_profile_settings.png)
+
+## 4. Detalhes do GitHub
+
+**Repositório**
+
+![](img/github_repository.png)
+
+## 4. Detalhes do GitHub
 
 **Repositório**
 
@@ -359,7 +313,7 @@ Salvem ou recuperem essas informações!
 - **Settings**: gerencia as configurações do repositório
 :::
 
-## 6. Detalhes do GitHub
+## 4. Detalhes do GitHub
 
 **README.md**
 
@@ -397,15 +351,15 @@ Salvem ou recuperem essas informações!
 [Como criar um README para o seu perfil do GitHub](https://www.alura.com.br/artigos/como-criar-um-readme-para-seu-perfil-github?srsltid=AfmBOopGVNPqjqVMXQ42hTQpH0exadVwz6U8jsiiNDAyehD0k--sct7e)
 :::
 
-# 7. Configurações: RStudio, git, GitHub
+# 5. Configurações: RStudio, git, GitHub
 
-## 7. Configurações
+## 5. Configurações
 
 **RStudio**
 
 ![](img/rstudio.png){.absolute right=0 top=150}
 
-## 7. Configurações
+## 5. Configurações
 
 **RStudio**
 
@@ -415,7 +369,7 @@ Salvem ou recuperem essas informações!
 
 ![](img/rstudio_git_config01.png){.absolute width=80% right=0 top=200}
 
-## 7. Configurações
+## 5. Configurações
 
 **RStudio**
 
@@ -432,7 +386,7 @@ Salvem ou recuperem essas informações!
 
 ![](img/rstudio_git_config02.png){.absolute width=50% right=-100 top=180}
 
-## 7. Configurações
+## 5. Configurações
 
 **RStudio**
 
@@ -448,7 +402,7 @@ Chave SSH
 ![](img/github_brave.jpg){.absolute width=45% right=500 top=400}
 ![](img/general_key.png){.absolute width=13% right=800 top=500}
 
-## 7. Configurações
+## 5. Configurações
 
 **GitHub**
 
@@ -462,7 +416,7 @@ Chave SSH
 [Add ao GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 :::
 
-## 7. Configurações
+## 5. Configurações
 
 **GitHub**
 
@@ -478,7 +432,7 @@ Chave SSH
 [Add ao GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 :::
 
-## 7. Configurações
+## 5. Configurações
 
 **git**
 
@@ -501,46 +455,72 @@ git config --list
 
 # Agora sim, podemos começar o versionamento...
 
-# 8. Controle de versão na prática
+# 6. Controle de versão na prática
 
-## 8. Controle de versão na prática
+## 6. Controle de versão na prática
 
 **Duas formas de trabalhar com o git e GitHub**
 
 ::: {style="font-size: 80%;"}
-1. Iniciando um projeto em nosso computador (git)
-1. Iniciando por um repositório remoto (GitHub)
+1. Iniciando um projeto em nosso computador - localmente (git)
+1. Iniciando por um repositório remoto - remotamente (GitHub)
 :::
 
 ![](img/github_logo.png){.absolute width=15% right=800 top=300}
 ![](img/git_operation.png){.absolute width=52% right=250 top=260}
 ![](img/git_logo.png){.absolute width=20% right=70 top=570}
 
-## 8. Controle de versão na prática
+## 6. Controle de versão na prática
 
 ![](img/git_github_workflow.png){.absolute width=100% right=0 top=100}
 ![](img/git_folder_project.png){.absolute width=5% right=220 top=630}
 
-## 8. Controle de versão na prática
+## 6. Controle de versão na prática
 
 ![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
 
-## 8. Controle de versão na prática
+## 6. Controle de versão na prática
 
 ![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
 ![](img/github_logo.png){.absolute width=30% right=700 top=150}
 ![](img/git_folder_project.png){.absolute width=15% right=780 top=520}
 ![](img/git_logo.png){.absolute width=25% right=-50 top=550}
 
-# 9. GitHub: Fork
+# 7. Iniciando localmente
 
-## 9. GitHub: Fork
+## 7. Iniciando localmente
+  
+- `git init`: inicia o versionamento de um repositório local
+
+![](img/git_init.png){.absolute width=40% right=550 top=180}
+![](img/git_folder.png){.absolute width=65% right=-50 top=180}
+
+## Prática 2
+
+1. Criem uma pasta qualquer 
+2. Abram o RStudio e dentro desta pasta criem um `script.R`
+3. Selecionem o caminho desta pasta
+4. Abram o `Terminal` do RStudio
+5. No `Terminal`, rodem: `cd caminho/pasta`
+6. No `Terminal`, rodem: `git init`
+
+## Prática 2
+
+7. No `Terminal`, rodem: `git add .`
+8. No `Terminal`, rodem: `git commit -m 'add script.R'`
+9. Deletem esse script, inclusive da lixeira
+10. No `Terminal`, rodem: `git restore .`
+11. Testemunhem o poder do git...
+
+# 8. Iniciando remotamente
+
+## 8. Iniciando remotamente
 
 **Fork**: cópia de um repositório remoto para o seu GitHub
 
 ![](img/git_fork.png){.absolute width=45% right=250 top=150}
 
-## Prática 2
+## Prática 3
 
 Forken o repositório do workshop
 
@@ -550,24 +530,13 @@ Forken o repositório do workshop
 [https://github.com/mauriciovancine/workshop-git-github-rstudio](https://github.com/mauriciovancine/workshop-git-github-rstudio)
 :::
 
-## 9. GitHub: Fork
+## 8. Iniciando remotamente
 
 Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfado") para o GitHub de vocês
 
 ![](img/gif_fork.gif){.absolute width=70% right=200 top=220}
 
-# 10. Iniciando localmente
-
-## 10. Iniciando localmente
-  
-- `git init`: inicia o versionamento de um repositório local
-
-![](img/git_init.png){.absolute width=40% right=550 top=180}
-![](img/git_folder.png){.absolute width=65% right=-50 top=180}
-
-# 11. Iniciando remotamente
-
-## 11. Iniciando remotamente
+## 8. Iniciando remotamente
 
 - `git clone`: faz o download de um repositório remoto (e.g. GitHub) para o seu computador (repositório local)
 
@@ -577,9 +546,9 @@ Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfad
 [Git 03: Git Clone - Work Locally On Your Computer](https://www.neonscience.org/resources/learning-hub/tutorials/github-git-clone)
 :::
 
-## 11. Iniciando remotamente
+## 8. Iniciando remotamente
 
-## Primeiro, vamos **criar uma pasta** chamada `github`
+Primeiro, vamos **criar uma pasta** chamada `github`
 
 ```{r eval=FALSE}
 ".                               # raiz"
@@ -588,108 +557,66 @@ Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfad
 "            ├── github/         # todos os repositorios"
 ```
 
----
+![](img/diretorio.png){.absolute width=100% right=30 top=400}
 
-class: inverse, center, middle
+## 8. Iniciando remotamente
 
-# E como podemos fazer o clone?
+1. **Download diretamente** do repositório no formato **.zip**
 
----
+![](img/github_clone_zip.png){.absolute width=100% right=260 top=210}
 
-background-image: url(img/github_clone_zip.png)
-background-size: 900px
-background-position: 50% 70%
+## 8. Iniciando remotamente
 
-# 8. Iniciando remotamente: git clone
+1. **Download diretamente** do repositório no formato **.zip**
 
-## 1. **Download diretamente** do repositório remoto no formato **.zip**
+![](img/github_clone_git.png){.absolute width=50% right=260 top=210}
 
----
+## 8. Iniciando remotamente
 
-background-image: url(img/github_clone_git.png)
-background-size: 900px
-background-position: 50% 80%
-
-# 8. Iniciando remotamente: git clone
-
-## 2. Usando o **terminal** para clonar pelo **SSH** (configurado anteriormente)
+2. Usando o **terminal** para clonar pelo **SSH** (configurado anteriormente)
 
 ```{bash eval=FALSE}
 # terminal
 git clone git@github.com:mauriciovancine/short-course-git-github-rstudio.git
 ```
 
----
+## 8. Iniciando remotamente
 
-background-image: url(img/git_rstudio.jpg)
-background-size: 500px
-background-position: 55% 80%
+3. Usando o **RStudio** para clonar pelo **SSH** (configurado anteriormente)
 
-# 8. Iniciando remotamente: git clone
+![](img/git_rstudio.jpg){.absolute width=50% right=260 top=210}
 
-## 3. Usando o **RStudio** para clonar pelo **SSH** (configurado anteriormente)
+## 8. Iniciando remotamente
 
----
+![](img/rstudio_git_create01.png){.absolute width=50% right=260 top=210}
+![](img/rstudio_project_logo.png){.absolute width=50% right=260 top=210}
 
-background-image: url(img/rstudio_git_create01.png), url(img/rstudio_project_logo.png)
-background-size: 900px, 120px
-background-position: 50% 85%, 95% 10%
+## 8. Iniciando remotamente
 
-# 8. Iniciando remotamente: git clone
-
-## Criar um **Projeto R** com controle de versão
+Criar um **Projeto R** com controle de versão
 
 `File > New Project > Version Control`
 
----
+![](img/rstudio_git_create02.png){.absolute width=50% right=260 top=210}
 
-background-image: url(img/rstudio_git_create02.png)
-background-size: 900px
-background-position: 50% 85%
+## 8. Iniciando remotamente
 
-# 8. Iniciando remotamente: git clone
-
-## Escolher **clonar repositório** do GitHub
+Escolher **clonar repositório** do GitHub
 
 `Git`
 
----
+![](img/rstudio_git_create03.png){.absolute width=50% right=260 top=210}
 
-background-image: url(img/rstudio_git_create03.png)
-background-size: 750px
-background-position: 50% 90%
+## 8. Iniciando remotamente
 
-# 8. Iniciando remotamente: git clone
+Preencher:
 
-### Preencher:
-
-Repository URL: `git@github.com:mauriciovancine/short-course-git-github-rstudio.git`
-
-Project directory name: `preenchimento automático`
-
-Create project as subdirectory of: `/home/mude/data/github`
-
----
-
-class: inverse, center, middle
-
-# Se uma janela aparecer, basta digitar "yes" para criar uma autentificação
-
----
-
-class: inverse, center, middle
+- Repository URL: `git@github.com:mauriciovancine/short-course-git-github-rstudio.git`
+- Project directory name: `preenchimento automático`
+- Create project as subdirectory of: `/home/mude/data/github`
+- Se uma janela aparecer, basta digitar "yes" para criar uma autentificação
 
 # Vamos aguardar o download...
-
----
-
-class: inverse, center, middle
-
-# Agora sim, vamos começar o versionamento propriamente dito
-
----
-
-
 
 # Dúvidas?
 
