@@ -39,8 +39,7 @@ lang: pt-br
 - Carga horária bem enxuta: 06 h
 - Parte teórica: 03 h (hoje)
 - Parte prática: 03 h (amanhã)
-- Nosso principal **objetivo** é **introduzir** o tema de reprodutibilidade e controle de versão
-- Vamos indicar muito **material** para estudo
+- Nosso principal **objetivo** é **introduzir** o tema de controle de versão
 - Cursos são ótimo para **"quebrar o gelo"**, mas o aprendizado depende de vocês
 
 ## Conteúdo{.smaller}
@@ -52,23 +51,23 @@ lang: pt-br
 2. Controle de versão
 3. git e GitHub 
 4. Detalhes do GitHub
-7. Configuração: *git config*
+7. Configuração: `git config`
 6. Controle de versão na prática
-7. Iniciando localmente: *git init*
-8. Iniciando remotamente: *git clone*
+7. Iniciando localmente: `git init`
+8. Iniciando remotamente: `fork` e `git clone`
 :::
 :::
 
 ::: {.column width="50%"}
 ::: nonincremental
-10. Versionamento: *git add*, *git commit* e *git status*
-11. Ignorando: *.gitignore*
-12. Histórico: *git log* e *git show*
-13. Diferenças: *git diff*
-14. Desfazer: *git revert* e *git reset*  
-15. Ramificações: *git branch*, *git switch* e *git merge*
-16. Remoto: *git remote*, *git push* e *git pull*
-17. GitHub: Pull request
+10. Versionamento: `git status`, `git add`, e `git commit`
+11. Ignorando: `.gitignore`
+12. Histórico: `git log` e `git show`
+13. Diferenças: `git diff`
+14. Desfazer: `git restore`, `git revert` e `git reset`
+15. Ramificações: `git branch`, `git switch` e `git merge`
+16. Remoto: `git remote`, `git push` e `git pull`
+17. GitHub: `Pull request`
 28. Interface gráfica do RStudio  
 :::
 :::
@@ -381,7 +380,7 @@ Salvem ou recuperem essas informações!
 ::: {style="font-size: 65%;"}
 - Windows: `C:/Program Files/Git/bin/git.exe`
 - Ubuntu: `/usr/bin/git`
-- Mac: `???`
+- Mac: `/usr/bin/git`
 :::
 
 ![](img/rstudio_git_config02.png){.absolute width=50% right=-100 top=180}
@@ -442,11 +441,10 @@ Chave SSH
 :::
 
 ```{r eval=FALSE}
-# terminal
-git config --list
-git config --global user.name "meu nome"
-git config --global user.email "email@dominio.com"
-git config --list
+$ git config --list
+$ git config --global user.name "meu nome"
+$ git config --global user.email "email@dominio.com"
+$ git config --list
 ```
 
 ![](img/git_config.png){.absolute width=80% right=100 top=450}
@@ -497,6 +495,8 @@ git config --list
 
 ## Prática 2
 
+<br>
+
 1. Criem uma pasta qualquer 
 2. Abram o RStudio e dentro desta pasta criem um `script.R`
 3. Selecionem o caminho desta pasta
@@ -505,6 +505,8 @@ git config --list
 6. No `Terminal`, rodem: `git init`
 
 ## Prática 2
+
+<br>
 
 7. No `Terminal`, rodem: `git add .`
 8. No `Terminal`, rodem: `git commit -m 'add script.R'`
@@ -563,33 +565,29 @@ Primeiro, vamos **criar uma pasta** chamada `github`
 
 1. **Download diretamente** do repositório no formato **.zip**
 
-![](img/github_clone_zip.png){.absolute width=100% right=260 top=210}
+![](img/github_clone_zip.png){.absolute width=100% right=30 top=210}
 
 ## 8. Iniciando remotamente
 
-1. **Download diretamente** do repositório no formato **.zip**
+2. Usando o **terminal** para clonar pelo **SSH** (configurado anteriormente)
 
-![](img/github_clone_git.png){.absolute width=50% right=260 top=210}
+![](img/github_clone_git.png){.absolute width=100% right=30 top=210}
 
 ## 8. Iniciando remotamente
 
 2. Usando o **terminal** para clonar pelo **SSH** (configurado anteriormente)
 
 ```{bash eval=FALSE}
-# terminal
-git clone git@github.com:mauriciovancine/short-course-git-github-rstudio.git
+$ git clone git@github.com:mauriciovancine/workshop-git-github-rstudio.git
 ```
+
+![](img/git_clone_terminal.png){.absolute width=50% right=260 top=350}
 
 ## 8. Iniciando remotamente
 
 3. Usando o **RStudio** para clonar pelo **SSH** (configurado anteriormente)
 
-![](img/git_rstudio.jpg){.absolute width=50% right=260 top=210}
-
-## 8. Iniciando remotamente
-
-![](img/rstudio_git_create01.png){.absolute width=50% right=260 top=210}
-![](img/rstudio_project_logo.png){.absolute width=50% right=260 top=210}
+![](img/git_rstudio.png){.absolute width=50% right=200 top=210}
 
 ## 8. Iniciando remotamente
 
@@ -597,7 +595,7 @@ Criar um **Projeto R** com controle de versão
 
 `File > New Project > Version Control`
 
-![](img/rstudio_git_create02.png){.absolute width=50% right=260 top=210}
+![](img/rstudio_git_create01.png){.absolute width=100% right=20 top=210}
 
 ## 8. Iniciando remotamente
 
@@ -605,18 +603,2039 @@ Escolher **clonar repositório** do GitHub
 
 `Git`
 
-![](img/rstudio_git_create03.png){.absolute width=50% right=260 top=210}
+![](img/rstudio_git_create02.png){.absolute width=100% right=20 top=210}
+
+## 8. Iniciando remotamente
+
+Preencher com dados do repositório do **GitHub**
+
+`Repository URL` 
+
+![](img/rstudio_git_create03.png){.absolute width=100% right=20 top=210}
 
 ## 8. Iniciando remotamente
 
 Preencher:
 
-- Repository URL: `git@github.com:mauriciovancine/short-course-git-github-rstudio.git`
-- Project directory name: `preenchimento automático`
-- Create project as subdirectory of: `/home/mude/data/github`
-- Se uma janela aparecer, basta digitar "yes" para criar uma autentificação
+- Repository URL:   `git@github.com:mauriciovancine/workshop-git-github-rstudio.git`
+- Project directory name:  
+`preenchimento automático`
+- Create project as subdirectory of:   
+`/home/mude/data/github`
+- Se uma janela aparecer, basta digitar "yes"
+- Aguardar o download
 
-# Vamos aguardar o download...
+#
+![](img/break-time01.jpg){fig-align='center'}
+
+# 9. Versionamento
+
+## 9. Versionamento
+
+![](img/git_add_commit.png){.absolute width=90% right=20 top=90}
+
+![](img/github_logo.png){.absolute width=20% right=-210 top=160}
+![](img/github_logo.png){.absolute width=20% right=970 top=160}
+![](img/git_folder_project.png){.absolute width=15% right=990 top=500}
+![](img/git_logo.png){.absolute width=20% right=-210 top=530}
+
+## 9. Versionamento
+
+**Comandos git** para o fluxo de trabalho dos repositórios
+
+![](img/git_workflow.png){.absolute width=100% right=10 top=150}
+![](img/git_folder_project.png){.absolute width=15% right=1030 top=350}
+![](img/github_logo.png){.absolute width=20% right=-220 top=350}
+![](img/git_logo.png){.absolute width=20% right=450 top=610}
+
+## 9. Versionamento
+
+Fluxo do versionamento
+
+![](img/git_add_commit_flow.png){.absolute width=70% right=130 top=200}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+Fluxo do versionamento
+
+::: {style="font-size: 70%;"}
+1. **Diretório de trabalho (*working directory*)**: pasta com os arquivos
+1. **Preparação (*staged area*)**: arquivos adicionados para serem versionados (.git)
+1. **Repositório (*repository*)**: versão consolidada dos arquivos (.git)
+:::
+
+![](img/git_files_states.png){.absolute width=100% right=30 top=320}
+
+## 9. Versionamento
+
+Fluxo do versionamento
+
+::: {style="font-size: 70%;"}
+1. **Diretório de trabalho (*working directory*)**: pasta com os arquivos
+1. **Preparação (*staging area*)**: arquivos adicionados para serem versionados (.git)
+1. **Repositório (*repository*)**: versão consolidada dos arquivos (.git)
+:::
+
+![](img/git_trees.png){.absolute width=60% right=230 top=450}
+
+## 9. Versionamento
+
+Fluxo do versionamento usando fotos
+
+![](img/git_photo01.jpg){.absolute width=40% right=700 top=150}
+![](img/git_trees.png){.absolute width=60% right=230 top=450}
+
+::: footer
+[IX Congresso de Herpetologia](https://9cbh.galoa.com.br)
+:::
+
+## 9. Versionamento
+
+Fluxo do versionamento usando fotos
+
+![](img/git_photo01.jpg){.absolute width=40% right=700 top=150}
+![](img/git_photo02.jpg){.absolute width=27% right=400 top=150}
+![](img/git_trees.png){.absolute width=60% right=230 top=450}
+
+::: footer
+[IX Congresso de Herpetologia](https://9cbh.galoa.com.br)
+:::
+
+## 9. Versionamento
+
+Fluxo do versionamento usando fotos
+
+![](img/git_photo01.jpg){.absolute width=40% right=700 top=150}
+![](img/git_photo02.jpg){.absolute width=27% right=400 top=150}
+![](img/git_photo03.webp){.absolute width=40% right=-35 top=150}
+![](img/git_trees.png){.absolute width=60% right=230 top=450}
+
+::: footer
+[IX Congresso de Herpetologia](https://9cbh.galoa.com.br)
+:::
+
+# Mas como o git sabe quais arquivos foram alterados?
+
+## 9. Versionamento
+
+Rastreamento dos arquivos no diretório de trabalho
+
+::: {style="font-size: 80%;"}
+1. **Untracked** (*não-rastreado*): arquivos não rastreados pelo git
+1. **Tracked** (*rastreado*): arquivos rastreados pelo git (adicionados no **stage**)
+:::
+
+![](img/git_states.webp){.absolute width=60% right=220 top=330}
+
+::: footer
+[Git — Os quatro estados](https://medium.com/@devmasterteam/git-ebook-8808f7301054)
+:::
+
+## 9. Versionamento
+
+Quatro estados de alteração dos arquivos
+
+::: {style="font-size: 60%;"}
+1. **Untracked (*não-rastreado*)**: arquivos não rastreados pelo git
+1. **Unmodified (*não-modificado*)**: arquivos rastreados e sem modificações
+1. **Modified (*modificado*)**: arquivos rastreados e com modificações
+1. **Staged (*preparado*)**: arquivos rastreados, com modificações e preparados para o commit
+:::
+
+![](img/git_states.webp){.absolute width=60% right=220 top=330}
+
+::: footer
+[Git — Os quatro estados](https://medium.com/@devmasterteam/git-ebook-8808f7301054)
+:::
+
+## 9. Versionamento
+
+**IMPORTANTE!**
+
+::: {style="font-size: 60%;"}
+1. Arquivos adicionados quando preparados se tornam **staged**
+1. Arquivos editados se tornam **modified**
+1. Arquivos editados e preparados se tornam **staged**
+1. Arquivos removidos se tornam **untracked**
+1. Após um commit, todos os arquivos se tornam **unmodified**
+:::
+
+![](img/git_states_pro.png){.absolute width=70% right=160 top=370}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+------------------------------------------------------------
+
+## 9. Versionamento
+
+`git status`: mostra o estado do repositório
+
+```{r eval=FALSE}
+$ git status
+
+# On branch master
+# nothing to commit, working tree clean
+```
+
+![](img/git_states_pro.png){.absolute width=60% right=220 top=420}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+Vamos criar um arquivo no diretório
+
+Usando a aba **Terminal** do RStudio
+
+```{r eval=FALSE}
+$ touch test.txt
+```
+
+![](img/general_bloco_notas.png){.absolute width=35% right=350 top=300}
+
+## 9. Versionamento
+
+`git status`: mostra o estado do repositório
+
+```{r eval=FALSE}
+$ git status
+
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+# 	test.txt
+# 
+# nothing added to commit but untracked files present (use "git add" to track)
+```
+
+![](img/git_states_pro.png){.absolute width=60% right=220 top=420}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git add`: adiciona mudanças após edições (**staging area**)
+
+```{bash eval=FALSE}
+$ git add test.txt
+```
+
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git add`: adiciona mudanças após edições (**staging area**)
+
+```{bash eval=FALSE}
+$ git add test.txt -v
+
+# add 'test.txt'
+```
+
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git add`: adiciona mudanças após edições (**staging area**)
+
+```{bash eval=FALSE}
+$ git add -Av
+
+# add 'test.txt'
+```
+
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git add`: adiciona mudanças após edições (**staging area**)
+
+```{bash eval=FALSE}
+$ git add .
+```
+
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git status`: mostra o estado do repositório
+
+```{bash eval=FALSE}
+$ git status
+
+# On branch master
+# Changes to be committed:
+#   (use "git restore --staged <file>..." to unstage)
+# 	new file:   test.txt
+```
+
+![](img/git_trees.png){.absolute width=60% right=230 top=450}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git commit`: registra as alterações da **staging area**
+
+::: {style="font-size: 80%;"}
+- Cria um **snapshot** do repositório, contendo:
+  - Mudanças realizadas nos arquivos
+  - Mensagem descritiva (*mensagem do commit*)
+  - Metadados do autor, data e identificador único (**hash**)
+:::
+
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git commit`: registra as alterações da **staging area**
+
+```{bash eval=FALSE}
+$ git commit -m "add test.txt"
+
+# [master 5a164d5] add test.txt
+# 1 file changed, 0 insertions(+), 0 deletions(-)
+# create mode 100644 test.txt
+```
+
+![](img/git-add-commit.png){.absolute width=50% right=200 top=400}
+
+::: footer
+[Guia dos principais comandos do GIT](https://blog.dbins.com.br/guia-dos-principais-comandos-do-git)
+:::
+
+## 9. Versionamento
+
+`git status`: mostra o estado do repositório
+
+```{bash eval=FALSE}
+$ git status
+
+# On branch master
+# nothing to commit, working tree clean
+```
+
+![](img/git_states_pro.png){.absolute width=60% right=220 top=420}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+Fluxo do versionamento
+
+::: {style="font-size: 70%;"}
+1. **Diretório de trabalho (*working directory*)**: pasta com os arquivos
+1. **Preparação (*staged area*)**: arquivos adicionados para serem versionados (.git)
+1. **Repositório (*repository*)**: versão consolidada dos arquivos (.git)
+:::
+
+![](img/git_files_states.png){.absolute width=100% right=30 top=320}
+
+## 9. Versionamento
+
+Usando a aba **Files** do RStudio, vamos abrir e editar o arquivo **test.txt**
+
+```{bash eval=FALSE}
+Acabo de inserir uma edição ao meu arquivo
+```
+
+![](img/general_bloco_notas.png){.absolute width=35% right=350 top=300}
+
+## 9. Versionamento
+
+`git status`: mostra o estado do repositório
+
+```{bash eval=FALSE}
+$ git status
+
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git restore <file>..." to discard changes in working directory)
+# 	modified:   test.txt
+# no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+![](img/git_states_pro.png){.absolute width=60% right=220 top=420}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------
+
+# E se houver arquivos que eu não quero versionar?
+
+# 
+![](img/gitignore.jpg)
+
+## 10. Ignorando: .gitignore
+
+## Arquivo .gitignore
+
+### O **.gitignore** é um arquivo especial que indica ao git que determinados arquivos ou diretórios devem ser **ignorados e não comitados**
+
+--
+
+### O **.gitignore** é um **arquivo de texto simples** em que cada linha especifica um padrão de arquivos ou diretórios a serem ignorados
+
+--
+
+### Geralmente colocado no **diretório raiz** de um repositório
+
+--
+
+### Atentar para o **ponto**, pois é um arquivo oculto [**.gitignore**]
+
+---
+
+# 10. Ignorando: .gitignore
+
+## Arquivo .gitignore
+
+```{bash eval=FALSE}
+# criar um arquivo
+touch ~/.gitignore
+```
+
+--
+
+### Nome de arquivos
+
+- raster.tif
+
+--
+
+### Diretórios
+
+- temp/
+
+--
+
+### Caracteres-curinga
+
+- Padrão: *.tif (todos com .tif)
+- Negação: !.tif (negar ignore)
+- Comentário: # (não negar)
+
+---
+
+class: inverse, center, middle
+
+# E se houver arquivos [enormes] que eu queira versionar?
+
+---
+
+![](img/github_limit.png)
+background-size: 170px
+background-position: 95% 60%
+
+# 10. Ignorando: .gitignore
+
+## Limites
+
+### O tamanho máximo de arquivos é 25 Mb (browser)
+
+- Arquivos adicionados via browser é limitado a 25 Mb
+
+### O tamanho máximo de arquivos é 100 Mb (terminal)
+
+- Arquivos adicionados via terminal é limitado a 25 Mb
+- Se o arquivo exceder esse limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
+
+### O tamanho máximo de um repositório é 5 GB
+
+- O tamanho total do repositório é limitado a 5 Gb
+- Idealmente um repositório dever ser menor que 1 Gb
+- Mensagens de aviso informam que o tamanho do repositório se aproxima do limite
+- Se o repositório exceder o limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
+
+---
+
+![](img/gif_large_files.gif)
+background-size: 500px
+background-position: 50% 90%
+
+# 10. Ignorando: .gitignore
+
+## Git Large File Storage (LFS)
+
+### [Git Large File Storage (LFS)](https://git-lfs.github.com/) substitui arquivos grandes por ponteiros de texto dentro do git
+
+### Armazena o conteúdo desses arquivos em um servidor remoto como GitHub.com ou GitHub Enterprise
+
+---
+
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+
+class: inverse, center, middle
+
+# Vamos ver como acessar todo o histórico de commits do git?
+
+---
+
+name: 11.
+
+class: inverse, center, middle
+
+# 11. Histórico: git log e git show
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+![](img/git_log.png)
+background-size: 450px
+background-position: 90% 70%
+
+# 11. Histórico: git log e git show
+
+## **git log**: mostra o registro de todo o histórico de commits
+
+<br><br>
+
+### 1. Nome do commit (hash ou tag - dcbd894)
+
+### 2. Autor
+
+### 3. E-mail
+
+### 4. Data
+
+### 5. Descrição (mensagem do commit)
+
+---
+
+# 11. Histórico: git log e git show
+
+## **git log**: mostra o registro de todo o histórico de commits
+
+```{bash eval=FALSE}
+git log
+```
+```{bash eval=FALSE}
+commit dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f (HEAD -> master)
+Author: mauriciovancine <mauricio.vancine@gmail.com>
+Date:   Mon Mar 15 11:03:26 2021 -0300
+
+    mod test.txt
+
+commit 8b33bc57187a2bcb59172c75ce7266fbddb64eff
+Author: mauriciovancine <mauricio.vancine@gmail.com>
+Date:   Mon Mar 15 11:02:04 2021 -0300
+
+    add test.txt
+```
+
+---
+
+# 11. Histórico: git log e git show
+
+## **git log [arquivo]**: registro de todo o histórico de commits para arquivos
+
+```{bash eval=FALSE}
+git log test.txt
+```
+```{bash eval=FALSE}
+commit dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f (HEAD -> master)
+Author: mauriciovancine <mauricio.vancine@gmail.com>
+Date:   Mon Mar 15 11:03:26 2021 -0300
+
+    mod test.txt
+
+commit 8b33bc57187a2bcb59172c75ce7266fbddb64eff
+Author: mauriciovancine <mauricio.vancine@gmail.com>
+Date:   Mon Mar 15 11:02:04 2021 -0300
+
+    add test.txt
+```
+
+---
+
+# 11. Histórico: git log e git show
+
+## **git log --oneline**: registro de todo o histórico de commits simplificado
+
+```{bash eval=FALSE}
+git log --oneline
+```
+```{bash eval=FALSE}
+dcbd894 (HEAD -> master) mod test.txt
+8b33bc5 add test.txt
+```
+
+---
+
+![](img/git_log_cheatsheet.png)
+background-size: 650px
+background-position: 50% 70%
+
+# 11. Histórico: git log e git show
+
+## **git log**: cheatsheet
+
+---
+
+# 11. Histórico: git log e git show
+
+## **git show**: visualização das alterações realizadas nos arquivos
+
+```{bash eval=FALSE}
+git show
+```
+```{bash eval=FALSE}
+commit dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f (HEAD -> master)
+Author: mauriciovancine <mauricio.vancine@gmail.com>
+Date:   Mon Mar 15 11:03:26 2021 -0300
+
+    mod test.txt
+
+diff --git a/test.txt b/test.txt
+index e69de29..f5201c0 100644
+--- a/test.txt
++++ b/test.txt
+@@ -0,0 +1 @@
++Acabo de inserir uma edição ao meu arquivo
+\ No newline at end of file
+```
+
+---
+
+# 11. Histórico: git log e git show
+
+## **git show**: visualização das alterações realizadas nos arquivos
+
+```{bash eval=FALSE}
+git show 8b33bc5
+```
+```{bash eval=FALSE}
+commit 8b33bc57187a2bcb59172c75ce7266fbddb64eff
+Author: mauriciovancine <mauricio.vancine@gmail.com>
+Date:   Mon Mar 15 11:02:04 2021 -0300
+
+    add test.txt
+
+diff --git a/test.txt b/test.txt
+new file mode 100644
+index 0000000..e69de29
+```
+
+---
+
+name: 12.
+
+class: inverse, center, middle
+
+# 12. Diferenças: git diff
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+![](img/git_diff.png)
+background-size: 1000px
+background-position: 50% 70%
+
+# 12. Diferenças: git diff
+
+## **git diff**: mostra as diferenças dos arquivos no *working directory*
+
+---
+
+![](img/git_diff.png)
+background-size: 800px
+background-position: 50% 100%
+
+# 12. Diferenças: git diff
+
+## **git diff**: mostra as diferenças dos arquivos no *working directory*
+
+```{bash eval=FALSE}
+git diff
+```
+
+## **Observação**: Não retornou nenhuma diferença...
+
+---
+
+![](img/general_bloco_notas.png)
+background-size: 250px
+background-position: 50% 80%
+
+# 12. Diferenças: git diff
+
+## **git diff**: mostra as diferenças dos arquivos no *working directory*
+
+### Vamos editar o arquivo "test.txt"
+
+```{bash eval=FALSE}
+Outra linha
+```
+
+---
+
+# 12. Diferenças: git diff
+
+## **git diff**: mostra as diferenças dos arquivos no *working directory*
+
+```{bash eval=FALSE}
+git diff
+```
+```{bash eval=FALSE}
+diff --git a/test.txt b/test.txt
+index f5201c0..71f35ef 100644
+--- a/test.txt
++++ b/test.txt
+@@ -1 +1,3 @@
+-Acabo de inserir uma edição ao meu arquivo
+\ No newline at end of file
++Acabo de inserir uma edição ao meu arquivo
++
++Outra linha
+\ No newline at end of file
+```
+
+---
+
+# 12. Diferenças: git diff
+
+## **git diff [arquivo]**: mostra as diferenças para o arquivo no *working directory*
+
+```{bash eval=FALSE}
+git diff test.txt
+```
+```{bash eval=FALSE}
+diff --git a/test.txt b/test.txt
+index f5201c0..71f35ef 100644
+--- a/test.txt
++++ b/test.txt
+@@ -1 +1,3 @@
+-Acabo de inserir uma edição ao meu arquivo
+\ No newline at end of file
++Acabo de inserir uma edição ao meu arquivo
++
++Outra linha
+\ No newline at end of file
+```
+
+---
+
+# 12. Diferenças: git diff
+
+## **git diff --staged**: mostra as diferenças dos arquivos na *staged area*
+
+```{bash eval=FALSE}
+git diff --staged
+```
+```{bash eval=FALSE}
+diff --git a/test.txt b/test.txt
+index f5201c0..71f35ef 100644
+--- a/test.txt
++++ b/test.txt
+@@ -1 +1,3 @@
+-Acabo de inserir uma edição ao meu arquivo
+\ No newline at end of file
++Acabo de inserir uma edição ao meu arquivo
++
++Outra linha
+\ No newline at end of file
+```
+
+---
+
+class: inverse, center, middle
+
+# Até aqui, alguma dúvida?
+
+---
+
+class: inverse, center, middle
+
+# E como voltar no tempo?
+
+---
+
+
+![](img/gif_delorean.gif)
+background-size: 500px
+background-position: 50% 50%
+
+---
+
+name: 13.
+
+class: inverse, center, middle
+
+# 13. Desfazer: git revert e git reset
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+![](img/gif_delorean.gif), ![](img/git_revert_reset.png)
+background-size: 400px, 500px
+background-position: 25% 80%, 95% 50%
+
+# 13. Desfazer: git revert e git reset
+
+## Desfazendo operações no git
+
+1. **git revert**: desfaz um commit **preservando o histórico** (criando outro commit)
+1. **git reset**:  desfaz um commit **deletando o histórico** (deletando commits)
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
+
+## Sintaxe
+
+```{bash eval=FALSE}
+# reverte um commit especifico
+git revert <hash do commit>
+```
+
+```{bash eval=FALSE}
+# reverter o ultimo commit
+git revert HEAD
+```
+
+```{bash eval=FALSE}
+# cancelar uma reversao
+git revert --abot
+```
+
+---
+
+![](img/general_butterfly_effect.jpg)
+background-size: 500px
+background-position: 80% 95%
+
+# 13. Desfazer: git revert e git reset
+
+## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
+
+### **IMPORTANTE!**
+
+### 1. Deve-se trabalhar em um diretório de trabalho limpo. Executar sempre **git add** e **git commit** antes de tentar reverter um commit
+
+### 2. Tente não **mudar** o passado!
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
+
+### Estado
+
+```{bash eval=FALSE}
+git status
+```
+```{bash eval=FALSE}
+On branch master
+nothing to commit, working tree clean
+```
+
+### Histórico
+
+```{bash eval=FALSE}
+git log --oneline
+```
+```{bash eval=FALSE}
+f9f2e9c (HEAD -> master) mod2 test.txt
+dcbd894 mod test.txt
+8b33bc5 add test.txt
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
+
+### Reverter - mensagem
+
+```{bash eval=FALSE}
+git revert f9f2e9c
+```
+```{bash eval=FALSE}
+Revert "mod2 test.txt"
+
+This reverts commit f9f2e9c867cfd549d0efcab1519a5ec9d86e7d0d.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Changes to be committed:
+#       modified:   test.txt
+#
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
+
+### Reverter
+
+```{bash eval=FALSE}
+git revert f9f2e9c
+```
+```{bash eval=FALSE}
+[master fca02a2] Revert "mod2 test.txt"
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+```
+
+### Estado
+
+```{bash eval=FALSE}
+git status
+```
+```{bash eval=FALSE}
+On branch master
+nothing to commit, working tree clean
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
+
+### Histórico
+
+```{bash eval=FALSE}
+git log --oneline
+```
+```{bash eval=FALSE}
+fca02a2 (HEAD -> master) Revert "mod2 test.txt"
+f9f2e9c mod2 test.txt
+dcbd894 mod test.txt
+8b33bc5 add test.txt
+```
+
+---
+
+![](img/git_reset.png)
+background-size: 450px
+background-position: 87% 90%
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Sintaxe
+
+```{bash eval=FALSE}
+git reset [modo] [arquivo|commit]
+```
+
+**Aplicações**
+
+- descartar commits em um branch privado
+- desfazer alterações não comitadas (branch privado)
+- tirar arquivos da área de staged
+
+**Observações**
+
+- descartar commits de um branch público: **git revert**
+- descartar alterações no diretório de trabalho: **git checkout**
+
+---
+
+![](img/git_reset_modes2.png), ![](img/git_reset_modes.png)
+background-size: 500px, 400px
+background-position: 10% 90%, 85% 90%
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Modos principais
+
+- **--soft**: não reseta o índice ou o diretório de trabalho (modo seguro)
+- **--mixed (default)**: reseta o índice, mas não o diretório de trabalho (modo seguro)
+- **--hard**: reseta o índice e o diretório de trabalho (modo não seguro)
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Exemplos
+
+**git reset**
+
+Reseta a *staging area* (retira os arquivos) para corresponder ao commit mais recente, sem modificar o *working directory*
+
+**git reset test.txt**
+
+Retira o test.txt da *staging area*, sem modificar o *working directory*
+
+**git reset --hard**
+
+Reseta a *staging area* e o *working directory* para corresponder ao commit mais recente. Todas as alterações no diretório são sobrescritas
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Exemplos
+
+**git reset <commit>**
+
+Move a versão para o commit indicado, reseta a *staging area* para corresponder a ele, mas não modifica o *working directory*
+
+**git reset <commit> --hard**
+
+Move a versão para o commit indicado e reseta tanto a *staging area*, quanto o *working directory* para corresponder ao commit especificado
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Estado
+
+```{bash eval=FALSE}
+git status
+```
+```{bash eval=FALSE}
+On branch master
+nothing to commit, working tree clean
+```
+
+---
+
+![](img/general_bloco_notas.png)
+background-size: 250px
+background-position: 50% 80%
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Vamos editar o arquivo "test.txt"
+
+```{bash eval=FALSE}
+Acabo de inserir uma edição ao meu arquivo
+Viagens no tempo podem ser perigosas...
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Estado
+
+```{bash eval=FALSE}
+git status
+```
+```{bash eval=FALSE}
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Adicionar
+
+```{bash eval=FALSE}
+git add -Av
+```
+```{bash eval=FALSE}
+add 'test.txt'
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Estado
+
+```{bash eval=FALSE}
+git status
+```
+```{bash eval=FALSE}
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   test.txt
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Remover do staged area
+
+### Resetar
+
+```{bash eval=FALSE}
+git reset test.txt
+```
+```{bash eval=FALSE}
+Unstaged changes after reset:
+M	test.txt
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Estado
+
+```{bash eval=FALSE}
+git status
+```
+```{bash eval=FALSE}
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Ver o conteúdo do arquivo
+
+```{bash eval=FALSE}
+cat test.txt
+```
+```{bash eval=FALSE}
+Acabo de inserir uma edição ao meu arquivo
+Viagens no tempo podem ser perigosas...
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Histórico
+
+```{bash eval=FALSE}
+git log --oneline
+```
+```{bash eval=FALSE}
+fca02a2 (HEAD -> master) Revert "mod2 test.txt"
+f9f2e9c mod2 test.txt
+dcbd894 mod test.txt
+8b33bc5 add test.txt
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Adicionar
+
+```{bash eval=FALSE}
+git add -Av
+```
+```{bash eval=FALSE}
+add 'test.txt'
+```
+
+### Commitar
+
+```{bash eval=FALSE}
+git commit -m "mod3 test.txt"
+```
+```{bash eval=FALSE}
+[master 4b0c4e8] mod3 test.txt
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Histórico
+
+```{bash eval=FALSE}
+git log --oneline
+```
+```{bash eval=FALSE}
+4b0c4e8 (HEAD -> master) mod3 test.txt
+fca02a2 Revert "mod2 test.txt"
+f9f2e9c mod2 test.txt
+dcbd894 mod test.txt
+8b33bc5 add test.txt
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Resetar
+
+```{bash eval=FALSE}
+git reset --hard f9f2e9c
+```
+```{bash eval=FALSE}
+HEAD is now at f9f2e9c mod2 test.txt
+```
+
+--
+
+### Histórico
+
+```{bash eval=FALSE}
+git log --oneline
+```
+```{bash eval=FALSE}
+f9f2e9c (HEAD -> master) mod2 test.txt
+dcbd894 mod test.txt
+8b33bc5 add test.txt
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Remover arquivo
+
+```{bash eval=FALSE}
+rm test.txt
+```
+
+### Adicionar
+
+```{bash eval=FALSE}
+git add -Av
+```
+
+### Commitar
+
+```{bash eval=FALSE}
+git commit -m "rem text.txt"
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Histórico
+
+```{bash eval=FALSE}
+git log --oneline
+```
+```{bash eval=FALSE}
+6a417c5 (HEAD -> master) rem text.txt
+f9f2e9c mod2 test.txt
+dcbd894 mod test.txt
+8b33bc5 add test.txt
+```
+
+---
+
+# 13. Desfazer: git revert e git reset
+
+## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+
+### Resetar
+
+```{bash eval=FALSE}
+git reset --hard f9f2e9c
+```
+```{bash eval=FALSE}
+HEAD is now at f9f2e9c mod2 test.txt
+```
+
+--
+
+### Histórico
+
+```{bash eval=FALSE}
+git log --oneline
+```
+```{bash eval=FALSE}
+f9f2e9c (HEAD -> master) mod2 test.txt
+dcbd894 mod test.txt
+8b33bc5 add test.txt
+```
+
+---
+
+, inverse
+![](img/gif_cat_ohh.gif)
+background-size: 600px
+background-position: 50% 50%
+
+---
+
+![](img/general_butterfly_effect.jpg)
+background-size: 600px
+background-position: 50% 95%
+
+# 13. Desfazer: git revert e git reset
+
+## Desfazendo operações no git
+
+### 1. **git revert**: desfaz um commit **preservando o histórico** (criando outro commit)
+
+### 2. **git reset**:  desfaz um commit **deletando o histórico** (deletando commits)
+
+---
+
+
+![](img/git_branches.png)
+background-size: 900px
+
+---
+
+name: 14.
+
+class: inverse, center, middle
+
+# 14. Ramificações: git branch, git switch e git merge
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+![](img/git_branch.png)
+background-size: 600px
+background-position: 50% 70%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## **git branch**: cria uma ramificação (**linha independente**) de desenvolvimento
+
+---
+
+![](img/git_branch.png)
+background-size: 500px
+background-position: 50% 92%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## **git branch**: lista os branchs e verifica o branch de edição
+
+```{bash eval=FALSE}
+git branch
+```
+```{bash eval=FALSE}
+* master
+```
+
+---
+
+![](img/git_branch.png)
+background-size: 450px
+background-position: 50% 95%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## **git branch**: cria uma ramificação
+
+```{bash eval=FALSE}
+git branch branch-1
+```
+```{bash eval=FALSE}
+git branch
+```
+```{bash eval=FALSE}
+branch-1
+* master
+```
+
+---
+
+![](img/git_switch.png)
+background-size: 700px
+background-position: 50% 85%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## **git switch**: troca a raficação de edição
+
+```{bash eval=FALSE}
+git switch branch-1
+```
+```{bash eval=FALSE}
+Switched to branch 'branch-1'
+```
+
+---
+
+![](img/git_branch.png)
+background-size: 500px
+background-position: 50% 90%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## **git branch**: lista os branchs e verifica o branch de edição
+
+```{bash eval=FALSE}
+git branch
+```
+```{bash eval=FALSE}
+* branch-1
+master
+```
+
+---
+
+![](img/general_bloco_notas.png)
+background-size: 250px
+background-position: 50% 80%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## Vamos criar um arquivo no diretório
+
+```{bash eval=FALSE}
+# terminal
+touch teste_branch1.txt
+git add -Av
+git commit -m "add teste_branch1.txt"
+```
+
+---
+
+![](img/git_branch.png)
+background-size: 500px
+background-position: 50% 70%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## **switch**: troca a raficação de edição
+
+```{bash eval=FALSE}
+git switch master
+```
+
+---
+
+![](img/git_merge.png)
+background-size: 800px
+background-position: 50% 70%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
+
+---
+
+![](img/git_merge.png)
+background-size: 500px
+background-position: 50% 90%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
+
+```{bash eval=FALSE}
+git merge branch-1
+```
+```{bash eval=FALSE}
+Updating f9f2e9c..7aeb06d
+Fast-forward
+ teste_branch1.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 teste_branch1.txt
+```
+
+---
+
+![](img/git_merge.png)
+background-size: 500px
+background-position: 50% 90%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
+
+```{bash eval=FALSE}
+git log --oneline
+```
+```{bash eval=FALSE}
+7aeb06d (HEAD -> master, branch-1) add teste_branch1.txt
+f9f2e9c mod2 test.txt
+dcbd894 mod test.txt
+8b33bc5 add test.txt
+```
+
+---
+
+![](img/gif_git_merge.gif)
+background-size: 800px
+background-position: 50% 60%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## CUIDADO!
+
+---
+
+![](img/git_merge_warning.png)
+background-size: 500px
+background-position: 50% 70%
+
+# 14. Ramificações: git branch, git switch e git merge
+
+## CUIDADO!
+
+---
+
+
+![](img/git_push_pull.svg)
+background-size: 600px
+
+---
+
+name: 15.
+
+class: inverse, center, middle
+
+# 15. Remoto: git remote, git push e git pull
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+![](img/git_remote.png)
+background-size: 400px
+background-position: 50% 90%
+
+# 15. Remoto: git remote, git push e git pull
+
+## **git remote**: exibe os repositórios remotos (GitHub)
+
+```{bash eval=FALSE}
+git remote -v
+```
+```{bash eval=FALSE}
+origin	git@github.com:mauriciovancine/short-course-git-github-rstudio.git (fetch)
+origin	git@github.com:mauriciovancine/short-course-git-github-rstudio.git (push)
+```
+
+---
+
+![](img/git_remote.png)
+background-size: 400px
+background-position: 50% 90%
+
+# 15. Remoto: git remote, git push e git pull
+
+## **git remote add**: faz a ligação com um repositório remoto (GitHub)
+
+### **Observação**: Usar o SSH para não precisar digitar sua senha!
+
+```{bash eval=FALSE}
+git remote add origin git@github.com:mauriciovancine/short-course-git-github-rstudio.git
+```
+
+---
+
+![](img/git_push.png)
+background-size: 800px
+background-position: 50% 60%
+
+# 15. Remoto: git remote, git push e git pull
+
+## **git push**: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
+
+---
+
+![](img/git_push_code.jpg)
+background-size: 700px
+background-position: 50% 90%
+
+# 15. Remoto: git remote, git push e git pull
+
+## **git push**: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
+
+---
+
+# 15. Remoto: git remote, git push e git pull
+
+## **git push**: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
+
+```{bash eval=FALSE}
+git push -u origin master
+```
+```{bash eval=FALSE}
+Enumerating objects: 41, done.
+Counting objects: 100% (41/41), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (35/35), done.
+Writing objects: 100% (35/35), 4.99 MiB | 155.00 KiB/s, done.
+Total 35 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+To github.com:mauriciovancine/course-geospatial-data-r.git
+   accc9db..8f70e96  master -> master
+```
+
+---
+
+![](img/git_push_fire.png)
+background-size: 500px
+background-position: 50% 60%
+
+# 15. Remoto: git remote, git push e git pull
+
+## Em caso de incêndio...
+
+---
+
+![](img/git_push_force01.jpg),![](img/git_push_force02.jpg)
+background-size: 500px, 450px
+background-position: 15% 70%, 90% 70%
+
+# 15. Remoto: git remote, git push e git pull
+
+## CUIDADO!
+
+---
+
+![](img/git_pull.png)
+background-size: 800px
+background-position: 50% 60%
+
+# 15. Remoto: git remote, git push e git pull
+
+## **git pull**: puxa uma nova versão do repositório remoto (GitHub) para o repositório local
+
+---
+
+class: clean, inverse, center, middle
+
+# Por fim, fazermos a requisição da mudança do nosso repositório remoto para o repositório remoto original com o **Pull request** (pedimos para que "puxem" nossas mudanças)
+
+---
+
+name: 16.
+
+class: inverse, center, middle
+
+# 16. GitHub: Pull request
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+![](img/git_push_pull_request.png)
+background-size: 650px
+background-position: 50% 80%
+
+# 16. GitHub: Pull request
+
+## **Pull Request**: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
+
+---
+
+![](img/git_pull_request.png)
+background-size: 1000px
+background-position: 50% 60%
+
+# 16. GitHub: Pull request
+
+## **Pull Request**: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
+
+---
+
+name: 17.
+
+class: inverse, center, middle
+
+# 17. Detalhes do respositório do GitHub
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+![](img/github_repository_details.png)
+background-size: 900px
+background-position: 50% 80%
+
+# 17. Detalhes do respositório do GitHub
+
+## Vamos detalhar alguns pontos dos repositórios no GitHub
+
+<br>
+
+.center[https://github.com/mauriciovancine/short-course-git-github-rstudio]
+
+---
+
+name: 18.
+
+class: inverse, center, middle
+
+# 18. Interface Gráfica do RStudio
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Agradecimento à [Beatriz Milz](https://beatrizmilz.com/) pelas figuras ~~surrupiadas~~ (eu pedi kkk)
+
+---
+
+![](img/rstudio_git_pane01.png)
+background-size: 700px
+background-position: 50% 80%
+
+# 18. Interface Gráfica do RStudio
+
+## Git Panel
+
+- RStudio tem um **cliente Git** na aba "Git"
+
+- Esse painel aparece em **projetos** que estejam **versionados com git**
+
+---
+
+![](img/rstudio_git_pane02.png)
+background-size: 800px
+background-position: 50% 60%
+
+# 18. Interface Gráfica do RStudio
+
+## Git Panel - Detalhes
+
+---
+
+![](img/rstudio_git_pane03.png)
+background-size: 800px
+background-position: 50% 60%
+
+# 18. Interface Gráfica do RStudio
+
+## Git Panel - Branches
+
+---
+
+![](img/rstudio_git_pane04.png)
+background-size: 800px
+background-position: 50% 60%
+
+# 18. Interface Gráfica do RStudio
+
+## Git Panel - Diff - Changes: Revisar mudanças
+
+---
+
+![](img/rstudio_git_pane05.png)
+background-size: 800px
+background-position: 50% 60%
+
+# 18. Interface Gráfica do RStudio
+
+## Git Panel - Diff - History: Histórico de mudanças
+
+---
+
+![](img/rstudio_git_pane06.png)
+background-size: 800px
+background-position: 50% 60%
+
+# 18. Interface Gráfica do RStudio
+
+## Git pane - Staged
+
+---
+
+![](img/rstudio_git_status.png),![](img/rstudio_git_pane06.png)
+background-size: 250px, 800px
+background-position: 92% 20%,50% 60%
+
+# 18. Interface Gráfica do RStudio
+
+## Git pane - Staged e File status
+
+---
+
+![](img/rstudio_git_pane07.png)
+background-size: 800px
+background-position: 50% 60%
+
+# 18. Interface Gráfica do RStudio
+
+## Git pane - Commit
+
+---
+
+![](img/rstudio_git_pane08.png)
+background-size: 800px
+background-position: 50% 60%
+
+# 18. Interface Gráfica do RStudio
+
+## Git pane - Commit
+
+---
+
+![](img/rstudio_git_pane09.png)
+background-size: 1000px
+background-position: 50% 60%
+
+# 18. Interface Gráfica do RStudio
+
+## Git pane - Push e Pull
+
+---
+
+name: 19.
+
+, inverse, middle, center
+
+# 19. Últimas palavras
+
+.footnote[
+
+[Slide de conteúdo](#contents-slide)
+
+]
+
+---
+
+
+![](img/general_make_impossible.jpeg)
+background-size: 600px
+background-position: 50% 40%
+
+---
+
+
+![](img/gif_bugcat_error.gif)
+background-size: 800px
+background-position: 50% 40%
+
+![](img/gif_bugcat_sad.gif)
+background-size: 800px
+background-position: 50% 50%
+
+
+![](img/cheatsheet_git.jpg)
+background-size: 350px
+background-position: 50% 55%
+
+# 20. Mais informações
+
+## Git Cheat Sheets
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+[*] https://github.github.com/training-kit/downloads/pt_BR/github-git-cheat-sheet.pdf
+
+---
+
+![](img/package_usethis.png)
+background-size: 250px
+background-position: 50% 85%
+
+# 20. Mais informações
+
+## Pacote [usethis](https://usethis.r-lib.org/)
+
+### Comandos direto no R para criar e versionar repositórios
+
+```{r eval=FALSE}
+install.packages("usethis")
+devtools::install_github("r-lib/usethis")
+```
+
+---
+
+# 20. Mais informações
+
+## Livros
+
+### [Pro Git](https://git-scm.com/book/en/v2) - Scott Chacon e Ben Straub
+
+### [Beginning Git and GitHub](https://www.amazon.com.br/Beginning-Git-GitHub-Comprehensive-Management/dp/1484253124) - Mariot Tsitoara
+
+### [Happy Git and GitHub for the useR](https://happygitwithr.com/) - Jenny Bryan
+
+### [Zen do R](https://curso-r.github.io/zen-do-r/index.html) - Caio Lente + Curso-R
+
+---
+
+# 20. Mais informações
+
+## Material
+
+### [Primeiros passos utilizando o Git e GitHub no RStudio](https://beatrizmilz.github.io/RLadies-Git-RStudio-2019) - Beatriz Milz
+
+### [Git e GitHub no RStudio](https://beatrizmilz.com/git_rstudio.html) - Beatriz Milz
+
+### [Torne-se um guru do git](https://www.atlassian.com/br/git/tutorials)
+
+### [RStudio e Github no dia a dia](https://blog.curso-r.com/posts/2017-07-17-rstudio-e-github/)
+
+---
+
+# 20. Mais informações
+
+## Material
+
+### [Oh Shit, Git!?!](https://ohshitgit.com/pt_BR) - Katie Sylor-Miller
+
+### [Dangit, Git!?!](https://dangitgit.com/pt_BR) - Katie Sylor-Miller
+
+### [Version Control with GitHub](https://www.neonscience.org/resources/learning-hub/tutorials/version-control-github)
+
+### [Git Cheat Sheet – 50 Git Commands You Should Know](https://www.freecodecamp.org/news/git-cheat-sheet/)
+
+---
+
+# 20. Mais informações
+
+## Curso de Git - Bóson Treinamentos
+
+<p align="center">
+<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/YnVnFanIAzU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
+
+---
+
+# 20. Mais informações
+
+## Git e Github para iniciantes - Willian Justen de Vasconcellos
+
+<p align="center">
+<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/IBClN6VpJDw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
+
+---
+
+# 20. Mais informações
+
+## Curso de Git -  Professor Aquino
+
+<p align="center">
+<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/udw3J335ZHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
+
+
 
 # Dúvidas?
 

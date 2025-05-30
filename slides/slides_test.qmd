@@ -1,0 +1,357 @@
+---
+title: "Controle de versão com git, GitHub e RStudio"
+subtitle: "<br>Unicamp"
+author: "[Maurício Vancine](https://mauriciovancine.github.io/)<br>"
+date: "06/05/2025"
+date-format: long
+format: 
+  revealjs:
+    theme: [custom.scss]
+    slide-number: c/t
+    show-slide-number: all
+    hash-type: number
+    preview-links: false
+    chalkboard: true
+    logo: "https://git-scm.com/images/logos/downloads/Git-Logo-1788C.png"
+    execute:
+      echo: true
+      eval: true
+      warning: false
+      message: false
+editor: source
+lang: pt-br
+---
+
+`git status`: mostra o estado do repositório
+
+```{r eval=FALSE}
+$ git status
+
+# On branch master
+# nothing to commit, working tree clean
+```
+
+![](img/git_states_pro.png){.absolute width=60% right=220 top=420}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+Vamos criar um arquivo no diretório
+
+Usando a aba **Terminal** do RStudio
+
+```{r eval=FALSE}
+$ touch test.txt
+```
+
+![](img/general_bloco_notas.png){.absolute width=35% right=350 top=300}
+
+## 9. Versionamento
+
+`git status`: mostra o estado do repositório
+
+```{r eval=FALSE}
+$ git status
+
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+# 	test.txt
+# 
+# nothing added to commit but untracked files present (use "git add" to track)
+```
+
+![](img/git_states_pro.png){.absolute width=60% right=220 top=420}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git add`: adiciona mudanças após edições (**staging area**)
+
+```{bash eval=FALSE}
+$ git add test.txt
+```
+
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git add`: adiciona mudanças após edições (**staging area**)
+
+```{bash eval=FALSE}
+$ git add test.txt -v
+
+# add 'test.txt'
+```
+
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git add`: adiciona mudanças após edições (**staging area**)
+
+```{bash eval=FALSE}
+$ git add -Av
+
+# add 'test.txt'
+```
+
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git add`: adiciona mudanças após edições (**staging area**)
+
+```{bash eval=FALSE}
+$ git add .
+```
+
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git status`: mostra o estado do repositório
+
+```{bash eval=FALSE}
+$ git status
+
+# On branch master
+# Changes to be committed:
+#   (use "git restore --staged <file>..." to unstage)
+# 	new file:   test.txt
+```
+
+![](img/git_trees.png){.absolute width=60% right=230 top=450}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git commit`: registra as alterações da **staging area**
+
+::: {style="font-size: 80%;"}
+- Cria um **snapshot** do repositório, contendo:
+  - Mudanças realizadas nos arquivos
+  - Mensagem descritiva (*mensagem do commit*)
+  - Metadados do autor, data e identificador único (**hash**)
+:::
+
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+`git commit`: registra as alterações da **staging area**
+
+```{bash eval=FALSE}
+$ git commit -m "add test.txt"
+
+# [master 5a164d5] add test.txt
+# 1 file changed, 0 insertions(+), 0 deletions(-)
+# create mode 100644 test.txt
+```
+
+![](img/git-add-commit.png){.absolute width=50% right=200 top=400}
+
+::: footer
+[Guia dos principais comandos do GIT](https://blog.dbins.com.br/guia-dos-principais-comandos-do-git)
+:::
+
+## 9. Versionamento
+
+`git status`: mostra o estado do repositório
+
+```{bash eval=FALSE}
+$ git status
+
+# On branch master
+# nothing to commit, working tree clean
+```
+
+![](img/git_states_pro.png){.absolute width=60% right=220 top=420}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+Fluxo do versionamento
+
+::: {style="font-size: 70%;"}
+1. **Diretório de trabalho (*working directory*)**: pasta com os arquivos
+1. **Preparação (*staged area*)**: arquivos adicionados para serem versionados (.git)
+1. **Repositório (*repository*)**: versão consolidada dos arquivos (.git)
+:::
+
+![](img/git_files_states.png){.absolute width=100% right=30 top=320}
+
+## 9. Versionamento
+
+Usando a aba **Files** do RStudio, vamos abrir e editar o arquivo **test.txt**
+
+```{bash eval=FALSE}
+Acabo de inserir uma edição ao meu arquivo
+```
+
+![](img/general_bloco_notas.png){.absolute width=35% right=350 top=300}
+
+## 9. Versionamento
+
+`git status`: mostra o estado do repositório
+
+```{bash eval=FALSE}
+$ git status
+
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git restore <file>..." to discard changes in working directory)
+# 	modified:   test.txt
+# no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+![](img/git_states_pro.png){.absolute width=60% right=220 top=420}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## 9. Versionamento
+
+## **git add**: adiciona mudanças após edições (*staging area*)
+
+```{bash eval=FALSE}
+# terminal
+git add -Av
+```
+```{bash eval=FALSE}
+add 'test.txt'
+```
+
+---
+
+![](img/git_states.png)
+background-size: 600px
+background-position: 50% 90%
+
+## 9. Versionamento
+
+## `git status`: mostra o estado do repositório
+
+```{bash eval=FALSE}
+git status
+```
+```{bash eval=FALSE}
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+ 	modified:   test.txt
+```
+
+---
+
+![](img/git_add_commit_flow.png)
+background-size: 450px
+background-position: 50% 93%
+
+## 9. Versionamento
+
+## **git commit**: armazena as mudanças com uma descrição, criando nova versão do repositório (*repository*)
+
+```{bash eval=FALSE}
+git commit -m "mod test.txt"
+```
+```{bash eval=FALSE}
+[master dcbd894] mod test.txt
+ 1 file changed, 1 insertion(+)
+```
+
+---
+
+![](img/git_commit_message.png)
+background-size: 600px
+background-position: 50% 90%
+
+## 9. Versionamento
+
+## ATENÇÃO!
+
+### As mensagens no commit são fundamentais! 
+
+### Devem ser curtas e indicar as mudanças feitas nos arquivos do diretório!
+
+---
+
+## 9. Versionamento
+
+## Usando Git Direito | Limpando seus Commits! - Fabio Akita
+
+<p align="center">
+<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/6OokP-NE49k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
+
+---
+
+![](img/git_states.png)
+background-size: 600px
+background-position: 50% 90%
+
+## 9. Versionamento
+
+## `git status`: mostra o estado do repositório
+
+```{bash eval=FALSE}
+git status
+On branch master
+nothing to commit, working tree clean
+```
+
+---
+
+![](img/git_states.png)
+background-size: 600px
+background-position: 50% 90%
+
+## 9. Versionamento
+
+## `git status`: mostra o estado do repositório
+
+```{bash eval=FALSE}
+git status
+```
+```{bash eval=FALSE}
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+```
