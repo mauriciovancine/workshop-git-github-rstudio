@@ -208,20 +208,6 @@
   <p class="date">5 de junho de 2025</p>
 </section>
 <section class="slide level2">
-<h2>Conteúdo</h2>
-<ul>
-<li>utilidade e importancia (exemplos - fair)</li>
-<li>reprodutibilidade - ambiente virtual</li>
-<li>controle de versao</li>
-<li>git vs github</li>
-<li>repositorio local e remoto</li>
-<li>readme.md</li>
-<li>fluxo de trabalho com git</li>
-<li>fork &gt; clone &gt; add/commmit/push &gt; branch? &gt; pull request</li>
-<li>status, show, log, diff, .gitignore, branch?, fetch, rebase, merge, checkout e switch</li>
-</ul>
-</section>
-<section class="slide level2">
 <h2>Workshop</h2>
 <ul>
 <li>Carga horária bem enxuta: 06 h</li>
@@ -245,16 +231,16 @@
 <li>Controle de versão na prática</li>
 <li>Iniciando localmente: <code>git init</code></li>
 <li>Iniciando remotamente: <code>fork</code> e <code>git clone</code></li>
+<li>Versionamento: <code>git status</code>, <code>git add</code>, e <code>git commit</code></li>
 </ol>
 </div>
 </div><div class="column" style="width:50%;">
 <div>
 <ol start="10" type="1">
-<li>Versionamento: <code>git status</code>, <code>git add</code>, e <code>git commit</code></li>
-<li>Ignorando: <code>.gitignore</code></li>
 <li>Histórico: <code>git log</code> e <code>git show</code></li>
 <li>Diferenças: <code>git diff</code></li>
-<li>Desfazer: <code>git revert</code> e <code>git reset</code></li>
+<li>Ignorando: <code>.gitignore</code></li>
+<li>Desfazer: <code>git restore</code>, <code>git revert</code> e <code>git reset</code></li>
 <li>Ramificações: <code>git branch</code>, <code>git switch</code> e <code>git merge</code></li>
 <li>Remoto: <code>git remote</code>, <code>git push</code> e <code>git pull</code></li>
 <li>GitHub: <code>Pull request</code></li>
@@ -343,6 +329,14 @@
 <p><img data-src="img/git_article.png" class="absolute" style="top: 150px; right: 520px; width: 50%; "> <img data-src="img/git_article_fig.png" class="absolute" style="top: 150px; right: -150px; width: 60%; "> <img data-src="img/git_article_table.png" class="absolute" style="top: 400px; right: 520px; width: 50%; "></p>
 <div class="footer">
 <p><a href="https://doi.org/10.1371/journal.pcbi.1004947">Perez-Riverol et al.&nbsp;(2016)</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>2. Controle de versão</h2>
+<p>Cada vez mais <strong>necessária</strong> em colaborações</p>
+<p><img data-src="img/github_article_2022.png" class="absolute" style="top: 150px; right: 600px; width: 50%; "> <img data-src="img/github_article_2022_fig02.jpg" class="absolute" style="top: 180px; right: -150px; width: 70%; "> <img data-src="img/github_article_2022_fig01.jpg" class="absolute" style="top: 330px; right: 700px; width: 40%; "></p>
+<div class="footer">
+<p><a href="https://doi.org/10.1111/2041-210X.14108">Braga et al.&nbsp;(2022)</a></p>
 </div>
 </section></section>
 <section>
@@ -553,7 +547,7 @@
 <ul>
 <li>Windows: <code>C:/Program Files/Git/bin/git.exe</code></li>
 <li>Ubuntu: <code>/usr/bin/git</code></li>
-<li>Mac: <code>???</code></li>
+<li>Mac: <code>/usr/bin/git</code></li>
 </ul>
 </div>
 <p><img data-src="img/rstudio_git_config02.png" class="absolute" style="top: 180px; right: -100px; width: 50%; "></p>
@@ -609,11 +603,10 @@
 </ul>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># terminal</span></span>
-<span id="cb1-2"><a href=""></a>git config <span class="sc">--</span>list</span>
-<span id="cb1-3"><a href=""></a>git config <span class="sc">--</span>global user.name <span class="st">"meu nome"</span></span>
-<span id="cb1-4"><a href=""></a>git config <span class="sc">--</span>global user.email <span class="st">"email@dominio.com"</span></span>
-<span id="cb1-5"><a href=""></a>git config <span class="sc">--</span>list</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="sc">$</span> git config <span class="sc">--</span>list</span>
+<span id="cb1-2"><a href=""></a><span class="sc">$</span> git config <span class="sc">--</span>global user.name <span class="st">"meu nome"</span></span>
+<span id="cb1-3"><a href=""></a><span class="sc">$</span> git config <span class="sc">--</span>global user.email <span class="st">"email@dominio.com"</span></span>
+<span id="cb1-4"><a href=""></a><span class="sc">$</span> git config <span class="sc">--</span>list</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img data-src="img/git_config.png" class="absolute" style="top: 450px; right: 100px; width: 80%; "></p>
 </section></section>
@@ -754,8 +747,7 @@
 <li>Usando o <strong>terminal</strong> para clonar pelo <strong>SSH</strong> (configurado anteriormente)</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="co"># terminal</span></span>
-<span id="cb3-2"><a href=""></a><span class="fu">git</span> clone git@github.com:mauriciovancine/workshop-git-github-rstudio.git</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="ex">$</span> git clone git@github.com:mauriciovancine/workshop-git-github-rstudio.git</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img data-src="img/git_clone_terminal.png" class="absolute" style="top: 350px; right: 260px; width: 50%; "></p>
 </section>
@@ -897,10 +889,10 @@
 <p>Quatro estados de alteração dos arquivos</p>
 <div style="font-size: 60%;">
 <ol type="1">
-<li><strong>Untracked (<em>não-rastreado</em>)</strong>: arquivos não rastreados pelo git (<code>git status</code>)</li>
-<li><strong>Unmodified (<em>não-modificado</em>)</strong>: arquivos rastreados e sem modificações (<code>git status</code>)</li>
-<li><strong>Modified (<em>modificado</em>)</strong>: arquivos rastreados e com modificações (<code>git status</code>)</li>
-<li><strong>Staged (<em>preparado</em>)</strong>: arquivos rastreados, com modificações e preparados para o commit (<code>git add</code>)</li>
+<li><strong>Untracked (<em>não-rastreado</em>)</strong>: arquivos não rastreados pelo git</li>
+<li><strong>Unmodified (<em>não-modificado</em>)</strong>: arquivos rastreados e sem modificações</li>
+<li><strong>Modified (<em>modificado</em>)</strong>: arquivos rastreados e com modificações</li>
+<li><strong>Staged (<em>preparado</em>)</strong>: arquivos rastreados, com modificações e preparados para o commit</li>
 </ol>
 </div>
 <p><img data-src="img/git_states.webp" class="absolute" style="top: 330px; right: 220px; width: 60%; "></p>
@@ -929,299 +921,210 @@
 <h2>9. Versionamento</h2>
 <p><code>git status</code>: mostra o estado do repositório</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># status</span></span>
-<span id="cb4-2"><a href=""></a>git status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="sc">$</span> git status</span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a><span class="co"># On branch master</span></span>
+<span id="cb4-4"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>On branch master</span>
-<span id="cb5-2"><a href=""></a>No commits yet</span>
-<span id="cb5-3"><a href=""></a>nothing to <span class="fu">commit</span> (create<span class="sc">/</span>copy files and use <span class="st">"git add"</span> to track)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
+<div class="footer">
+<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
 </div>
-
-<img data-src="img/git_states.png" class="r-stretch"></section>
+</section>
 <section class="slide level2">
-<h2>Vamos criar um arquivo no diretório</h2>
+<h2>9. Versionamento</h2>
+<p>Vamos criar um arquivo no diretório</p>
 <p>Usando a aba <strong>Terminal</strong> do RStudio</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># adicionar um arquivo</span></span>
-<span id="cb6-2"><a href=""></a>touch test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="sc">$</span> touch test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-
-<img data-src="img/general_bloco_notas.png" class="r-stretch"></section>
+<p><img data-src="img/general_bloco_notas.png" class="absolute" style="top: 300px; right: 350px; width: 35%; "></p>
+</section>
 <section class="slide level2">
 <h2>9. Versionamento</h2>
 <p><code>git status</code>: mostra o estado do repositório</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>git status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="sc">$</span> git status</span>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a><span class="co"># On branch master</span></span>
+<span id="cb6-4"><a href=""></a><span class="co"># Untracked files:</span></span>
+<span id="cb6-5"><a href=""></a><span class="co">#   (use "git add &lt;file&gt;..." to include in what will be committed)</span></span>
+<span id="cb6-6"><a href=""></a><span class="co">#   test.txt</span></span>
+<span id="cb6-7"><a href=""></a><span class="co"># </span></span>
+<span id="cb6-8"><a href=""></a><span class="co"># nothing added to commit but untracked files present (use "git add" to track)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>On branch master</span>
-<span id="cb8-2"><a href=""></a>No commits yet</span>
-<span id="cb8-3"><a href=""></a>Untracked files<span class="sc">:</span></span>
-<span id="cb8-4"><a href=""></a>  (use <span class="st">"git add &lt;file&gt;..."</span> to include <span class="cf">in</span> what will be committed)</span>
-<span id="cb8-5"><a href=""></a>    test.txt</span>
-<span id="cb8-6"><a href=""></a>nothing added to commit but untracked files <span class="fu">present</span> (use <span class="st">"git add"</span> to track)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
+<div class="footer">
+<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
 </div>
-
-<img data-src="img/git_states.png" class="r-stretch"></section>
-<section class="slide level2">
-
-<p><img data-src="img/git_states.png"> background-size: 600px background-position: 50% 90%</p>
 </section>
 <section class="slide level2">
 <h2>9. Versionamento</h2>
+<p><code>git add</code>: adiciona mudanças após edições (<strong>staging area</strong>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="ex">$</span> git add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
+<div class="footer">
+<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
+</div>
 </section>
 <section class="slide level2">
-<h2><code>git status</code>: mostra o estado do repositório</h2>
+<h2>9. Versionamento</h2>
+<p><code>git add</code>: adiciona mudanças após edições (<strong>staging area</strong>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href=""></a><span class="ex">$</span> git add test.txt <span class="at">-v</span></span>
+<span id="cb8-2"><a href=""></a></span>
+<span id="cb8-3"><a href=""></a><span class="co"># add 'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
+<div class="footer">
+<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>9. Versionamento</h2>
+<p><code>git add</code>: adiciona mudanças após edições (<strong>staging area</strong>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb10-2"><a href=""></a><span class="ex">No</span> commits yet</span>
-<span id="cb10-3"><a href=""></a><span class="ex">Untracked</span> files:</span>
-<span id="cb10-4"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to include in what will be committed<span class="kw">)</span></span>
-<span id="cb10-5"><a href=""></a>    <span class="ex">test.txt</span></span>
-<span id="cb10-6"><a href=""></a><span class="ex">nothing</span> added to commit but untracked files present <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> to track<span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href=""></a><span class="ex">$</span> git add <span class="at">-Av</span></span>
+<span id="cb9-2"><a href=""></a></span>
+<span id="cb9-3"><a href=""></a><span class="co"># add 'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
+<div class="footer">
+<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>9. Versionamento</h2>
+<p><code>git add</code>: adiciona mudanças após edições (<strong>staging area</strong>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="ex">$</span> git add .</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
+<div class="footer">
+<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>9. Versionamento</h2>
+<p><code>git status</code>: mostra o estado do repositório</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="ex">$</span> git status</span>
+<span id="cb11-2"><a href=""></a></span>
+<span id="cb11-3"><a href=""></a><span class="co"># On branch master</span></span>
+<span id="cb11-4"><a href=""></a><span class="co"># Changes to be committed:</span></span>
+<span id="cb11-5"><a href=""></a><span class="co">#   (use "git restore --staged &lt;file&gt;..." to unstage)</span></span>
+<span id="cb11-6"><a href=""></a><span class="co">#   new file:   test.txt</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="img/git_trees.png" class="absolute" style="top: 450px; right: 230px; width: 60%; "></p>
+<div class="footer">
+<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>9. Versionamento</h2>
+<p><code>git commit</code>: registra as alterações da <strong>staging area</strong></p>
+<div style="font-size: 80%;">
+<ul>
+<li>Cria um <strong>snapshot</strong> do repositório, contendo:
+<ul>
+<li>Mudanças realizadas nos arquivos</li>
+<li>Mensagem descritiva (<em>mensagem do commit</em>)</li>
+<li>Metadados do autor, data e identificador único (<strong>hash</strong>)</li>
+</ul></li>
+</ul>
+</div>
+<p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
+<div class="footer">
+<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>9. Versionamento</h2>
+<p><code>git commit</code>: registra as alterações da <strong>staging area</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"add test.txt"</span></span>
+<span id="cb12-2"><a href=""></a></span>
+<span id="cb12-3"><a href=""></a><span class="co"># [master 5a164d5] add test.txt</span></span>
+<span id="cb12-4"><a href=""></a><span class="co"># 1 file changed, 0 insertions(+), 0 deletions(-)</span></span>
+<span id="cb12-5"><a href=""></a><span class="co"># create mode 100644 test.txt</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="img/git-add-commit.png" class="absolute" style="top: 400px; right: 200px; width: 50%; "></p>
+<div class="footer">
+<p><a href="https://blog.dbins.com.br/guia-dos-principais-comandos-do-git">Guia dos principais comandos do GIT</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>9. Versionamento</h2>
+<p><code>git status</code>: mostra o estado do repositório</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="ex">$</span> git status</span>
+<span id="cb13-2"><a href=""></a></span>
+<span id="cb13-3"><a href=""></a><span class="co"># On branch master</span></span>
+<span id="cb13-4"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
+<div class="footer">
+<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>9. Versionamento</h2>
+<p>Fluxo do versionamento</p>
+<div style="font-size: 70%;">
+<ol type="1">
+<li><strong>Diretório de trabalho (<em>working directory</em>)</strong>: pasta com os arquivos</li>
+<li><strong>Preparação (<em>staged area</em>)</strong>: arquivos adicionados para serem versionados (.git)</li>
+<li><strong>Repositório (<em>repository</em>)</strong>: versão consolidada dos arquivos (.git)</li>
+</ol>
+</div>
+<p><img data-src="img/git_files_states.png" class="absolute" style="top: 320px; right: 30px; width: 100%; "></p>
+</section>
+<section class="slide level2">
+<h2>9. Versionamento</h2>
+<p>Usando a aba <strong>Files</strong> do RStudio, vamos abrir e editar o arquivo <strong>test.txt</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="ex">Acabo</span> de inserir uma edição ao meu arquivo</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="img/general_bloco_notas.png" class="absolute" style="top: 300px; right: 350px; width: 35%; "></p>
+</section>
+<section class="slide level2">
+<h2>9. Versionamento</h2>
+<p><code>git status</code>: mostra o estado do repositório</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="ex">$</span> git status</span>
+<span id="cb15-2"><a href=""></a></span>
+<span id="cb15-3"><a href=""></a><span class="co"># On branch master</span></span>
+<span id="cb15-4"><a href=""></a><span class="co"># Changes not staged for commit:</span></span>
+<span id="cb15-5"><a href=""></a><span class="co">#   (use "git add &lt;file&gt;..." to update what will be committed)</span></span>
+<span id="cb15-6"><a href=""></a><span class="co">#   (use "git restore &lt;file&gt;..." to discard changes in working directory)</span></span>
+<span id="cb15-7"><a href=""></a><span class="co">#   modified:   test.txt</span></span>
+<span id="cb15-8"><a href=""></a><span class="co"># no changes added to commit (use "git add" and/or "git commit -a")</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
+<div class="footer">
+<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
 </div>
 </section>
 <section class="slide level2">
 
-<p><img data-src="img/git_add_commit_flow.png"> background-size: 500px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><strong>git add</strong>: adiciona mudanças após edições (<em>staging area</em>)</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="co"># adicionar ao staging area</span></span>
-<span id="cb11-2"><a href=""></a><span class="fu">git</span> add <span class="at">-Av</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">add</span> <span class="st">'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section class="slide level2">
 
-<p><img data-src="img/git_states.png"> background-size: 600px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><code>git status</code>: mostra o estado do repositório</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb14-2"><a href=""></a><span class="ex">No</span> commits yet</span>
-<span id="cb14-3"><a href=""></a><span class="ex">Changes</span> to be committed:</span>
-<span id="cb14-4"><a href=""></a>   <span class="kw">(</span><span class="ex">use</span> <span class="st">"git rm --cached &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
-<span id="cb14-5"><a href=""></a>     <span class="ex">new</span> file:   test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_add_commit_flow.png"> background-size: 450px background-position: 50% 93%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><strong>git commit</strong>: armazena as mudanças com uma descrição, criando nova versão do repositório (<em>repository</em>)</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"add test.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href=""></a><span class="ex">[master</span> <span class="er">(</span><span class="ex">root-commit</span><span class="kw">)</span> <span class="ex">8b33bc5]</span> add test.txt</span>
-<span id="cb16-2"><a href=""></a>  <span class="ex">1</span> file changed, 0 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 0 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span>
-<span id="cb16-3"><a href=""></a>  <span class="ex">create</span> mode 100644 test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_states.png"> background-size: 600px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><code>git status</code>: mostra o estado do repositório</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb18-2"><a href=""></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/general_bloco_notas.png"> background-size: 250px background-position: 50% 80%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2>Usando a aba <strong>Files</strong> do RStudio, vamos abrir e editar o arquivo <strong>test.txt</strong></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href=""></a><span class="ex">Acabo</span> de inserir uma edição ao meu arquivo</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_states.png"> background-size: 600px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><code>git status</code>: mostra o estado do repositório</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href=""></a><span class="ex">Changes</span> not staged for commit:</span>
-<span id="cb21-2"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to update what will be committed<span class="kw">)</span></span>
-<span id="cb21-3"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
-<span id="cb21-4"><a href=""></a>        <span class="ex">modified:</span>   test.txt</span>
-<span id="cb21-5"><a href=""></a><span class="ex">no</span> changes added to commit <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> and/or <span class="st">"git commit -a"</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_add_commit_flow.png"> background-size: 500px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><strong>git add</strong>: adiciona mudanças após edições (<em>staging area</em>)</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href=""></a><span class="co"># terminal</span></span>
-<span id="cb22-2"><a href=""></a><span class="fu">git</span> add <span class="at">-Av</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href=""></a><span class="ex">add</span> <span class="st">'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_states.png"> background-size: 600px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><code>git status</code>: mostra o estado do repositório</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb25-2"><a href=""></a><span class="ex">Changes</span> to be committed:</span>
-<span id="cb25-3"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore --staged &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
-<span id="cb25-4"><a href=""></a>    <span class="ex">modified:</span>   test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_add_commit_flow.png"> background-size: 450px background-position: 50% 93%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><strong>git commit</strong>: armazena as mudanças com uma descrição, criando nova versão do repositório (<em>repository</em>)</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"mod test.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href=""></a><span class="ex">[master</span> dcbd894] mod test.txt</span>
-<span id="cb27-2"><a href=""></a> <span class="ex">1</span> file changed, 1 insertion<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_commit_message.png"> background-size: 600px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2>ATENÇÃO!</h2>
-<h3>As mensagens no commit são fundamentais!</h3>
-<h3>Devem ser curtas e indicar as mudanças feitas nos arquivos do diretório!</h3>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2>Usando Git Direito | Limpando seus Commits! - Fabio Akita</h2>
-<p align="center">
-<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/6OokP-NE49k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-</p>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_states.png"> background-size: 600px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><code>git status</code>: mostra o estado do repositório</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb29-2"><a href=""></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_states.png"> background-size: 600px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><code>git status</code>: mostra o estado do repositório</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb31-2"><a href=""></a><span class="ex">Your</span> branch is ahead of <span class="st">'origin/master'</span> by 2 commits.</span>
-<span id="cb31-3"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git push"</span> to publish your local commits<span class="kw">)</span></span>
-<span id="cb31-4"><a href=""></a></span>
-<span id="cb31-5"><a href=""></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p>class: inverse, center, middle</p>
 </section></section>
-<section>
 <section class="title-slide slide level1 center">
 <h1>E se houver arquivos que eu não quero versionar?</h1>
 
 </section>
-<section class="slide level2">
 
-<p><img data-src="img/gitignore.jpg"> background-size: 800px</p>
-</section>
-<section class="slide level2">
-
-</section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>10. Ignorando: .gitignore</h1>
+<h1></h1>
 
+<img data-src="img/gitignore.jpg" class="r-stretch"></section>
+<section class="slide level2">
+<h2>10. Ignorando: .gitignore</h2>
 </section>
 <section class="slide level2">
 <h2>Arquivo .gitignore</h2>
@@ -1244,8 +1147,8 @@
 <section class="slide level2">
 <h2>Arquivo .gitignore</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href=""></a><span class="co"># criar um arquivo</span></span>
-<span id="cb32-2"><a href=""></a><span class="fu">touch</span> ~/.gitignore</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href=""></a><span class="co"># criar um arquivo</span></span>
+<span id="cb16-2"><a href=""></a><span class="fu">touch</span> ~/.gitignore</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>–</p>
 <h3>Nome de arquivos</h3>
@@ -1375,20 +1278,20 @@
 <section class="slide level2">
 <h2><strong>git log</strong>: mostra o registro de todo o histórico de commits</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href=""></a><span class="fu">git</span> log</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href=""></a><span class="fu">git</span> log</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href=""></a><span class="ex">commit</span> dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span></span>
-<span id="cb34-2"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
-<span id="cb34-3"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:03:26 2021 <span class="at">-0300</span></span>
-<span id="cb34-4"><a href=""></a></span>
-<span id="cb34-5"><a href=""></a>    <span class="ex">mod</span> test.txt</span>
-<span id="cb34-6"><a href=""></a></span>
-<span id="cb34-7"><a href=""></a><span class="ex">commit</span> 8b33bc57187a2bcb59172c75ce7266fbddb64eff</span>
-<span id="cb34-8"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
-<span id="cb34-9"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:02:04 2021 <span class="at">-0300</span></span>
-<span id="cb34-10"><a href=""></a></span>
-<span id="cb34-11"><a href=""></a>    <span class="ex">add</span> test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href=""></a><span class="ex">commit</span> dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span></span>
+<span id="cb18-2"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
+<span id="cb18-3"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:03:26 2021 <span class="at">-0300</span></span>
+<span id="cb18-4"><a href=""></a></span>
+<span id="cb18-5"><a href=""></a>    <span class="ex">mod</span> test.txt</span>
+<span id="cb18-6"><a href=""></a></span>
+<span id="cb18-7"><a href=""></a><span class="ex">commit</span> 8b33bc57187a2bcb59172c75ce7266fbddb64eff</span>
+<span id="cb18-8"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
+<span id="cb18-9"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:02:04 2021 <span class="at">-0300</span></span>
+<span id="cb18-10"><a href=""></a></span>
+<span id="cb18-11"><a href=""></a>    <span class="ex">add</span> test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1402,20 +1305,20 @@
 <section class="slide level2">
 <h2><strong>git log [arquivo]</strong>: registro de todo o histórico de commits para arquivos</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href=""></a><span class="fu">git</span> log test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href=""></a><span class="fu">git</span> log test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href=""></a><span class="ex">commit</span> dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span></span>
-<span id="cb36-2"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
-<span id="cb36-3"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:03:26 2021 <span class="at">-0300</span></span>
-<span id="cb36-4"><a href=""></a></span>
-<span id="cb36-5"><a href=""></a>    <span class="ex">mod</span> test.txt</span>
-<span id="cb36-6"><a href=""></a></span>
-<span id="cb36-7"><a href=""></a><span class="ex">commit</span> 8b33bc57187a2bcb59172c75ce7266fbddb64eff</span>
-<span id="cb36-8"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
-<span id="cb36-9"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:02:04 2021 <span class="at">-0300</span></span>
-<span id="cb36-10"><a href=""></a></span>
-<span id="cb36-11"><a href=""></a>    <span class="ex">add</span> test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href=""></a><span class="ex">commit</span> dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span></span>
+<span id="cb20-2"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
+<span id="cb20-3"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:03:26 2021 <span class="at">-0300</span></span>
+<span id="cb20-4"><a href=""></a></span>
+<span id="cb20-5"><a href=""></a>    <span class="ex">mod</span> test.txt</span>
+<span id="cb20-6"><a href=""></a></span>
+<span id="cb20-7"><a href=""></a><span class="ex">commit</span> 8b33bc57187a2bcb59172c75ce7266fbddb64eff</span>
+<span id="cb20-8"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
+<span id="cb20-9"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:02:04 2021 <span class="at">-0300</span></span>
+<span id="cb20-10"><a href=""></a></span>
+<span id="cb20-11"><a href=""></a>    <span class="ex">add</span> test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1429,11 +1332,11 @@
 <section class="slide level2">
 <h2><strong>git log –oneline</strong>: registro de todo o histórico de commits simplificado</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href=""></a><span class="ex">dcbd894</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">mod</span> test.txt</span>
-<span id="cb38-2"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href=""></a><span class="ex">dcbd894</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">mod</span> test.txt</span>
+<span id="cb22-2"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1459,22 +1362,22 @@
 <section class="slide level2">
 <h2><strong>git show</strong>: visualização das alterações realizadas nos arquivos</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href=""></a><span class="fu">git</span> show</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href=""></a><span class="fu">git</span> show</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href=""></a><span class="ex">commit</span> dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span></span>
-<span id="cb40-2"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
-<span id="cb40-3"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:03:26 2021 <span class="at">-0300</span></span>
-<span id="cb40-4"><a href=""></a></span>
-<span id="cb40-5"><a href=""></a>    <span class="ex">mod</span> test.txt</span>
-<span id="cb40-6"><a href=""></a></span>
-<span id="cb40-7"><a href=""></a><span class="fu">diff</span> <span class="at">--git</span> a/test.txt b/test.txt</span>
-<span id="cb40-8"><a href=""></a><span class="ex">index</span> e69de29..f5201c0 100644</span>
-<span id="cb40-9"><a href=""></a><span class="ex">---</span> a/test.txt</span>
-<span id="cb40-10"><a href=""></a><span class="ex">+++</span> b/test.txt</span>
-<span id="cb40-11"><a href=""></a><span class="ex">@@</span> <span class="at">-0,0</span> +1 @@</span>
-<span id="cb40-12"><a href=""></a><span class="ex">+Acabo</span> de inserir uma edição ao meu arquivo</span>
-<span id="cb40-13"><a href=""></a><span class="ex">\ No</span> newline at end of file</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href=""></a><span class="ex">commit</span> dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span></span>
+<span id="cb24-2"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
+<span id="cb24-3"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:03:26 2021 <span class="at">-0300</span></span>
+<span id="cb24-4"><a href=""></a></span>
+<span id="cb24-5"><a href=""></a>    <span class="ex">mod</span> test.txt</span>
+<span id="cb24-6"><a href=""></a></span>
+<span id="cb24-7"><a href=""></a><span class="fu">diff</span> <span class="at">--git</span> a/test.txt b/test.txt</span>
+<span id="cb24-8"><a href=""></a><span class="ex">index</span> e69de29..f5201c0 100644</span>
+<span id="cb24-9"><a href=""></a><span class="ex">---</span> a/test.txt</span>
+<span id="cb24-10"><a href=""></a><span class="ex">+++</span> b/test.txt</span>
+<span id="cb24-11"><a href=""></a><span class="ex">@@</span> <span class="at">-0,0</span> +1 @@</span>
+<span id="cb24-12"><a href=""></a><span class="ex">+Acabo</span> de inserir uma edição ao meu arquivo</span>
+<span id="cb24-13"><a href=""></a><span class="ex">\ No</span> newline at end of file</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1488,18 +1391,18 @@
 <section class="slide level2">
 <h2><strong>git show</strong>: visualização das alterações realizadas nos arquivos</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href=""></a><span class="fu">git</span> show 8b33bc5</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href=""></a><span class="fu">git</span> show 8b33bc5</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href=""></a><span class="ex">commit</span> 8b33bc57187a2bcb59172c75ce7266fbddb64eff</span>
-<span id="cb42-2"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
-<span id="cb42-3"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:02:04 2021 <span class="at">-0300</span></span>
-<span id="cb42-4"><a href=""></a></span>
-<span id="cb42-5"><a href=""></a>    <span class="ex">add</span> test.txt</span>
-<span id="cb42-6"><a href=""></a></span>
-<span id="cb42-7"><a href=""></a><span class="fu">diff</span> <span class="at">--git</span> a/test.txt b/test.txt</span>
-<span id="cb42-8"><a href=""></a><span class="ex">new</span> file mode 100644</span>
-<span id="cb42-9"><a href=""></a><span class="ex">index</span> 0000000..e69de29</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href=""></a><span class="ex">commit</span> 8b33bc57187a2bcb59172c75ce7266fbddb64eff</span>
+<span id="cb26-2"><a href=""></a><span class="ex">Author:</span> mauriciovancine <span class="op">&lt;</span>mauricio.vancine@gmail.com<span class="op">&gt;</span></span>
+<span id="cb26-3"><a href=""></a><span class="ex">Date:</span>   Mon Mar 15 11:02:04 2021 <span class="at">-0300</span></span>
+<span id="cb26-4"><a href=""></a></span>
+<span id="cb26-5"><a href=""></a>    <span class="ex">add</span> test.txt</span>
+<span id="cb26-6"><a href=""></a></span>
+<span id="cb26-7"><a href=""></a><span class="fu">diff</span> <span class="at">--git</span> a/test.txt b/test.txt</span>
+<span id="cb26-8"><a href=""></a><span class="ex">new</span> file mode 100644</span>
+<span id="cb26-9"><a href=""></a><span class="ex">index</span> 0000000..e69de29</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1538,7 +1441,7 @@
 <section class="slide level2">
 <h2><strong>git diff</strong>: mostra as diferenças dos arquivos no <em>working directory</em></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href=""></a><span class="fu">git</span> diff</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href=""></a><span class="fu">git</span> diff</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1557,7 +1460,7 @@
 <h2><strong>git diff</strong>: mostra as diferenças dos arquivos no <em>working directory</em></h2>
 <h3>Vamos editar o arquivo “test.txt”</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href=""></a><span class="ex">Outra</span> linha</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href=""></a><span class="ex">Outra</span> linha</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1571,20 +1474,20 @@
 <section class="slide level2">
 <h2><strong>git diff</strong>: mostra as diferenças dos arquivos no <em>working directory</em></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href=""></a><span class="fu">git</span> diff</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href=""></a><span class="fu">git</span> diff</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href=""></a><span class="fu">diff</span> <span class="at">--git</span> a/test.txt b/test.txt</span>
-<span id="cb46-2"><a href=""></a><span class="ex">index</span> f5201c0..71f35ef 100644</span>
-<span id="cb46-3"><a href=""></a><span class="ex">---</span> a/test.txt</span>
-<span id="cb46-4"><a href=""></a><span class="ex">+++</span> b/test.txt</span>
-<span id="cb46-5"><a href=""></a><span class="ex">@@</span> <span class="at">-1</span> +1,3 @@</span>
-<span id="cb46-6"><a href=""></a><span class="ex">-Acabo</span> de inserir uma edição ao meu arquivo</span>
-<span id="cb46-7"><a href=""></a><span class="ex">\ No</span> newline at end of file</span>
-<span id="cb46-8"><a href=""></a><span class="ex">+Acabo</span> de inserir uma edição ao meu arquivo</span>
-<span id="cb46-9"><a href=""></a><span class="ex">+</span></span>
-<span id="cb46-10"><a href=""></a><span class="ex">+Outra</span> linha</span>
-<span id="cb46-11"><a href=""></a><span class="ex">\ No</span> newline at end of file</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href=""></a><span class="fu">diff</span> <span class="at">--git</span> a/test.txt b/test.txt</span>
+<span id="cb30-2"><a href=""></a><span class="ex">index</span> f5201c0..71f35ef 100644</span>
+<span id="cb30-3"><a href=""></a><span class="ex">---</span> a/test.txt</span>
+<span id="cb30-4"><a href=""></a><span class="ex">+++</span> b/test.txt</span>
+<span id="cb30-5"><a href=""></a><span class="ex">@@</span> <span class="at">-1</span> +1,3 @@</span>
+<span id="cb30-6"><a href=""></a><span class="ex">-Acabo</span> de inserir uma edição ao meu arquivo</span>
+<span id="cb30-7"><a href=""></a><span class="ex">\ No</span> newline at end of file</span>
+<span id="cb30-8"><a href=""></a><span class="ex">+Acabo</span> de inserir uma edição ao meu arquivo</span>
+<span id="cb30-9"><a href=""></a><span class="ex">+</span></span>
+<span id="cb30-10"><a href=""></a><span class="ex">+Outra</span> linha</span>
+<span id="cb30-11"><a href=""></a><span class="ex">\ No</span> newline at end of file</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1598,20 +1501,20 @@
 <section class="slide level2">
 <h2><strong>git diff [arquivo]</strong>: mostra as diferenças para o arquivo no <em>working directory</em></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href=""></a><span class="fu">git</span> diff test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href=""></a><span class="fu">git</span> diff test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href=""></a><span class="fu">diff</span> <span class="at">--git</span> a/test.txt b/test.txt</span>
-<span id="cb48-2"><a href=""></a><span class="ex">index</span> f5201c0..71f35ef 100644</span>
-<span id="cb48-3"><a href=""></a><span class="ex">---</span> a/test.txt</span>
-<span id="cb48-4"><a href=""></a><span class="ex">+++</span> b/test.txt</span>
-<span id="cb48-5"><a href=""></a><span class="ex">@@</span> <span class="at">-1</span> +1,3 @@</span>
-<span id="cb48-6"><a href=""></a><span class="ex">-Acabo</span> de inserir uma edição ao meu arquivo</span>
-<span id="cb48-7"><a href=""></a><span class="ex">\ No</span> newline at end of file</span>
-<span id="cb48-8"><a href=""></a><span class="ex">+Acabo</span> de inserir uma edição ao meu arquivo</span>
-<span id="cb48-9"><a href=""></a><span class="ex">+</span></span>
-<span id="cb48-10"><a href=""></a><span class="ex">+Outra</span> linha</span>
-<span id="cb48-11"><a href=""></a><span class="ex">\ No</span> newline at end of file</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href=""></a><span class="fu">diff</span> <span class="at">--git</span> a/test.txt b/test.txt</span>
+<span id="cb32-2"><a href=""></a><span class="ex">index</span> f5201c0..71f35ef 100644</span>
+<span id="cb32-3"><a href=""></a><span class="ex">---</span> a/test.txt</span>
+<span id="cb32-4"><a href=""></a><span class="ex">+++</span> b/test.txt</span>
+<span id="cb32-5"><a href=""></a><span class="ex">@@</span> <span class="at">-1</span> +1,3 @@</span>
+<span id="cb32-6"><a href=""></a><span class="ex">-Acabo</span> de inserir uma edição ao meu arquivo</span>
+<span id="cb32-7"><a href=""></a><span class="ex">\ No</span> newline at end of file</span>
+<span id="cb32-8"><a href=""></a><span class="ex">+Acabo</span> de inserir uma edição ao meu arquivo</span>
+<span id="cb32-9"><a href=""></a><span class="ex">+</span></span>
+<span id="cb32-10"><a href=""></a><span class="ex">+Outra</span> linha</span>
+<span id="cb32-11"><a href=""></a><span class="ex">\ No</span> newline at end of file</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1625,20 +1528,20 @@
 <section class="slide level2">
 <h2><strong>git diff –staged</strong>: mostra as diferenças dos arquivos na <em>staged area</em></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb49-1"><a href=""></a><span class="fu">git</span> diff <span class="at">--staged</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href=""></a><span class="fu">git</span> diff <span class="at">--staged</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb50-1"><a href=""></a><span class="fu">diff</span> <span class="at">--git</span> a/test.txt b/test.txt</span>
-<span id="cb50-2"><a href=""></a><span class="ex">index</span> f5201c0..71f35ef 100644</span>
-<span id="cb50-3"><a href=""></a><span class="ex">---</span> a/test.txt</span>
-<span id="cb50-4"><a href=""></a><span class="ex">+++</span> b/test.txt</span>
-<span id="cb50-5"><a href=""></a><span class="ex">@@</span> <span class="at">-1</span> +1,3 @@</span>
-<span id="cb50-6"><a href=""></a><span class="ex">-Acabo</span> de inserir uma edição ao meu arquivo</span>
-<span id="cb50-7"><a href=""></a><span class="ex">\ No</span> newline at end of file</span>
-<span id="cb50-8"><a href=""></a><span class="ex">+Acabo</span> de inserir uma edição ao meu arquivo</span>
-<span id="cb50-9"><a href=""></a><span class="ex">+</span></span>
-<span id="cb50-10"><a href=""></a><span class="ex">+Outra</span> linha</span>
-<span id="cb50-11"><a href=""></a><span class="ex">\ No</span> newline at end of file</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href=""></a><span class="fu">diff</span> <span class="at">--git</span> a/test.txt b/test.txt</span>
+<span id="cb34-2"><a href=""></a><span class="ex">index</span> f5201c0..71f35ef 100644</span>
+<span id="cb34-3"><a href=""></a><span class="ex">---</span> a/test.txt</span>
+<span id="cb34-4"><a href=""></a><span class="ex">+++</span> b/test.txt</span>
+<span id="cb34-5"><a href=""></a><span class="ex">@@</span> <span class="at">-1</span> +1,3 @@</span>
+<span id="cb34-6"><a href=""></a><span class="ex">-Acabo</span> de inserir uma edição ao meu arquivo</span>
+<span id="cb34-7"><a href=""></a><span class="ex">\ No</span> newline at end of file</span>
+<span id="cb34-8"><a href=""></a><span class="ex">+Acabo</span> de inserir uma edição ao meu arquivo</span>
+<span id="cb34-9"><a href=""></a><span class="ex">+</span></span>
+<span id="cb34-10"><a href=""></a><span class="ex">+Outra</span> linha</span>
+<span id="cb34-11"><a href=""></a><span class="ex">\ No</span> newline at end of file</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1705,16 +1608,16 @@
 <section class="slide level2">
 <h2>Sintaxe</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href=""></a><span class="co"># reverte um commit especifico</span></span>
-<span id="cb51-2"><a href=""></a><span class="fu">git</span> revert <span class="op">&lt;</span>hash do commit<span class="op">&gt;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href=""></a><span class="co"># reverte um commit especifico</span></span>
+<span id="cb35-2"><a href=""></a><span class="fu">git</span> revert <span class="op">&lt;</span>hash do commit<span class="op">&gt;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb52-1"><a href=""></a><span class="co"># reverter o ultimo commit</span></span>
-<span id="cb52-2"><a href=""></a><span class="fu">git</span> revert HEAD</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href=""></a><span class="co"># reverter o ultimo commit</span></span>
+<span id="cb36-2"><a href=""></a><span class="fu">git</span> revert HEAD</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb53-1"><a href=""></a><span class="co"># cancelar uma reversao</span></span>
-<span id="cb53-2"><a href=""></a><span class="fu">git</span> revert <span class="at">--abot</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href=""></a><span class="co"># cancelar uma reversao</span></span>
+<span id="cb37-2"><a href=""></a><span class="fu">git</span> revert <span class="at">--abot</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1744,20 +1647,20 @@
 <h2>1. <strong>git revert</strong>: desfaz um commit preservando o histórico (criando outro commit)</h2>
 <h3>Estado</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb54-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb55-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb55-2"><a href=""></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href=""></a><span class="ex">On</span> branch master</span>
+<span id="cb39-2"><a href=""></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3>Histórico</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb56-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb57-1"><a href=""></a><span class="ex">f9f2e9c</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">mod2</span> test.txt</span>
-<span id="cb57-2"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
-<span id="cb57-3"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href=""></a><span class="ex">f9f2e9c</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">mod2</span> test.txt</span>
+<span id="cb41-2"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
+<span id="cb41-3"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1772,20 +1675,20 @@
 <h2>1. <strong>git revert</strong>: desfaz um commit preservando o histórico (criando outro commit)</h2>
 <h3>Reverter - mensagem</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb58-1"><a href=""></a><span class="fu">git</span> revert f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href=""></a><span class="fu">git</span> revert f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb59-1"><a href=""></a><span class="ex">Revert</span> <span class="st">"mod2 test.txt"</span></span>
-<span id="cb59-2"><a href=""></a></span>
-<span id="cb59-3"><a href=""></a><span class="ex">This</span> reverts commit f9f2e9c867cfd549d0efcab1519a5ec9d86e7d0d.</span>
-<span id="cb59-4"><a href=""></a></span>
-<span id="cb59-5"><a href=""></a><span class="co"># Please enter the commit message for your changes. Lines starting</span></span>
-<span id="cb59-6"><a href=""></a><span class="co"># with '#' will be ignored, and an empty message aborts the commit.</span></span>
-<span id="cb59-7"><a href=""></a><span class="co">#</span></span>
-<span id="cb59-8"><a href=""></a><span class="co"># On branch master</span></span>
-<span id="cb59-9"><a href=""></a><span class="co"># Changes to be committed:</span></span>
-<span id="cb59-10"><a href=""></a><span class="co">#       modified:   test.txt</span></span>
-<span id="cb59-11"><a href=""></a><span class="co">#</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href=""></a><span class="ex">Revert</span> <span class="st">"mod2 test.txt"</span></span>
+<span id="cb43-2"><a href=""></a></span>
+<span id="cb43-3"><a href=""></a><span class="ex">This</span> reverts commit f9f2e9c867cfd549d0efcab1519a5ec9d86e7d0d.</span>
+<span id="cb43-4"><a href=""></a></span>
+<span id="cb43-5"><a href=""></a><span class="co"># Please enter the commit message for your changes. Lines starting</span></span>
+<span id="cb43-6"><a href=""></a><span class="co"># with '#' will be ignored, and an empty message aborts the commit.</span></span>
+<span id="cb43-7"><a href=""></a><span class="co">#</span></span>
+<span id="cb43-8"><a href=""></a><span class="co"># On branch master</span></span>
+<span id="cb43-9"><a href=""></a><span class="co"># Changes to be committed:</span></span>
+<span id="cb43-10"><a href=""></a><span class="co">#       modified:   test.txt</span></span>
+<span id="cb43-11"><a href=""></a><span class="co">#</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1800,19 +1703,19 @@
 <h2>1. <strong>git revert</strong>: desfaz um commit preservando o histórico (criando outro commit)</h2>
 <h3>Reverter</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb60-1"><a href=""></a><span class="fu">git</span> revert f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href=""></a><span class="fu">git</span> revert f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb61-1"><a href=""></a><span class="ex">[master</span> fca02a2] Revert <span class="st">"mod2 test.txt"</span></span>
-<span id="cb61-2"><a href=""></a> <span class="ex">1</span> file changed, 1 insertion<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 3 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href=""></a><span class="ex">[master</span> fca02a2] Revert <span class="st">"mod2 test.txt"</span></span>
+<span id="cb45-2"><a href=""></a> <span class="ex">1</span> file changed, 1 insertion<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 3 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3>Estado</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb62-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb63-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb63-2"><a href=""></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href=""></a><span class="ex">On</span> branch master</span>
+<span id="cb47-2"><a href=""></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1827,13 +1730,13 @@
 <h2>1. <strong>git revert</strong>: desfaz um commit preservando o histórico (criando outro commit)</h2>
 <h3>Histórico</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb64-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb65-1"><a href=""></a><span class="ex">fca02a2</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">Revert</span> <span class="st">"mod2 test.txt"</span></span>
-<span id="cb65-2"><a href=""></a><span class="ex">f9f2e9c</span> mod2 test.txt</span>
-<span id="cb65-3"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
-<span id="cb65-4"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb49-1"><a href=""></a><span class="ex">fca02a2</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">Revert</span> <span class="st">"mod2 test.txt"</span></span>
+<span id="cb49-2"><a href=""></a><span class="ex">f9f2e9c</span> mod2 test.txt</span>
+<span id="cb49-3"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
+<span id="cb49-4"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1849,7 +1752,7 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Sintaxe</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb66-1"><a href=""></a><span class="fu">git</span> reset <span class="pp">[</span><span class="ss">modo</span><span class="pp">]</span> [arquivo<span class="kw">|</span><span class="ex">commit]</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb50-1"><a href=""></a><span class="fu">git</span> reset <span class="pp">[</span><span class="ss">modo</span><span class="pp">]</span> [arquivo<span class="kw">|</span><span class="ex">commit]</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Aplicações</strong></p>
 <ul>
@@ -1927,11 +1830,11 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Estado</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb67-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb68-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb68-2"><a href=""></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb52-1"><a href=""></a><span class="ex">On</span> branch master</span>
+<span id="cb52-2"><a href=""></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1947,8 +1850,8 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Vamos editar o arquivo “test.txt”</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb69-1"><a href=""></a><span class="ex">Acabo</span> de inserir uma edição ao meu arquivo</span>
-<span id="cb69-2"><a href=""></a><span class="ex">Viagens</span> no tempo podem ser perigosas...</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb53-1"><a href=""></a><span class="ex">Acabo</span> de inserir uma edição ao meu arquivo</span>
+<span id="cb53-2"><a href=""></a><span class="ex">Viagens</span> no tempo podem ser perigosas...</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1963,16 +1866,16 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Estado</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb70-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb54-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb71-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb71-2"><a href=""></a><span class="ex">Changes</span> not staged for commit:</span>
-<span id="cb71-3"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to update what will be committed<span class="kw">)</span></span>
-<span id="cb71-4"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
-<span id="cb71-5"><a href=""></a>    <span class="ex">modified:</span>   test.txt</span>
-<span id="cb71-6"><a href=""></a></span>
-<span id="cb71-7"><a href=""></a><span class="ex">no</span> changes added to commit <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> and/or <span class="st">"git commit -a"</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb55-1"><a href=""></a><span class="ex">On</span> branch master</span>
+<span id="cb55-2"><a href=""></a><span class="ex">Changes</span> not staged for commit:</span>
+<span id="cb55-3"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to update what will be committed<span class="kw">)</span></span>
+<span id="cb55-4"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
+<span id="cb55-5"><a href=""></a>    <span class="ex">modified:</span>   test.txt</span>
+<span id="cb55-6"><a href=""></a></span>
+<span id="cb55-7"><a href=""></a><span class="ex">no</span> changes added to commit <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> and/or <span class="st">"git commit -a"</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1987,10 +1890,10 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Adicionar</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb72-1"><a href=""></a><span class="fu">git</span> add <span class="at">-Av</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb56-1"><a href=""></a><span class="fu">git</span> add <span class="at">-Av</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb73-1"><a href=""></a><span class="ex">add</span> <span class="st">'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb57-1"><a href=""></a><span class="ex">add</span> <span class="st">'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2005,13 +1908,13 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Estado</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb74-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb58-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb75-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb75-2"><a href=""></a><span class="ex">Changes</span> to be committed:</span>
-<span id="cb75-3"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore --staged &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
-<span id="cb75-4"><a href=""></a>    <span class="ex">modified:</span>   test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb59-1"><a href=""></a><span class="ex">On</span> branch master</span>
+<span id="cb59-2"><a href=""></a><span class="ex">Changes</span> to be committed:</span>
+<span id="cb59-3"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore --staged &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
+<span id="cb59-4"><a href=""></a>    <span class="ex">modified:</span>   test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2027,11 +1930,11 @@
 <h3>Remover do staged area</h3>
 <h3>Resetar</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb76-1"><a href=""></a><span class="fu">git</span> reset test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb60-1"><a href=""></a><span class="fu">git</span> reset test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb77-1"><a href=""></a><span class="ex">Unstaged</span> changes after reset:</span>
-<span id="cb77-2"><a href=""></a><span class="ex">M</span>   test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb61-1"><a href=""></a><span class="ex">Unstaged</span> changes after reset:</span>
+<span id="cb61-2"><a href=""></a><span class="ex">M</span>   test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2046,16 +1949,16 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Estado</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb78-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb62-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb79-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb79-2"><a href=""></a><span class="ex">Changes</span> not staged for commit:</span>
-<span id="cb79-3"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to update what will be committed<span class="kw">)</span></span>
-<span id="cb79-4"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
-<span id="cb79-5"><a href=""></a>    <span class="ex">modified:</span>   test.txt</span>
-<span id="cb79-6"><a href=""></a></span>
-<span id="cb79-7"><a href=""></a><span class="ex">no</span> changes added to commit <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> and/or <span class="st">"git commit -a"</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb63-1"><a href=""></a><span class="ex">On</span> branch master</span>
+<span id="cb63-2"><a href=""></a><span class="ex">Changes</span> not staged for commit:</span>
+<span id="cb63-3"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to update what will be committed<span class="kw">)</span></span>
+<span id="cb63-4"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
+<span id="cb63-5"><a href=""></a>    <span class="ex">modified:</span>   test.txt</span>
+<span id="cb63-6"><a href=""></a></span>
+<span id="cb63-7"><a href=""></a><span class="ex">no</span> changes added to commit <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> and/or <span class="st">"git commit -a"</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2070,11 +1973,11 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Ver o conteúdo do arquivo</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb80-1"><a href=""></a><span class="fu">cat</span> test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb64-1"><a href=""></a><span class="fu">cat</span> test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb81-1"><a href=""></a><span class="ex">Acabo</span> de inserir uma edição ao meu arquivo</span>
-<span id="cb81-2"><a href=""></a><span class="ex">Viagens</span> no tempo podem ser perigosas...</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb65-1"><a href=""></a><span class="ex">Acabo</span> de inserir uma edição ao meu arquivo</span>
+<span id="cb65-2"><a href=""></a><span class="ex">Viagens</span> no tempo podem ser perigosas...</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2089,13 +1992,13 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Histórico</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb82-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb66-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb83-1"><a href=""></a><span class="ex">fca02a2</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">Revert</span> <span class="st">"mod2 test.txt"</span></span>
-<span id="cb83-2"><a href=""></a><span class="ex">f9f2e9c</span> mod2 test.txt</span>
-<span id="cb83-3"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
-<span id="cb83-4"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb67-1"><a href=""></a><span class="ex">fca02a2</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">Revert</span> <span class="st">"mod2 test.txt"</span></span>
+<span id="cb67-2"><a href=""></a><span class="ex">f9f2e9c</span> mod2 test.txt</span>
+<span id="cb67-3"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
+<span id="cb67-4"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2110,18 +2013,18 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Adicionar</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb84-1"><a href=""></a><span class="fu">git</span> add <span class="at">-Av</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb68-1"><a href=""></a><span class="fu">git</span> add <span class="at">-Av</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb85-1"><a href=""></a><span class="ex">add</span> <span class="st">'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb69-1"><a href=""></a><span class="ex">add</span> <span class="st">'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3>Commitar</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb86-1"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"mod3 test.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb70-1"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"mod3 test.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb87-1"><a href=""></a><span class="ex">[master</span> 4b0c4e8] mod3 test.txt</span>
-<span id="cb87-2"><a href=""></a> <span class="ex">1</span> file changed, 2 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 1 deletion<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb71-1"><a href=""></a><span class="ex">[master</span> 4b0c4e8] mod3 test.txt</span>
+<span id="cb71-2"><a href=""></a> <span class="ex">1</span> file changed, 2 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 1 deletion<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2136,14 +2039,14 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Histórico</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb88-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb72-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb89-1"><a href=""></a><span class="ex">4b0c4e8</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">mod3</span> test.txt</span>
-<span id="cb89-2"><a href=""></a><span class="ex">fca02a2</span> Revert <span class="st">"mod2 test.txt"</span></span>
-<span id="cb89-3"><a href=""></a><span class="ex">f9f2e9c</span> mod2 test.txt</span>
-<span id="cb89-4"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
-<span id="cb89-5"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb73-1"><a href=""></a><span class="ex">4b0c4e8</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">mod3</span> test.txt</span>
+<span id="cb73-2"><a href=""></a><span class="ex">fca02a2</span> Revert <span class="st">"mod2 test.txt"</span></span>
+<span id="cb73-3"><a href=""></a><span class="ex">f9f2e9c</span> mod2 test.txt</span>
+<span id="cb73-4"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
+<span id="cb73-5"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2158,20 +2061,20 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Resetar</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb90-1"><a href=""></a><span class="fu">git</span> reset <span class="at">--hard</span> f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb74-1"><a href=""></a><span class="fu">git</span> reset <span class="at">--hard</span> f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb91-1"><a href=""></a><span class="ex">HEAD</span> is now at f9f2e9c mod2 test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb75-1"><a href=""></a><span class="ex">HEAD</span> is now at f9f2e9c mod2 test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>–</p>
 <h3>Histórico</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb92-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb76-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb93-1"><a href=""></a><span class="ex">f9f2e9c</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">mod2</span> test.txt</span>
-<span id="cb93-2"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
-<span id="cb93-3"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb77-1"><a href=""></a><span class="ex">f9f2e9c</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">mod2</span> test.txt</span>
+<span id="cb77-2"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
+<span id="cb77-3"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2186,15 +2089,15 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Remover arquivo</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb94-1"><a href=""></a><span class="fu">rm</span> test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb78-1"><a href=""></a><span class="fu">rm</span> test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3>Adicionar</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb95-1"><a href=""></a><span class="fu">git</span> add <span class="at">-Av</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb79-1"><a href=""></a><span class="fu">git</span> add <span class="at">-Av</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3>Commitar</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb96-1"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"rem text.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb80-1"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"rem text.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2209,13 +2112,13 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Histórico</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb97-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb81-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb98-1"><a href=""></a><span class="ex">6a417c5</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">rem</span> text.txt</span>
-<span id="cb98-2"><a href=""></a><span class="ex">f9f2e9c</span> mod2 test.txt</span>
-<span id="cb98-3"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
-<span id="cb98-4"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb82-1"><a href=""></a><span class="ex">6a417c5</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">rem</span> text.txt</span>
+<span id="cb82-2"><a href=""></a><span class="ex">f9f2e9c</span> mod2 test.txt</span>
+<span id="cb82-3"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
+<span id="cb82-4"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2230,20 +2133,20 @@
 <h2>2. <strong>git reset</strong>: desfaz um commit deletando o histórico (deletando commits)</h2>
 <h3>Resetar</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb99-1"><a href=""></a><span class="fu">git</span> reset <span class="at">--hard</span> f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb83-1"><a href=""></a><span class="fu">git</span> reset <span class="at">--hard</span> f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb100-1"><a href=""></a><span class="ex">HEAD</span> is now at f9f2e9c mod2 test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb84-1"><a href=""></a><span class="ex">HEAD</span> is now at f9f2e9c mod2 test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>–</p>
 <h3>Histórico</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb101-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb85-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb102-1"><a href=""></a><span class="ex">f9f2e9c</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">mod2</span> test.txt</span>
-<span id="cb102-2"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
-<span id="cb102-3"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb86-1"><a href=""></a><span class="ex">f9f2e9c</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master<span class="kw">)</span> <span class="ex">mod2</span> test.txt</span>
+<span id="cb86-2"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
+<span id="cb86-3"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2304,10 +2207,10 @@
 <section class="slide level2">
 <h2><strong>git branch</strong>: lista os branchs e verifica o branch de edição</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb103-1"><a href=""></a><span class="fu">git</span> branch</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb87-1"><a href=""></a><span class="fu">git</span> branch</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb104-1"><a href=""></a><span class="ex">*</span> master</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb88-1"><a href=""></a><span class="ex">*</span> master</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2322,14 +2225,14 @@
 <section class="slide level2">
 <h2><strong>git branch</strong>: cria uma ramificação</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb105-1"><a href=""></a><span class="fu">git</span> branch branch-1</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb89-1"><a href=""></a><span class="fu">git</span> branch branch-1</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb106-1"><a href=""></a><span class="fu">git</span> branch</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb90-1"><a href=""></a><span class="fu">git</span> branch</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb107-1"><a href=""></a><span class="ex">branch-1</span></span>
-<span id="cb107-2"><a href=""></a><span class="ex">*</span> master</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb91-1"><a href=""></a><span class="ex">branch-1</span></span>
+<span id="cb91-2"><a href=""></a><span class="ex">*</span> master</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2344,10 +2247,10 @@
 <section class="slide level2">
 <h2><strong>git switch</strong>: troca a raficação de edição</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb108-1"><a href=""></a><span class="fu">git</span> switch branch-1</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb92-1"><a href=""></a><span class="fu">git</span> switch branch-1</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb109-1"><a href=""></a><span class="ex">Switched</span> to branch <span class="st">'branch-1'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb93-1"><a href=""></a><span class="ex">Switched</span> to branch <span class="st">'branch-1'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2362,11 +2265,11 @@
 <section class="slide level2">
 <h2><strong>git branch</strong>: lista os branchs e verifica o branch de edição</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb110-1"><a href=""></a><span class="fu">git</span> branch</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb94-1"><a href=""></a><span class="fu">git</span> branch</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb111-1"><a href=""></a><span class="ex">*</span> branch-1</span>
-<span id="cb111-2"><a href=""></a><span class="ex">master</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb95-1"><a href=""></a><span class="ex">*</span> branch-1</span>
+<span id="cb95-2"><a href=""></a><span class="ex">master</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2381,10 +2284,10 @@
 <section class="slide level2">
 <h2>Vamos criar um arquivo no diretório</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb112-1"><a href=""></a><span class="co"># terminal</span></span>
-<span id="cb112-2"><a href=""></a><span class="fu">touch</span> teste_branch1.txt</span>
-<span id="cb112-3"><a href=""></a><span class="fu">git</span> add <span class="at">-Av</span></span>
-<span id="cb112-4"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"add teste_branch1.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb96-1"><a href=""></a><span class="co"># terminal</span></span>
+<span id="cb96-2"><a href=""></a><span class="fu">touch</span> teste_branch1.txt</span>
+<span id="cb96-3"><a href=""></a><span class="fu">git</span> add <span class="at">-Av</span></span>
+<span id="cb96-4"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"add teste_branch1.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2399,7 +2302,7 @@
 <section class="slide level2">
 <h2><strong>switch</strong>: troca a raficação de edição</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb113-1"><a href=""></a><span class="fu">git</span> switch master</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb97-1"><a href=""></a><span class="fu">git</span> switch master</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2426,14 +2329,14 @@
 <section class="slide level2">
 <h2><strong>git merge</strong>: mescla as linhas de desenvolvimento independentes em um único branch</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb114-1"><a href=""></a><span class="fu">git</span> merge branch-1</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb98-1"><a href=""></a><span class="fu">git</span> merge branch-1</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb115-1"><a href=""></a><span class="ex">Updating</span> f9f2e9c..7aeb06d</span>
-<span id="cb115-2"><a href=""></a><span class="ex">Fast-forward</span></span>
-<span id="cb115-3"><a href=""></a> <span class="ex">teste_branch1.txt</span> <span class="kw">|</span> <span class="ex">0</span></span>
-<span id="cb115-4"><a href=""></a> <span class="ex">1</span> file changed, 0 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 0 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span>
-<span id="cb115-5"><a href=""></a> <span class="ex">create</span> mode 100644 teste_branch1.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb99-1"><a href=""></a><span class="ex">Updating</span> f9f2e9c..7aeb06d</span>
+<span id="cb99-2"><a href=""></a><span class="ex">Fast-forward</span></span>
+<span id="cb99-3"><a href=""></a> <span class="ex">teste_branch1.txt</span> <span class="kw">|</span> <span class="ex">0</span></span>
+<span id="cb99-4"><a href=""></a> <span class="ex">1</span> file changed, 0 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 0 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span>
+<span id="cb99-5"><a href=""></a> <span class="ex">create</span> mode 100644 teste_branch1.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2448,13 +2351,13 @@
 <section class="slide level2">
 <h2><strong>git merge</strong>: mescla as linhas de desenvolvimento independentes em um único branch</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb116-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb100-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb117-1"><a href=""></a><span class="ex">7aeb06d</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master, branch-1<span class="kw">)</span> <span class="ex">add</span> teste_branch1.txt</span>
-<span id="cb117-2"><a href=""></a><span class="ex">f9f2e9c</span> mod2 test.txt</span>
-<span id="cb117-3"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
-<span id="cb117-4"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb101-1"><a href=""></a><span class="ex">7aeb06d</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> master, branch-1<span class="kw">)</span> <span class="ex">add</span> teste_branch1.txt</span>
+<span id="cb101-2"><a href=""></a><span class="ex">f9f2e9c</span> mod2 test.txt</span>
+<span id="cb101-3"><a href=""></a><span class="ex">dcbd894</span> mod test.txt</span>
+<span id="cb101-4"><a href=""></a><span class="ex">8b33bc5</span> add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2509,11 +2412,11 @@
 <section class="slide level2">
 <h2><strong>git remote</strong>: exibe os repositórios remotos (GitHub)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb118-1"><a href=""></a><span class="fu">git</span> remote <span class="at">-v</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb102-1"><a href=""></a><span class="fu">git</span> remote <span class="at">-v</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb119-1"><a href=""></a><span class="ex">origin</span>  git@github.com:mauriciovancine/short-course-git-github-rstudio.git <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
-<span id="cb119-2"><a href=""></a><span class="ex">origin</span>  git@github.com:mauriciovancine/short-course-git-github-rstudio.git <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb103-1"><a href=""></a><span class="ex">origin</span>  git@github.com:mauriciovancine/short-course-git-github-rstudio.git <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
+<span id="cb103-2"><a href=""></a><span class="ex">origin</span>  git@github.com:mauriciovancine/short-course-git-github-rstudio.git <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2529,7 +2432,7 @@
 <h2><strong>git remote add</strong>: faz a ligação com um repositório remoto (GitHub)</h2>
 <h3><strong>Observação</strong>: Usar o SSH para não precisar digitar sua senha!</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb120-1"><a href=""></a><span class="fu">git</span> remote add origin git@github.com:mauriciovancine/short-course-git-github-rstudio.git</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb104-1"><a href=""></a><span class="fu">git</span> remote add origin git@github.com:mauriciovancine/short-course-git-github-rstudio.git</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2567,18 +2470,18 @@
 <section class="slide level2">
 <h2><strong>git push</strong>: empurra uma nova versão do repositório local para o repositório remoto (GitHub)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb121-1"><a href=""></a><span class="fu">git</span> push <span class="at">-u</span> origin master</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb105-1"><a href=""></a><span class="fu">git</span> push <span class="at">-u</span> origin master</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb122-1"><a href=""></a><span class="ex">Enumerating</span> objects: 41, done.</span>
-<span id="cb122-2"><a href=""></a><span class="ex">Counting</span> objects: 100% <span class="er">(</span><span class="ex">41/41</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb122-3"><a href=""></a><span class="ex">Delta</span> compression using up to 12 threads</span>
-<span id="cb122-4"><a href=""></a><span class="ex">Compressing</span> objects: 100% <span class="er">(</span><span class="ex">35/35</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb122-5"><a href=""></a><span class="ex">Writing</span> objects: 100% <span class="er">(</span><span class="ex">35/35</span><span class="kw">)</span><span class="ex">,</span> 4.99 MiB <span class="kw">|</span> <span class="ex">155.00</span> KiB/s, done.</span>
-<span id="cb122-6"><a href=""></a><span class="ex">Total</span> 35 <span class="er">(</span><span class="ex">delta</span> 6<span class="kw">)</span><span class="ex">,</span> reused 0 <span class="er">(</span><span class="ex">delta</span> 0<span class="kw">)</span><span class="ex">,</span> pack-reused 0</span>
-<span id="cb122-7"><a href=""></a><span class="ex">remote:</span> Resolving deltas: 100% <span class="er">(</span><span class="ex">6/6</span><span class="kw">)</span><span class="ex">,</span> completed with 6 local objects.</span>
-<span id="cb122-8"><a href=""></a><span class="ex">To</span> github.com:mauriciovancine/course-geospatial-data-r.git</span>
-<span id="cb122-9"><a href=""></a>   <span class="ex">accc9db..8f70e96</span>  master <span class="at">-</span><span class="op">&gt;</span> master</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb106-1"><a href=""></a><span class="ex">Enumerating</span> objects: 41, done.</span>
+<span id="cb106-2"><a href=""></a><span class="ex">Counting</span> objects: 100% <span class="er">(</span><span class="ex">41/41</span><span class="kw">)</span><span class="ex">,</span> done.</span>
+<span id="cb106-3"><a href=""></a><span class="ex">Delta</span> compression using up to 12 threads</span>
+<span id="cb106-4"><a href=""></a><span class="ex">Compressing</span> objects: 100% <span class="er">(</span><span class="ex">35/35</span><span class="kw">)</span><span class="ex">,</span> done.</span>
+<span id="cb106-5"><a href=""></a><span class="ex">Writing</span> objects: 100% <span class="er">(</span><span class="ex">35/35</span><span class="kw">)</span><span class="ex">,</span> 4.99 MiB <span class="kw">|</span> <span class="ex">155.00</span> KiB/s, done.</span>
+<span id="cb106-6"><a href=""></a><span class="ex">Total</span> 35 <span class="er">(</span><span class="ex">delta</span> 6<span class="kw">)</span><span class="ex">,</span> reused 0 <span class="er">(</span><span class="ex">delta</span> 0<span class="kw">)</span><span class="ex">,</span> pack-reused 0</span>
+<span id="cb106-7"><a href=""></a><span class="ex">remote:</span> Resolving deltas: 100% <span class="er">(</span><span class="ex">6/6</span><span class="kw">)</span><span class="ex">,</span> completed with 6 local objects.</span>
+<span id="cb106-8"><a href=""></a><span class="ex">To</span> github.com:mauriciovancine/course-geospatial-data-r.git</span>
+<span id="cb106-9"><a href=""></a>   <span class="ex">accc9db..8f70e96</span>  master <span class="at">-</span><span class="op">&gt;</span> master</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -2878,8 +2781,8 @@
 <h2>Pacote <a href="https://usethis.r-lib.org/">usethis</a></h2>
 <h3>Comandos direto no R para criar e versionar repositórios</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
-<span id="cb123-2"><a href=""></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/usethis"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
+<span id="cb107-2"><a href=""></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/usethis"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">

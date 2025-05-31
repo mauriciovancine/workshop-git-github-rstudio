@@ -1,6 +1,5 @@
 ---
 title: "Controle de versão com git, GitHub e RStudio"
-subtitle: "<br>Unicamp"
 author: "[Maurício Vancine](https://mauriciovancine.github.io/)<br>"
 date: "06/05/2025"
 date-format: long
@@ -21,18 +20,6 @@ format:
 editor: source
 lang: pt-br
 ---
-
-## Conteúdo 
-
-- utilidade e importancia (exemplos - fair)
-- reprodutibilidade - ambiente virtual
-- controle de versao
-- git vs github
-- repositorio local e remoto 
-- readme.md
-- fluxo de trabalho com git
-- fork > clone > add/commmit/push > branch? > pull request 
-- status, show, log, diff, .gitignore, branch?, fetch, rebase, merge, checkout e switch
 
 ## Workshop
 
@@ -55,20 +42,21 @@ lang: pt-br
 6. Controle de versão na prática
 7. Iniciando localmente: `git init`
 8. Iniciando remotamente: `fork` e `git clone`
+9. Versionamento: `git status`, `git add` e `git commit`
 :::
 :::
 
 ::: {.column width="50%"}
 ::: nonincremental
-10. Versionamento: `git status`, `git add`, e `git commit`
-11. Ignorando: `.gitignore`
-12. Histórico: `git log` e `git show`
-13. Diferenças: `git diff`
-14. Desfazer: `git restore`, `git revert` e `git reset`
-15. Ramificações: `git branch`, `git switch` e `git merge`
-16. Remoto: `git remote`, `git push` e `git pull`
-17. GitHub: `Pull request`
-28. Interface gráfica do RStudio  
+
+10. Histórico: `git log` e `git show`
+11. Diferença: `git diff`
+12. Ignorando: `.gitignore`
+13. Desfazer: `git restore`, `git revert` e `git reset`
+14. Ramificações: `git branch`, `git switch` e `git merge`
+15. Remoto: `git remote`, `git push` e `git pull`
+16. GitHub: `Pull request`
+17. Interface gráfica do RStudio  
 :::
 :::
 
@@ -162,6 +150,18 @@ Principal **ferramenta** utilizada em grandes projetos
 
 :::footer
 [Perez-Riverol et al. (2016)](https://doi.org/10.1371/journal.pcbi.1004947)
+:::
+
+## 2. Controle de versão
+
+Cada vez mais **necessária** em colaborações
+
+![](img/github_article_2022.png){.absolute width=50% right=600 top=150}
+![](img/github_article_2022_fig02.jpg){.absolute width=70% right=-150 top=180}
+![](img/github_article_2022_fig01.jpg){.absolute width=40% right=700 top=330}
+
+:::footer
+[Braga et al. (2022)](https://doi.org/10.1111/2041-210X.14108)
 :::
 
 # 3. git e GitHub
@@ -995,6 +995,49 @@ $ git status
 ::: footer
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
+
+## 9. Versionamento
+
+`git add`: adiciona mudanças após edições (*staging area*)
+
+```{r eval=FALSE}
+$ git add -Av
+
+# add 'test.txt'
+```
+
+![](img/git_states_pro.png){.absolute width=60% right=220 top=420}
+
+## 9. Versionamento
+
+`git status`: mostra o estado do repositório
+
+```{r eval=FALSE}
+$ git status
+
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+ 	modified:   test.txt
+```
+
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
+
+## 9. Versionamento
+
+`git commit`: registra as alterações da **staging area**
+
+```{r eval=FALSE}
+$ git commit -m "mod test.txt"
+
+# [master f73fca3] modificação do test.txt
+#  1 file changed, 1 insertion(+)
+```
+
+![](img/git-add-commit.png){.absolute width=50% right=200 top=400}
+
+## 9. Versionamento
+
 
 ------------------------------------------------------------
 

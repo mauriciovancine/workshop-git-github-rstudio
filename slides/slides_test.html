@@ -195,7 +195,6 @@
 
 <section class="quarto-title-block center">
   <h1 class="title">Controle de versão com git, GitHub e RStudio</h1>
-  <p class="subtitle"><br>Unicamp</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -208,299 +207,39 @@
   <p class="date">5 de junho de 2025</p>
 </section>
 <section class="slide level2">
+<h2>9. Versionamento</h2>
+<p><strong>ATENÇÃO!</strong></p>
+<ul>
+<li>As mensagens no commit são fundamentais</li>
+<li>Devem ser curtas e indicar as mudanças feitas nos arquivos</li>
+</ul>
 
+<img data-src="img/git_commit_message.png" class="r-stretch"></section>
+<section class="slide level2">
+<h2>9. Versionamento</h2>
+
+<img data-src="img/git_states.png" class="r-stretch"></section>
+<section class="slide level2">
+<h2>9. Versionamento</h2>
 <p><code>git status</code>: mostra o estado do repositório</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="sc">$</span> git status</span>
 <span id="cb1-2"><a href=""></a></span>
-<span id="cb1-3"><a href=""></a><span class="co"># On branch master</span></span>
-<span id="cb1-4"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href=""></a>On branch master</span>
+<span id="cb1-4"><a href=""></a>nothing to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
-<div class="footer">
-<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p>Vamos criar um arquivo no diretório</p>
-<p>Usando a aba <strong>Terminal</strong> do RStudio</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="sc">$</span> touch test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/general_bloco_notas.png" class="absolute" style="top: 300px; right: 350px; width: 35%; "></p>
-</section>
+
+<img data-src="img/git_states.png" class="r-stretch"></section>
 <section class="slide level2">
 <h2>9. Versionamento</h2>
 <p><code>git status</code>: mostra o estado do repositório</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="sc">$</span> git status</span>
-<span id="cb3-2"><a href=""></a></span>
-<span id="cb3-3"><a href=""></a><span class="co"># On branch master</span></span>
-<span id="cb3-4"><a href=""></a><span class="co"># Untracked files:</span></span>
-<span id="cb3-5"><a href=""></a><span class="co">#   (use "git add &lt;file&gt;..." to include in what will be committed)</span></span>
-<span id="cb3-6"><a href=""></a><span class="co">#   test.txt</span></span>
-<span id="cb3-7"><a href=""></a><span class="co"># </span></span>
-<span id="cb3-8"><a href=""></a><span class="co"># nothing added to commit but untracked files present (use "git add" to track)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
-<div class="footer">
-<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><code>git add</code>: adiciona mudanças após edições (<strong>staging area</strong>)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="ex">$</span> git add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
-<div class="footer">
-<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><code>git add</code>: adiciona mudanças após edições (<strong>staging area</strong>)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href=""></a><span class="ex">$</span> git add test.txt <span class="at">-v</span></span>
-<span id="cb5-2"><a href=""></a></span>
-<span id="cb5-3"><a href=""></a><span class="co"># add 'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
-<div class="footer">
-<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><code>git add</code>: adiciona mudanças após edições (<strong>staging area</strong>)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="ex">$</span> git add <span class="at">-Av</span></span>
-<span id="cb6-2"><a href=""></a></span>
-<span id="cb6-3"><a href=""></a><span class="co"># add 'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
-<div class="footer">
-<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><code>git add</code>: adiciona mudanças após edições (<strong>staging area</strong>)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="ex">$</span> git add .</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
-<div class="footer">
-<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><code>git status</code>: mostra o estado do repositório</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href=""></a><span class="ex">$</span> git status</span>
-<span id="cb8-2"><a href=""></a></span>
-<span id="cb8-3"><a href=""></a><span class="co"># On branch master</span></span>
-<span id="cb8-4"><a href=""></a><span class="co"># Changes to be committed:</span></span>
-<span id="cb8-5"><a href=""></a><span class="co">#   (use "git restore --staged &lt;file&gt;..." to unstage)</span></span>
-<span id="cb8-6"><a href=""></a><span class="co">#   new file:   test.txt</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/git_trees.png" class="absolute" style="top: 450px; right: 230px; width: 60%; "></p>
-<div class="footer">
-<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><code>git commit</code>: registra as alterações da <strong>staging area</strong></p>
-<div style="font-size: 80%;">
-<ul>
-<li>Cria um <strong>snapshot</strong> do repositório, contendo:
-<ul>
-<li>Mudanças realizadas nos arquivos</li>
-<li>Mensagem descritiva (<em>mensagem do commit</em>)</li>
-<li>Metadados do autor, data e identificador único (<strong>hash</strong>)</li>
-</ul></li>
-</ul>
-</div>
-<p><img data-src="img/git_add_commit_flow.png" class="absolute" style="top: 400px; right: 270px; width: 45%; "></p>
-<div class="footer">
-<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><code>git commit</code>: registra as alterações da <strong>staging area</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href=""></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"add test.txt"</span></span>
-<span id="cb9-2"><a href=""></a></span>
-<span id="cb9-3"><a href=""></a><span class="co"># [master 5a164d5] add test.txt</span></span>
-<span id="cb9-4"><a href=""></a><span class="co"># 1 file changed, 0 insertions(+), 0 deletions(-)</span></span>
-<span id="cb9-5"><a href=""></a><span class="co"># create mode 100644 test.txt</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/git-add-commit.png" class="absolute" style="top: 400px; right: 200px; width: 50%; "></p>
-<div class="footer">
-<p><a href="https://blog.dbins.com.br/guia-dos-principais-comandos-do-git">Guia dos principais comandos do GIT</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><code>git status</code>: mostra o estado do repositório</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="ex">$</span> git status</span>
-<span id="cb10-2"><a href=""></a></span>
-<span id="cb10-3"><a href=""></a><span class="co"># On branch master</span></span>
-<span id="cb10-4"><a href=""></a><span class="co"># nothing to commit, working tree clean</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
-<div class="footer">
-<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p>Fluxo do versionamento</p>
-<div style="font-size: 70%;">
-<ol type="1">
-<li><strong>Diretório de trabalho (<em>working directory</em>)</strong>: pasta com os arquivos</li>
-<li><strong>Preparação (<em>staged area</em>)</strong>: arquivos adicionados para serem versionados (.git)</li>
-<li><strong>Repositório (<em>repository</em>)</strong>: versão consolidada dos arquivos (.git)</li>
-</ol>
-</div>
-<p><img data-src="img/git_files_states.png" class="absolute" style="top: 320px; right: 30px; width: 100%; "></p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p>Usando a aba <strong>Files</strong> do RStudio, vamos abrir e editar o arquivo <strong>test.txt</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="ex">Acabo</span> de inserir uma edição ao meu arquivo</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/general_bloco_notas.png" class="absolute" style="top: 300px; right: 350px; width: 35%; "></p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><code>git status</code>: mostra o estado do repositório</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">$</span> git status</span>
-<span id="cb12-2"><a href=""></a></span>
-<span id="cb12-3"><a href=""></a><span class="co"># On branch master</span></span>
-<span id="cb12-4"><a href=""></a><span class="co"># Changes not staged for commit:</span></span>
-<span id="cb12-5"><a href=""></a><span class="co">#   (use "git add &lt;file&gt;..." to update what will be committed)</span></span>
-<span id="cb12-6"><a href=""></a><span class="co">#   (use "git restore &lt;file&gt;..." to discard changes in working directory)</span></span>
-<span id="cb12-7"><a href=""></a><span class="co">#   modified:   test.txt</span></span>
-<span id="cb12-8"><a href=""></a><span class="co"># no changes added to commit (use "git add" and/or "git commit -a")</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/git_states_pro.png" class="absolute" style="top: 420px; right: 220px; width: 60%; "></p>
-<div class="footer">
-<p><a href="https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git">pro Git (2014)</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><strong>git add</strong>: adiciona mudanças após edições (<em>staging area</em>)</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="co"># terminal</span></span>
-<span id="cb13-2"><a href=""></a><span class="fu">git</span> add <span class="at">-Av</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="ex">add</span> <span class="st">'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_states.png"> background-size: 600px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><code>git status</code>: mostra o estado do repositório</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb16-2"><a href=""></a><span class="ex">Changes</span> to be committed:</span>
-<span id="cb16-3"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore --staged &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
-<span id="cb16-4"><a href=""></a>    <span class="ex">modified:</span>   test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_add_commit_flow.png"> background-size: 450px background-position: 50% 93%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><strong>git commit</strong>: armazena as mudanças com uma descrição, criando nova versão do repositório (<em>repository</em>)</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"mod test.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href=""></a><span class="ex">[master</span> dcbd894] mod test.txt</span>
-<span id="cb18-2"><a href=""></a> <span class="ex">1</span> file changed, 1 insertion<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_commit_message.png"> background-size: 600px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2>ATENÇÃO!</h2>
-<h3>As mensagens no commit são fundamentais!</h3>
-<h3>Devem ser curtas e indicar as mudanças feitas nos arquivos do diretório!</h3>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2>Usando Git Direito | Limpando seus Commits! - Fabio Akita</h2>
-<p align="center">
-<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/6OokP-NE49k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-</p>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_states.png"> background-size: 600px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><code>git status</code>: mostra o estado do repositório</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href=""></a><span class="fu">git</span> status</span>
-<span id="cb19-2"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb19-3"><a href=""></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-<p><img data-src="img/git_states.png"> background-size: 600px background-position: 50% 90%</p>
-</section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-</section>
-<section class="slide level2">
-<h2><code>git status</code>: mostra o estado do repositório</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href=""></a><span class="ex">On</span> branch master</span>
-<span id="cb21-2"><a href=""></a><span class="ex">Your</span> branch is ahead of <span class="st">'origin/master'</span> by 2 commits.</span>
-<span id="cb21-3"><a href=""></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git push"</span> to publish your local commits<span class="kw">)</span></span>
-<span id="cb21-4"><a href=""></a></span>
-<span id="cb21-5"><a href=""></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="sc">$</span> git status</span>
+<span id="cb2-2"><a href=""></a></span>
+<span id="cb2-3"><a href=""></a><span class="co"># On branch master</span></span>
+<span id="cb2-4"><a href=""></a><span class="co"># Your branch is ahead of 'origin/master' by 2 commits.</span></span>
+<span id="cb2-5"><a href=""></a><span class="co">#   (use "git push" to publish your local commits)</span></span>
+<span id="cb2-6"><a href=""></a><span class="co">#   nothing to commit, working tree clean</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
