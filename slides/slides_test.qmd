@@ -22,94 +22,77 @@ lang: pt-br
 ---
 
 ![](img/gif_delorean.gif), ![](img/git_revert_reset.png)
-background-size: 400px, 500px
-background-position: 25% 80%, 95% 50%
 
-# 13. Desfazer: git revert e git reset
+# 14. Desfazer: git restore, git revert e git reset
 
-## Desfazendo operações no git
+## 14. Desfazer
 
-1. **git revert**: desfaz um commit **preservando o histórico** (criando outro commit)
-1. **git reset**:  desfaz um commit **deletando o histórico** (deletando commits)
+1. `git restore`: 
 
----
+1. `git revert`: desfaz um commit **preservando o histórico** (criando outro commit)
+1. `git reset`:  desfaz um commit **deletando o histórico** (deletando commits)
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
+`git revert`: desfaz um commit preservando o histórico (criando outro commit)
 
-## Sintaxe
+- Sintaxe
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 # reverte um commit especifico
-git revert <hash do commit>
+git revert [hash]
 ```
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 # reverter o ultimo commit
 git revert HEAD
 ```
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 # cancelar uma reversao
-git revert --abot
+git revert --abort
 ```
-
----
 
 ![](img/general_butterfly_effect.jpg)
-background-size: 500px
-background-position: 80% 95%
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
+`git revert`: desfaz um commit preservando o histórico (criando outro commit)
 
-### **IMPORTANTE!**
+**IMPORTANTE!**
 
-### 1. Deve-se trabalhar em um diretório de trabalho limpo. Executar sempre **git add** e **git commit** antes de tentar reverter um commit
+1. Deve-se trabalhar em um diretório de trabalho limpo. Executar sempre `git add` e `git commit` antes de tentar reverter um commit
+1. Tente não **mudar** o passado!
 
-### 2. Tente não **mudar** o passado!
+## 14. Desfazer
 
----
+`git revert`: desfaz um commit preservando o histórico (criando outro commit)
 
-# 13. Desfazer: git revert e git reset
-
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
-
-### Estado
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git status
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 On branch master
 nothing to commit, working tree clean
 ```
 
-### Histórico
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git log --oneline
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 f9f2e9c (HEAD -> master) mod2 test.txt
 dcbd894 mod test.txt
 8b33bc5 add test.txt
 ```
 
----
+## 14. Desfazer
 
-# 13. Desfazer: git revert e git reset
+`git revert`: desfaz um commit preservando o histórico (criando outro commit)
 
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
-
-### Reverter - mensagem
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git revert f9f2e9c
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 Revert "mod2 test.txt"
 
 This reverts commit f9f2e9c867cfd549d0efcab1519a5ec9d86e7d0d.
@@ -123,63 +106,47 @@ This reverts commit f9f2e9c867cfd549d0efcab1519a5ec9d86e7d0d.
 #
 ```
 
----
+## 14. Desfazer
 
-# 13. Desfazer: git revert e git reset
+`git revert`: desfaz um commit preservando o histórico (criando outro commit)
 
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
-
-### Reverter
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git revert f9f2e9c
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 [master fca02a2] Revert "mod2 test.txt"
  1 file changed, 1 insertion(+), 3 deletions(-)
 ```
 
-### Estado
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git status
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 On branch master
 nothing to commit, working tree clean
 ```
 
----
+## 14. Desfazer
 
-# 13. Desfazer: git revert e git reset
+`git revert`: desfaz um commit preservando o histórico (criando outro commit)
 
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
-
-### Histórico
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git log --oneline
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 fca02a2 (HEAD -> master) Revert "mod2 test.txt"
 f9f2e9c mod2 test.txt
 dcbd894 mod test.txt
 8b33bc5 add test.txt
 ```
 
----
-
 ![](img/git_reset.png)
-background-size: 450px
-background-position: 87% 90%
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
-### Sintaxe
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git reset [modo] [arquivo|commit]
 ```
 
@@ -191,36 +158,24 @@ git reset [modo] [arquivo|commit]
 
 **Observações**
 
-- descartar commits de um branch público: **git revert**
+- descartar commits de um branch público: `git revert`
 - descartar alterações no diretório de trabalho: **git checkout**
 
----
+## 14. Desfazer
 
-![](img/git_reset_modes2.png), ![](img/git_reset_modes.png)
-background-size: 500px, 400px
-background-position: 10% 90%, 85% 90%
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Modos principais
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 - **--soft**: não reseta o índice ou o diretório de trabalho (modo seguro)
 - **--mixed (default)**: reseta o índice, mas não o diretório de trabalho (modo seguro)
 - **--hard**: reseta o índice e o diretório de trabalho (modo não seguro)
 
----
+![](img/git_reset_modes2.png), ![](img/git_reset_modes.png)
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
-### Exemplos
-
-**git reset**
-
-Reseta a *staging area* (retira os arquivos) para corresponder ao commit mais recente, sem modificar o *working directory*
+- Reseta a *staging area* (retira os arquivos) para corresponder ao commit mais recente, sem modificar o *working directory*
 
 **git reset test.txt**
 
@@ -230,13 +185,9 @@ Retira o test.txt da *staging area*, sem modificar o *working directory*
 
 Reseta a *staging area* e o *working directory* para corresponder ao commit mais recente. Todas as alterações no diretório são sobrescritas
 
----
+## 14. Desfazer
 
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Exemplos
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 **git reset <commit>**
 
@@ -246,51 +197,39 @@ Move a versão para o commit indicado, reseta a *staging area* para corresponder
 
 Move a versão para o commit indicado e reseta tanto a *staging area*, quanto o *working directory* para corresponder ao commit especificado
 
----
+## 14. Desfazer
 
-# 13. Desfazer: git revert e git reset
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Estado
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git status
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 On branch master
 nothing to commit, working tree clean
 ```
 
----
+## 14. Desfazer
 
-![](img/general_bloco_notas.png){fig-align='center'}
-background-size: 250px
-background-position: 50% 80%
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
-# 13. Desfazer: git revert e git reset
+Vamos editar o arquivo "test.txt"
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Vamos editar o arquivo "test.txt"
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 Acabo de inserir uma edição ao meu arquivo
 Viagens no tempo podem ser perigosas...
 ```
 
----
+![](img/general_bloco_notas.png){fig-align='center'}
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
-### Estado
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git status
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -300,33 +239,29 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
----
+## 14. Desfazer
 
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 ### Adicionar
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git add -Av
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 add 'test.txt'
 ```
 
----
+## 14. Desfazer
 
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 ### Estado
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git status
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 On branch master
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
@@ -335,34 +270,34 @@ Changes to be committed:
 
 ---
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 ### Remover do staged area
 
 ### Resetar
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git reset test.txt
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 Unstaged changes after reset:
 M	test.txt
 ```
 
 ---
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 ### Estado
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git status
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -374,32 +309,32 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ---
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 ### Ver o conteúdo do arquivo
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 cat test.txt
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 Acabo de inserir uma edição ao meu arquivo
 Viagens no tempo podem ser perigosas...
 ```
 
 ---
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 ### Histórico
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git log --oneline
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 fca02a2 (HEAD -> master) Revert "mod2 test.txt"
 f9f2e9c mod2 test.txt
 dcbd894 mod test.txt
@@ -408,41 +343,41 @@ dcbd894 mod test.txt
 
 ---
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 ### Adicionar
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git add -Av
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 add 'test.txt'
 ```
 
 ### Commitar
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git commit -m "mod3 test.txt"
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 [master 4b0c4e8] mod3 test.txt
  1 file changed, 2 insertions(+), 1 deletion(-)
 ```
 
 ---
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 ### Histórico
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git log --oneline
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 4b0c4e8 (HEAD -> master) mod3 test.txt
 fca02a2 Revert "mod2 test.txt"
 f9f2e9c mod2 test.txt
@@ -452,16 +387,16 @@ dcbd894 mod test.txt
 
 ---
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 ### Resetar
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git reset --hard f9f2e9c
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 HEAD is now at f9f2e9c mod2 test.txt
 ```
 
@@ -469,10 +404,10 @@ HEAD is now at f9f2e9c mod2 test.txt
 
 ### Histórico
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git log --oneline
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 f9f2e9c (HEAD -> master) mod2 test.txt
 dcbd894 mod test.txt
 8b33bc5 add test.txt
@@ -480,40 +415,40 @@ dcbd894 mod test.txt
 
 ---
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 ### Remover arquivo
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 rm test.txt
 ```
 
 ### Adicionar
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git add -Av
 ```
 
 ### Commitar
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git commit -m "rem text.txt"
 ```
 
 ---
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
 ### Histórico
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git log --oneline
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 6a417c5 (HEAD -> master) rem text.txt
 f9f2e9c mod2 test.txt
 dcbd894 mod test.txt
@@ -522,50 +457,26 @@ dcbd894 mod test.txt
 
 ---
 
-# 13. Desfazer: git revert e git reset
+## 14. Desfazer
 
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
+`git reset`:  desfaz um commit deletando o histórico (deletando commits)
 
-### Resetar
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git reset --hard f9f2e9c
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 HEAD is now at f9f2e9c mod2 test.txt
 ```
 
---
-
-### Histórico
-
-```{bash eval=FALSE}
+```{r eval=FALSE}
 git log --oneline
 ```
-```{bash eval=FALSE}
+```{r eval=FALSE}
 f9f2e9c (HEAD -> master) mod2 test.txt
 dcbd894 mod test.txt
 8b33bc5 add test.txt
 ```
 
----
-
-, inverse
 ![](img/gif_cat_ohh.gif)
-background-size: 600px
-background-position: 50% 50%
-
----
 
 ![](img/general_butterfly_effect.jpg)
-background-size: 600px
-background-position: 50% 95%
-
-# 13. Desfazer: git revert e git reset
-
-## Desfazendo operações no git
-
-### 1. **git revert**: desfaz um commit **preservando o histórico** (criando outro commit)
-
-### 2. **git reset**:  desfaz um commit **deletando o histórico** (deletando commits)
-

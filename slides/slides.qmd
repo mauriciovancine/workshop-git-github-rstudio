@@ -38,28 +38,29 @@ lang: pt-br
 2. Controle de versão
 3. git e GitHub 
 4. Detalhes do GitHub
-7. Configuração: `git config`
-6. Controle de versão na prática
-7. Iniciando localmente: `git init`
-8. Iniciando remotamente: `fork` e `git clone`
-9. Versionamento: `git status`, `git add` e `git commit`
+5. Criando um repositório
+6. Configuração: `git config`
+7. Controle de versão na prática
+8. Iniciando localmente: `git init`
+9. Iniciando remotamente: `fork` e `git clone`
+10. Versionamento: `git status`, `git add` e `git commit`
 :::
 :::
 
 ::: {.column width="50%"}
 ::: nonincremental
-
-10. Ignorando: `.gitignore`
-11. Histórico: `git log` e `git show`
-12. Diferença: `git diff`
-13. Desfazer: `git restore`, `git revert` e `git reset`
-14. Ramificações: `git branch`, `git switch` e `git merge`
-15. Remoto: `git remote`, `git push` e `git pull`
-16. GitHub: `Pull request`
-17. Interface gráfica do RStudio  
+11. Ignorando: `.gitignore`
+12. Histórico: `git log` e `git show`
+13. Diferença: `git diff`
+14. Desfazer: `git restore`, `git revert` e `git reset`
+15. Ramificações: `git branch`, `git switch` e `git merge`
+16. Remoto: `git remote`, `git push` e `git pull`
+17. GitHub: `Pull request`
+18. Interface gráfica do RStudio  
+19. Últimas palavras
+20. Mais informações
 :::
 :::
-
 :::
 
 ## IMPORTANTE!!!
@@ -327,6 +328,10 @@ Salvem ou recuperem essas informações!
 [Markdown](https://daringfireball.net/projects/markdown/), [Markdown Guide](https://www.markdownguide.org/)
 :::
 
+# 5. Criando um repositório
+
+## 5. Criando um repositório
+
 ## Prática 1
 
 **Criar uma página inicial para o perfil do GitHub**
@@ -350,15 +355,23 @@ Salvem ou recuperem essas informações!
 [Como criar um README para o seu perfil do GitHub](https://www.alura.com.br/artigos/como-criar-um-readme-para-seu-perfil-github?srsltid=AfmBOopGVNPqjqVMXQ42hTQpH0exadVwz6U8jsiiNDAyehD0k--sct7e)
 :::
 
-# 5. Configurações: RStudio, git, GitHub
+## Prática 2
 
-## 5. Configurações
+**Criar um repositório para o curso**
+
+1. Criem um repositório com o nome `teste`)
+1. Criem um arquivo `README.md` nesse repositório
+1. Preencham com algum detalhe do curso
+
+# 6. Configurações: RStudio, git, GitHub
+
+## 6. Configurações
 
 **RStudio**
 
 ![](img/rstudio.png){.absolute right=0 top=150}
 
-## 5. Configurações
+## 6. Configurações
 
 **RStudio**
 
@@ -368,7 +381,7 @@ Salvem ou recuperem essas informações!
 
 ![](img/rstudio_git_config01.png){.absolute width=80% right=0 top=200}
 
-## 5. Configurações
+## 6. Configurações
 
 **RStudio**
 
@@ -385,7 +398,7 @@ Salvem ou recuperem essas informações!
 
 ![](img/rstudio_git_config02.png){.absolute width=50% right=-100 top=180}
 
-## 5. Configurações
+## 6. Configurações
 
 **RStudio**
 
@@ -401,7 +414,7 @@ Chave SSH
 ![](img/github_brave.jpg){.absolute width=45% right=500 top=400}
 ![](img/general_key.png){.absolute width=13% right=800 top=500}
 
-## 5. Configurações
+## 6. Configurações
 
 **GitHub**
 
@@ -415,7 +428,7 @@ Chave SSH
 [Add ao GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 :::
 
-## 5. Configurações
+## 6. Configurações
 
 **GitHub**
 
@@ -431,7 +444,7 @@ Chave SSH
 [Add ao GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 :::
 
-## 5. Configurações
+## 6. Configurações
 
 **git**
 
@@ -453,9 +466,9 @@ $ git config --list
 
 # Agora sim, podemos começar o versionamento...
 
-# 6. Controle de versão na prática
+# 7. Controle de versão na prática
 
-## 6. Controle de versão na prática
+## 7. Controle de versão na prática
 
 **Duas formas de trabalhar com o git e GitHub**
 
@@ -468,25 +481,25 @@ $ git config --list
 ![](img/git_operation.png){.absolute width=52% right=250 top=260}
 ![](img/git_logo.png){.absolute width=20% right=70 top=570}
 
-## 6. Controle de versão na prática
+## 7. Controle de versão na prática
 
 ![](img/git_github_workflow.png){.absolute width=100% right=0 top=100}
 ![](img/git_folder_project.png){.absolute width=5% right=220 top=630}
 
-## 6. Controle de versão na prática
+## 7. Controle de versão na prática
 
 ![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
 
-## 6. Controle de versão na prática
+## 7. Controle de versão na prática
 
 ![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
 ![](img/github_logo.png){.absolute width=30% right=700 top=150}
 ![](img/git_folder_project.png){.absolute width=15% right=780 top=520}
 ![](img/git_logo.png){.absolute width=25% right=-50 top=550}
 
-# 7. Iniciando localmente
+# 8. Iniciando localmente
 
-## 7. Iniciando localmente
+## 8. Iniciando localmente
   
 - `git init`: inicia o versionamento de um repositório local
 
@@ -497,26 +510,26 @@ $ git config --list
 
 <br>
 
-1. Criem uma pasta qualquer 
-2. Abram o RStudio e dentro desta pasta criem um `script.R`
-3. Selecionem o caminho desta pasta
-4. Abram o `Terminal` do RStudio
-5. No `Terminal`, rodem: `cd caminho/pasta`
-6. No `Terminal`, rodem: `git init`
+1. Criem uma pasta chamada: `teste_local` 
+1. Abram o RStudio
+1. Selecionem o caminho desta pasta
+1. Mudem o diretório para esta pasta (`setwd()`)
+1. Dentro desta pasta criem um `script.R`
 
 ## Prática 2
 
-<br>
+1. Abram o `Terminal` do RStudio
+1. No `Terminal`, rodem: `cd caminho/pasta`
+1. No `Terminal`, rodem: `git init`
+1. No `Terminal`, rodem: `git add .`
+1. No `Terminal`, rodem: `git commit -m 'add script.R'`
+1. Deletem esse script, inclusive da lixeira
+1. No `Terminal`, rodem: `git restore .`
+1. Testemunhem o poder do git...
 
-7. No `Terminal`, rodem: `git add .`
-8. No `Terminal`, rodem: `git commit -m 'add script.R'`
-9. Deletem esse script, inclusive da lixeira
-10. No `Terminal`, rodem: `git restore .`
-11. Testemunhem o poder do git...
+# 9. Iniciando remotamente
 
-# 8. Iniciando remotamente
-
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 **Fork**: cópia de um repositório remoto para o seu GitHub
 
@@ -532,13 +545,13 @@ Forken o repositório do workshop
 [https://github.com/mauriciovancine/workshop-git-github-rstudio](https://github.com/mauriciovancine/workshop-git-github-rstudio)
 :::
 
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfado") para o GitHub de vocês
 
 ![](img/gif_fork.gif){.absolute width=70% right=200 top=220}
 
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 - `git clone`: faz o download de um repositório remoto (e.g. GitHub) para o seu computador (repositório local)
 
@@ -548,7 +561,7 @@ Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfad
 [Git 03: Git Clone - Work Locally On Your Computer](https://www.neonscience.org/resources/learning-hub/tutorials/github-git-clone)
 :::
 
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 Primeiro, vamos **criar uma pasta** chamada `github`
 
@@ -561,19 +574,19 @@ Primeiro, vamos **criar uma pasta** chamada `github`
 
 ![](img/diretorio.png){.absolute width=100% right=30 top=400}
 
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 1. **Download diretamente** do repositório no formato **.zip**
 
 ![](img/github_clone_zip.png){.absolute width=100% right=30 top=210}
 
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 2. Usando o **terminal** para clonar pelo **SSH** (configurado anteriormente)
 
 ![](img/github_clone_git.png){.absolute width=100% right=30 top=210}
 
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 2. Usando o **terminal** para clonar pelo **SSH** (configurado anteriormente)
 
@@ -583,13 +596,13 @@ $ git clone git@github.com:mauriciovancine/workshop-git-github-rstudio.git
 
 ![](img/git_clone_terminal.png){.absolute width=50% right=260 top=350}
 
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 3. Usando o **RStudio** para clonar pelo **SSH** (configurado anteriormente)
 
 ![](img/git_rstudio.png){.absolute width=50% right=200 top=210}
 
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 Criar um **Projeto R** com controle de versão
 
@@ -597,7 +610,7 @@ Criar um **Projeto R** com controle de versão
 
 ![](img/rstudio_git_create01.png){.absolute width=100% right=20 top=210}
 
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 Escolher **clonar repositório** do GitHub
 
@@ -605,7 +618,7 @@ Escolher **clonar repositório** do GitHub
 
 ![](img/rstudio_git_create02.png){.absolute width=100% right=20 top=210}
 
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 Preencher com dados do repositório do **GitHub**
 
@@ -613,7 +626,7 @@ Preencher com dados do repositório do **GitHub**
 
 ![](img/rstudio_git_create03.png){.absolute width=100% right=20 top=210}
 
-## 8. Iniciando remotamente
+## 9. Iniciando remotamente
 
 Preencher:
 
@@ -628,9 +641,9 @@ Preencher:
 #
 ![](img/break-time01.jpg){fig-align='center'}
 
-# 9. Versionamento
+# 10. Versionamento
 
-## 9. Versionamento
+## 10. Versionamento
 
 ![](img/git_add_commit.png){.absolute width=90% right=20 top=90}
 
@@ -639,7 +652,7 @@ Preencher:
 ![](img/git_folder_project.png){.absolute width=15% right=990 top=500}
 ![](img/git_logo.png){.absolute width=20% right=-210 top=530}
 
-## 9. Versionamento
+## 10. Versionamento
 
 **Comandos git** para o fluxo de trabalho dos repositórios
 
@@ -648,7 +661,7 @@ Preencher:
 ![](img/github_logo.png){.absolute width=20% right=-220 top=350}
 ![](img/git_logo.png){.absolute width=20% right=450 top=610}
 
-## 9. Versionamento
+## 10. Versionamento
 
 Fluxo do versionamento
 
@@ -658,7 +671,7 @@ Fluxo do versionamento
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 Fluxo do versionamento
 
@@ -670,7 +683,7 @@ Fluxo do versionamento
 
 ![](img/git_files_states.png){.absolute width=100% right=30 top=320}
 
-## 9. Versionamento
+## 10. Versionamento
 
 Fluxo do versionamento
 
@@ -682,7 +695,7 @@ Fluxo do versionamento
 
 ![](img/git_trees.png){.absolute width=60% right=230 top=450}
 
-## 9. Versionamento
+## 10. Versionamento
 
 Fluxo do versionamento usando fotos
 
@@ -693,7 +706,7 @@ Fluxo do versionamento usando fotos
 [IX Congresso de Herpetologia](https://9cbh.galoa.com.br)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 Fluxo do versionamento usando fotos
 
@@ -705,7 +718,7 @@ Fluxo do versionamento usando fotos
 [IX Congresso de Herpetologia](https://9cbh.galoa.com.br)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 Fluxo do versionamento usando fotos
 
@@ -720,7 +733,7 @@ Fluxo do versionamento usando fotos
 
 # Mas como o git sabe quais arquivos foram alterados?
 
-## 9. Versionamento
+## 10. Versionamento
 
 Rastreamento dos arquivos no diretório de trabalho
 
@@ -735,7 +748,7 @@ Rastreamento dos arquivos no diretório de trabalho
 [Git — Os quatro estados](https://medium.com/@devmasterteam/git-ebook-8808f7301054)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 Quatro estados de alteração dos arquivos
 
@@ -752,7 +765,7 @@ Quatro estados de alteração dos arquivos
 [Git — Os quatro estados](https://medium.com/@devmasterteam/git-ebook-8808f7301054)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 **IMPORTANTE!**
 
@@ -772,7 +785,7 @@ Quatro estados de alteração dos arquivos
 
 ------------------------------------------------------------
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git status`: mostra o estado do repositório
 
@@ -789,7 +802,7 @@ $ git status
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 Vamos criar um arquivo no diretório
 
@@ -801,7 +814,7 @@ $ touch test.txt
 
 ![](img/general_bloco_notas.png){fig-align='center'}
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git status`: mostra o estado do repositório
 
@@ -822,7 +835,7 @@ $ git status
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git add`: adiciona mudanças após edições (**staging area**) [Index]
 
@@ -836,7 +849,7 @@ $ git add test.txt
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git add`: adiciona mudanças após edições (**staging area**) [Index]
 
@@ -852,7 +865,7 @@ $ git add test.txt -v
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git add`: adiciona mudanças após edições (**staging area**) [Index]
 
@@ -868,7 +881,7 @@ $ git add -Av
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git add`: adiciona mudanças após edições (**staging area**) [Index]
 
@@ -882,7 +895,7 @@ $ git add .
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git status`: mostra o estado do repositório
 
@@ -901,7 +914,7 @@ $ git status
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git commit`: registra as alterações da **staging area** [HEAD]
 
@@ -918,7 +931,7 @@ $ git status
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git commit`: registra as alterações da **staging area** [HEAD]
 
@@ -936,7 +949,7 @@ $ git commit -m "add test.txt"
 [Guia dos principais comandos do GIT](https://blog.dbins.com.br/guia-dos-principais-comandos-do-git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git status`: mostra o estado do repositório
 
@@ -953,7 +966,7 @@ $ git status
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 Fluxo do versionamento
 
@@ -965,7 +978,7 @@ Fluxo do versionamento
 
 ![](img/git_files_states.png){.absolute width=100% right=30 top=320}
 
-## 9. Versionamento
+## 10. Versionamento
 
 Usando a aba **Files** do RStudio, vamos abrir e editar o arquivo **test.txt**
 
@@ -975,7 +988,7 @@ Acabo de inserir uma edição ao meu arquivo
 
 ![](img/general_bloco_notas.png){fig-align='center'}
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git status`: mostra o estado do repositório
 
@@ -996,7 +1009,7 @@ $ git status
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git add`: adiciona mudanças após edições (*staging area*) [Index]
 
@@ -1008,7 +1021,7 @@ $ git add -Av
 
 ![](img/git_states_pro.png){.absolute width=60% right=220 top=420}
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git status`: mostra o estado do repositório
 
@@ -1023,7 +1036,7 @@ $ git status
 
 ![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git commit`: registra as alterações da **staging area** [HEAD]
 
@@ -1036,7 +1049,7 @@ $ git commit -m "mod test.txt"
 
 ![](img/git-add-commit.png){.absolute width=50% right=200 top=400}
 
-## 9. Versionamento
+## 10. Versionamento
 
 `git status`: mostra o estado do repositório
 
@@ -1049,7 +1062,7 @@ $ git status
 
 ![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
 
-## 9. Versionamento
+## 10. Versionamento
 
 **ATENÇÃO!**
 
@@ -1064,7 +1077,7 @@ $ git status
 [Como escrever mensagens de commits no Git](https://www.lucascaton.com/pt-BR/2017/10/16/como-escrever-mensagens-de-commits-no-git)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 **ATENÇÃO!**
 
@@ -1079,7 +1092,7 @@ $ git status
 [3 dicas práticas para um bom commit](https://medium.com/@rafaelnai/3-dicas-pr%C3%A1ticas-para-um-bom-commit-673da001e1d1)
 :::
 
-## 9. Versionamento
+## 10. Versionamento
 
 Fluxo do versionamento
 
@@ -1091,7 +1104,7 @@ Fluxo do versionamento
 
 ![](img/git_files_states.png){.absolute width=100% right=30 top=320}
 
-## 9. Versionamento
+## 10. Versionamento
 
 **git**
 
@@ -1105,7 +1118,7 @@ Fluxo do versionamento
 # 
 ![](img/gitignore.jpg){fig-align='center'}
 
-## 10. Ignorando
+## 11. Ignorando
 
 `.gitignore`
 
@@ -1121,7 +1134,7 @@ Fluxo do versionamento
 
 ![](img/gitignore.png){fig-align='center'}
 
-## 10. Ignorando
+## 11. Ignorando
 
 `.gitignore`
 
@@ -1131,7 +1144,7 @@ Fluxo do versionamento
 [The .gitignore File - Complete Guide with Examples](https://blog.yarsalabs.com/gitignore-file-guide-with-examples/)
 :::
 
-## 10. Ignorando
+## 11. Ignorando
 
 Arquivo `.gitignore`
 
@@ -1155,7 +1168,7 @@ temp/
 
 # Vamos ver como acessar todo o histórico de commits do git?
 
-## 11. Histórico
+## 12. Histórico
 
 `git log`: histórico dos commits
 
@@ -1170,7 +1183,7 @@ temp/
 
 ![](img/git_log.png){.absolute width=50% right=-30 top=200}
 
-## 11. Histórico
+## 12. Histórico
 
 **hash**
 
@@ -1190,7 +1203,7 @@ temp/
 [Guia dos principais comandos do GIT](https://blog.dbins.com.br/guia-dos-principais-comandos-do-git)
 :::
 
-## 11. Histórico
+## 12. Histórico
 
 **hash curto**
 
@@ -1204,7 +1217,7 @@ temp/
   - Completo:  
   `3a4f9b7c19e2f4e1a0de9b7e5c6aebd7d5d85792`
 
-## 11. Histórico
+## 12. Histórico
 
 **HEAD**
 
@@ -1220,7 +1233,7 @@ temp/
 # * commit A
 ```
 
-## 11. Histórico
+## 12. Histórico
 
 `git log`: histórico dos commits
 
@@ -1246,7 +1259,7 @@ $ git log
 #     first commit
 ```
 
-## 11. Histórico
+## 12. Histórico
 
 `git log [arquivo]`: histórico dos commits para arquivos
 
@@ -1266,7 +1279,7 @@ $ git log test.txt
 #     add test.txt
 ```
 
-## 11. Histórico
+## 12. Histórico
 
 `git log --oneline`: histórico dos commits simplificado
 
@@ -1278,7 +1291,7 @@ $ git log --oneline
 # 50c520f first commit
 ```
 
-## 11. Histórico
+## 12. Histórico
 
 `git log --graph`: histórico dos commits em grafo
 
@@ -1304,7 +1317,7 @@ $ git log --graph
 #       first commit
 ```
 
-## 11. Histórico
+## 12. Histórico
 
 `git log --grep`: faz uma busca no histórico dos commits
 
@@ -1318,7 +1331,7 @@ $ git log --grep="first commit"
 #     first commit
 ```
 
-## 11. Histórico
+## 12. Histórico
 
 `git log --author`: filtra o histórico dos commits por autor
 
@@ -1342,7 +1355,7 @@ $ git log --author="mauricio"
 # Date:   Thu May 29 09:34:13 2025 -0300
 ```
 
-## 11. Histórico
+## 12. Histórico
 
 `git log`: cheatsheet
 
@@ -1352,7 +1365,7 @@ $ git log --author="mauricio"
 [Git Log Cheatsheet](https://elijahmanor.com/blog/git-log)
 :::
 
-## 11. Histórico
+## 12. Histórico
 
 `git show`: detalhes de um commit
 
@@ -1374,7 +1387,7 @@ $ git show
 # \ No newline at end of file
 ```
 
-## 11. Histórico
+## 12. Histórico
 
 `git show [hash]`: detalhes de um commit específico
 
@@ -1400,7 +1413,7 @@ $ git show 5a164d5
 # index 0000000..e69de29
 ```
 
-## 11. Histórico
+## 12. Histórico
 
 `git show [arquivo]`: detalhes de um arquivo específico
 
@@ -1421,7 +1434,7 @@ $ git show test.txt
 # \ No newline at end of file
 ```
 
-## 12. Diferenças
+## 13. Diferenças
 
 `git diff`: diferenças realizadas em um repositório
 
@@ -1431,7 +1444,7 @@ $ git show test.txt
 [Work with Your History in Git](https://trailhead.salesforce.com/pt-BR/content/learn/modules/git-and-git-hub-basics/work-with-your-history-in-git)
 :::
 
-## 12. Diferenças
+## 13. Diferenças
 
 `git diff`: diferenças entre **working directory** e **staging area**
 
@@ -1444,7 +1457,7 @@ git diff
 
 ![](img/general_bloco_notas.png){fig-align='center'}
 
-## 12. Diferenças
+## 13. Diferenças
 
 `git diff`: diferenças entre **working directory** e **staging area**
 
@@ -1458,7 +1471,7 @@ echo "Nova linha de código" >> test.txt
 
 ![](img/general_bloco_notas.png){fig-align='center'}
 
-## 12. Diferenças
+## 13. Diferenças
 
 `git diff`: diferenças entre **working directory** e **staging area**
 
@@ -1483,7 +1496,7 @@ $ git diff
 - `+`: linhas adicionadas
 :::
 
-## 12. Diferenças
+## 13. Diferenças
 
 `git diff --staged`: diferenças entre **staging area** e **repository**
 
@@ -1493,7 +1506,7 @@ $ git diff --staged
 
 **Observação**: Não retornou nenhuma diferença, pois não adicionamos ao staging area
 
-## 12. Diferenças
+## 13. Diferenças
 
 `git diff --staged`: diferenças entre **staging area** e **repository**
 
@@ -1515,7 +1528,7 @@ $ git diff --staged
 # +Nova linha de código
 ```
 
-## 12. Diferenças
+## 13. Diferenças
 
 `git diff HEAD`: diferenças entre **working directory** e **repository**
 
@@ -1532,7 +1545,7 @@ $ git diff HEAD
 # +Nova linha de código
 ```
 
-## 12. Diferenças
+## 13. Diferenças
 
 `git diff [arquivo]`: diferenças entre versões do mesmo arquivo
 
@@ -1550,7 +1563,7 @@ $ git diff test.txt
 # +Nova linha de código
 ```
 
-## 12. Diferenças
+## 13. Diferenças
 
 `git diff [hash1] [hash 2]`: diferenças entre commits
 
@@ -1565,7 +1578,7 @@ $ git diff 5a164d5 50c520f
 # index e69de29..0000000
 ```
 
-## 12. Diferenças
+## 13. Diferenças
 
 `git diff 5a164d5 50c520f --stat`: diferenças em resumo, sem mostrar o conteúdo alterado
 
@@ -1588,45 +1601,21 @@ $ git diff 5a164d5 50c520f --stat
 
 
 
----
 
+-------------------------------------------------------
 
+# 
 ![](img/git_branches.png)
-background-size: 900px
 
----
+# 15. Ramificações: git branch, git switch e git merge
 
-name: 14.
-
-class: inverse, center, middle
-
-# 14. Ramificações: git branch, git switch e git merge
-
-.footnote[
-
-[Slide de conteúdo](#contents-slide)
-
-]
-
----
+`git branch`: cria uma ramificação (**linha independente**) de desenvolvimento
 
 ![](img/git_branch.png)
-background-size: 600px
-background-position: 50% 70%
 
-# 14. Ramificações: git branch, git switch e git merge
+## 15. Ramificações
 
-## **git branch**: cria uma ramificação (**linha independente**) de desenvolvimento
-
----
-
-![](img/git_branch.png)
-background-size: 500px
-background-position: 50% 92%
-
-# 14. Ramificações: git branch, git switch e git merge
-
-## **git branch**: lista os branchs e verifica o branch de edição
+`git branch`: lista os branchs e verifica o branch de edição
 
 ```{bash eval=FALSE}
 git branch
@@ -1641,9 +1630,9 @@ git branch
 background-size: 450px
 background-position: 50% 95%
 
-# 14. Ramificações: git branch, git switch e git merge
+## 15. Ramificações
 
-## **git branch**: cria uma ramificação
+`git branch`: cria uma ramificação
 
 ```{bash eval=FALSE}
 git branch branch-1
@@ -1662,7 +1651,7 @@ branch-1
 background-size: 700px
 background-position: 50% 85%
 
-# 14. Ramificações: git branch, git switch e git merge
+## 15. Ramificações
 
 ## **git switch**: troca a raficação de edição
 
@@ -1679,9 +1668,9 @@ Switched to branch 'branch-1'
 background-size: 500px
 background-position: 50% 90%
 
-# 14. Ramificações: git branch, git switch e git merge
+## 15. Ramificações
 
-## **git branch**: lista os branchs e verifica o branch de edição
+`git branch`: lista os branchs e verifica o branch de edição
 
 ```{bash eval=FALSE}
 git branch
@@ -1697,7 +1686,7 @@ master
 background-size: 250px
 background-position: 50% 80%
 
-# 14. Ramificações: git branch, git switch e git merge
+## 15. Ramificações
 
 ## Vamos criar um arquivo no diretório
 
@@ -1714,7 +1703,7 @@ git commit -m "add teste_branch1.txt"
 background-size: 500px
 background-position: 50% 70%
 
-# 14. Ramificações: git branch, git switch e git merge
+## 15. Ramificações
 
 ## **switch**: troca a raficação de edição
 
@@ -1728,7 +1717,7 @@ git switch master
 background-size: 800px
 background-position: 50% 70%
 
-# 14. Ramificações: git branch, git switch e git merge
+## 15. Ramificações
 
 ## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
 
@@ -1738,7 +1727,7 @@ background-position: 50% 70%
 background-size: 500px
 background-position: 50% 90%
 
-# 14. Ramificações: git branch, git switch e git merge
+## 15. Ramificações
 
 ## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
 
@@ -1759,7 +1748,7 @@ Fast-forward
 background-size: 500px
 background-position: 50% 90%
 
-# 14. Ramificações: git branch, git switch e git merge
+## 15. Ramificações
 
 ## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
 
@@ -1779,7 +1768,7 @@ dcbd894 mod test.txt
 background-size: 800px
 background-position: 50% 60%
 
-# 14. Ramificações: git branch, git switch e git merge
+## 15. Ramificações
 
 ## CUIDADO!
 
@@ -1789,7 +1778,7 @@ background-position: 50% 60%
 background-size: 500px
 background-position: 50% 70%
 
-# 14. Ramificações: git branch, git switch e git merge
+## 15. Ramificações
 
 ## CUIDADO!
 
@@ -1799,27 +1788,11 @@ background-position: 50% 70%
 ![](img/git_push_pull.svg)
 background-size: 600px
 
----
-
-name: 15.
-
-class: inverse, center, middle
-
-# 15. Remoto: git remote, git push e git pull
-
-.footnote[
-
-[Slide de conteúdo](#contents-slide)
-
-]
-
----
+# 16. Remoto: git remote, git push e git pull
 
 ![](img/git_remote.png)
-background-size: 400px
-background-position: 50% 90%
 
-# 15. Remoto: git remote, git push e git pull
+## 16. Remoto
 
 ## **git remote**: exibe os repositórios remotos (GitHub)
 
@@ -1837,11 +1810,11 @@ origin	git@github.com:mauriciovancine/short-course-git-github-rstudio.git (push)
 background-size: 400px
 background-position: 50% 90%
 
-# 15. Remoto: git remote, git push e git pull
+## 16. Remoto
 
-## **git remote add**: faz a ligação com um repositório remoto (GitHub)
+`git remote add`: faz a ligação com um repositório remoto (GitHub)
 
-### **Observação**: Usar o SSH para não precisar digitar sua senha!
+- **Observação**: Usar o SSH para não precisar digitar sua senha!
 
 ```{bash eval=FALSE}
 git remote add origin git@github.com:mauriciovancine/short-course-git-github-rstudio.git
@@ -1853,9 +1826,9 @@ git remote add origin git@github.com:mauriciovancine/short-course-git-github-rst
 background-size: 800px
 background-position: 50% 60%
 
-# 15. Remoto: git remote, git push e git pull
+## 16. Remoto
 
-## **git push**: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
+`git push`: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
 
 ---
 
@@ -1863,15 +1836,15 @@ background-position: 50% 60%
 background-size: 700px
 background-position: 50% 90%
 
-# 15. Remoto: git remote, git push e git pull
+## 16. Remoto
 
-## **git push**: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
+`git push`: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
 
 ---
 
-# 15. Remoto: git remote, git push e git pull
+## 16. Remoto
 
-## **git push**: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
+`git push`: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
 
 ```{bash eval=FALSE}
 git push -u origin master
@@ -1894,7 +1867,7 @@ To github.com:mauriciovancine/course-geospatial-data-r.git
 background-size: 500px
 background-position: 50% 60%
 
-# 15. Remoto: git remote, git push e git pull
+## 16. Remoto
 
 ## Em caso de incêndio...
 
@@ -1904,7 +1877,7 @@ background-position: 50% 60%
 background-size: 500px, 450px
 background-position: 15% 70%, 90% 70%
 
-# 15. Remoto: git remote, git push e git pull
+## 16. Remoto
 
 ## CUIDADO!
 
@@ -1914,7 +1887,7 @@ background-position: 15% 70%, 90% 70%
 background-size: 800px
 background-position: 50% 60%
 
-# 15. Remoto: git remote, git push e git pull
+## 16. Remoto
 
 ## **git pull**: puxa uma nova versão do repositório remoto (GitHub) para o repositório local
 
@@ -1987,328 +1960,172 @@ background-position: 50% 60%
 
 ## **Pull Request**: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
 
----
-
-name: 17.
-
-class: inverse, center, middle
-
-# 17. Detalhes do respositório do GitHub
-
-.footnote[
-
-[Slide de conteúdo](#contents-slide)
-
-]
-
----
-
-![](img/github_repository_details.png)
-background-size: 900px
-background-position: 50% 80%
-
-# 17. Detalhes do respositório do GitHub
-
-## Vamos detalhar alguns pontos dos repositórios no GitHub
-
-<br>
-
-.center[https://github.com/mauriciovancine/short-course-git-github-rstudio]
-
----
-
-name: 18.
-
-class: inverse, center, middle
-
 # 18. Interface Gráfica do RStudio
 
-.footnote[
+## Agradecimentos
 
-[Slide de conteúdo](#contents-slide)
+Agradecimento à [Beatriz Milz](https://beatrizmilz.com/) pelas figuras ~~surrupiadas~~ (eu pedi...)
 
-]
+![](img/bea.jpg){fig-align='center'}
 
----
+## 18. Interface Gráfica do RStudio
 
-class: inverse, center, middle
-
-# Agradecimento à [Beatriz Milz](https://beatrizmilz.com/) pelas figuras ~~surrupiadas~~ (eu pedi kkk)
-
----
-
-![](img/rstudio_git_pane01.png)
-background-size: 700px
-background-position: 50% 80%
-
-# 18. Interface Gráfica do RStudio
-
-## Git Panel
+**Git Panel**
 
 - RStudio tem um **cliente Git** na aba "Git"
-
 - Esse painel aparece em **projetos** que estejam **versionados com git**
 
----
+![](img/rstudio_git_pane01.png){fig-align='center'}
 
-![](img/rstudio_git_pane02.png)
-background-size: 800px
-background-position: 50% 60%
 
-# 18. Interface Gráfica do RStudio
+## 18. Interface Gráfica do RStudio
 
-## Git Panel - Detalhes
+**Git Panel - Detalhes**
 
----
+![](img/rstudio_git_pane02.png){fig-align='center'}
 
-![](img/rstudio_git_pane03.png)
-background-size: 800px
-background-position: 50% 60%
+## 18. Interface Gráfica do RStudio
 
-# 18. Interface Gráfica do RStudio
+**Git Panel - Branches**
 
-## Git Panel - Branches
+![](img/rstudio_git_pane03.png){fig-align='center'}
 
----
+## 18. Interface Gráfica do RStudio
 
-![](img/rstudio_git_pane04.png)
-background-size: 800px
-background-position: 50% 60%
+**Git Panel - Diff - Changes: Revisar mudanças**
 
-# 18. Interface Gráfica do RStudio
+![](img/rstudio_git_pane04.png){fig-align='center'}
 
-## Git Panel - Diff - Changes: Revisar mudanças
 
----
+## 18. Interface Gráfica do RStudio
 
-![](img/rstudio_git_pane05.png)
-background-size: 800px
-background-position: 50% 60%
+**Git Panel - Diff - History: Histórico de mudanças**
 
-# 18. Interface Gráfica do RStudio
+![](img/rstudio_git_pane05.png){fig-align='center'}
 
-## Git Panel - Diff - History: Histórico de mudanças
+## 18. Interface Gráfica do RStudio
 
----
+**Git pane - Staged**
 
-![](img/rstudio_git_pane06.png)
-background-size: 800px
-background-position: 50% 60%
+![](img/rstudio_git_pane06.png){fig-align='center'}
 
-# 18. Interface Gráfica do RStudio
+## 18. Interface Gráfica do RStudio
 
-## Git pane - Staged
+**Git pane - Staged e File status**
 
----
+![](img/rstudio_git_status.png){fig-align='center'}
+![](img/rstudio_git_pane06.png){fig-align='center'}
 
-![](img/rstudio_git_status.png),![](img/rstudio_git_pane06.png)
-background-size: 250px, 800px
-background-position: 92% 20%,50% 60%
+## 18. Interface Gráfica do RStudio
 
-# 18. Interface Gráfica do RStudio
+**Git pane - Commit**
 
-## Git pane - Staged e File status
+![](img/rstudio_git_pane07.png){fig-align='center'}
 
----
+## 18. Interface Gráfica do RStudio
 
-![](img/rstudio_git_pane07.png)
-background-size: 800px
-background-position: 50% 60%
+**Git pane - Commit**
 
-# 18. Interface Gráfica do RStudio
+![](img/rstudio_git_pane08.png){fig-align='center'}
 
-## Git pane - Commit
+## 18. Interface Gráfica do RStudio
 
----
+**Git pane - Push e Pull**
 
-![](img/rstudio_git_pane08.png)
-background-size: 800px
-background-position: 50% 60%
-
-# 18. Interface Gráfica do RStudio
-
-## Git pane - Commit
-
----
-
-![](img/rstudio_git_pane09.png)
-background-size: 1000px
-background-position: 50% 60%
-
-# 18. Interface Gráfica do RStudio
-
-## Git pane - Push e Pull
-
----
-
-name: 19.
-
-, inverse, middle, center
+![](img/rstudio_git_pane09.png){fig-align='center'}
 
 # 19. Últimas palavras
 
-.footnote[
+#
+![](img/general_make_impossible.jpeg){fig-align='center'}
 
-[Slide de conteúdo](#contents-slide)
+#
+![](img/gif_bugcat_error.gif){fig-align='center'}
 
-]
+#
+![](img/gif_bugcat_sad.gif){fig-align='center'}
 
----
-
-
-![](img/general_make_impossible.jpeg)
-background-size: 600px
-background-position: 50% 40%
-
----
-
-
-![](img/gif_bugcat_error.gif)
-background-size: 800px
-background-position: 50% 40%
-
-![](img/gif_bugcat_sad.gif)
-background-size: 800px
-background-position: 50% 50%
-
-
-![](img/cheatsheet_git.jpg)
-background-size: 350px
-background-position: 50% 55%
+#
+![](img/cheatsheet_git.jpg){fig-align='center'}
 
 # 20. Mais informações
 
-## Git Cheat Sheets
+## 20. Mais informações
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+**Git Cheat Sheets**
 
-[*] https://github.github.com/training-kit/downloads/pt_BR/github-git-cheat-sheet.pdf
+[](https://github.github.com/training-kit/downloads/pt_BR/github-git-cheat-sheet.pdf)
 
----
+## 20. Mais informações
 
-![](img/package_usethis.png)
-background-size: 250px
-background-position: 50% 85%
+**usethis**
 
-# 20. Mais informações
-
-## Pacote [usethis](https://usethis.r-lib.org/)
-
-### Comandos direto no R para criar e versionar repositórios
+Comandos direto no R para criar e versionar repositórios
 
 ```{r eval=FALSE}
 install.packages("usethis")
 devtools::install_github("r-lib/usethis")
 ```
 
----
+![](img/package_usethis.png){fig-align='center'}
 
-# 20. Mais informações
+:::footnoote
+[usethis](https://usethis.r-lib.org/)
+:::
 
-## Livros
+## 20. Mais informações
 
-### [Pro Git](https://git-scm.com/book/en/v2) - Scott Chacon e Ben Straub
+**Livros**
 
-### [Beginning Git and GitHub](https://www.amazon.com.br/Beginning-Git-GitHub-Comprehensive-Management/dp/1484253124) - Mariot Tsitoara
+- [Pro Git](https://git-scm.com/book/en/v2) - Scott Chacon e Ben Straub
+- [Beginning Git and GitHub](https://www.amazon.com.br/Beginning-Git-GitHub-Comprehensive-Management/dp/1484253124) - Mariot Tsitoara
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/) - Jenny Bryan
+- [Zen do R](https://curso-r.github.io/zen-do-r/index.html) - Caio Lente + Curso-R
 
-### [Happy Git and GitHub for the useR](https://happygitwithr.com/) - Jenny Bryan
+## 20. Mais informações
 
-### [Zen do R](https://curso-r.github.io/zen-do-r/index.html) - Caio Lente + Curso-R
+**Material**
 
----
+- [Primeiros passos utilizando o Git e GitHub no RStudio](https://beatrizmilz.github.io/RLadies-Git-RStudio-2019) - Beatriz Milz
+- [Git e GitHub no RStudio](https://beatrizmilz.com/git_rstudio.html) - Beatriz Milz
+- [Torne-se um guru do git](https://www.atlassian.com/br/git/tutorials)
+- [RStudio e Github no dia a dia](https://blog.curso-r.com/posts/2017-07-17-rstudio-e-github/)
 
-# 20. Mais informações
+## 20. Mais informações
 
-## Material
+**Material**
 
-### [Primeiros passos utilizando o Git e GitHub no RStudio](https://beatrizmilz.github.io/RLadies-Git-RStudio-2019) - Beatriz Milz
+- [Oh Shit, Git!?!](https://ohshitgit.com/pt_BR) - Katie Sylor-Miller
+- [Dangit, Git!?!](https://dangitgit.com/pt_BR) - Katie Sylor-Miller
+- [Version Control with GitHub](https://www.neonscience.org/resources/learning-hub/tutorials/version-control-github)
+- [Git Cheat Sheet – 50 Git Commands You Should Know](https://www.freecodecamp.org/news/git-cheat-sheet/)
 
-### [Git e GitHub no RStudio](https://beatrizmilz.com/git_rstudio.html) - Beatriz Milz
+## 20. Mais informações
 
-### [Torne-se um guru do git](https://www.atlassian.com/br/git/tutorials)
-
-### [RStudio e Github no dia a dia](https://blog.curso-r.com/posts/2017-07-17-rstudio-e-github/)
-
----
-
-# 20. Mais informações
-
-## Material
-
-### [Oh Shit, Git!?!](https://ohshitgit.com/pt_BR) - Katie Sylor-Miller
-
-### [Dangit, Git!?!](https://dangitgit.com/pt_BR) - Katie Sylor-Miller
-
-### [Version Control with GitHub](https://www.neonscience.org/resources/learning-hub/tutorials/version-control-github)
-
-### [Git Cheat Sheet – 50 Git Commands You Should Know](https://www.freecodecamp.org/news/git-cheat-sheet/)
-
----
-
-# 20. Mais informações
-
-## Curso de Git - Bóson Treinamentos
+**Curso de Git - Bóson Treinamentos**
 
 <p align="center">
 <iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/YnVnFanIAzU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </p>
 
----
+## 20. Mais informações
 
-# 20. Mais informações
-
-## Git e Github para iniciantes - Willian Justen de Vasconcellos
+**Git e Github para iniciantes - Willian Justen de Vasconcellos**
 
 <p align="center">
 <iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/IBClN6VpJDw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </p>
 
----
+## 20. Mais informações
 
-# 20. Mais informações
-
-## Curso de Git -  Professor Aquino
+**Curso de Git -  Professor Aquino**
 
 <p align="center">
 <iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/udw3J335ZHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </p>
-
-
-
-# Dúvidas?
-
-# Material de estudo
-
-## Livros
-
-- [ggplot2 (2016)](https://ggplot2.tidyverse.org/)
-
-- [R Graphics Cookbook (2018)](http://www.cookbook-r.com/Graphs/)
-
-- [R for Data Science (2017)](https://r4ds.had.co.nz/)
-
-- [Data Visualization with R (2018)](https://rkabacoff.github.io/datavis/)
-
-- [Fundamentals of Data Visualization (2019)](https://serialmentor.com/dataviz/)
-
-- [Interactive web-based data visualization with R, plotly, and shiny (2019)](https://plotly-r.com/)
-
-## Sites
-
-- [ggplot2: Reference](https://ggplot2.tidyverse.org/reference/)
-
-- [R Graph Gallery](https://www.r-graph-gallery.com/)
-
-- [from Data to Viz](https://www.data-to-viz.com/)
-
-- [The Data Visualisation Catalogue](https://datavizcatalogue.com/index.html)
-
-- [plotly](https://plotly.com)
-
-- [Statistical tools for high-throughput data analysis (STHDA)](http://www.sthda.com/english/)
 
 ## Muito obrigado!
 
@@ -2327,7 +2144,7 @@ devtools::install_github("r-lib/usethis")
 **Contato**:
 
 [mauricio.vancine@gmail.com]()
-[mauriciovancine.github.io](https://mauriciovancine.github.io/)
+[mauriciovancine.github.io](https://mauriciovancine.github.io)
 
 <center>
 <img src="img/gif_frogs.gif" style="width:75%"/>
