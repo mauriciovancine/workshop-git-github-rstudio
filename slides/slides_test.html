@@ -207,39 +207,138 @@
   <p class="date">5 de junho de 2025</p>
 </section>
 <section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><strong>ATENÇÃO!</strong></p>
-<ul>
-<li>As mensagens no commit são fundamentais</li>
-<li>Devem ser curtas e indicar as mudanças feitas nos arquivos</li>
-</ul>
+<h2>12. Diferenças</h2>
+<p><code>git diff</code>: diferenças realizadas em um repositório</p>
 
-<img data-src="img/git_commit_message.png" class="r-stretch"></section>
+<img data-src="img/git_diff.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p><a href="https://trailhead.salesforce.com/pt-BR/content/learn/modules/git-and-git-hub-basics/work-with-your-history-in-git">Work with Your History in Git</a></p>
+</div>
+</section>
 <section class="slide level2">
-<h2>9. Versionamento</h2>
-
-<img data-src="img/git_states.png" class="r-stretch"></section>
-<section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><code>git status</code>: mostra o estado do repositório</p>
+<h2>12. Diferenças</h2>
+<p><code>git diff</code>: diferenças entre <strong>working directory</strong> e <strong>staging area</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="sc">$</span> git status</span>
-<span id="cb1-2"><a href=""></a></span>
-<span id="cb1-3"><a href=""></a>On branch master</span>
-<span id="cb1-4"><a href=""></a>nothing to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>git diff</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br> <strong>Observação</strong>: Não retornou nenhuma diferença, pois não editamos o arquivo</p>
+
+<img data-src="img/general_bloco_notas.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+<h2>12. Diferenças</h2>
+<p><code>git diff</code>: diferenças entre <strong>working directory</strong> e <strong>staging area</strong></p>
+<p><br> Vamos editar o arquivo “test.txt” usando o terminal</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>echo <span class="st">""</span> <span class="sc">&gt;</span><span class="er">&gt;</span> test.txt</span>
+<span id="cb2-2"><a href=""></a>echo <span class="st">"Nova linha de código"</span> <span class="sc">&gt;</span><span class="er">&gt;</span> test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<img data-src="img/git_states.png" class="r-stretch"></section>
+<img data-src="img/general_bloco_notas.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
-<h2>9. Versionamento</h2>
-<p><code>git status</code>: mostra o estado do repositório</p>
+<h2>12. Diferenças</h2>
+<p><code>git diff</code>: diferenças entre <strong>working directory</strong> e <strong>staging area</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="sc">$</span> git status</span>
-<span id="cb2-2"><a href=""></a></span>
-<span id="cb2-3"><a href=""></a><span class="co"># On branch master</span></span>
-<span id="cb2-4"><a href=""></a><span class="co"># Your branch is ahead of 'origin/master' by 2 commits.</span></span>
-<span id="cb2-5"><a href=""></a><span class="co">#   (use "git push" to publish your local commits)</span></span>
-<span id="cb2-6"><a href=""></a><span class="co">#   nothing to commit, working tree clean</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="sc">$</span> git diff</span>
+<span id="cb3-2"><a href=""></a></span>
+<span id="cb3-3"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
+<span id="cb3-4"><a href=""></a><span class="co"># index f5201c0..74cb9b5 100644</span></span>
+<span id="cb3-5"><a href=""></a><span class="co"># --- a/test.txt</span></span>
+<span id="cb3-6"><a href=""></a><span class="co"># +++ b/test.txt</span></span>
+<span id="cb3-7"><a href=""></a><span class="co"># @@ -1 +1,2 @@</span></span>
+<span id="cb3-8"><a href=""></a><span class="co"># -Acabo de inserir uma edição ao meu arquivo</span></span>
+<span id="cb3-9"><a href=""></a><span class="co"># \ No newline at end of file</span></span>
+<span id="cb3-10"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
+<span id="cb3-11"><a href=""></a><span class="co"># +Nova linha de código</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div style="font-size: 80%;">
+<ul>
+<li><code>diff --git a/test.txt b/test.txt</code>: que arquivo mudou</li>
+<li><code>@@...@@</code>: onde foi mudado</li>
+<li><code>-</code>: linhas removidas</li>
+<li><code>+</code>: linhas adicionadas</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+<h2>12. Diferenças</h2>
+<p><code>git diff --staged</code>: diferenças entre <strong>staging area</strong> e <strong>repository</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="sc">$</span> git diff <span class="sc">--</span>staged</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Observação</strong>: Não retornou nenhuma diferença, pois não adicionamos ao staging area</p>
+</section>
+<section class="slide level2">
+<h2>12. Diferenças</h2>
+<p><code>git diff --staged</code>: diferenças entre <strong>staging area</strong> e <strong>repository</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="sc">$</span> git add <span class="sc">-</span>Av</span>
+<span id="cb5-2"><a href=""></a><span class="co"># add 'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="sc">$</span> git diff <span class="sc">--</span>staged</span>
+<span id="cb6-2"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
+<span id="cb6-3"><a href=""></a><span class="co"># index f5201c0..74cb9b5 100644</span></span>
+<span id="cb6-4"><a href=""></a><span class="co"># --- a/test.txt</span></span>
+<span id="cb6-5"><a href=""></a><span class="co"># +++ b/test.txt</span></span>
+<span id="cb6-6"><a href=""></a><span class="co"># @@ -1 +1,2 @@</span></span>
+<span id="cb6-7"><a href=""></a><span class="co"># -Acabo de inserir uma edição ao meu arquivo</span></span>
+<span id="cb6-8"><a href=""></a><span class="co"># \ No newline at end of file</span></span>
+<span id="cb6-9"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
+<span id="cb6-10"><a href=""></a><span class="co"># +Nova linha de código</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+<h2>12. Diferenças</h2>
+<p><code>git diff HEAD</code>: diferenças entre <strong>working directory</strong> e <strong>repository</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="sc">$</span> git diff HEAD</span>
+<span id="cb7-2"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
+<span id="cb7-3"><a href=""></a><span class="co"># index f5201c0..74cb9b5 100644</span></span>
+<span id="cb7-4"><a href=""></a><span class="co"># --- a/test.txt</span></span>
+<span id="cb7-5"><a href=""></a><span class="co"># +++ b/test.txt</span></span>
+<span id="cb7-6"><a href=""></a><span class="co"># @@ -1 +1,2 @@</span></span>
+<span id="cb7-7"><a href=""></a><span class="co"># -Acabo de inserir uma edição ao meu arquivo</span></span>
+<span id="cb7-8"><a href=""></a><span class="co"># \ No newline at end of file</span></span>
+<span id="cb7-9"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
+<span id="cb7-10"><a href=""></a><span class="co"># +Nova linha de código</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+<h2>12. Diferenças</h2>
+<p><code>git diff [arquivo]</code>: diferenças entre versões do mesmo arquivo</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="sc">$</span> git diff test.txt</span>
+<span id="cb8-2"><a href=""></a></span>
+<span id="cb8-3"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
+<span id="cb8-4"><a href=""></a><span class="co"># index f5201c0..74cb9b5 100644</span></span>
+<span id="cb8-5"><a href=""></a><span class="co"># --- a/test.txt</span></span>
+<span id="cb8-6"><a href=""></a><span class="co"># +++ b/test.txt</span></span>
+<span id="cb8-7"><a href=""></a><span class="co"># @@ -1 +1,2 @@</span></span>
+<span id="cb8-8"><a href=""></a><span class="co"># -Acabo de inserir uma edição ao meu arquivo</span></span>
+<span id="cb8-9"><a href=""></a><span class="co"># \ No newline at end of file</span></span>
+<span id="cb8-10"><a href=""></a><span class="co"># +Acabo de inserir uma edição ao meu arquivo</span></span>
+<span id="cb8-11"><a href=""></a><span class="co"># +Nova linha de código</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+<h2>12. Diferenças</h2>
+<p><code>git diff [hash1] [hash 2]</code>: diferenças entre commits</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="sc">$</span> git log <span class="sc">--</span>oneline</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="sc">$</span> git diff <span class="dv">5</span>a164d5 <span class="dv">50</span>c520f</span>
+<span id="cb10-2"><a href=""></a><span class="co"># diff --git a/test.txt b/test.txt</span></span>
+<span id="cb10-3"><a href=""></a><span class="co"># deleted file mode 100644</span></span>
+<span id="cb10-4"><a href=""></a><span class="co"># index e69de29..0000000</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+<h2>12. Diferenças</h2>
+<p><code>git diff 5a164d5 50c520f --stat</code>: diferenças em resumo, sem mostrar o conteúdo alterado</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="sc">$</span> git diff <span class="dv">5</span>a164d5 <span class="dv">50</span>c520f <span class="sc">--</span>stat</span>
+<span id="cb11-2"><a href=""></a><span class="co">#  test.txt | 0</span></span>
+<span id="cb11-3"><a href=""></a><span class="co"># 1 file changed, 0 insertions(+), 0 deletions(-)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>

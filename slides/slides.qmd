@@ -49,9 +49,9 @@ lang: pt-br
 ::: {.column width="50%"}
 ::: nonincremental
 
-10. Histórico: `git log` e `git show`
-11. Diferença: `git diff`
-12. Ignorando: `.gitignore`
+10. Ignorando: `.gitignore`
+11. Histórico: `git log` e `git show`
+12. Diferença: `git diff`
 13. Desfazer: `git restore`, `git revert` e `git reset`
 14. Ramificações: `git branch`, `git switch` e `git merge`
 15. Remoto: `git remote`, `git push` e `git pull`
@@ -664,8 +664,8 @@ Fluxo do versionamento
 
 ::: {style="font-size: 70%;"}
 1. **Diretório de trabalho (*working directory*)**: pasta com os arquivos
-1. **Preparação (*staged area*)**: arquivos adicionados para serem versionados (.git)
-1. **Repositório (*repository*)**: versão consolidada dos arquivos (.git)
+1. **Preparação (*staging area*)**: arquivos adicionados para serem versionados [Index] (.git) 
+1. **Repositório (*repository*)**: versão consolidada dos arquivos [HEAD] (.git)
 :::
 
 ![](img/git_files_states.png){.absolute width=100% right=30 top=320}
@@ -676,8 +676,8 @@ Fluxo do versionamento
 
 ::: {style="font-size: 70%;"}
 1. **Diretório de trabalho (*working directory*)**: pasta com os arquivos
-1. **Preparação (*staging area*)**: arquivos adicionados para serem versionados (.git)
-1. **Repositório (*repository*)**: versão consolidada dos arquivos (.git)
+1. **Preparação (*staging area*)**: arquivos adicionados para serem versionados [Index] (.git)
+1. **Repositório (*repository*)**: versão consolidada dos arquivos [HEAD] (.git)
 :::
 
 ![](img/git_trees.png){.absolute width=60% right=230 top=450}
@@ -799,7 +799,7 @@ Usando a aba **Terminal** do RStudio
 $ touch test.txt
 ```
 
-![](img/general_bloco_notas.png){.absolute width=35% right=350 top=300}
+![](img/general_bloco_notas.png){fig-align='center'}
 
 ## 9. Versionamento
 
@@ -824,7 +824,7 @@ $ git status
 
 ## 9. Versionamento
 
-`git add`: adiciona mudanças após edições (**staging area**)
+`git add`: adiciona mudanças após edições (**staging area**) [Index]
 
 ```{bash eval=FALSE}
 $ git add test.txt
@@ -838,7 +838,7 @@ $ git add test.txt
 
 ## 9. Versionamento
 
-`git add`: adiciona mudanças após edições (**staging area**)
+`git add`: adiciona mudanças após edições (**staging area**) [Index]
 
 ```{bash eval=FALSE}
 $ git add test.txt -v
@@ -854,7 +854,7 @@ $ git add test.txt -v
 
 ## 9. Versionamento
 
-`git add`: adiciona mudanças após edições (**staging area**)
+`git add`: adiciona mudanças após edições (**staging area**) [Index]
 
 ```{bash eval=FALSE}
 $ git add -Av
@@ -870,7 +870,7 @@ $ git add -Av
 
 ## 9. Versionamento
 
-`git add`: adiciona mudanças após edições (**staging area**)
+`git add`: adiciona mudanças após edições (**staging area**) [Index]
 
 ```{bash eval=FALSE}
 $ git add .
@@ -903,7 +903,7 @@ $ git status
 
 ## 9. Versionamento
 
-`git commit`: registra as alterações da **staging area**
+`git commit`: registra as alterações da **staging area** [HEAD]
 
 ::: {style="font-size: 80%;"}
 - Cria um **snapshot** do repositório, contendo:
@@ -920,7 +920,7 @@ $ git status
 
 ## 9. Versionamento
 
-`git commit`: registra as alterações da **staging area**
+`git commit`: registra as alterações da **staging area** [HEAD]
 
 ```{bash eval=FALSE}
 $ git commit -m "add test.txt"
@@ -959,8 +959,8 @@ Fluxo do versionamento
 
 ::: {style="font-size: 70%;"}
 1. **Diretório de trabalho (*working directory*)**: pasta com os arquivos
-1. **Preparação (*staged area*)**: arquivos adicionados para serem versionados (.git)
-1. **Repositório (*repository*)**: versão consolidada dos arquivos (.git)
+1. **Preparação (*staged area*)**: arquivos adicionados para serem versionados [Index] (.git)
+1. **Repositório (*repository*)**: versão consolidada dos arquivos  [HEAD] (.git)
 :::
 
 ![](img/git_files_states.png){.absolute width=100% right=30 top=320}
@@ -973,7 +973,7 @@ Usando a aba **Files** do RStudio, vamos abrir e editar o arquivo **test.txt**
 Acabo de inserir uma edição ao meu arquivo
 ```
 
-![](img/general_bloco_notas.png){.absolute width=35% right=350 top=300}
+![](img/general_bloco_notas.png){fig-align='center'}
 
 ## 9. Versionamento
 
@@ -998,7 +998,7 @@ $ git status
 
 ## 9. Versionamento
 
-`git add`: adiciona mudanças após edições (*staging area*)
+`git add`: adiciona mudanças após edições (*staging area*) [Index]
 
 ```{r eval=FALSE}
 $ git add -Av
@@ -1015,17 +1015,17 @@ $ git add -Av
 ```{r eval=FALSE}
 $ git status
 
-On branch master
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
- 	modified:   test.txt
+# On branch master
+# Changes to be committed:
+#   (use "git restore --staged <file>..." to unstage)
+# 	modified:   test.txt
 ```
 
 ![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
 
 ## 9. Versionamento
 
-`git commit`: registra as alterações da **staging area**
+`git commit`: registra as alterações da **staging area** [HEAD]
 
 ```{r eval=FALSE}
 $ git commit -m "mod test.txt"
@@ -1038,986 +1038,555 @@ $ git commit -m "mod test.txt"
 
 ## 9. Versionamento
 
+`git status`: mostra o estado do repositório
 
-------------------------------------------------------------
+```{r eval=FALSE}
+$ git status
 
+# On branch master
+# nothing to commit, working tree clean
+```
 
+![](img/git_add_commit_flow.png){.absolute width=45% right=270 top=400}
 
+## 9. Versionamento
 
+**ATENÇÃO!**
 
-------------------------------------------------------------
+::: {style="font-size: 80%;"}
+- Mensagens de commit são **fundamentais** 
+- Devem ser curtas e indicar as **mudanças** feitas nos arquivos
+:::
+
+![](img/git-commits-messages.jpg){.absolute width=75% right=120 top=250}
+
+::: footer
+[Como escrever mensagens de commits no Git](https://www.lucascaton.com/pt-BR/2017/10/16/como-escrever-mensagens-de-commits-no-git)
+:::
+
+## 9. Versionamento
+
+**ATENÇÃO!**
+
+::: {style="font-size: 80%;"}
+- Mensagens de commit são **fundamentais** 
+- Devem ser curtas e indicar as **mudanças** feitas nos arquivos
+:::
+
+![](img/git-commits-messages.webp){.absolute width=40% right=310 top=250}
+
+::: footer
+[3 dicas práticas para um bom commit](https://medium.com/@rafaelnai/3-dicas-pr%C3%A1ticas-para-um-bom-commit-673da001e1d1)
+:::
+
+## 9. Versionamento
+
+Fluxo do versionamento
+
+::: {style="font-size: 70%;"}
+1. **Diretório de trabalho (*working directory*)**: pasta com os arquivos
+1. **Preparação (*staged area*)**: arquivos adicionados para serem versionados (.git)
+1. **Repositório (*repository*)**: versão consolidada dos arquivos (.git)
+:::
+
+![](img/git_files_states.png){.absolute width=100% right=30 top=320}
+
+## 9. Versionamento
+
+**git**
+
+<p align="center">
+<iframe width="80%" height="480" align="center" src="https://www.youtube.com/embed/6OokP-NE49k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
 
 # E se houver arquivos que eu não quero versionar?
 
 # 
-![](img/gitignore.jpg)
+![](img/gitignore.jpg){fig-align='center'}
 
-## 10. Ignorando: .gitignore
+## 10. Ignorando
 
-## Arquivo .gitignore
+`.gitignore`
 
-### O **.gitignore** é um arquivo especial que indica ao git que determinados arquivos ou diretórios devem ser **ignorados e não comitados**
+::: {style="font-size: 80%;"}
+- Arquivo especial que indica ao git que determinados arquivos ou diretórios devem ser **ignorados** no versionamento
 
---
+- Arquivo de texto simples em que **cada linha** especifica um padrão de arquivos ou diretórios a serem ignorados
 
-### O **.gitignore** é um **arquivo de texto simples** em que cada linha especifica um padrão de arquivos ou diretórios a serem ignorados
+- Geralmente colocado no **diretório raiz** de um repositório
 
---
+- Atentar para o **ponto**, pois é um arquivo oculto [`.gitignore`]
+:::
 
-### Geralmente colocado no **diretório raiz** de um repositório
+![](img/gitignore.png){fig-align='center'}
 
---
+## 10. Ignorando
 
-### Atentar para o **ponto**, pois é um arquivo oculto [**.gitignore**]
+`.gitignore`
 
----
+![](img/gitignore_file.png){fig-align='center'}
 
-# 10. Ignorando: .gitignore
+::: footer
+[The .gitignore File - Complete Guide with Examples](https://blog.yarsalabs.com/gitignore-file-guide-with-examples/)
+:::
 
-## Arquivo .gitignore
+## 10. Ignorando
 
-```{bash eval=FALSE}
-# criar um arquivo
-touch ~/.gitignore
+Arquivo `.gitignore`
+
+- Criando um arquivo
+```{r eval=FALSE}
+$ touch ~/.gitignore
 ```
 
---
+- Preenchendo com padrões
+```{r eval=FALSE}
+# ignorar nome de arquivos
+raster.tif
 
-### Nome de arquivos
+# ignorar diretorios
+temp/
 
-- raster.tif
-
---
-
-### Diretórios
-
-- temp/
-
---
-
-### Caracteres-curinga
-
-- Padrão: *.tif (todos com .tif)
-- Negação: !.tif (negar ignore)
-- Comentário: # (não negar)
-
----
-
-class: inverse, center, middle
-
-# E se houver arquivos [enormes] que eu queira versionar?
-
----
-
-![](img/github_limit.png)
-background-size: 170px
-background-position: 95% 60%
-
-# 10. Ignorando: .gitignore
-
-## Limites
-
-### O tamanho máximo de arquivos é 25 Mb (browser)
-
-- Arquivos adicionados via browser é limitado a 25 Mb
-
-### O tamanho máximo de arquivos é 100 Mb (terminal)
-
-- Arquivos adicionados via terminal é limitado a 25 Mb
-- Se o arquivo exceder esse limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
-
-### O tamanho máximo de um repositório é 5 GB
-
-- O tamanho total do repositório é limitado a 5 Gb
-- Idealmente um repositório dever ser menor que 1 Gb
-- Mensagens de aviso informam que o tamanho do repositório se aproxima do limite
-- Se o repositório exceder o limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
-
----
-
-![](img/gif_large_files.gif)
-background-size: 500px
-background-position: 50% 90%
-
-# 10. Ignorando: .gitignore
-
-## Git Large File Storage (LFS)
-
-### [Git Large File Storage (LFS)](https://git-lfs.github.com/) substitui arquivos grandes por ponteiros de texto dentro do git
-
-### Armazena o conteúdo desses arquivos em um servidor remoto como GitHub.com ou GitHub Enterprise
-
----
-
-class: inverse, center, middle
-
-# Dúvidas?
-
----
-
-class: inverse, center, middle
+# ignorar padrao 
+*.tif (ignorar todos com .tif)
+!.tif (nao ignorar todos com .tif)
+```
 
 # Vamos ver como acessar todo o histórico de commits do git?
 
----
+## 11. Histórico
 
-name: 11.
+`git log`: histórico dos commits
 
-class: inverse, center, middle
+<br>
 
-# 11. Histórico: git log e git show
+::: {style="font-size: 80%;"}
+1. Identificador do commit (hash)
+1. Autor <e-mail>
+1. Data
+1. Descrição (mensagem de commit)
+:::
 
-.footnote[
+![](img/git_log.png){.absolute width=50% right=-30 top=200}
 
-[Slide de conteúdo](#contents-slide)
+## 11. Histórico
 
-]
+**hash**
 
----
+::: {style="font-size: 80%;"}
+-  Identificador **único**, gerado pelo git, que representa um commit
 
-![](img/git_log.png)
-background-size: 450px
-background-position: 90% 70%
+- É baseado no **conteúdo do commit** (alterações, autor, data)
 
-# 11. Histórico: git log e git show
+- **SHA-1 (Secure Hash Algorithm 1)**: hexadecimal de **40 caracteres**
 
-## **git log**: mostra o registro de todo o histórico de commits
+- Permite **localizar rapidamente** um commit
+:::
 
-<br><br>
+![](img/git-add-commit.png){.absolute width=50% right=200 top=400}
 
-### 1. Nome do commit (hash ou tag - dcbd894)
+::: footer
+[Guia dos principais comandos do GIT](https://blog.dbins.com.br/guia-dos-principais-comandos-do-git)
+:::
 
-### 2. Autor
+## 11. Histórico
 
-### 3. E-mail
+**hash curto**
 
-### 4. Data
+- Referenciar um commit usando apenas os primeiros caracteres do **hash**
 
-### 5. Descrição (mensagem do commit)
+- Utilizamos esse identificador em **várias operações** no git
 
----
+- Por exemplo:
+  - Curto:   
+  `3a4f9b7` 
+  - Completo:  
+  `3a4f9b7c19e2f4e1a0de9b7e5c6aebd7d5d85792`
 
-# 11. Histórico: git log e git show
+## 11. Histórico
 
-## **git log**: mostra o registro de todo o histórico de commits
+**HEAD**
 
-```{bash eval=FALSE}
-git log
-```
-```{bash eval=FALSE}
-commit dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f (HEAD -> master)
-Author: mauriciovancine <mauricio.vancine@gmail.com>
-Date:   Mon Mar 15 11:03:26 2021 -0300
+- Ponteiro simbólico que **indica onde você está atualmente** no histórico de commits
 
-    mod test.txt
+- Aponta sempre para o **último commit "ativo"** — normalmente, o commit mais recente
 
-commit 8b33bc57187a2bcb59172c75ce7266fbddb64eff
-Author: mauriciovancine <mauricio.vancine@gmail.com>
-Date:   Mon Mar 15 11:02:04 2021 -0300
+- Quando você faz um git commit, o HEAD **se move automaticamente** para esse novo commit
 
-    add test.txt
-```
-
----
-
-# 11. Histórico: git log e git show
-
-## **git log [arquivo]**: registro de todo o histórico de commits para arquivos
-
-```{bash eval=FALSE}
-git log test.txt
-```
-```{bash eval=FALSE}
-commit dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f (HEAD -> master)
-Author: mauriciovancine <mauricio.vancine@gmail.com>
-Date:   Mon Mar 15 11:03:26 2021 -0300
-
-    mod test.txt
-
-commit 8b33bc57187a2bcb59172c75ce7266fbddb64eff
-Author: mauriciovancine <mauricio.vancine@gmail.com>
-Date:   Mon Mar 15 11:02:04 2021 -0300
-
-    add test.txt
+```{r eval=FALSE}
+# * commit C (HEAD -> main)
+# * commit B
+# * commit A
 ```
 
----
+## 11. Histórico
 
-# 11. Histórico: git log e git show
+`git log`: histórico dos commits
 
-## **git log --oneline**: registro de todo o histórico de commits simplificado
+```{r eval=FALSE}
+$ git log
 
-```{bash eval=FALSE}
-git log --oneline
-```
-```{bash eval=FALSE}
-dcbd894 (HEAD -> master) mod test.txt
-8b33bc5 add test.txt
-```
+# commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -> master)
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Sat May 31 18:22:19 2025 -0300
 
----
+#     modificação do test.txt
 
-![](img/git_log_cheatsheet.png)
-background-size: 650px
-background-position: 50% 70%
+# commit 5a164d55896d6251249a5142f6110e8e0b06a49b
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Fri May 30 09:53:55 2025 -0300
 
-# 11. Histórico: git log e git show
+#     add test.txt
 
-## **git log**: cheatsheet
+# commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Thu May 29 09:34:13 2025 -0300
 
----
-
-# 11. Histórico: git log e git show
-
-## **git show**: visualização das alterações realizadas nos arquivos
-
-```{bash eval=FALSE}
-git show
-```
-```{bash eval=FALSE}
-commit dcbd894ade9a85f78e1b0d6ed08cbc76dcc2448f (HEAD -> master)
-Author: mauriciovancine <mauricio.vancine@gmail.com>
-Date:   Mon Mar 15 11:03:26 2021 -0300
-
-    mod test.txt
-
-diff --git a/test.txt b/test.txt
-index e69de29..f5201c0 100644
---- a/test.txt
-+++ b/test.txt
-@@ -0,0 +1 @@
-+Acabo de inserir uma edição ao meu arquivo
-\ No newline at end of file
+#     first commit
 ```
 
----
+## 11. Histórico
 
-# 11. Histórico: git log e git show
+`git log [arquivo]`: histórico dos commits para arquivos
 
-## **git show**: visualização das alterações realizadas nos arquivos
+```{r eval=FALSE}
+$ git log test.txt
 
-```{bash eval=FALSE}
-git show 8b33bc5
+# commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -> master)
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Sat May 31 18:22:19 2025 -0300
+
+#     modificação do test.txt
+
+# commit 5a164d55896d6251249a5142f6110e8e0b06a49b
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Fri May 30 09:53:55 2025 -0300
+
+#     add test.txt
 ```
-```{bash eval=FALSE}
-commit 8b33bc57187a2bcb59172c75ce7266fbddb64eff
-Author: mauriciovancine <mauricio.vancine@gmail.com>
-Date:   Mon Mar 15 11:02:04 2021 -0300
 
-    add test.txt
+## 11. Histórico
 
-diff --git a/test.txt b/test.txt
-new file mode 100644
-index 0000000..e69de29
+`git log --oneline`: histórico dos commits simplificado
+
+```{r eval=FALSE}
+$ git log --oneline
+
+# dfefc85 (HEAD -> master) modificação do test.txt
+# 5a164d5 add test.txt
+# 50c520f first commit
 ```
 
----
+## 11. Histórico
 
-name: 12.
+`git log --graph`: histórico dos commits em grafo
 
-class: inverse, center, middle
+```{r eval=FALSE}
+$ git log --graph
 
-# 12. Diferenças: git diff
+# * commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -> master)
+# | Author: mauriciovancine <mauricio.vancine@gmail.com>
+# | Date:   Sat May 31 18:22:19 2025 -0300
+# | 
+# |     modificação do test.txt
+# | 
+# * commit 5a164d55896d6251249a5142f6110e8e0b06a49b
+# | Author: mauriciovancine <mauricio.vancine@gmail.com>
+# | Date:   Fri May 30 09:53:55 2025 -0300
+# | 
+# |     add test.txt
+# | 
+# * commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af
+#   Author: mauriciovancine <mauricio.vancine@gmail.com>
+#   Date:   Thu May 29 09:34:13 2025 -0300
+#   
+#       first commit
+```
 
-.footnote[
+## 11. Histórico
 
-[Slide de conteúdo](#contents-slide)
+`git log --grep`: faz uma busca no histórico dos commits
 
-]
+```{r eval=FALSE}
+$ git log --grep="first commit"
 
----
+# commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Thu May 29 09:34:13 2025 -0300
+# 
+#     first commit
+```
 
-![](img/git_diff.png)
-background-size: 1000px
-background-position: 50% 70%
+## 11. Histórico
 
-# 12. Diferenças: git diff
+`git log --author`: filtra o histórico dos commits por autor
 
-## **git diff**: mostra as diferenças dos arquivos no *working directory*
+```{r eval=FALSE}
+$ git log --author="mauricio"
 
----
+# commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -> master)
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Sat May 31 18:22:19 2025 -0300
+# 
+#     modificação do test.txt
+# 
+# commit 5a164d55896d6251249a5142f6110e8e0b06a49b
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Fri May 30 09:53:55 2025 -0300
+# 
+#     add test.txt
+# 
+# commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Thu May 29 09:34:13 2025 -0300
+```
 
-![](img/git_diff.png)
-background-size: 800px
-background-position: 50% 100%
+## 11. Histórico
 
-# 12. Diferenças: git diff
+`git log`: cheatsheet
 
-## **git diff**: mostra as diferenças dos arquivos no *working directory*
+![](img/git_log_cheatsheet.png){fig-align='center'}
 
-```{bash eval=FALSE}
+::: footer
+[Git Log Cheatsheet](https://elijahmanor.com/blog/git-log)
+:::
+
+## 11. Histórico
+
+`git show`: detalhes de um commit
+
+```{r eval=FALSE}
+$ git show
+
+# commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -> master)
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Sat May 31 18:22:19 2025 -0300
+# 
+#     modificação do test.txt
+# 
+# diff --git a/test.txt b/test.txt
+# index e69de29..f5201c0 100644
+# --- a/test.txt
+# +++ b/test.txt
+# @@ -0,0 +1 @@
+# +Acabo de inserir uma edição ao meu arquivo
+# \ No newline at end of file
+```
+
+## 11. Histórico
+
+`git show [hash]`: detalhes de um commit específico
+
+```{r eval=FALSE}
+$ git log --oneline
+# dfefc85 (HEAD -> master) modificação do test.txt
+# 5a164d5 add test.txt
+# 50c520f first commit
+```
+
+<br>
+
+```{r eval=FALSE}
+$ git show 5a164d5
+# commit 5a164d55896d6251249a5142f6110e8e0b06a49b
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Fri May 30 09:53:55 2025 -0300
+#
+#    add test.txt
+#
+# diff --git a/test.txt b/test.txt
+# new file mode 100644
+# index 0000000..e69de29
+```
+
+## 11. Histórico
+
+`git show [arquivo]`: detalhes de um arquivo específico
+
+```{r eval=FALSE}
+$ git show test.txt
+# commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -> master)
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Sat May 31 18:22:19 2025 -0300
+# 
+#     modificação do test.txt
+# 
+# diff --git a/test.txt b/test.txt
+# index e69de29..f5201c0 100644
+# --- a/test.txt
+# +++ b/test.txt
+# @@ -0,0 +1 @@
+# +Acabo de inserir uma edição ao meu arquivo
+# \ No newline at end of file
+```
+
+## 12. Diferenças
+
+`git diff`: diferenças realizadas em um repositório
+
+![](img/git_diff.png){fig-align='center'}
+
+:::footer
+[Work with Your History in Git](https://trailhead.salesforce.com/pt-BR/content/learn/modules/git-and-git-hub-basics/work-with-your-history-in-git)
+:::
+
+## 12. Diferenças
+
+`git diff`: diferenças entre **working directory** e **staging area**
+
+```{r eval=FALSE}
 git diff
 ```
 
-## **Observação**: Não retornou nenhuma diferença...
+<br>
+**Observação**: Não retornou nenhuma diferença, pois não editamos o arquivo
 
----
+![](img/general_bloco_notas.png){fig-align='center'}
 
-![](img/general_bloco_notas.png)
-background-size: 250px
-background-position: 50% 80%
+## 12. Diferenças
 
-# 12. Diferenças: git diff
+`git diff`: diferenças entre **working directory** e **staging area**
 
-## **git diff**: mostra as diferenças dos arquivos no *working directory*
+<br>
+Vamos editar o arquivo "test.txt" usando o terminal
 
-### Vamos editar o arquivo "test.txt"
-
-```{bash eval=FALSE}
-Outra linha
+```{r eval=FALSE}
+echo "" >> test.txt
+echo "Nova linha de código" >> test.txt
 ```
 
----
+![](img/general_bloco_notas.png){fig-align='center'}
 
-# 12. Diferenças: git diff
+## 12. Diferenças
 
-## **git diff**: mostra as diferenças dos arquivos no *working directory*
+`git diff`: diferenças entre **working directory** e **staging area**
 
-```{bash eval=FALSE}
-git diff
-```
-```{bash eval=FALSE}
-diff --git a/test.txt b/test.txt
-index f5201c0..71f35ef 100644
---- a/test.txt
-+++ b/test.txt
-@@ -1 +1,3 @@
--Acabo de inserir uma edição ao meu arquivo
-\ No newline at end of file
-+Acabo de inserir uma edição ao meu arquivo
-+
-+Outra linha
-\ No newline at end of file
+```{r eval=FALSE}
+$ git diff
+
+# diff --git a/test.txt b/test.txt
+# index f5201c0..74cb9b5 100644
+# --- a/test.txt
+# +++ b/test.txt
+# @@ -1 +1,2 @@
+# -Acabo de inserir uma edição ao meu arquivo
+# \ No newline at end of file
+# +Acabo de inserir uma edição ao meu arquivo
+# +Nova linha de código
 ```
 
----
+::: {style="font-size: 80%;"}
+- `diff --git a/test.txt b/test.txt`: que arquivo mudou
+- `@@...@@`: onde foi mudado
+- `-`: linhas removidas
+- `+`: linhas adicionadas
+:::
 
-# 12. Diferenças: git diff
+## 12. Diferenças
 
-## **git diff [arquivo]**: mostra as diferenças para o arquivo no *working directory*
+`git diff --staged`: diferenças entre **staging area** e **repository**
 
-```{bash eval=FALSE}
-git diff test.txt
-```
-```{bash eval=FALSE}
-diff --git a/test.txt b/test.txt
-index f5201c0..71f35ef 100644
---- a/test.txt
-+++ b/test.txt
-@@ -1 +1,3 @@
--Acabo de inserir uma edição ao meu arquivo
-\ No newline at end of file
-+Acabo de inserir uma edição ao meu arquivo
-+
-+Outra linha
-\ No newline at end of file
+```{r eval=FALSE}
+$ git diff --staged
 ```
 
----
+**Observação**: Não retornou nenhuma diferença, pois não adicionamos ao staging area
 
-# 12. Diferenças: git diff
+## 12. Diferenças
 
-## **git diff --staged**: mostra as diferenças dos arquivos na *staged area*
+`git diff --staged`: diferenças entre **staging area** e **repository**
 
-```{bash eval=FALSE}
-git diff --staged
-```
-```{bash eval=FALSE}
-diff --git a/test.txt b/test.txt
-index f5201c0..71f35ef 100644
---- a/test.txt
-+++ b/test.txt
-@@ -1 +1,3 @@
--Acabo de inserir uma edição ao meu arquivo
-\ No newline at end of file
-+Acabo de inserir uma edição ao meu arquivo
-+
-+Outra linha
-\ No newline at end of file
+```{r eval=FALSE}
+$ git add -Av
+# add 'test.txt'
 ```
 
----
+```{r eval=FALSE}
+$ git diff --staged
+# diff --git a/test.txt b/test.txt
+# index f5201c0..74cb9b5 100644
+# --- a/test.txt
+# +++ b/test.txt
+# @@ -1 +1,2 @@
+# -Acabo de inserir uma edição ao meu arquivo
+# \ No newline at end of file
+# +Acabo de inserir uma edição ao meu arquivo
+# +Nova linha de código
+```
 
-class: inverse, center, middle
+## 12. Diferenças
 
-# Até aqui, alguma dúvida?
+`git diff HEAD`: diferenças entre **working directory** e **repository**
 
----
+```{r eval=FALSE}
+$ git diff HEAD
+# diff --git a/test.txt b/test.txt
+# index f5201c0..74cb9b5 100644
+# --- a/test.txt
+# +++ b/test.txt
+# @@ -1 +1,2 @@
+# -Acabo de inserir uma edição ao meu arquivo
+# \ No newline at end of file
+# +Acabo de inserir uma edição ao meu arquivo
+# +Nova linha de código
+```
 
-class: inverse, center, middle
+## 12. Diferenças
+
+`git diff [arquivo]`: diferenças entre versões do mesmo arquivo
+
+```{r eval=FALSE}
+$ git diff test.txt
+
+# diff --git a/test.txt b/test.txt
+# index f5201c0..74cb9b5 100644
+# --- a/test.txt
+# +++ b/test.txt
+# @@ -1 +1,2 @@
+# -Acabo de inserir uma edição ao meu arquivo
+# \ No newline at end of file
+# +Acabo de inserir uma edição ao meu arquivo
+# +Nova linha de código
+```
+
+## 12. Diferenças
+
+`git diff [hash1] [hash 2]`: diferenças entre commits
+
+```{r eval=FALSE}
+$ git log --oneline
+```
+
+```{r eval=FALSE}
+$ git diff 5a164d5 50c520f
+# diff --git a/test.txt b/test.txt
+# deleted file mode 100644
+# index e69de29..0000000
+```
+
+## 12. Diferenças
+
+`git diff 5a164d5 50c520f --stat`: diferenças em resumo, sem mostrar o conteúdo alterado
+
+```{r eval=FALSE}
+$ git diff 5a164d5 50c520f --stat
+#  test.txt | 0
+# 1 file changed, 0 insertions(+), 0 deletions(-)
+```
+
+#
+![](img/break-time02.png){fig-align='center'}
 
 # E como voltar no tempo?
 
----
+# 
+![](img/gif_delorean.gif){fig-align='center'}
 
+-------------------------------------------------------
 
-![](img/gif_delorean.gif)
-background-size: 500px
-background-position: 50% 50%
 
----
 
-name: 13.
-
-class: inverse, center, middle
-
-# 13. Desfazer: git revert e git reset
-
-.footnote[
-
-[Slide de conteúdo](#contents-slide)
-
-]
-
----
-
-![](img/gif_delorean.gif), ![](img/git_revert_reset.png)
-background-size: 400px, 500px
-background-position: 25% 80%, 95% 50%
-
-# 13. Desfazer: git revert e git reset
-
-## Desfazendo operações no git
-
-1. **git revert**: desfaz um commit **preservando o histórico** (criando outro commit)
-1. **git reset**:  desfaz um commit **deletando o histórico** (deletando commits)
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
-
-## Sintaxe
-
-```{bash eval=FALSE}
-# reverte um commit especifico
-git revert <hash do commit>
-```
-
-```{bash eval=FALSE}
-# reverter o ultimo commit
-git revert HEAD
-```
-
-```{bash eval=FALSE}
-# cancelar uma reversao
-git revert --abot
-```
-
----
-
-![](img/general_butterfly_effect.jpg)
-background-size: 500px
-background-position: 80% 95%
-
-# 13. Desfazer: git revert e git reset
-
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
-
-### **IMPORTANTE!**
-
-### 1. Deve-se trabalhar em um diretório de trabalho limpo. Executar sempre **git add** e **git commit** antes de tentar reverter um commit
-
-### 2. Tente não **mudar** o passado!
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
-
-### Estado
-
-```{bash eval=FALSE}
-git status
-```
-```{bash eval=FALSE}
-On branch master
-nothing to commit, working tree clean
-```
-
-### Histórico
-
-```{bash eval=FALSE}
-git log --oneline
-```
-```{bash eval=FALSE}
-f9f2e9c (HEAD -> master) mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
-
-### Reverter - mensagem
-
-```{bash eval=FALSE}
-git revert f9f2e9c
-```
-```{bash eval=FALSE}
-Revert "mod2 test.txt"
-
-This reverts commit f9f2e9c867cfd549d0efcab1519a5ec9d86e7d0d.
-
-# Please enter the commit message for your changes. Lines starting
-# with '#' will be ignored, and an empty message aborts the commit.
-#
-# On branch master
-# Changes to be committed:
-#       modified:   test.txt
-#
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
-
-### Reverter
-
-```{bash eval=FALSE}
-git revert f9f2e9c
-```
-```{bash eval=FALSE}
-[master fca02a2] Revert "mod2 test.txt"
- 1 file changed, 1 insertion(+), 3 deletions(-)
-```
-
-### Estado
-
-```{bash eval=FALSE}
-git status
-```
-```{bash eval=FALSE}
-On branch master
-nothing to commit, working tree clean
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 1. **git revert**: desfaz um commit preservando o histórico (criando outro commit)
-
-### Histórico
-
-```{bash eval=FALSE}
-git log --oneline
-```
-```{bash eval=FALSE}
-fca02a2 (HEAD -> master) Revert "mod2 test.txt"
-f9f2e9c mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
----
-
-![](img/git_reset.png)
-background-size: 450px
-background-position: 87% 90%
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Sintaxe
-
-```{bash eval=FALSE}
-git reset [modo] [arquivo|commit]
-```
-
-**Aplicações**
-
-- descartar commits em um branch privado
-- desfazer alterações não comitadas (branch privado)
-- tirar arquivos da área de staged
-
-**Observações**
-
-- descartar commits de um branch público: **git revert**
-- descartar alterações no diretório de trabalho: **git checkout**
-
----
-
-![](img/git_reset_modes2.png), ![](img/git_reset_modes.png)
-background-size: 500px, 400px
-background-position: 10% 90%, 85% 90%
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Modos principais
-
-- **--soft**: não reseta o índice ou o diretório de trabalho (modo seguro)
-- **--mixed (default)**: reseta o índice, mas não o diretório de trabalho (modo seguro)
-- **--hard**: reseta o índice e o diretório de trabalho (modo não seguro)
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Exemplos
-
-**git reset**
-
-Reseta a *staging area* (retira os arquivos) para corresponder ao commit mais recente, sem modificar o *working directory*
-
-**git reset test.txt**
-
-Retira o test.txt da *staging area*, sem modificar o *working directory*
-
-**git reset --hard**
-
-Reseta a *staging area* e o *working directory* para corresponder ao commit mais recente. Todas as alterações no diretório são sobrescritas
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Exemplos
-
-**git reset <commit>**
-
-Move a versão para o commit indicado, reseta a *staging area* para corresponder a ele, mas não modifica o *working directory*
-
-**git reset <commit> --hard**
-
-Move a versão para o commit indicado e reseta tanto a *staging area*, quanto o *working directory* para corresponder ao commit especificado
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Estado
-
-```{bash eval=FALSE}
-git status
-```
-```{bash eval=FALSE}
-On branch master
-nothing to commit, working tree clean
-```
-
----
-
-![](img/general_bloco_notas.png)
-background-size: 250px
-background-position: 50% 80%
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Vamos editar o arquivo "test.txt"
-
-```{bash eval=FALSE}
-Acabo de inserir uma edição ao meu arquivo
-Viagens no tempo podem ser perigosas...
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Estado
-
-```{bash eval=FALSE}
-git status
-```
-```{bash eval=FALSE}
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   test.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Adicionar
-
-```{bash eval=FALSE}
-git add -Av
-```
-```{bash eval=FALSE}
-add 'test.txt'
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Estado
-
-```{bash eval=FALSE}
-git status
-```
-```{bash eval=FALSE}
-On branch master
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-	modified:   test.txt
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Remover do staged area
-
-### Resetar
-
-```{bash eval=FALSE}
-git reset test.txt
-```
-```{bash eval=FALSE}
-Unstaged changes after reset:
-M	test.txt
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Estado
-
-```{bash eval=FALSE}
-git status
-```
-```{bash eval=FALSE}
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   test.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Ver o conteúdo do arquivo
-
-```{bash eval=FALSE}
-cat test.txt
-```
-```{bash eval=FALSE}
-Acabo de inserir uma edição ao meu arquivo
-Viagens no tempo podem ser perigosas...
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Histórico
-
-```{bash eval=FALSE}
-git log --oneline
-```
-```{bash eval=FALSE}
-fca02a2 (HEAD -> master) Revert "mod2 test.txt"
-f9f2e9c mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Adicionar
-
-```{bash eval=FALSE}
-git add -Av
-```
-```{bash eval=FALSE}
-add 'test.txt'
-```
-
-### Commitar
-
-```{bash eval=FALSE}
-git commit -m "mod3 test.txt"
-```
-```{bash eval=FALSE}
-[master 4b0c4e8] mod3 test.txt
- 1 file changed, 2 insertions(+), 1 deletion(-)
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Histórico
-
-```{bash eval=FALSE}
-git log --oneline
-```
-```{bash eval=FALSE}
-4b0c4e8 (HEAD -> master) mod3 test.txt
-fca02a2 Revert "mod2 test.txt"
-f9f2e9c mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Resetar
-
-```{bash eval=FALSE}
-git reset --hard f9f2e9c
-```
-```{bash eval=FALSE}
-HEAD is now at f9f2e9c mod2 test.txt
-```
-
---
-
-### Histórico
-
-```{bash eval=FALSE}
-git log --oneline
-```
-```{bash eval=FALSE}
-f9f2e9c (HEAD -> master) mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Remover arquivo
-
-```{bash eval=FALSE}
-rm test.txt
-```
-
-### Adicionar
-
-```{bash eval=FALSE}
-git add -Av
-```
-
-### Commitar
-
-```{bash eval=FALSE}
-git commit -m "rem text.txt"
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Histórico
-
-```{bash eval=FALSE}
-git log --oneline
-```
-```{bash eval=FALSE}
-6a417c5 (HEAD -> master) rem text.txt
-f9f2e9c mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
----
-
-# 13. Desfazer: git revert e git reset
-
-## 2. **git reset**:  desfaz um commit deletando o histórico (deletando commits)
-
-### Resetar
-
-```{bash eval=FALSE}
-git reset --hard f9f2e9c
-```
-```{bash eval=FALSE}
-HEAD is now at f9f2e9c mod2 test.txt
-```
-
---
-
-### Histórico
-
-```{bash eval=FALSE}
-git log --oneline
-```
-```{bash eval=FALSE}
-f9f2e9c (HEAD -> master) mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
----
-
-, inverse
-![](img/gif_cat_ohh.gif)
-background-size: 600px
-background-position: 50% 50%
-
----
-
-![](img/general_butterfly_effect.jpg)
-background-size: 600px
-background-position: 50% 95%
-
-# 13. Desfazer: git revert e git reset
-
-## Desfazendo operações no git
-
-### 1. **git revert**: desfaz um commit **preservando o histórico** (criando outro commit)
-
-### 2. **git reset**:  desfaz um commit **deletando o histórico** (deletando commits)
 
 ---
 
@@ -2124,7 +1693,7 @@ master
 
 ---
 
-![](img/general_bloco_notas.png)
+![](img/general_bloco_notas.png){fig-align='center'}
 background-size: 250px
 background-position: 50% 80%
 
@@ -2348,6 +1917,35 @@ background-position: 50% 60%
 # 15. Remoto: git remote, git push e git pull
 
 ## **git pull**: puxa uma nova versão do repositório remoto (GitHub) para o repositório local
+
+# E se houver arquivos [enormes] que eu queira versionar no GitHub?
+
+## 10. Ignorando
+
+**Limites**
+
+- Tamanho máximo de arquivos é 25 Mb (browser)
+- Tamanho máximo de arquivos é 100 Mb (terminal)
+- Arquivos adicionados via terminal é limitado a 25 Mb
+- Se o arquivo exceder esse limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
+
+### O tamanho máximo de um repositório é 5 GB
+
+- O tamanho total do repositório é limitado a 5 Gb
+- Idealmente um repositório dever ser menor que 1 Gb
+- Mensagens de aviso informam que o tamanho do repositório se aproxima do limite
+- Se o repositório exceder o limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
+
+
+![](img/gif_large_files.gif)
+
+# 10. Ignorando: .gitignore
+
+## Git Large File Storage (LFS)
+
+### [Git Large File Storage (LFS)](https://git-lfs.github.com/) substitui arquivos grandes por ponteiros de texto dentro do git
+
+### Armazena o conteúdo desses arquivos em um servidor remoto como GitHub.com ou GitHub Enterprise
 
 ---
 
