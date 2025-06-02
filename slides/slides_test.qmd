@@ -33,7 +33,7 @@ lang: pt-br
 <br>
 
 1. `git restore`: desfaz alterações em arquivos no **working directory** ou **staging area**
-1. `git revert`: desfaz um commit, mas **preserva o histórico** (criando outro commit)
+1. `git revert`: desfaz um commit **preservando o histórico** (criando outro commit)
 1. `git reset`:  desfaz um commit, podendo **deletar o histórico** (deletando commits)
 :::
 
@@ -44,7 +44,14 @@ lang: pt-br
 
 ## 14. Desfazer
 
-`git revert`: desfaz um commit preservando o histórico (criando outro commit)
+`git restore`: desfaz alterações em arquivos no **working directory** ou **staging area**
+
+
+
+
+## 14. Desfazer
+
+`git revert`: desfaz um commit **preservando o histórico** (criando outro commit)
 
 - Sintaxe
 

@@ -528,7 +528,9 @@ $ git config --list
 ![](img/git_init.png){.absolute width=40% right=550 top=180}
 ![](img/git_folder.png){.absolute width=65% right=-50 top=180}
 
-## Prática 2
+# Prática 3
+
+## Prática 3
 
 <br>
 
@@ -538,7 +540,7 @@ $ git config --list
 1. Mudem o diretório para esta pasta (`setwd()`)
 1. Dentro desta pasta criem um `script.R`
 
-## Prática 2
+## Prática 3
 
 1. Abram o `Terminal` do RStudio
 1. No `Terminal`, rodem: `cd caminho/pasta`
@@ -546,18 +548,20 @@ $ git config --list
 1. No `Terminal`, rodem: `git add .`
 1. No `Terminal`, rodem: `git commit -m 'add script.R'`
 1. Deletem esse script, inclusive da lixeira
-1. No `Terminal`, rodem: `git restore .`
+1. No `Terminal`, rodem: `git restore script.R`
 1. Testemunhem o poder do git...
 
 # 9. Iniciando remotamente
 
 ## 9. Iniciando remotamente
 
-**Fork**: cópia de um repositório remoto para o seu GitHub
+**Fork**: cópia de um repositório remoto para o seu **repositório remoto (GitHub)**
 
 ![](img/git_fork.png){.absolute width=45% right=250 top=150}
 
-## Prática 3
+# Prática 4
+
+## Prática 4
 
 Forken o repositório do workshop
 
@@ -572,6 +576,12 @@ Forken o repositório do workshop
 Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfado") para o GitHub de vocês
 
 ![](img/gif_fork.gif){.absolute width=70% right=200 top=220}
+
+## 9. Iniciando remotamente
+
+**Clone**: cópia de um repositório remoto para o seu **repositório local**
+
+![](img/git_clone_example.png){.absolute width=70% right=200 top=220}
 
 ## 9. Iniciando remotamente
 
