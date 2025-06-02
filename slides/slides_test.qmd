@@ -21,16 +21,26 @@ editor: source
 lang: pt-br
 ---
 
-![](img/gif_delorean.gif), ![](img/git_revert_reset.png)
+# 
+![](img/gif_delorean.gif){fig-align='center'}
 
 # 14. Desfazer: git restore, git revert e git reset
 
 ## 14. Desfazer
 
-1. `git restore`: 
+::: columns
+::: {.column width="80%" style="font-size: 80%;"}
+<br>
 
-1. `git revert`: desfaz um commit **preservando o histórico** (criando outro commit)
-1. `git reset`:  desfaz um commit **deletando o histórico** (deletando commits)
+1. `git restore`: desfaz alterações em arquivos no **working directory** ou **staging area**
+1. `git revert`: desfaz um commit, mas **preserva o histórico** (criando outro commit)
+1. `git reset`:  desfaz um commit, podendo **deletar o histórico** (deletando commits)
+:::
+
+::: {.column width="20%"}
+![](img/git_revert_reset.png){.absolute width=50% right=-100 top=100}
+:::
+:::
 
 ## 14. Desfazer
 

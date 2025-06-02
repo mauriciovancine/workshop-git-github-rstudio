@@ -332,6 +332,26 @@ Salvem ou recuperem essas informações!
 
 ## 5. Criando um repositório
 
+`Perfil > Repositories > New`
+
+![](img/github_criar_repositorio01.png){fig-align='center'}
+
+## 5. Criando um repositório
+
+**Criar um repositório**
+
+1. Nome do repositório
+1. Descrição (opcional)
+1. Público ou privado
+1. Add um README.md
+1. Add .gitignore
+1. Licença
+1. Criar
+
+![](img/github_criar_repositorio02.png){.absolute width=50% right=-30 top=100}
+
+# Prática 1
+
 ## Prática 1
 
 **Criar uma página inicial para o perfil do GitHub**
@@ -355,15 +375,17 @@ Salvem ou recuperem essas informações!
 [Como criar um README para o seu perfil do GitHub](https://www.alura.com.br/artigos/como-criar-um-readme-para-seu-perfil-github?srsltid=AfmBOopGVNPqjqVMXQ42hTQpH0exadVwz6U8jsiiNDAyehD0k--sct7e)
 :::
 
+# Prática 2
+
 ## Prática 2
 
-**Criar um repositório para o curso**
+**Criar um repositório para exemplo no curso**
 
-1. Criem um repositório com o nome `teste`)
+1. Criem um repositório chamado `teste`)
 1. Criem um arquivo `README.md` nesse repositório
-1. Preencham com algum detalhe do curso
+1. Preencham com algum detalhe do curso neste `README.md`
 
-# 6. Configurações: RStudio, git, GitHub
+# 6. Configurações: RStudio, git, GitHub 
 
 ## 6. Configurações
 
@@ -1624,11 +1646,7 @@ git branch
 * master
 ```
 
----
-
 ![](img/git_branch.png)
-background-size: 450px
-background-position: 50% 95%
 
 ## 15. Ramificações
 
@@ -1636,37 +1654,23 @@ background-position: 50% 95%
 
 ```{bash eval=FALSE}
 git branch branch-1
-```
-```{bash eval=FALSE}
+
 git branch
+# branch-1
+# * master
 ```
-```{bash eval=FALSE}
-branch-1
-* master
-```
-
----
-
-![](img/git_switch.png)
-background-size: 700px
-background-position: 50% 85%
 
 ## 15. Ramificações
 
-## **git switch**: troca a raficação de edição
+`git switch`: troca a raficação de edição
 
 ```{bash eval=FALSE}
 git switch branch-1
-```
-```{bash eval=FALSE}
-Switched to branch 'branch-1'
+
+# Switched to branch 'branch-1'
 ```
 
----
-
-![](img/git_branch.png)
-background-size: 500px
-background-position: 50% 90%
+![](img/git_switch.png)
 
 ## 15. Ramificações
 
@@ -1680,15 +1684,11 @@ git branch
 master
 ```
 
----
-
-![](img/general_bloco_notas.png){fig-align='center'}
-background-size: 250px
-background-position: 50% 80%
+![](img/git_branch.png)
 
 ## 15. Ramificações
 
-## Vamos criar um arquivo no diretório
+Vamos criar um arquivo no diretório
 
 ```{bash eval=FALSE}
 # terminal
@@ -1697,39 +1697,27 @@ git add -Av
 git commit -m "add teste_branch1.txt"
 ```
 
----
-
-![](img/git_branch.png)
-background-size: 500px
-background-position: 50% 70%
+![](img/general_bloco_notas.png){fig-align='center'}
 
 ## 15. Ramificações
 
-## **switch**: troca a raficação de edição
+`git switch`: troca a raficação de edição
 
 ```{bash eval=FALSE}
 git switch master
 ```
 
----
-
-![](img/git_merge.png)
-background-size: 800px
-background-position: 50% 70%
+![](img/git_branch.png)
 
 ## 15. Ramificações
 
-## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
-
----
+`git merge` mescla as linhas de desenvolvimento independentes em um único branch
 
 ![](img/git_merge.png)
-background-size: 500px
-background-position: 50% 90%
 
 ## 15. Ramificações
 
-## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
+`git merge`: mescla as linhas de desenvolvimento independentes em um único branch
 
 ```{bash eval=FALSE}
 git merge branch-1
@@ -1742,28 +1730,24 @@ Fast-forward
  create mode 100644 teste_branch1.txt
 ```
 
----
-
 ![](img/git_merge.png)
-background-size: 500px
-background-position: 50% 90%
 
 ## 15. Ramificações
 
-## **git merge**: mescla as linhas de desenvolvimento independentes em um único branch
+`git merge`: mescla as linhas de desenvolvimento independentes em um único branch
 
 ```{bash eval=FALSE}
 git log --oneline
-```
-```{bash eval=FALSE}
-7aeb06d (HEAD -> master, branch-1) add teste_branch1.txt
-f9f2e9c mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
+
+# 7aeb06d (HEAD -> master, branch-1) add teste_branch1.txt
+# f9f2e9c mod2 test.txt
+# dcbd894 mod test.txt
+# 8b33bc5 add test.txt
 ```
 
----
+![](img/git_merge.png)
 
+# 
 ![](img/gif_git_merge.gif)
 background-size: 800px
 background-position: 50% 60%
@@ -1772,29 +1756,35 @@ background-position: 50% 60%
 
 ## CUIDADO!
 
----
-
+# 
 ![](img/git_merge_warning.png)
-background-size: 500px
-background-position: 50% 70%
 
 ## 15. Ramificações
 
-## CUIDADO!
+**CUIDADO!**
 
----
+![](img/git_merge_warning.png)
 
+## 15. Ramificações
 
+**Git Branch Cheatsheet**
+
+![](img/git_merge_warning.png)
+
+:::footnote
+[Git Branch Cheatsheet](https://elijahmanor.com/blog/git-branch)
+:::
+
+#
 ![](img/git_push_pull.svg)
-background-size: 600px
 
-# 16. Remoto: git remote, git push e git pull
+## 16. Remoto
 
 ![](img/git_remote.png)
 
 ## 16. Remoto
 
-## **git remote**: exibe os repositórios remotos (GitHub)
+`git remote`: exibe os repositórios remotos (GitHub)
 
 ```{bash eval=FALSE}
 git remote -v
@@ -1804,43 +1794,29 @@ origin	git@github.com:mauriciovancine/short-course-git-github-rstudio.git (fetch
 origin	git@github.com:mauriciovancine/short-course-git-github-rstudio.git (push)
 ```
 
----
-
-![](img/git_remote.png)
-background-size: 400px
-background-position: 50% 90%
-
 ## 16. Remoto
 
 `git remote add`: faz a ligação com um repositório remoto (GitHub)
 
 - **Observação**: Usar o SSH para não precisar digitar sua senha!
 
+![](img/git_remote.png)
+
 ```{bash eval=FALSE}
 git remote add origin git@github.com:mauriciovancine/short-course-git-github-rstudio.git
 ```
 
----
+## 16. Remoto
+
+`git push`: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
 
 ![](img/git_push.png)
-background-size: 800px
-background-position: 50% 60%
 
 ## 16. Remoto
 
 `git push`: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
-
----
 
 ![](img/git_push_code.jpg)
-background-size: 700px
-background-position: 50% 90%
-
-## 16. Remoto
-
-`git push`: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
-
----
 
 ## 16. Remoto
 
@@ -1861,39 +1837,27 @@ To github.com:mauriciovancine/course-geospatial-data-r.git
    accc9db..8f70e96  master -> master
 ```
 
----
+## 16. Remoto
+
+Em caso de incêndio...
 
 ![](img/git_push_fire.png)
-background-size: 500px
-background-position: 50% 60%
 
 ## 16. Remoto
 
-## Em caso de incêndio...
-
----
+**CUIDADO!**
 
 ![](img/git_push_force01.jpg),![](img/git_push_force02.jpg)
-background-size: 500px, 450px
-background-position: 15% 70%, 90% 70%
 
 ## 16. Remoto
 
-## CUIDADO!
-
----
+`git pull`: puxa uma nova versão do repositório remoto (GitHub) para o repositório local
 
 ![](img/git_pull.png)
-background-size: 800px
-background-position: 50% 60%
-
-## 16. Remoto
-
-## **git pull**: puxa uma nova versão do repositório remoto (GitHub) para o repositório local
 
 # E se houver arquivos [enormes] que eu queira versionar no GitHub?
 
-## 10. Ignorando
+## 16. Remoto
 
 **Limites**
 
@@ -1902,73 +1866,50 @@ background-position: 50% 60%
 - Arquivos adicionados via terminal é limitado a 25 Mb
 - Se o arquivo exceder esse limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
 
-### O tamanho máximo de um repositório é 5 GB
+**O tamanho máximo de um repositório é 5 GB**
 
 - O tamanho total do repositório é limitado a 5 Gb
 - Idealmente um repositório dever ser menor que 1 Gb
 - Mensagens de aviso informam que o tamanho do repositório se aproxima do limite
 - Se o repositório exceder o limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
 
-
 ![](img/gif_large_files.gif)
 
-# 10. Ignorando: .gitignore
+## 16. Remoto
 
-## Git Large File Storage (LFS)
+**Git Large File Storage (LFS)**
 
-### [Git Large File Storage (LFS)](https://git-lfs.github.com/) substitui arquivos grandes por ponteiros de texto dentro do git
+[Git Large File Storage (LFS)](https://git-lfs.github.com/) substitui arquivos grandes por ponteiros de texto dentro do git
 
-### Armazena o conteúdo desses arquivos em um servidor remoto como GitHub.com ou GitHub Enterprise
-
----
-
-class: clean, inverse, center, middle
+Armazena o conteúdo desses arquivos em um servidor remoto como GitHub.com ou GitHub Enterprise
 
 # Por fim, fazermos a requisição da mudança do nosso repositório remoto para o repositório remoto original com o **Pull request** (pedimos para que "puxem" nossas mudanças)
 
----
-
-name: 16.
-
-class: inverse, center, middle
-
-# 16. GitHub: Pull request
-
-.footnote[
-
-[Slide de conteúdo](#contents-slide)
-
-]
-
----
-
 ![](img/git_push_pull_request.png)
-background-size: 650px
-background-position: 50% 80%
 
-# 16. GitHub: Pull request
+# 17. Pull request
 
-## **Pull Request**: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
-
----
+`Pull Request`: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
 
 ![](img/git_pull_request.png)
-background-size: 1000px
-background-position: 50% 60%
 
-# 16. GitHub: Pull request
+# 17. Pull request
 
-## **Pull Request**: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
+`Pull Request`: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
 
-# 18. Interface Gráfica do RStudio
+# 18. Conflitos
 
-## Agradecimentos
+## Conflitos
+
+# 19. Interface Gráfica do RStudio
+
+## Agradecimentos mais que justo
 
 Agradecimento à [Beatriz Milz](https://beatrizmilz.com/) pelas figuras ~~surrupiadas~~ (eu pedi...)
 
 ![](img/bea.jpg){fig-align='center'}
 
-## 18. Interface Gráfica do RStudio
+## 19. Interface Gráfica do RStudio
 
 **Git Panel**
 
@@ -1978,63 +1919,63 @@ Agradecimento à [Beatriz Milz](https://beatrizmilz.com/) pelas figuras ~~surrup
 ![](img/rstudio_git_pane01.png){fig-align='center'}
 
 
-## 18. Interface Gráfica do RStudio
+## 19. Interface Gráfica do RStudio
 
 **Git Panel - Detalhes**
 
 ![](img/rstudio_git_pane02.png){fig-align='center'}
 
-## 18. Interface Gráfica do RStudio
+## 19. Interface Gráfica do RStudio
 
 **Git Panel - Branches**
 
 ![](img/rstudio_git_pane03.png){fig-align='center'}
 
-## 18. Interface Gráfica do RStudio
+## 19. Interface Gráfica do RStudio
 
 **Git Panel - Diff - Changes: Revisar mudanças**
 
 ![](img/rstudio_git_pane04.png){fig-align='center'}
 
 
-## 18. Interface Gráfica do RStudio
+## 19. Interface Gráfica do RStudio
 
 **Git Panel - Diff - History: Histórico de mudanças**
 
 ![](img/rstudio_git_pane05.png){fig-align='center'}
 
-## 18. Interface Gráfica do RStudio
+## 19. Interface Gráfica do RStudio
 
 **Git pane - Staged**
 
 ![](img/rstudio_git_pane06.png){fig-align='center'}
 
-## 18. Interface Gráfica do RStudio
+## 19. Interface Gráfica do RStudio
 
 **Git pane - Staged e File status**
 
 ![](img/rstudio_git_status.png){fig-align='center'}
 ![](img/rstudio_git_pane06.png){fig-align='center'}
 
-## 18. Interface Gráfica do RStudio
+## 19. Interface Gráfica do RStudio
 
 **Git pane - Commit**
 
 ![](img/rstudio_git_pane07.png){fig-align='center'}
 
-## 18. Interface Gráfica do RStudio
+## 19. Interface Gráfica do RStudio
 
 **Git pane - Commit**
 
 ![](img/rstudio_git_pane08.png){fig-align='center'}
 
-## 18. Interface Gráfica do RStudio
+## 19. Interface Gráfica do RStudio
 
 **Git pane - Push e Pull**
 
 ![](img/rstudio_git_pane09.png){fig-align='center'}
 
-# 19. Últimas palavras
+# Últimas palavras
 
 #
 ![](img/general_make_impossible.jpeg){fig-align='center'}

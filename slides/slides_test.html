@@ -206,10 +206,11 @@
 
   <p class="date">5 de junho de 2025</p>
 </section>
-<section class="slide level2">
+<section class="title-slide slide level1 center">
+<h1></h1>
 
-<p><img data-src="img/gif_delorean.gif">, <img data-src="img/git_revert_reset.png"></p>
-</section>
+<img data-src="img/gif_delorean.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+
 <section>
 <section class="title-slide slide level1 center">
 <h1>14. Desfazer: git restore, git revert e git reset</h1>
@@ -217,11 +218,17 @@
 </section>
 <section class="slide level2">
 <h2>14. Desfazer</h2>
+<div class="columns">
+<div class="column" style="font-size: 80%;">
+<p><br></p>
 <ol type="1">
-<li><p><code>git restore</code>:</p></li>
-<li><p><code>git revert</code>: desfaz um commit <strong>preservando o histórico</strong> (criando outro commit)</p></li>
-<li><p><code>git reset</code>: desfaz um commit <strong>deletando o histórico</strong> (deletando commits)</p></li>
+<li><code>git restore</code>: desfaz alterações em arquivos no <strong>working directory</strong> ou <strong>staging area</strong></li>
+<li><code>git revert</code>: desfaz um commit, mas <strong>preserva o histórico</strong> (criando outro commit)</li>
+<li><code>git reset</code>: desfaz um commit, podendo <strong>deletar o histórico</strong> (deletando commits)</li>
 </ol>
+</div><div class="column" style="width:20%;">
+<p><img data-src="img/git_revert_reset.png" class="absolute" style="top: 100px; right: -100px; width: 50%; "></p>
+</div></div>
 </section>
 <section class="slide level2">
 <h2>14. Desfazer</h2>
