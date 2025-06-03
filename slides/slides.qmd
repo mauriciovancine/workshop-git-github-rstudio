@@ -1,6 +1,6 @@
 ---
 title: "Controle de versão com git, GitHub e RStudio"
-author: "[Maurício Vancine](https://mauriciovancine.github.io/)<br>"
+author: "<br><br>Maurício Vancine<br>"
 date: "06/05/2025"
 date-format: long
 format: 
@@ -22,6 +22,8 @@ lang: pt-br
 ---
 
 ## Workshop
+
+<br>
 
 - Carga horária bem enxuta: 06 h
 - Parte teórica: 03 h (hoje)
@@ -56,8 +58,8 @@ lang: pt-br
 15. Ramificações: `git branch`, `git switch` e `git merge`
 16. Remoto: `git remote`, `git push` e `git pull`
 17. GitHub: `Pull request`
-18. Interface gráfica do RStudio  
-19. Últimas palavras
+18. Conflitos
+19. Interface gráfica do RStudio  
 20. Mais informações
 :::
 :::
@@ -172,7 +174,7 @@ Cada vez mais **necessária** em colaborações
 **git**
 
 - Software (app) que faz o **controle de versão**
-- Maneja os **repositórios locais** (computador) e **remotos** (e.g. GitHub)
+- Maneja os **repositórios locais** (computador) e **repositório remotos** (e.g. GitHub)
 
 ![](img/git_logo.png){.absolute width=60% right=200 top=370}
 
@@ -184,14 +186,14 @@ Cada vez mais **necessária** em colaborações
 
 **git**
 
-- Criado por **Linus Torvalds** em 2005 para substituir o BitKeeper SCM no gerenciamento do Kernel Linux
+- Criado por **Linus Torvalds** em 2005 para substituir o BitKeeper no gerenciamento do Kernel Linux
 -  Software livre, distribuído sob a licença GNU GPL v.2
 
 ![](img/general_linus.jpg){.absolute width=50% right=480 top=350}
 ![](img/general_tux.png){.absolute width=40% right=0 top=320}
 
 :::footer
-[kernel](https://www.kernel.org/)
+[kernel](https://www.kernel.org/), [Começando - Uma Breve História do Git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Uma-Breve-Hist%C3%B3ria-do-Git#:~:text=Desde%20seu%20nascimento%20em%202005,%2Dgit%2Dbranching%5D).)
 :::
 
 ## 3. git e GitHub
@@ -208,7 +210,7 @@ Cada vez mais **necessária** em colaborações
 **GitHub**
 
 - Repositórios remotos  
-- **Plataformas de hospedagem** de códigos com controle de versão
+- **Plataformas de hospedagem** de códigos e controle de versão
 
 ![](img/github_logo2.png){.absolute width=50% right=600 top=350}
 ![](img/gitlab_logo.png){.absolute width=28% right=350 top=350}
@@ -272,7 +274,7 @@ Salvem ou recuperem essas informações!
 
 **Perfil**
 
-![](img/github_profile.png)
+![](img/github_profile.png){fig-align='center'}
 
 ## 4. Detalhes do GitHub
 
@@ -283,19 +285,30 @@ Salvem ou recuperem essas informações!
 - **Projects**: ferramentas de gerenciamento (Kanban e tarefas)
 - **Packages**: pacotes (bibliotecas) ou containers (Docker)
 - **Stars**: respositórios marcados com estrela
-- **Settings**: superior direito > foto do perfil > settings
 
 ## 4. Detalhes do GitHub
 
-**Perfil - Settings**
+**Settings**: superior direito > foto do perfil > `Settings`
 
-![](img/github_profile_settings.png)
+![](img/github_profile_settings.png){fig-align='center'}
+
+## 4. Detalhes do GitHub
+
+**Settings**: superior direito > foto do perfil > `Settings`
+
+![](img/github_profile_settings_detalhes.png){fig-align='center'}
+
+## 4. Detalhes do GitHub
+
+**Settings**
+
+![](img/github_profile_settings_detalhes02.png){fig-align='center'}
 
 ## 4. Detalhes do GitHub
 
 **Repositório**
 
-![](img/github_repository.png)
+![](img/github_repository.png){fig-align='center'}
 
 ## 4. Detalhes do GitHub
 
@@ -317,6 +330,12 @@ Salvem ou recuperem essas informações!
 
 **README.md**
 
+![](img/github_readme.png){fig-align='center'}
+
+## 4. Detalhes do GitHub
+
+**README.md**
+
 - Arquivo de documentação principal de um repositório
 - Escrito em Markdown (formatação simples e amigável)
 - Aparece automaticamente na página inicial do repositório
@@ -332,7 +351,7 @@ Salvem ou recuperem essas informações!
 
 ## 5. Criando um repositório
 
-`Perfil > Repositories > New`
+**Criar repositório**: Perfil > Repositories > New
 
 ![](img/github_criar_repositorio01.png){fig-align='center'}
 
@@ -346,9 +365,9 @@ Salvem ou recuperem essas informações!
 1. Add um README.md
 1. Add .gitignore
 1. Licença
-1. Criar
+1. Criar repositório
 
-![](img/github_criar_repositorio02.png){.absolute width=50% right=-30 top=100}
+![](img/github_criar_repositorio02.png){.absolute width=50% right=-30 top=130}
 
 # Prática 1
 
@@ -366,6 +385,8 @@ Salvem ou recuperem essas informações!
 
 **Criar uma página inicial para o perfil do GitHub**
 
+<br>
+
 1. Criem um repositório com o nome de usuário de vocês (e.g. `mauriciovancine`)
 1. Criem um arquivo `README.md` nesse repositório
 1. Preencham com algum conteúdo em Markdown
@@ -381,6 +402,8 @@ Salvem ou recuperem essas informações!
 
 **Criar um repositório para exemplo no curso**
 
+<br>
+
 1. Criem um repositório chamado `teste`)
 1. Criem um arquivo `README.md` nesse repositório
 1. Preencham com algum detalhe do curso neste `README.md`
@@ -391,7 +414,7 @@ Salvem ou recuperem essas informações!
 
 **RStudio**
 
-![](img/rstudio.png){.absolute right=0 top=150}
+![](img/rstudio.png){fig-align='center'
 
 ## 6. Configurações
 
@@ -441,10 +464,10 @@ Chave SSH
 **GitHub**
 
 ::: {style="font-size: 80%;"}
-- Perfil > Settings > SSH and GPG keys > New SSH key
+- **Add chave SSH**: Perfil > Settings > SSH and GPG keys > New SSH key
 :::
 
-![](img/github_ssh_key.png){.absolute width=100% right=0 top=220}
+![](img/github_ssh_key.png){fig-align='center'}
 
 ::: footer
 [Add ao GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
@@ -482,7 +505,7 @@ $ git config --global user.email "email@dominio.com"
 $ git config --list
 ```
 
-![](img/git_config.png){.absolute width=80% right=100 top=450}
+![](img/git_config.png){fig-align='center'}
 
 # Tudo certo até aqui?
 
@@ -505,7 +528,7 @@ $ git config --list
 
 ## 7. Controle de versão na prática
 
-![](img/git_github_workflow.png){.absolute width=100% right=0 top=100}
+![](img/git_github_workflow.png){fig-align='center'}
 ![](img/git_folder_project.png){.absolute width=5% right=220 top=630}
 
 ## 7. Controle de versão na prática
@@ -537,8 +560,8 @@ $ git config --list
 1. Criem uma pasta chamada: `teste_local` 
 1. Abram o RStudio
 1. Selecionem o caminho desta pasta
-1. Mudem o diretório para esta pasta (`setwd()`)
-1. Dentro desta pasta criem um `script.R`
+1. Mudem o diretório para esta pasta (`setwd("teste_local")`)
+1. Criem um arquivo dentro desta pasta `script.R`
 
 ## Prática 3
 
@@ -555,9 +578,9 @@ $ git config --list
 
 ## 9. Iniciando remotamente
 
-**Fork**: cópia de um repositório remoto para o seu **repositório remoto (GitHub)**
+**Fork**: cópia de um repositório para o seu **repositório (GitHub)**
 
-![](img/git_fork.png){.absolute width=45% right=250 top=150}
+![](img/git_fork.png){fig-align='center'}
 
 # Prática 4
 
@@ -575,17 +598,17 @@ Forken o repositório do workshop
 
 Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfado") para o GitHub de vocês
 
-![](img/gif_fork.gif){.absolute width=70% right=200 top=220}
+![](img/gif_fork.gif){fig-align='center'}
 
 ## 9. Iniciando remotamente
 
-**Clone**: cópia de um repositório remoto para o seu **repositório local**
+**Clone**: download de um **repositório remoto** (e.g. GitHub) para o seu **repositório local** (computador)
 
-![](img/git_clone_example.png){.absolute width=70% right=200 top=220}
+![](img/git_clone_example.png){.absolute width=80% right=130 top=200}
 
 ## 9. Iniciando remotamente
 
-- `git clone`: faz o download de um repositório remoto (e.g. GitHub) para o seu computador (repositório local)
+`git clone`: download de um **repositório remoto** (e.g. GitHub) para o seu **repositório local** (computador) 
 
 ![](img/git_clone.png){.absolute width=50% right=260 top=210}
 
@@ -596,6 +619,8 @@ Agora o repositório do workshop, que estava no meu GitHub, foi copiado ("garfad
 ## 9. Iniciando remotamente
 
 Primeiro, vamos **criar uma pasta** chamada `github`
+
+<br>
 
 ```{r eval=FALSE}
 ".                               # raiz"
@@ -623,14 +648,16 @@ Primeiro, vamos **criar uma pasta** chamada `github`
 2. Usando o **terminal** para clonar pelo **SSH** (configurado anteriormente)
 
 ```{bash eval=FALSE}
-$ git clone git@github.com:mauriciovancine/workshop-git-github-rstudio.git
+$ git clone git@github.com:mauriciovancine/teste.git
 ```
 
-![](img/git_clone_terminal.png){.absolute width=50% right=260 top=350}
+<br>
+
+![](img/git_clone_terminal.png){fig-align='center'}
 
 ## 9. Iniciando remotamente
 
-3. Usando o **RStudio** para clonar pelo **SSH** (configurado anteriormente)
+3. Usando o **Projeto do RStudio** para clonar pelo **SSH** (configurado anteriormente)
 
 ![](img/git_rstudio.png){.absolute width=50% right=200 top=210}
 
@@ -662,13 +689,15 @@ Preencher com dados do repositório do **GitHub**
 
 Preencher:
 
-- Repository URL:   `git@github.com:mauriciovancine/workshop-git-github-rstudio.git`
-- Project directory name:  
-`preenchimento automático`
-- Create project as subdirectory of:   
-`/home/mude/data/github`
+::: {style="font-size: 80%;"}
+- Repository URL: `git@github.com:mauriciovancine/teste.git`
+- Project directory name: `preenchimento automático`
+- Create project as subdirectory of: `/home/mude/data/github`
 - Se uma janela aparecer, basta digitar "yes"
 - Aguardar o download
+:::
+
+![](img/git_clone_rstudio.png){.absolute width=40% right=100 top=380}
 
 #
 ![](img/break-time01.jpg){fig-align='center'}
@@ -677,21 +706,21 @@ Preencher:
 
 ## 10. Versionamento
 
-![](img/git_add_commit.png){.absolute width=90% right=20 top=90}
+![](img/git_add_commit.png){.absolute width=90% right=40 top=90}
 
-![](img/github_logo.png){.absolute width=20% right=-210 top=160}
+![](img/github_logo.png){.absolute width=20% right=-180 top=160}
 ![](img/github_logo.png){.absolute width=20% right=970 top=160}
 ![](img/git_folder_project.png){.absolute width=15% right=990 top=500}
-![](img/git_logo.png){.absolute width=20% right=-210 top=530}
+![](img/git_logo.png){.absolute width=20% right=-180 top=530}
 
 ## 10. Versionamento
 
 **Comandos git** para o fluxo de trabalho dos repositórios
 
-![](img/git_workflow.png){.absolute width=100% right=10 top=150}
-![](img/git_folder_project.png){.absolute width=15% right=1030 top=350}
-![](img/github_logo.png){.absolute width=20% right=-220 top=350}
-![](img/git_logo.png){.absolute width=20% right=450 top=610}
+![](img/git_workflow.png){.absolute width=100% right=50 top=150}
+![](img/git_folder_project.png){.absolute width=15% right=1070 top=350}
+![](img/github_logo.png){.absolute width=20% right=-180 top=350}
+![](img/git_logo.png){.absolute width=20% right=570 top=610}
 
 ## 10. Versionamento
 
@@ -814,8 +843,6 @@ Quatro estados de alteração dos arquivos
 ::: footer
 [pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
 :::
-
-------------------------------------------------------------
 
 ## 10. Versionamento
 
@@ -948,7 +975,7 @@ $ git status
 
 ## 10. Versionamento
 
-`git commit`: registra as alterações da **staging area** [HEAD]
+`git commit`: registra as alterações da **staging area** no **repository** [HEAD]
 
 ::: {style="font-size: 80%;"}
 - Cria um **snapshot** do repositório, contendo:
@@ -965,7 +992,7 @@ $ git status
 
 ## 10. Versionamento
 
-`git commit`: registra as alterações da **staging area** [HEAD]
+`git commit`: registra as alterações da **staging area** no **repository** [HEAD]
 
 ```{bash eval=FALSE}
 $ git commit -m "add test.txt"
@@ -1043,7 +1070,7 @@ $ git status
 
 ## 10. Versionamento
 
-`git add`: adiciona mudanças após edições (*staging area*) [Index]
+`git add`: adiciona mudanças após edições na **staging area** [Index]
 
 ```{r eval=FALSE}
 $ git add -Av
@@ -1070,7 +1097,7 @@ $ git status
 
 ## 10. Versionamento
 
-`git commit`: registra as alterações da **staging area** [HEAD]
+`git commit`: registra as alterações da **staging area** no **repository** [HEAD]
 
 ```{r eval=FALSE}
 $ git commit -m "mod test.txt"
@@ -1597,7 +1624,7 @@ $ git diff test.txt
 
 ## 13. Diferenças
 
-`git diff [hash1] [hash 2]`: diferenças entre commits
+`git diff [hash1] [hash2]`: diferenças entre commits
 
 ```{r eval=FALSE}
 $ git log --oneline
@@ -1913,11 +1940,15 @@ Armazena o conteúdo desses arquivos em um servidor remoto como GitHub.com ou Gi
 
 # 19. Interface Gráfica do RStudio
 
-## Agradecimentos mais que justo
+## Agradecimento mais que justo
 
 Agradecimento à [Beatriz Milz](https://beatrizmilz.com/) pelas figuras ~~surrupiadas~~ (eu pedi...)
 
 ![](img/bea.jpg){fig-align='center'}
+
+:::footer
+[Beatriz Milz](https://beatrizmilz.com/)
+:::
 
 ## 19. Interface Gráfica do RStudio
 

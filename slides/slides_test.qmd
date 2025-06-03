@@ -21,6 +21,20 @@ editor: source
 lang: pt-br
 ---
 
+## 10. Versionamento
+
+![](img/git_add_commit.png){.absolute width=90% right=40 top=90}
+
+![](img/github_logo.png){.absolute width=20% right=-180 top=160}
+![](img/github_logo.png){.absolute width=20% right=970 top=160}
+![](img/git_folder_project.png){.absolute width=15% right=990 top=500}
+![](img/git_logo.png){.absolute width=20% right=-180 top=530}
+
+
+
+
+
+
 # 
 ![](img/gif_delorean.gif){fig-align='center'}
 
