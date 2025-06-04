@@ -206,408 +206,252 @@
 
   <p class="date">5 de junho de 2025</p>
 </section>
-<section class="slide level2">
-<h2>10. Versionamento</h2>
-<p><img data-src="img/git_add_commit.png" class="absolute" style="top: 90px; right: 40px; width: 90%; "></p>
-<p><img data-src="img/github_logo.png" class="absolute" style="top: 160px; right: -180px; width: 20%; "> <img data-src="img/github_logo.png" class="absolute" style="top: 160px; right: 970px; width: 20%; "> <img data-src="img/git_folder_project.png" class="absolute" style="top: 500px; right: 990px; width: 15%; "> <img data-src="img/git_logo.png" class="absolute" style="top: 530px; right: -180px; width: 20%; "></p>
-</section>
 <section class="title-slide slide level1 center">
-<h1></h1>
+<h1>Vamos finalmente conectar o repositório local (diretório) com o repositório remoto (GitHub)</h1>
 
-<img data-src="img/gif_delorean.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+</section>
 
 <section>
 <section class="title-slide slide level1 center">
-<h1>14. Desfazer: git restore, git revert e git reset</h1>
+<h1></h1>
 
-</section>
+<img data-src="img/git_push_pull.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
-<h2>14. Desfazer</h2>
-<div class="columns">
-<div class="column" style="font-size: 80%;">
+<h2>16. Remoto</h2>
+
+<img data-src="img/git_remote.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+<h2>16. Remoto</h2>
+<p><code>git remote</code>: gerencia conexões com repositórios remotos (GitHub)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="sc">$</span> git remote</span>
+<span id="cb1-2"><a href=""></a><span class="co"># origin</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><br></p>
-<ol type="1">
-<li><code>git restore</code>: desfaz alterações em arquivos no <strong>working directory</strong> ou <strong>staging area</strong></li>
-<li><code>git revert</code>: desfaz um commit <strong>preservando o histórico</strong> (criando outro commit)</li>
-<li><code>git reset</code>: desfaz um commit, podendo <strong>deletar o histórico</strong> (deletando commits)</li>
-</ol>
-</div><div class="column" style="width:20%;">
-<p><img data-src="img/git_revert_reset.png" class="absolute" style="top: 100px; right: -100px; width: 50%; "></p>
-</div></div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git restore</code>: desfaz alterações em arquivos no <strong>working directory</strong> ou <strong>staging area</strong></p>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git revert</code>: desfaz um commit <strong>preservando o histórico</strong> (criando outro commit)</p>
 <ul>
-<li>Sintaxe</li>
+<li>Mostra os nomes das conexões remotas</li>
+<li><code>origin</code>: nome padrão para o repositório remoto principal</li>
 </ul>
+</section>
+<section class="slide level2">
+<h2>16. Remoto</h2>
+<p><code>git remote</code>: gerencia conexões com repositórios remotos (GitHub)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># reverte um commit especifico</span></span>
-<span id="cb1-2"><a href=""></a>git revert [hash]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="sc">$</span> git remote <span class="sc">-</span>v</span>
+<span id="cb2-2"><a href=""></a></span>
+<span id="cb2-3"><a href=""></a><span class="co"># origin    git@github.com:mauriciovancine/teste.git (fetch)</span></span>
+<span id="cb2-4"><a href=""></a><span class="co"># origin    git@github.com:mauriciovancine/teste.git (push)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># reverter o ultimo commit</span></span>
-<span id="cb2-2"><a href=""></a>git revert HEAD</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div style="font-size: 80%;">
+<ul>
+<li>Mostra os nomes das conexões remotas: <code>origin</code></li>
+<li>Mostra os URLs das conexões remotas: <code>git@github.com:mauriciovancine/teste.git</code></li>
+<li><code>fetch</code>: endereço para <strong>buscar atualizações</strong> do repositório remoto</li>
+<li><code>push</code>: endereço para <strong>enviar suas alterações</strong> para o repositório remoto</li>
+</ul>
 </div>
+</section>
+<section class="slide level2">
+<h2>16. Remoto</h2>
+<p><code>git remote add</code>: adiciona ligação com um repositório remoto (GitHub)</p>
+<p><strong>Observação</strong>: usar o SSH para não precisar digitar a senha</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># cancelar uma reversao</span></span>
-<span id="cb3-2"><a href=""></a>git revert <span class="sc">--</span>abort</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="sc">$</span> git remote add origin git<span class="sc">@</span>github.com<span class="sc">:</span>mauriciovancine<span class="sc">/</span>teste.git</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<img data-src="img/general_butterfly_effect.jpg" class="r-stretch"></section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git revert</code>: desfaz um commit preservando o histórico (criando outro commit)</p>
-<p><strong>IMPORTANTE!</strong></p>
-<ol type="1">
-<li>Deve-se trabalhar em um diretório de trabalho limpo. Executar sempre <code>git add</code> e <code>git commit</code> antes de tentar reverter um commit</li>
-<li>Tente não <strong>mudar</strong> o passado!</li>
-</ol>
+<img data-src="img/git_remote.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Tudo certo, o git sabe para onde deve enviar as alterações para o endereço do repositório remoto (GitHub)</h1>
+
 </section>
 <section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git revert</code>: desfaz um commit preservando o histórico (criando outro commit)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>git status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>On branch master</span>
-<span id="cb5-2"><a href=""></a>nothing to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>git log <span class="sc">--</span>oneline</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">f9f2e9c</span> (HEAD <span class="ot">-&gt;</span> master) mod2 test.txt</span>
-<span id="cb7-2"><a href=""></a>dcbd894 mod test.txt</span>
-<span id="cb7-3"><a href=""></a><span class="dv">8</span>b33bc5 add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
+<h2>16. Remoto</h2>
+<p><code>git push</code>: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)</p>
+
+<img data-src="img/git_push.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git revert</code>: desfaz um commit preservando o histórico (criando outro commit)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>git revert f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>Revert <span class="st">"mod2 test.txt"</span></span>
-<span id="cb9-2"><a href=""></a></span>
-<span id="cb9-3"><a href=""></a>This reverts commit f9f2e9c867cfd549d0efcab1519a5ec9d86e7d0d.</span>
-<span id="cb9-4"><a href=""></a></span>
-<span id="cb9-5"><a href=""></a><span class="co"># Please enter the commit message for your changes. Lines starting</span></span>
-<span id="cb9-6"><a href=""></a><span class="co"># with '#' will be ignored, and an empty message aborts the commit.</span></span>
-<span id="cb9-7"><a href=""></a><span class="co">#</span></span>
-<span id="cb9-8"><a href=""></a><span class="co"># On branch master</span></span>
-<span id="cb9-9"><a href=""></a><span class="co"># Changes to be committed:</span></span>
-<span id="cb9-10"><a href=""></a><span class="co">#       modified:   test.txt</span></span>
-<span id="cb9-11"><a href=""></a><span class="co">#</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git revert</code>: desfaz um commit preservando o histórico (criando outro commit)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>git revert f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>[master fca02a2] Revert <span class="st">"mod2 test.txt"</span></span>
-<span id="cb11-2"><a href=""></a> <span class="dv">1</span> file changed, <span class="dv">1</span> <span class="fu">insertion</span>(<span class="sc">+</span>), <span class="dv">3</span> <span class="fu">deletions</span>(<span class="sc">-</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>git status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>On branch master</span>
-<span id="cb13-2"><a href=""></a>nothing to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git revert</code>: desfaz um commit preservando o histórico (criando outro commit)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>git log <span class="sc">--</span>oneline</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">fca02a2</span> (HEAD <span class="ot">-&gt;</span> master) Revert <span class="st">"mod2 test.txt"</span></span>
-<span id="cb15-2"><a href=""></a>f9f2e9c mod2 test.txt</span>
-<span id="cb15-3"><a href=""></a>dcbd894 mod test.txt</span>
-<span id="cb15-4"><a href=""></a><span class="dv">8</span>b33bc5 add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h2>16. Remoto</h2>
+<p><code>git push</code>: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)</p>
+<p>Função:</p>
+<div style="font-size: 80%;">
+<ul>
+<li>Atualiza a branch correspondente no repositório remoto</li>
+<li>Torna suas mudanças disponíveis para outras pessoas</li>
+<li>Se não configurar a chave SSH, exige autenticação (usuário/senha ou token)</li>
+</ul>
 </div>
 
-<img data-src="img/git_reset.png" class="r-stretch"></section>
+<img data-src="img/git_push.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
+<h2>16. Remoto</h2>
+<p><code>git push</code>: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)</p>
+
+<img data-src="img/git_push_code.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+<h2>16. Remoto</h2>
+<p><code>git push</code>: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>git reset [modo] [arquivo<span class="sc">|</span>commit]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>Aplicações</strong></p>
-<ul>
-<li>descartar commits em um branch privado</li>
-<li>desfazer alterações não comitadas (branch privado)</li>
-<li>tirar arquivos da área de staged</li>
-</ul>
-<p><strong>Observações</strong></p>
-<ul>
-<li>descartar commits de um branch público: <code>git revert</code></li>
-<li>descartar alterações no diretório de trabalho: <strong>git checkout</strong></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<ul>
-<li><strong>–soft</strong>: não reseta o índice ou o diretório de trabalho (modo seguro)</li>
-<li><strong>–mixed (default)</strong>: reseta o índice, mas não o diretório de trabalho (modo seguro)</li>
-<li><strong>–hard</strong>: reseta o índice e o diretório de trabalho (modo não seguro)</li>
-</ul>
-<p><img data-src="img/git_reset_modes2.png">, <img data-src="img/git_reset_modes.png"></p>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<ul>
-<li>Reseta a <em>staging area</em> (retira os arquivos) para corresponder ao commit mais recente, sem modificar o <em>working directory</em></li>
-</ul>
-<p><strong>git reset test.txt</strong></p>
-<p>Retira o test.txt da <em>staging area</em>, sem modificar o <em>working directory</em></p>
-<p><strong>git reset –hard</strong></p>
-<p>Reseta a <em>staging area</em> e o <em>working directory</em> para corresponder ao commit mais recente. Todas as alterações no diretório são sobrescritas</p>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<p><strong>git reset <commit></commit></strong></p>
-<p>Move a versão para o commit indicado, reseta a <em>staging area</em> para corresponder a ele, mas não modifica o <em>working directory</em></p>
-<p><strong>git reset <commit> –hard</commit></strong></p>
-<p>Move a versão para o commit indicado e reseta tanto a <em>staging area</em>, quanto o <em>working directory</em> para corresponder ao commit especificado</p>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>git status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>On branch master</span>
-<span id="cb18-2"><a href=""></a>nothing to commit, working tree clean</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="sc">$</span> git push <span class="sc">-</span>u origin main</span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a><span class="co"># Enumerating objects: 41, done.</span></span>
+<span id="cb4-4"><a href=""></a><span class="co"># Counting objects: 100% (41/41), done.</span></span>
+<span id="cb4-5"><a href=""></a><span class="co"># Delta compression using up to 12 threads</span></span>
+<span id="cb4-6"><a href=""></a><span class="co"># Compressing objects: 100% (35/35), done.</span></span>
+<span id="cb4-7"><a href=""></a><span class="co"># Writing objects: 100% (35/35), 4.99 MiB | 155.00 KiB/s, done.</span></span>
+<span id="cb4-8"><a href=""></a><span class="co"># Total 35 (delta 6), reused 0 (delta 0), pack-reused 0</span></span>
+<span id="cb4-9"><a href=""></a><span class="co"># remote: Resolving deltas: 100% (6/6), completed with 6 local objects.</span></span>
+<span id="cb4-10"><a href=""></a><span class="co"># To github.com:mauriciovancine/course-geospatial-data-r.git</span></span>
+<span id="cb4-11"><a href=""></a><span class="co">#    accc9db..8f70e96  master -&gt; master</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<p>Vamos editar o arquivo “test.txt”</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>Acabo de inserir uma edição ao meu arquivo</span>
-<span id="cb19-2"><a href=""></a>Viagens no tempo podem ser perigosas...</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h2>16. Remoto</h2>
+<p>Em caso de incêndio…</p>
+
+<img data-src="img/git_push_fire.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+<h2>16. Remoto</h2>
+<p><strong>CUIDADO</strong>: muitas vezes há conflitos que precisam ser revolvidos entre o repositório local e o remoto</p>
+<p><img data-src="img/git_push_force01.jpg" class="absolute" style="top: 200px; right: 520px; width: 50%; "> <img data-src="img/git_push_force02.jpg" class="absolute" style="top: 200px; right: 0px; width: 46%; "></p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>E se houver arquivos [enormes] que eu queira versionar no GitHub?</h1>
+
+</section>
+<section class="slide level2">
+<h2>16. Remoto</h2>
+<div style="font-size: 80%;">
+<p><strong>Limites de tamanho</strong></p>
+</div>
+<div style="font-size: 60%;">
+<ul>
+<li>Arquivos <strong>acima de 25 MB</strong> causam erro e o envio ao GitHub é bloqueado</li>
+<li>Para <strong>arquivos maiores</strong>, é necessário usar o <a href="https://git-lfs.github.com/">Git Large File Storage (LFS)</a></li>
+<li>O repositório no GitHub tem limite de <strong>5 GB</strong> no total</li>
+<li>É recomendável manter o repositório com menos de <strong>1 GB</strong></li>
+<li>O GitHub <strong>envia avisos</strong> quando o tamanho se aproxima do limite</li>
+<li>Ao <strong>exceder o limite</strong>, o envio é bloqueado com uma mensagem de erro</li>
+</ul>
+</div>
+<p><img data-src="img/gif_large_files.gif" class="absolute" style="top: 400px; right: 550px; width: 45%; "> <img data-src="img/github_limit.png" class="absolute" style="top: 50px; right: -50px; width: 30%; "></p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>E se eu quiser ver o que mudou no repositório remoto e trazer para o repositório local?</h1>
+
+</section>
+<section class="slide level2">
+<h2>16. Remoto</h2>
+
+<img data-src="img/git-fetch-git-pull.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p><a href="https://manitapanta.com.np/git-fetch-vs-git-pull/">Git Fetch vs Git Pull: Key Differences Every Developer Should Know</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>16. Remoto</h2>
+<p><code>git fetch</code>: busca atualizações do <strong>repositório remoto</strong> e as traz para o <strong>repositório local</strong>, mas não <strong>altera</strong> a branch atual</p>
+<p>Função:</p>
+<div style="font-size: 80%;">
+<ul>
+<li>Atualiza o histórico e as branches remotas</li>
+<li>Permite que você veja o que mudou antes de aplicar</li>
+<li><strong>Seguro</strong>: não altera seus arquivos nem seu histórico local automaticamente</li>
+</ul>
 </div>
 
-<img data-src="img/general_bloco_notas.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="img/git-fetch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
+<h2>16. Remoto</h2>
+<p><code>git fetch</code>: busca atualizações do <strong>repositório remoto</strong> e as traz para o <strong>repositório local</strong>, mas não <strong>altera</strong> a branch atual</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>git status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="sc">$</span> git fetch origin</span>
+<span id="cb5-2"><a href=""></a><span class="co"># remote: Enumerating objects: 4, done.</span></span>
+<span id="cb5-3"><a href=""></a><span class="co"># remote: Counting objects: 100% (4/4), done.</span></span>
+<span id="cb5-4"><a href=""></a><span class="co"># remote: Compressing objects: 100% (2/2), done.</span></span>
+<span id="cb5-5"><a href=""></a><span class="co"># remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)</span></span>
+<span id="cb5-6"><a href=""></a><span class="co"># Unpacking objects: 100% (3/3), 934 bytes | 934.00 KiB/s, done.</span></span>
+<span id="cb5-7"><a href=""></a><span class="co"># From github.com:mauriciovancine/teste</span></span>
+<span id="cb5-8"><a href=""></a><span class="co">#    4029d2c..dfb960b  main       -&gt; origin/main</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="img/git-fetch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+<h2>16. Remoto</h2>
+<p><code>git fetch</code>: busca atualizações do <strong>repositório remoto</strong> e as traz para o <strong>repositório local</strong>, mas não <strong>altera</strong> a branch atual</p>
+<div style="font-size: 80%;">
+<ul>
+<li>Se quiser atualizar a branch local com as mudanças use:
+<ul>
+<li><code>git merge</code>: para mesclar manualmente</li>
+<li><code>git rebase</code>: para reescrever o histórico de forma linear</li>
+</ul></li>
+</ul>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>On branch master</span>
-<span id="cb21-2"><a href=""></a>Changes not staged <span class="cf">for</span> commit<span class="sc">:</span></span>
-<span id="cb21-3"><a href=""></a>  (use <span class="st">"git add &lt;file&gt;..."</span> to update what will be committed)</span>
-<span id="cb21-4"><a href=""></a>  (use <span class="st">"git restore &lt;file&gt;..."</span> to discard changes <span class="cf">in</span> working directory)</span>
-<span id="cb21-5"><a href=""></a>    modified<span class="sc">:</span>   test.txt</span>
-<span id="cb21-6"><a href=""></a></span>
-<span id="cb21-7"><a href=""></a>no changes added to <span class="fu">commit</span> (use <span class="st">"git add"</span> and<span class="sc">/</span>or <span class="st">"git commit -a"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="sc">$</span> git merge origin<span class="sc">/</span>main</span>
+<span id="cb6-2"><a href=""></a><span class="sc">$</span> git rebase origin<span class="sc">/</span>main</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="img/git-fetch.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+<h2>16. Remoto</h2>
+<p><code>git pull</code>: busca atualizações do <strong>repositório remoto</strong> e as traz para o <strong>repositório local</strong>, <strong>alterando</strong> a branch atual</p>
+
+<img data-src="img/git_pull.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+<h2>16. Remoto</h2>
+<p><code>git pull</code>: busca atualizações do <strong>repositório remoto</strong> e as traz para o <strong>repositório local</strong>, <strong>alterando</strong> a branch atual automativamente</p>
+<ul>
+<li>Equivalente a rodar: <code>git fetch</code> + <code>git merge</code></li>
+</ul>
+<p>Função:</p>
+<div style="font-size: 80%;">
+<ul>
+<li>Sincronizar sua branch local com as alterações mais recentes do remoto</li>
+<li>Trabalhar colaborativamente, mantendo o código sempre atualizado</li>
+<li>Automatizar o processo de trazer e aplicar mudanças</li>
+<li><strong>Cuidado</strong>: pode causar conflitos se houver alterações locais incompatíveis com as mudanças remotas</li>
+</ul>
 </div>
 </section>
 <section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<h3>Adicionar</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>git add <span class="sc">-</span>Av</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h2>16. Remoto</h2>
+<p><strong>Resumo</strong></p>
+
+<img data-src="img/git_remote_total.png" class="r-stretch"><div class="footer">
+<p><a href="https://www.linkedin.com/pulse/whats-difference-between-git-fetch-pull-commands-omar-ismail/">What’s the Difference Between the Git Fetch and Git Pull Commands?</a></p>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>add <span class="st">'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+</section></section>
+<section class="title-slide slide level1 center">
+<h1>Por fim, requisição das alterações do nosso repositório remoto para o repositório remoto original: <strong>Pull request</strong></h1>
+
+</section>
+
+<section>
+<section class="title-slide slide level1 center">
+<h1></h1>
+
+<img data-src="img/git_push_pull_request.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+<h2>17. Pull request</h2>
+<p><code>Pull Request</code>: solicita que o repositório central (remoto) aceite (pull - ‘puxe’) as alterações realizadas do nosso fork</p>
+
+<img data-src="img/git_pull_request.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section class="slide level2">
+<h2>17. Pull request</h2>
+<p><code>Pull Request</code>: solicita que o repositório central (remoto) aceite (pull - ‘puxe’) as alterações realizadas do nosso fork</p>
+
+<img data-src="img/git_pull_request.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>18. Conflitos</h1>
+
 </section>
 <section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<h3>Estado</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>git status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>On branch master</span>
-<span id="cb25-2"><a href=""></a>Changes to be committed<span class="sc">:</span></span>
-<span id="cb25-3"><a href=""></a>  (use <span class="st">"git restore --staged &lt;file&gt;..."</span> to unstage)</span>
-<span id="cb25-4"><a href=""></a>    modified<span class="sc">:</span>   test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<h3>Remover do staged area</h3>
-<h3>Resetar</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a>git reset test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a>Unstaged changes after reset<span class="sc">:</span></span>
-<span id="cb27-2"><a href=""></a>M   test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<h3>Estado</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a>git status</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>On branch master</span>
-<span id="cb29-2"><a href=""></a>Changes not staged <span class="cf">for</span> commit<span class="sc">:</span></span>
-<span id="cb29-3"><a href=""></a>  (use <span class="st">"git add &lt;file&gt;..."</span> to update what will be committed)</span>
-<span id="cb29-4"><a href=""></a>  (use <span class="st">"git restore &lt;file&gt;..."</span> to discard changes <span class="cf">in</span> working directory)</span>
-<span id="cb29-5"><a href=""></a>    modified<span class="sc">:</span>   test.txt</span>
-<span id="cb29-6"><a href=""></a></span>
-<span id="cb29-7"><a href=""></a>no changes added to <span class="fu">commit</span> (use <span class="st">"git add"</span> and<span class="sc">/</span>or <span class="st">"git commit -a"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<h3>Ver o conteúdo do arquivo</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>cat test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>Acabo de inserir uma edição ao meu arquivo</span>
-<span id="cb31-2"><a href=""></a>Viagens no tempo podem ser perigosas...</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<h3>Histórico</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a>git log <span class="sc">--</span>oneline</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="fu">fca02a2</span> (HEAD <span class="ot">-&gt;</span> master) Revert <span class="st">"mod2 test.txt"</span></span>
-<span id="cb33-2"><a href=""></a>f9f2e9c mod2 test.txt</span>
-<span id="cb33-3"><a href=""></a>dcbd894 mod test.txt</span>
-<span id="cb33-4"><a href=""></a><span class="dv">8</span>b33bc5 add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<h3>Adicionar</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>git add <span class="sc">-</span>Av</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a>add <span class="st">'test.txt'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<h3>Commitar</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a>git commit <span class="sc">-</span>m <span class="st">"mod3 test.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a>[master <span class="dv">4</span>b0c4e8] mod3 test.txt</span>
-<span id="cb37-2"><a href=""></a> <span class="dv">1</span> file changed, <span class="dv">2</span> <span class="fu">insertions</span>(<span class="sc">+</span>), <span class="dv">1</span> <span class="fu">deletion</span>(<span class="sc">-</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<h3>Histórico</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a>git log <span class="sc">--</span>oneline</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a><span class="dv">4</span><span class="fu">b0c4e8</span> (HEAD <span class="ot">-&gt;</span> master) mod3 test.txt</span>
-<span id="cb39-2"><a href=""></a>fca02a2 Revert <span class="st">"mod2 test.txt"</span></span>
-<span id="cb39-3"><a href=""></a>f9f2e9c mod2 test.txt</span>
-<span id="cb39-4"><a href=""></a>dcbd894 mod test.txt</span>
-<span id="cb39-5"><a href=""></a><span class="dv">8</span>b33bc5 add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<h3>Resetar</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a>git reset <span class="sc">--</span>hard f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href=""></a>HEAD is now at f9f2e9c mod2 test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>–</p>
-<h3>Histórico</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href=""></a>git log <span class="sc">--</span>oneline</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a><span class="fu">f9f2e9c</span> (HEAD <span class="ot">-&gt;</span> master) mod2 test.txt</span>
-<span id="cb43-2"><a href=""></a>dcbd894 mod test.txt</span>
-<span id="cb43-3"><a href=""></a><span class="dv">8</span>b33bc5 add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<h3>Remover arquivo</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a>rm test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<h3>Adicionar</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a>git add <span class="sc">-</span>Av</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<h3>Commitar</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a>git commit <span class="sc">-</span>m <span class="st">"rem text.txt"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<h3>Histórico</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a>git log <span class="sc">--</span>oneline</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a><span class="dv">6</span><span class="fu">a417c5</span> (HEAD <span class="ot">-&gt;</span> master) rem text.txt</span>
-<span id="cb48-2"><a href=""></a>f9f2e9c mod2 test.txt</span>
-<span id="cb48-3"><a href=""></a>dcbd894 mod test.txt</span>
-<span id="cb48-4"><a href=""></a><span class="dv">8</span>b33bc5 add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-<h2>14. Desfazer</h2>
-<p><code>git reset</code>: desfaz um commit deletando o histórico (deletando commits)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a>git reset <span class="sc">--</span>hard f9f2e9c</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a>HEAD is now at f9f2e9c mod2 test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href=""></a>git log <span class="sc">--</span>oneline</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a><span class="fu">f9f2e9c</span> (HEAD <span class="ot">-&gt;</span> master) mod2 test.txt</span>
-<span id="cb52-2"><a href=""></a>dcbd894 mod test.txt</span>
-<span id="cb52-3"><a href=""></a><span class="dv">8</span>b33bc5 add test.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img data-src="img/gif_cat_ohh.gif"></p>
-<p><img data-src="img/general_butterfly_effect.jpg"></p>
+<h2>Conflitos</h2>
 
 </section></section>
     </div>

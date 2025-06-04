@@ -21,493 +21,248 @@ editor: source
 lang: pt-br
 ---
 
-## 10. Versionamento
+# Vamos finalmente conectar o repositório local (diretório) com o repositório remoto (GitHub)
 
-![](img/git_add_commit.png){.absolute width=90% right=40 top=90}
+#
+![](img/git_push_pull.svg){fig-align='center'}
 
-![](img/github_logo.png){.absolute width=20% right=-180 top=160}
-![](img/github_logo.png){.absolute width=20% right=970 top=160}
-![](img/git_folder_project.png){.absolute width=15% right=990 top=500}
-![](img/git_logo.png){.absolute width=20% right=-180 top=530}
+## 16. Remoto
 
+![](img/git_remote.png){fig-align='center'}
 
+## 16. Remoto
 
+`git remote`: gerencia conexões com repositórios remotos (GitHub)
 
+```{r eval=FALSE}
+$ git remote
+# origin
+```
 
-
-# 
-![](img/gif_delorean.gif){fig-align='center'}
-
-# 14. Desfazer: git restore, git revert e git reset
-
-## 14. Desfazer
-
-::: columns
-::: {.column width="80%" style="font-size: 80%;"}
 <br>
 
-1. `git restore`: desfaz alterações em arquivos no **working directory** ou **staging area**
-1. `git revert`: desfaz um commit **preservando o histórico** (criando outro commit)
-1. `git reset`:  desfaz um commit, podendo **deletar o histórico** (deletando commits)
+- Mostra os nomes das conexões remotas
+- `origin`: nome padrão para o repositório remoto principal
+
+## 16. Remoto
+
+`git remote`: gerencia conexões com repositórios remotos (GitHub)
+
+```{r eval=FALSE}
+$ git remote -v
+
+# origin	git@github.com:mauriciovancine/teste.git (fetch)
+# origin	git@github.com:mauriciovancine/teste.git (push)
+```
+
+<br>
+
+::: {style="font-size: 80%;"}
+- Mostra os nomes das conexões remotas: `origin`
+- Mostra os URLs das conexões remotas: `git@github.com:mauriciovancine/teste.git`
+- `fetch`: endereço para **buscar atualizações** do repositório remoto
+- `push`: endereço para **enviar suas alterações** para o repositório remoto
 :::
 
-::: {.column width="20%"}
-![](img/git_revert_reset.png){.absolute width=50% right=-100 top=100}
+## 16. Remoto
+
+`git remote add`: adiciona ligação com um repositório remoto (GitHub)
+
+**Observação**: usar o SSH para não precisar digitar a senha
+
+```{r eval=FALSE}
+$ git remote add origin git@github.com:mauriciovancine/teste.git
+```
+
+![](img/git_remote.png){fig-align='center'}
+
+# Tudo certo, o git sabe para onde deve enviar as alterações para o endereço do repositório remoto (GitHub)
+
+## 16. Remoto
+
+`git push`: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)
+
+![](img/git_push.png){fig-align='center'}
+
+## 16. Remoto
+
+`git push`: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)
+
+Função:
+
+::: {style="font-size: 80%;"}
+- Atualiza a branch correspondente no repositório remoto
+- Torna suas mudanças disponíveis para outras pessoas
+- Se não configurar a chave SSH, exige autenticação (usuário/senha ou token)
 :::
+
+![](img/git_push.png){fig-align='center'}
+
+## 16. Remoto
+
+`git push`: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)
+
+![](img/git_push_code.png){fig-align='center'}
+
+## 16. Remoto
+
+`git push`: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)
+
+```{r eval=FALSE}
+$ git push -u origin main
+
+# Enumerating objects: 41, done.
+# Counting objects: 100% (41/41), done.
+# Delta compression using up to 12 threads
+# Compressing objects: 100% (35/35), done.
+# Writing objects: 100% (35/35), 4.99 MiB | 155.00 KiB/s, done.
+# Total 35 (delta 6), reused 0 (delta 0), pack-reused 0
+# remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+# To github.com:mauriciovancine/course-geospatial-data-r.git
+#    accc9db..8f70e96  master -> master
+```
+
+## 16. Remoto
+
+Em caso de incêndio...
+
+![](img/git_push_fire.png){fig-align='center'}
+
+## 16. Remoto
+
+**CUIDADO**: muitas vezes há conflitos que precisam ser revolvidos entre o repositório local e o remoto
+
+![](img/git_push_force01.jpg){.absolute width=50% right=520 top=200}
+![](img/git_push_force02.jpg){.absolute width=46% right=0 top=200}
+
+# E se houver arquivos [enormes] que eu queira versionar no GitHub?
+
+## 16. Remoto
+
+::: {style="font-size: 80%;"}
+**Limites de tamanho**
 :::
 
-## 14. Desfazer
+::: {style="font-size: 60%;"}
+- Arquivos **acima de 25 MB** causam erro e o envio ao GitHub é bloqueado
+- Para **arquivos maiores**, é necessário usar o [Git Large File Storage (LFS)](https://git-lfs.github.com/)
+- O repositório no GitHub tem limite de **5 GB** no total
+- É recomendável manter o repositório com menos de **1 GB**
+- O GitHub **envia avisos** quando o tamanho se aproxima do limite
+- Ao **exceder o limite**, o envio é bloqueado com uma mensagem de erro
+:::
 
-`git restore`: desfaz alterações em arquivos no **working directory** ou **staging area**
+![](img/gif_large_files.gif){.absolute width=45% right=550 top=400}
+![](img/github_limit.png){.absolute width=30% right=-50 top=50}
 
+# E se eu quiser ver o que mudou no repositório remoto e trazer para o repositório local?
 
+## 16. Remoto
 
+![](img/git-fetch-git-pull.png){fig-align='center'}
 
-## 14. Desfazer
+:::footer
+[Git Fetch vs Git Pull: Key Differences Every Developer Should Know](https://manitapanta.com.np/git-fetch-vs-git-pull/)
+:::
 
-`git revert`: desfaz um commit **preservando o histórico** (criando outro commit)
+## 16. Remoto
 
-- Sintaxe
+`git fetch`: busca atualizações do **repositório remoto** e as traz para o **repositório local**, mas não **altera** a branch atual
 
-```{r eval=FALSE}
-# reverte um commit especifico
-git revert [hash]
-```
+Função:
 
-```{r eval=FALSE}
-# reverter o ultimo commit
-git revert HEAD
-```
+::: {style="font-size: 80%;"}
+- Atualiza o histórico e as branches remotas
+- Permite que você veja o que mudou antes de aplicar
+- **Seguro**: não altera seus arquivos nem seu histórico local automaticamente
+:::
 
-```{r eval=FALSE}
-# cancelar uma reversao
-git revert --abort
-```
+![](img/git-fetch.png){fig-align='center'}
 
-![](img/general_butterfly_effect.jpg)
+## 16. Remoto
 
-## 14. Desfazer
-
-`git revert`: desfaz um commit preservando o histórico (criando outro commit)
-
-**IMPORTANTE!**
-
-1. Deve-se trabalhar em um diretório de trabalho limpo. Executar sempre `git add` e `git commit` antes de tentar reverter um commit
-1. Tente não **mudar** o passado!
-
-## 14. Desfazer
-
-`git revert`: desfaz um commit preservando o histórico (criando outro commit)
+`git fetch`: busca atualizações do **repositório remoto** e as traz para o **repositório local**, mas não **altera** a branch atual
 
 ```{r eval=FALSE}
-git status
-```
-```{r eval=FALSE}
-On branch master
-nothing to commit, working tree clean
-```
-
-```{r eval=FALSE}
-git log --oneline
-```
-```{r eval=FALSE}
-f9f2e9c (HEAD -> master) mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
+$ git fetch origin
+# remote: Enumerating objects: 4, done.
+# remote: Counting objects: 100% (4/4), done.
+# remote: Compressing objects: 100% (2/2), done.
+# remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+# Unpacking objects: 100% (3/3), 934 bytes | 934.00 KiB/s, done.
+# From github.com:mauriciovancine/teste
+#    4029d2c..dfb960b  main       -> origin/main
 ```
 
-## 14. Desfazer
+![](img/git-fetch.png){fig-align='center'}
 
-`git revert`: desfaz um commit preservando o histórico (criando outro commit)
+## 16. Remoto
 
-```{r eval=FALSE}
-git revert f9f2e9c
-```
-```{r eval=FALSE}
-Revert "mod2 test.txt"
+`git fetch`: busca atualizações do **repositório remoto** e as traz para o **repositório local**, mas não **altera** a branch atual
 
-This reverts commit f9f2e9c867cfd549d0efcab1519a5ec9d86e7d0d.
-
-# Please enter the commit message for your changes. Lines starting
-# with '#' will be ignored, and an empty message aborts the commit.
-#
-# On branch master
-# Changes to be committed:
-#       modified:   test.txt
-#
-```
-
-## 14. Desfazer
-
-`git revert`: desfaz um commit preservando o histórico (criando outro commit)
+::: {style="font-size: 80%;"}
+- Se quiser atualizar a branch local com as mudanças use:
+  - `git merge`: para mesclar manualmente
+  - `git rebase`: para reescrever o histórico de forma linear 
+:::
 
 ```{r eval=FALSE}
-git revert f9f2e9c
-```
-```{r eval=FALSE}
-[master fca02a2] Revert "mod2 test.txt"
- 1 file changed, 1 insertion(+), 3 deletions(-)
+$ git merge origin/main
+$ git rebase origin/main
 ```
 
-```{r eval=FALSE}
-git status
-```
-```{r eval=FALSE}
-On branch master
-nothing to commit, working tree clean
-```
+![](img/git-fetch.png){fig-align='center'}
 
-## 14. Desfazer
+## 16. Remoto
 
-`git revert`: desfaz um commit preservando o histórico (criando outro commit)
+`git pull`: busca atualizações do **repositório remoto** e as traz para o **repositório local**, **alterando** a branch atual
 
-```{r eval=FALSE}
-git log --oneline
-```
-```{r eval=FALSE}
-fca02a2 (HEAD -> master) Revert "mod2 test.txt"
-f9f2e9c mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
+![](img/git_pull.png){fig-align='center'}
 
-![](img/git_reset.png)
+## 16. Remoto
 
-## 14. Desfazer
+`git pull`: busca atualizações do **repositório remoto** e as traz para o **repositório local**, **alterando** a branch atual automativamente
 
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
+- Equivalente a rodar: `git fetch` + `git merge`
 
-```{r eval=FALSE}
-git reset [modo] [arquivo|commit]
-```
+Função:
 
-**Aplicações**
+::: {style="font-size: 80%;"}
+- Sincronizar sua branch local com as alterações mais recentes do remoto
+- Trabalhar colaborativamente, mantendo o código sempre atualizado
+- Automatizar o processo de trazer e aplicar mudanças
+- **Cuidado**: pode causar conflitos se houver alterações locais incompatíveis com as mudanças remotas
+:::
 
-- descartar commits em um branch privado
-- desfazer alterações não comitadas (branch privado)
-- tirar arquivos da área de staged
+## 16. Remoto
 
-**Observações**
+**Resumo**
 
-- descartar commits de um branch público: `git revert`
-- descartar alterações no diretório de trabalho: **git checkout**
+![](img/git_remote_total.png)
 
-## 14. Desfazer
+:::footer
+[What's the Difference Between the Git Fetch and Git Pull Commands?](https://www.linkedin.com/pulse/whats-difference-between-git-fetch-pull-commands-omar-ismail/)
+:::
 
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
+# Por fim, requisição das alterações do nosso repositório remoto para o repositório remoto original: **Pull request**
 
-- **--soft**: não reseta o índice ou o diretório de trabalho (modo seguro)
-- **--mixed (default)**: reseta o índice, mas não o diretório de trabalho (modo seguro)
-- **--hard**: reseta o índice e o diretório de trabalho (modo não seguro)
+# 
+![](img/git_push_pull_request.png){fig-align='center'}
 
-![](img/git_reset_modes2.png), ![](img/git_reset_modes.png)
+## 17. Pull request
 
-## 14. Desfazer
+`Pull Request`: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
 
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
+![](img/git_pull_request.png){fig-align='center'}
 
-- Reseta a *staging area* (retira os arquivos) para corresponder ao commit mais recente, sem modificar o *working directory*
+## 17. Pull request
 
-**git reset test.txt**
+`Pull Request`: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
 
-Retira o test.txt da *staging area*, sem modificar o *working directory*
+![](img/git_pull_request.png){fig-align='center'}
 
-**git reset --hard**
+# 18. Conflitos
 
-Reseta a *staging area* e o *working directory* para corresponder ao commit mais recente. Todas as alterações no diretório são sobrescritas
+## Conflitos
 
-## 14. Desfazer
 
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-**git reset <commit>**
-
-Move a versão para o commit indicado, reseta a *staging area* para corresponder a ele, mas não modifica o *working directory*
-
-**git reset <commit> --hard**
-
-Move a versão para o commit indicado e reseta tanto a *staging area*, quanto o *working directory* para corresponder ao commit especificado
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-```{r eval=FALSE}
-git status
-```
-```{r eval=FALSE}
-On branch master
-nothing to commit, working tree clean
-```
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-Vamos editar o arquivo "test.txt"
-
-```{r eval=FALSE}
-Acabo de inserir uma edição ao meu arquivo
-Viagens no tempo podem ser perigosas...
-```
-
-![](img/general_bloco_notas.png){fig-align='center'}
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-```{r eval=FALSE}
-git status
-```
-```{r eval=FALSE}
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   test.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-```
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-### Adicionar
-
-```{r eval=FALSE}
-git add -Av
-```
-```{r eval=FALSE}
-add 'test.txt'
-```
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-### Estado
-
-```{r eval=FALSE}
-git status
-```
-```{r eval=FALSE}
-On branch master
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-	modified:   test.txt
-```
-
----
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-### Remover do staged area
-
-### Resetar
-
-```{r eval=FALSE}
-git reset test.txt
-```
-```{r eval=FALSE}
-Unstaged changes after reset:
-M	test.txt
-```
-
----
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-### Estado
-
-```{r eval=FALSE}
-git status
-```
-```{r eval=FALSE}
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   test.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-```
-
----
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-### Ver o conteúdo do arquivo
-
-```{r eval=FALSE}
-cat test.txt
-```
-```{r eval=FALSE}
-Acabo de inserir uma edição ao meu arquivo
-Viagens no tempo podem ser perigosas...
-```
-
----
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-### Histórico
-
-```{r eval=FALSE}
-git log --oneline
-```
-```{r eval=FALSE}
-fca02a2 (HEAD -> master) Revert "mod2 test.txt"
-f9f2e9c mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
----
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-### Adicionar
-
-```{r eval=FALSE}
-git add -Av
-```
-```{r eval=FALSE}
-add 'test.txt'
-```
-
-### Commitar
-
-```{r eval=FALSE}
-git commit -m "mod3 test.txt"
-```
-```{r eval=FALSE}
-[master 4b0c4e8] mod3 test.txt
- 1 file changed, 2 insertions(+), 1 deletion(-)
-```
-
----
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-### Histórico
-
-```{r eval=FALSE}
-git log --oneline
-```
-```{r eval=FALSE}
-4b0c4e8 (HEAD -> master) mod3 test.txt
-fca02a2 Revert "mod2 test.txt"
-f9f2e9c mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
----
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-### Resetar
-
-```{r eval=FALSE}
-git reset --hard f9f2e9c
-```
-```{r eval=FALSE}
-HEAD is now at f9f2e9c mod2 test.txt
-```
-
---
-
-### Histórico
-
-```{r eval=FALSE}
-git log --oneline
-```
-```{r eval=FALSE}
-f9f2e9c (HEAD -> master) mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
----
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-### Remover arquivo
-
-```{r eval=FALSE}
-rm test.txt
-```
-
-### Adicionar
-
-```{r eval=FALSE}
-git add -Av
-```
-
-### Commitar
-
-```{r eval=FALSE}
-git commit -m "rem text.txt"
-```
-
----
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-### Histórico
-
-```{r eval=FALSE}
-git log --oneline
-```
-```{r eval=FALSE}
-6a417c5 (HEAD -> master) rem text.txt
-f9f2e9c mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
----
-
-## 14. Desfazer
-
-`git reset`:  desfaz um commit deletando o histórico (deletando commits)
-
-```{r eval=FALSE}
-git reset --hard f9f2e9c
-```
-```{r eval=FALSE}
-HEAD is now at f9f2e9c mod2 test.txt
-```
-
-```{r eval=FALSE}
-git log --oneline
-```
-```{r eval=FALSE}
-f9f2e9c (HEAD -> master) mod2 test.txt
-dcbd894 mod test.txt
-8b33bc5 add test.txt
-```
-
-![](img/gif_cat_ohh.gif)
-
-![](img/general_butterfly_effect.jpg)

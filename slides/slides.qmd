@@ -647,7 +647,7 @@ Primeiro, vamos **criar uma pasta** chamada `github`
 
 2. Usando o **terminal** para clonar pelo **SSH** (configurado anteriormente)
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 $ git clone git@github.com:mauriciovancine/teste.git
 ```
 
@@ -898,7 +898,7 @@ $ git status
 
 `git add`: adiciona mudanças após edições (**staging area**) [Index]
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 $ git add test.txt
 ```
 
@@ -912,7 +912,7 @@ $ git add test.txt
 
 `git add`: adiciona mudanças após edições (**staging area**) [Index]
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 $ git add test.txt -v
 
 # add 'test.txt'
@@ -928,7 +928,7 @@ $ git add test.txt -v
 
 `git add`: adiciona mudanças após edições (**staging area**) [Index]
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 $ git add -Av
 
 # add 'test.txt'
@@ -944,7 +944,7 @@ $ git add -Av
 
 `git add`: adiciona mudanças após edições (**staging area**) [Index]
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 $ git add .
 ```
 
@@ -958,7 +958,7 @@ $ git add .
 
 `git status`: mostra o estado do repositório
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 $ git status
 
 # On branch master
@@ -994,7 +994,7 @@ $ git status
 
 `git commit`: registra as alterações da **staging area** no **repository** [HEAD]
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 $ git commit -m "add test.txt"
 
 # [master 5a164d5] add test.txt
@@ -1012,7 +1012,7 @@ $ git commit -m "add test.txt"
 
 `git status`: mostra o estado do repositório
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 $ git status
 
 # On branch master
@@ -1041,17 +1041,16 @@ Fluxo do versionamento
 
 Usando a aba **Files** do RStudio, vamos abrir e editar o arquivo **test.txt**
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 Acabo de inserir uma edição ao meu arquivo
 ```
 
 ![](img/general_bloco_notas.png){fig-align='center'}
-
 ## 10. Versionamento
 
 `git status`: mostra o estado do repositório
 
-```{bash eval=FALSE}
+```{r eval=FALSE}
 $ git status
 
 # On branch master
@@ -1150,6 +1149,75 @@ $ git status
 ::: footer
 [3 dicas práticas para um bom commit](https://medium.com/@rafaelnai/3-dicas-pr%C3%A1ticas-para-um-bom-commit-673da001e1d1)
 :::
+
+## 10. Versionamento
+
+**Corrigir mensagens de commit**
+
+- Corrigir mensagens  de commit é complicado
+- Vou mostrar como corrigir a última mensagem
+
+```{r eval=FALSE}
+$ git log
+
+# commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -> master)
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Sat May 31 18:22:19 2025 -0300
+
+#     modificação do test.txt
+
+# commit 5a164d55896d6251249a5142f6110e8e0b06a49b
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Fri May 30 09:53:55 2025 -0300
+
+#     add test.txt
+
+# commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Thu May 29 09:34:13 2025 -0300
+
+#     first commit
+```
+
+## 10. Versionamento
+
+**Corrigir mensagens de commit**
+
+```{r eval=FALSE}
+$ git commit --amend -m "correcao do ultimo commit"
+```
+
+![](img/git_commit_amend.jpg){fig-align='center'}
+
+:::footer
+[GitFichas - Jéssia Temporal](https://gitfichas.com/projects/031)
+:::
+
+## 10. Versionamento
+
+**Corrigir mensagens de commit**
+
+```{r eval=FALSE}
+$ git log
+
+# commit dfefc8530b25bfe96d8ccf7ba74aa0858ade6346 (HEAD -> master)
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Sat May 31 18:22:19 2025 -0300
+
+#     correcao do ultimo commit
+
+# commit 5a164d55896d6251249a5142f6110e8e0b06a49b
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Fri May 30 09:53:55 2025 -0300
+
+#     add test.txt
+
+# commit 50c520ff2cd531f1652eafb4654a9fb3fcd196af
+# Author: mauriciovancine <mauricio.vancine@gmail.com>
+# Date:   Thu May 29 09:34:13 2025 -0300
+
+#     first commit
+```
 
 ## 10. Versionamento
 
@@ -1655,125 +1723,786 @@ $ git diff 5a164d5 50c520f --stat
 # 
 ![](img/gif_delorean.gif){fig-align='center'}
 
--------------------------------------------------------
+# 14. Desfazer: git restore, git revert e git reset
 
+## 14. Desfazer
 
+::: columns
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+1. `git restore`: desfaz alterações na **working tree** ou **staging area**
 
+<br><br><br><br>
 
+2. `git revert`: desfaz commits, mas **preserva o histórico** (criando outro commit)
+3. `git reset`:  desfaz commits, mas **deleta o histórico** (deletando commits)
+:::
+:::
+::: {.column width="50%"}
+![](img/git_restore.png){.absolute width=40% right=70 top=100}
+![](img/git_revert_reset.png){.absolute width=30% right=130 top=370}
+:::
+:::
 
--------------------------------------------------------
+## 14. Desfazer
+
+::: {style="font-size: 95%;"}
+`git restore`: desfaz alterações na **working tree** ou **staging area**
+:::
+
+![](img/git_restore.png){fig-align='center'}
+
+:::footer
+[Reverting Staged Changes](https://codefinity.com/courses/v2/7533d91f-0a23-44a3-afc7-c84d5072e189/b9a4a4e8-3d95-4d5d-bf29-f87c3fd673a4/b1df4ebb-6f34-4234-b915-62ef85e0bdd6)
+:::
+
+## 14. Desfazer
+
+`git restore [arquivo]`: desfaz alterações na **working tree**
+
+```{r eval=FALSE}
+$ git status
+
+# On branch main
+# nothing to commit, working tree clean
+```
+
+![](img/git_add_commit_flow.png){.absolute width=40% right=300 top=450}
+
+## 14. Desfazer
+
+`git restore [arquivo]`: desfaz alterações na **working tree**
+
+- Apaguem o arquivo `test.txt` da pasta **test**
+
+![](img/general_bloco_notas.png){fig-align='center'}
+
+## 14. Desfazer
+
+`git restore [arquivo]`: desfaz alterações na **working tree**
+
+```{r eval=FALSE}
+$ git status
+
+# On branch main
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git restore <file>..." to discard changes in working directory)
+# 	deleted:    test.txt
+
+# no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+![](img/git_add_commit_flow.png){.absolute width=40% right=300 top=450}
+
+## 14. Desfazer
+
+`git restore [arquivo]`: desfaz alterações na **working tree**
+
+```{r eval=FALSE}
+$ git restore test.txt
+```
+
+![](img/git_restore.png){fig-align='center'}
+
+:::footer
+[Reverting Staged Changes](https://codefinity.com/courses/v2/7533d91f-0a23-44a3-afc7-c84d5072e189/b9a4a4e8-3d95-4d5d-bf29-f87c3fd673a4/b1df4ebb-6f34-4234-b915-62ef85e0bdd6)
+:::
+
+## 14. Desfazer
+
+`git restore [arquivo]`: desfaz alterações na **working tree**
+
+```{r eval=FALSE}
+$ git restore .
+```
+
+![](img/git_restore.png){fig-align='center'}
+
+## 14. Desfazer
+
+`git restore [arquivo]`: desfaz alterações na **working tree**
+
+```{r eval=FALSE}
+$ git status
+
+# On branch main
+# nothing to commit, working tree clean
+```
+
+- Arquivo reapareceu na pasta...
+
+![](img/git_add_commit_flow.png){.absolute width=40% right=300 top=450}
+
+#
+![](img/gif_cat_ohh.gif){fig-align='center'}
+
+# E se eu já tiver feito um git add e mandado as alterações na **staging area**?
+
+## 14. Desfazer
+
+`git restore --staged`: desfaz alterações na **staging area**, mas mantém alterações dos arquivos
+
+```{r eval=FALSE}
+$ git status
+
+# On branch main
+# nothing to commit, working tree clean
+```
+
+![](img/git_add_commit_flow.png){.absolute width=40% right=300 top=450}
+
+## 14. Desfazer
+
+`git restore --staged`: desfaz alterações na **staging area**, mas mantém alterações dos arquivos
+
+- Vamos editar o arquivo "test.txt" usando o terminal
+
+```{r eval=FALSE}
+echo "" >> test.txt
+echo "Mais uma linha no meu arquivo" >> test.txt
+```
+
+![](img/general_bloco_notas.png){fig-align='center'}
+
+## 14. Desfazer
+
+`git restore --staged`: desfaz alterações na **staging area**, mas mantém alterações dos arquivos
+
+```{r eval=FALSE}
+$ git status
+
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git restore <file>..." to discard changes in working directory)
+# 	modified:   test.txt
+
+# no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+![](img/git_add_commit_flow.png){.absolute width=40% right=300 top=450}
+
+## 14. Desfazer
+
+`git restore --staged`: desfaz alterações na **staging area**, mas mantém alterações dos arquivos
+
+- Vamos adicionar essas mudanças na **staging area**
+
+```{r eval=FALSE}
+$ git add -Av
+# add 'test.txt'
+```
+
+![](img/git_add_commit_flow.png){.absolute width=40% right=300 top=450}
+
+## 14. Desfazer
+
+`git restore --staged`: desfaz alterações na **staging area**, mas mantém alterações dos arquivos
+
+```{r eval=FALSE}
+$ git status
+
+# Changes to be committed:
+#   (use "git restore --staged <file>..." to unstage)
+# 	modified:   test.txt
+```
+
+![](img/git_add_commit_flow.png){.absolute width=40% right=300 top=450}
+
+## 14. Desfazer
+
+`git restore --staged`: desfaz alterações na **staging area**, mas mantém alterações dos arquivos
+
+```{r eval=FALSE}
+$ git restore --staged test.txt
+```
+
+![](img/git_restore.png){fig-align='center'}
+
+:::footer
+[Reverting Staged Changes](https://codefinity.com/courses/v2/7533d91f-0a23-44a3-afc7-c84d5072e189/b9a4a4e8-3d95-4d5d-bf29-f87c3fd673a4/b1df4ebb-6f34-4234-b915-62ef85e0bdd6)
+:::
+
+## 14. Desfazer
+
+`git restore --staged`: desfaz alterações na **staging area**, mas mantém alterações dos arquivos
+
+```{r eval=FALSE}
+$ git status
+
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git restore <file>..." to discard changes in working directory)
+# 	modified:   test.txt
+
+# no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+![](img/git_add_commit_flow.png){.absolute width=40% right=300 top=450}
+
+## 14. Desfazer
+
+`git restore --staged --worktree`: desfaz alterações na **staging area** e na **work tree** (arquivos)
+
+![](img/git_restore.png){fig-align='center'}
+
+:::footer
+[Reverting Staged Changes](https://codefinity.com/courses/v2/7533d91f-0a23-44a3-afc7-c84d5072e189/b9a4a4e8-3d95-4d5d-bf29-f87c3fd673a4/b1df4ebb-6f34-4234-b915-62ef85e0bdd6)
+:::
+
+## 14. Desfazer
+
+`git restore --staged --worktree`: desfaz alterações na **staging area** e na **work tree** (arquivos)
+
+```{r eval=FALSE}
+$ git restore --staged --worktree test.txt
+```
+
+![](img/git_restore.png){fig-align='center'}
+
+:::footer
+[Reverting Staged Changes](https://codefinity.com/courses/v2/7533d91f-0a23-44a3-afc7-c84d5072e189/b9a4a4e8-3d95-4d5d-bf29-f87c3fd673a4/b1df4ebb-6f34-4234-b915-62ef85e0bdd6)
+:::
+
+# E se eu já tiver feito um commit e queira desfazer?
 
 # 
-![](img/git_branches.png)
+![](img/general_butterfly_effect.png){fig-align='center'}
+
+#
+![](img/git_revert_reset.png){fig-align='center'}
+
+## 14. Desfazer
+
+`git revert [hash]`: desfaz commits, mas **preserva o histórico** (criando outro commit)
+
+![](img/git_revert.png){fig-align='center'}
+
+## 14. Desfazer
+
+`git revert [hash]`: desfaz commits, mas **preserva o histórico** (criando outro commit)
+
+```{r eval=FALSE}
+$ git status
+
+# On branch master
+# nothing to commit, working tree clean
+```
+
+<br>
+
+```{r eval=FALSE}
+$ git log --oneline
+
+# d0ad9d1 (HEAD -> main) correcao do ultimo commit
+# c1c596e update file test.txt
+# 4029d2c (origin/main, origin/HEAD) Create teste
+```
+
+## 14. Desfazer
+
+`git revert [hash]`: desfaz commits, mas **preserva o histórico** (criando outro commit)
+
+```{r eval=FALSE}
+$ git revert c1c596e
+
+# Revert "update file test.txt second time"
+
+# This reverts commit 49af53ec06e09c2301241a1d555ab1d8b4ba0908.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is ahead of 'origin/main' by 6 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#       deleted:    teste
+```
+
+## 14. Desfazer
+
+`git revert [hash]`: desfaz commits, mas **preserva o histórico** (criando outro commit)
+
+::: {style="font-size: 80%;"}
+- Abriu um editor de texto: Nano
+- Editar a primeira linha para alterar a mensagem de commit
+- `Ctrl + O` (Write out) > `Enter` > `Ctrl + X` (Exit)
+:::
+
+```{r eval=FALSE}
+$ git revert c1c596e
+
+# Revert "update file test.txt second time"
+
+# This reverts commit 49af53ec06e09c2301241a1d555ab1d8b4ba0908.
+
+# Please enter the commit message for your changes.
+```
+
+## 14. Desfazer
+
+`git revert [hash]`: desfaz commits, mas **preserva o histórico** (criando outro commit)
+
+```{r eval=FALSE}
+$ git revert c1c596e
+
+# [main c1c596e] Revert "update file test.txt second time"
+# 1 file changed, 1 deletion(-)
+# delete mode 100644 teste
+```
+
+![](img/git_revert.png){fig-align='center'}
+
+## 14. Desfazer
+
+`git revert [hash]`: desfaz commits, mas **preserva o histórico** (criando outro commit)
+
+```{r eval=FALSE}
+$ git log --oneline
+
+# 49af53e update file test.txt second time
+# d0ad9d1 correcao do ultimo commit
+# c1c596e update file test.txt
+# 4029d2c (origin/main, origin/HEAD) Create teste
+```
+
+![](img/git_revert.png){fig-align='center'}
+
+#
+![](img/git_revert_reset.png){fig-align='center'}
+
+## 14. Desfazer
+
+`git reset [modo] [hash]`: desfaz commits, mas **deleta o histórico** (deletando commits)
+
+![](img/git_reset2.png){fig-align='center'}
+
+## 14. Desfazer
+
+`git reset [modo] [hash]`: desfaz commits, mas **deleta o histórico** (deletando commits)
+
+<br>
+
+Modos:
+
+::: columns
+::: {.column width="50%"}
+::: {style="font-size: 70%;"}
+- `--soft`: move **HEAD** para outro commit (modo seguro)
+- `--mixed`: move **HEAD** e desfaz **staging** (modo seguro)
+- `--hard`: move **HEAD**, desfaz **staging** e descarta alterações nos arquivos (modo não seguro)
+:::
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+![](img/git_reset_modes.png){.absolute width=50% right=-30 top=230}
+
+## 14. Desfazer
+
+`git reset --soft [hash]`: mover o **HEAD** para outro commit
+
+```{r eval=FALSE}
+$ git status
+
+# On branch master
+# nothing to commit, working tree clean
+```
+
+<br>
+
+```{r eval=FALSE}
+$ git log --oneline
+
+# d0ad9d1 (HEAD -> main) correcao do ultimo commit
+# c1c596e update file test.txt
+# 4029d2c (origin/main, origin/HEAD) Create teste
+```
+
+## 14. Desfazer
+
+`git reset --soft [hash]`: mover o **HEAD** para outro commit
+
+```{r eval=FALSE}
+$ git reset --soft c1c596e
+```
+
+<br>
+
+```{r eval=FALSE}
+$ git log --oneline
+
+# d0ad9d1 correcao do ultimo commit
+# c1c596e (HEAD -> main) update file test.txt
+# 4029d2c (origin/main, origin/HEAD) Create teste
+```
+
+## 14. Desfazer
+
+`git reset --soft [hash]`: mover o **HEAD** para outro commit
+
+Detalhes:
+
+::: {style="font-size: 80%;"}
+  - HEAD volta para commit escolhido
+  - Conteúdo do commit atual continua no **staging area**
+  - Arquivos continuam alterados no **working directory** e prontos para commit
+:::
+
+Quando usar: 
+
+::: {style="font-size: 80%;"}
+  - Refazer o último commit, mantendo as mudanças no **staging area**
+:::
+
+## 14. Desfazer
+
+`git reset --mixed [hash]`: mover o **HEAD** e desfazer o **staging area**
+
+```{r eval=FALSE}
+$ git status
+
+# On branch master
+# nothing to commit, working tree clean
+```
+
+<br>
+
+```{r eval=FALSE}
+$ git log --oneline
+
+# d0ad9d1 (HEAD -> main) correcao do ultimo commit
+# c1c596e update file test.txt
+# 4029d2c (origin/main, origin/HEAD) Create teste
+```
+
+## 14. Desfazer
+
+`git reset --mixed [hash]`: mover o **HEAD** e desfazer o **staging area**
+
+```{r eval=FALSE}
+$ git reset --mixed c1c596e
+```
+
+<br>
+
+```{r eval=FALSE}
+$ git log --oneline
+
+# d0ad9d1 correcao do ultimo commit
+# c1c596e (HEAD -> main) update file test.txt
+# 4029d2c (origin/main, origin/HEAD) Create teste
+```
+
+## 14. Desfazer
+
+`git reset --mixed [hash]`: mover o **HEAD** e desfazer o **staging area**
+
+Detalhes:
+
+::: {style="font-size: 80%;"}
+- HEAD volta para commit escolhido
+- Conteúdo do commit atual é removido do **staging area**
+- Arquivos continuam alterados no **working directory** e não preparados para commit
+:::
+
+Quando usar: 
+
+::: {style="font-size: 80%;"}
+  - Desfazer o commit, mas ainda quero ver e editar as mudanças antes de comitar
+:::
+
+## 14. Desfazer
+
+`git reset --hard [hash]`: move **HEAD**, desfaz **staging** e descarta alterações nos arquivos
+
+```{r eval=FALSE}
+$ git status
+
+# On branch master
+# nothing to commit, working tree clean
+```
+
+<br>
+
+```{r eval=FALSE}
+$ git log --oneline
+
+# d0ad9d1 (HEAD -> main) correcao do ultimo commit
+# c1c596e  update file test.txt
+# 4029d2c (origin/main, origin/HEAD) Create teste
+```
+
+## 14. Desfazer
+
+`git reset --hard [hash]`: move **HEAD**, desfaz **staging** e descarta alterações nos arquivos
+
+```{r eval=FALSE}
+$ git reset --hard c1c596e
+```
+
+<br>
+
+```{r eval=FALSE}
+$ git log --oneline
+
+# d0ad9d1 correcao do ultimo commit
+# c1c596e (HEAD -> main) update file test.txt
+# 4029d2c (origin/main, origin/HEAD) Create teste
+```
+
+## 14. Desfazer
+
+`git reset --hard [hash]`: move **HEAD**, desfaz **staging** e descarta alterações nos arquivos
+
+Detalhes:
+
+::: {style="font-size: 80%;"}
+- HEAD volta para commit escolhido
+- Conteúdo do commit atual é perdido: **staging area** e **working directory**
+- Arquivos voltam exatamente ao estado do commit escolhido
+:::
+
+Quando usar: 
+
+::: {style="font-size: 80%;"}
+- Desfazer completamente um ou mais commits, eliminando as alterações
+:::
+
+## 14. Desfazer
+
+`git reset --hard [hash]`: move **HEAD**, desfaz **staging** e descarta alterações nos arquivos
+
+**Cuidado**: essa operação é irreversível (exceto `git reflog`)
+
+![](img/general_butterfly_effect.png){fig-align='center'}
+
+# 
+![](img/git_branches.png){fig-align='center'}
 
 # 15. Ramificações: git branch, git switch e git merge
 
-`git branch`: cria uma ramificação (**linha independente**) de desenvolvimento
+## 15. Ramificações
 
-![](img/git_branch.png)
+- **Branch** (ou ramo) é uma linha paralela de desenvolvimento
+
+![](img/git_branch.png){fig-align='center'}
 
 ## 15. Ramificações
 
-`git branch`: lista os branchs e verifica o branch de edição
+- **Branch** (ou ramo) é uma linha paralela de desenvolvimento
 
-```{bash eval=FALSE}
-git branch
-```
-```{bash eval=FALSE}
-* master
-```
-
-![](img/git_branch.png)
+- Funções:
+  - Separar novas funcionalidades
+  - Isolar correções de bugs
+  - Trabalhar em paralelo com segurança
+  - Facilitar a colaboração em equipe
+  - Testes sem arriscar o código principal (`main` ou `master`)
 
 ## 15. Ramificações
 
-`git branch`: cria uma ramificação
+**Importante!**
 
-```{bash eval=FALSE}
-git branch branch-1
+::: {style="font-size: 90%;"}
+- Criar uma branch significa criar um **novo ponteiro** que pode evoluir independentemente
+- Os arquivos locais **permanecem os mesmos**; apenas o histórico e o ponteiro mudam
+- Apenas **arquivos versionados** (`git add` e `git commit`) fazem parte da branch
+- Uma branch é como um **marcador de página**: você não copia o livro, apenas marca onde continuar
+:::
 
-git branch
-# branch-1
+## 15. Ramificações
+
+`git branch`: listar as branchs e verificar a branch de edição (`*`)
+
+::: {style="font-size: 90%;"}
+- Em 2020, adotou-se `main` para a **branch principal** para adotar uma linguagem mais **inclusiva, clara e alinhada** com os padrões de desenvolvimento
+:::
+
+::: {style="font-size: 90%;"}
+- Versões antigas: branch `master` 
+:::
+
+```{r eval=FALSE}
+$ git branch
 # * master
 ```
 
+::: {style="font-size: 90%;"}
+- Versões recentes: branch `main` 
+:::
+
+```{r eval=FALSE}
+$ git branch
+# * main
+```
+
 ## 15. Ramificações
 
-`git switch`: troca a raficação de edição
+`git branch [nome-branch]`: criar uma branch
 
-```{bash eval=FALSE}
-git switch branch-1
+```{r eval=FALSE}
+$ git branch branch-1
 
+$ git branch
+# branch-1
+# * main
+```
+
+![](img/git_branch.png){fig-align='center'}
+
+## 15. Ramificações
+
+`git switch [nome-branch]`: trocar a branch de edição
+
+```{r eval=FALSE}
+$ git switch branch-1
 # Switched to branch 'branch-1'
 ```
 
-![](img/git_switch.png)
+![](img/git_checkout_switch.png){fig-align='center'}
 
 ## 15. Ramificações
 
 `git branch`: lista os branchs e verifica o branch de edição
 
-```{bash eval=FALSE}
-git branch
-```
-```{bash eval=FALSE}
-* branch-1
-master
+```{r eval=FALSE}
+$ git branch
+# * branch-1
+# main
 ```
 
-![](img/git_branch.png)
+![](img/git_branch.png){fig-align='center'}
 
 ## 15. Ramificações
 
-Vamos criar um arquivo no diretório
+`git switch -c [nome-branch]`: criar e mudar para a nova branch
 
-```{bash eval=FALSE}
-# terminal
-touch teste_branch1.txt
-git add -Av
-git commit -m "add teste_branch1.txt"
+```{r eval=FALSE}
+$ git switch -c branch-2
+# Switched to branch 'branch-2'
+```
+
+![](img/git_checkout_switch.png){fig-align='center'}
+
+## 15. Ramificações
+
+`git branch`: lista os branchs e verifica o branch de edição
+
+```{r eval=FALSE}
+$ git branch
+# branch-1
+# * branch-2
+# main
+```
+
+![](img/git_branch.png){fig-align='center'}
+
+## 15. Ramificações
+
+`git branch -m [novo-nome]`: renomear uma branch de edição
+
+```{r eval=FALSE}
+$ git branch -m branch-3
+
+$ git branch
+# branch-1
+# * branch-3
+# main
+```
+
+![](img/git_branch.png){fig-align='center'}
+
+## 15. Ramificações
+
+`git branch -m [nome-antigo] [novo-nome]`: renomear uma branch
+
+```{r eval=FALSE}
+$ git branch -m branch-3 branch-2
+
+$ git branch
+# branch-1
+# * branch-2
+# main
+```
+
+![](img/git_branch.png){fig-align='center'}
+
+## 15. Ramificações
+
+`git branch -d [nome]`: deletar uma branch
+
+```{r eval=FALSE}
+$ git branch -d branch-1
+# branch-1
+# * branch-2
+# main
+```
+
+![](img/git_branch.png){fig-align='center'}
+
+## 15. Ramificações
+
+Vamos criar um arquivo no diretório e na **branch-2**
+
+```{r eval=FALSE}
+$ touch teste_branch2.txt
+$ git add -Av
+$ git commit -m "add teste_branch2.txt"
 ```
 
 ![](img/general_bloco_notas.png){fig-align='center'}
 
 ## 15. Ramificações
 
-`git switch`: troca a raficação de edição
+`git switch`: trocar a branch de edição
 
-```{bash eval=FALSE}
-git switch master
+```{r eval=FALSE}
+$ git switch main
 ```
 
-![](img/git_branch.png)
+![](img/git_branch.png){fig-align='center'}
 
 ## 15. Ramificações
 
-`git merge` mescla as linhas de desenvolvimento independentes em um único branch
+`git switch`: trocar a branch de edição
 
-![](img/git_merge.png)
+- O arquivo sumiu...
 
-## 15. Ramificações
+![](img/gif_cat_ohh.gif){fig-align='center'}
 
-`git merge`: mescla as linhas de desenvolvimento independentes em um único branch
-
-```{bash eval=FALSE}
-git merge branch-1
-```
-```{bash eval=FALSE}
-Updating f9f2e9c..7aeb06d
-Fast-forward
- teste_branch1.txt | 0
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 teste_branch1.txt
-```
-
-![](img/git_merge.png)
+# Vamos juntar esses branches fazendo um merge
 
 ## 15. Ramificações
 
-`git merge`: mescla as linhas de desenvolvimento independentes em um único branch
+`git merge`: mescla as branchs em um único branch
 
-```{bash eval=FALSE}
+![](img/git_merge.png){fig-align='center'}
+
+## 15. Ramificações
+
+`git merge`: mescla as branchs em um único branch
+
+```{r eval=FALSE}
+$ git merge branch-2
+
+# Updating c1c596e..9900ebb
+# Fast-forward
+#  teste_branch2.txt | 0
+#  1 file changed, 0 insertions(+), 0 deletions(-)
+#  create mode 100644 teste_branch2.txt
+```
+
+![](img/git_merge.png){fig-align='center'}
+
+## 15. Ramificações
+
+`git merge`: mescla as branchs em um único branch
+
+```{r eval=FALSE}
 git log --oneline
 
 # 7aeb06d (HEAD -> master, branch-1) add teste_branch1.txt
@@ -1782,161 +2511,271 @@ git log --oneline
 # 8b33bc5 add test.txt
 ```
 
-![](img/git_merge.png)
+![](img/git_merge.png){fig-align='center'}
+
+# CUIDADO!
 
 # 
-![](img/gif_git_merge.gif)
-background-size: 800px
-background-position: 50% 60%
-
-## 15. Ramificações
-
-## CUIDADO!
+![](img/gif_git_merge.gif){fig-align='center'}
 
 # 
-![](img/git_merge_warning.png)
-
-## 15. Ramificações
-
-**CUIDADO!**
-
-![](img/git_merge_warning.png)
+![](img/git_merge_warning.png){fig-align='center'}
 
 ## 15. Ramificações
 
 **Git Branch Cheatsheet**
 
-![](img/git_merge_warning.png)
+![](img/git-branch-cheatsheet.webp){fig-align='center'}
 
-:::footnote
+:::footer
 [Git Branch Cheatsheet](https://elijahmanor.com/blog/git-branch)
 :::
 
+# Vamos finalmente conectar o repositório local (diretório) com o repositório remoto (GitHub)
+
 #
-![](img/git_push_pull.svg)
+![](img/git_push_pull.svg){fig-align='center'}
 
 ## 16. Remoto
 
-![](img/git_remote.png)
+![](img/git_remote.png){fig-align='center'}
 
 ## 16. Remoto
 
-`git remote`: exibe os repositórios remotos (GitHub)
+`git remote`: gerencia conexões com repositórios remotos (GitHub)
 
-```{bash eval=FALSE}
-git remote -v
-```
-```{bash eval=FALSE}
-origin	git@github.com:mauriciovancine/short-course-git-github-rstudio.git (fetch)
-origin	git@github.com:mauriciovancine/short-course-git-github-rstudio.git (push)
+```{r eval=FALSE}
+$ git remote
+# origin
 ```
 
+<br>
+
+- Mostra os nomes das conexões remotas
+- `origin`: nome padrão para o repositório remoto principal
+
 ## 16. Remoto
 
-`git remote add`: faz a ligação com um repositório remoto (GitHub)
+`git remote`: gerencia conexões com repositórios remotos (GitHub)
 
-- **Observação**: Usar o SSH para não precisar digitar sua senha!
+```{r eval=FALSE}
+$ git remote -v
 
-![](img/git_remote.png)
-
-```{bash eval=FALSE}
-git remote add origin git@github.com:mauriciovancine/short-course-git-github-rstudio.git
+# origin	git@github.com:mauriciovancine/teste.git (fetch)
+# origin	git@github.com:mauriciovancine/teste.git (push)
 ```
 
-## 16. Remoto
+<br>
 
-`git push`: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
-
-![](img/git_push.png)
-
-## 16. Remoto
-
-`git push`: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
-
-![](img/git_push_code.jpg)
+::: {style="font-size: 80%;"}
+- Mostra os nomes das conexões remotas: `origin`
+- Mostra os URLs das conexões remotas: `git@github.com:mauriciovancine/teste.git`
+- `fetch`: endereço para **buscar atualizações** do repositório remoto
+- `push`: endereço para **enviar suas alterações** para o repositório remoto
+:::
 
 ## 16. Remoto
 
-`git push`: empurra uma nova versão do repositório local para o repositório remoto (GitHub)
+`git remote add`: adiciona ligação com um repositório remoto (GitHub)
 
-```{bash eval=FALSE}
-git push -u origin master
+**Observação**: usar o SSH para não precisar digitar a senha
+
+```{r eval=FALSE}
+$ git remote add origin git@github.com:mauriciovancine/teste.git
 ```
-```{bash eval=FALSE}
-Enumerating objects: 41, done.
-Counting objects: 100% (41/41), done.
-Delta compression using up to 12 threads
-Compressing objects: 100% (35/35), done.
-Writing objects: 100% (35/35), 4.99 MiB | 155.00 KiB/s, done.
-Total 35 (delta 6), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
-To github.com:mauriciovancine/course-geospatial-data-r.git
-   accc9db..8f70e96  master -> master
+
+![](img/git_remote.png){fig-align='center'}
+
+# Tudo certo, o git sabe para onde deve enviar as alterações para o endereço do repositório remoto (GitHub)
+
+## 16. Remoto
+
+`git push`: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)
+
+![](img/git_push.png){fig-align='center'}
+
+## 16. Remoto
+
+`git push`: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)
+
+Função:
+
+::: {style="font-size: 80%;"}
+- Atualiza a branch correspondente no repositório remoto
+- Torna suas mudanças disponíveis para outras pessoas
+- Se não configurar a chave SSH, exige autenticação (usuário/senha ou token)
+:::
+
+![](img/git_push.png){fig-align='center'}
+
+## 16. Remoto
+
+`git push`: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)
+
+![](img/git_push_code.png){fig-align='center'}
+
+## 16. Remoto
+
+`git push`: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)
+
+```{r eval=FALSE}
+$ git push -u origin main
+
+# Enumerating objects: 41, done.
+# Counting objects: 100% (41/41), done.
+# Delta compression using up to 12 threads
+# Compressing objects: 100% (35/35), done.
+# Writing objects: 100% (35/35), 4.99 MiB | 155.00 KiB/s, done.
+# Total 35 (delta 6), reused 0 (delta 0), pack-reused 0
+# remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+# To github.com:mauriciovancine/course-geospatial-data-r.git
+#    accc9db..8f70e96  master -> master
 ```
 
 ## 16. Remoto
 
 Em caso de incêndio...
 
-![](img/git_push_fire.png)
+![](img/git_push_fire.png){fig-align='center'}
 
 ## 16. Remoto
 
-**CUIDADO!**
+**CUIDADO**: muitas vezes há conflitos que precisam ser revolvidos entre o repositório local e o remoto
 
-![](img/git_push_force01.jpg),![](img/git_push_force02.jpg)
-
-## 16. Remoto
-
-`git pull`: puxa uma nova versão do repositório remoto (GitHub) para o repositório local
-
-![](img/git_pull.png)
+![](img/git_push_force01.jpg){.absolute width=50% right=520 top=200}
+![](img/git_push_force02.jpg){.absolute width=46% right=0 top=200}
 
 # E se houver arquivos [enormes] que eu queira versionar no GitHub?
 
 ## 16. Remoto
 
-**Limites**
+::: {style="font-size: 80%;"}
+**Limites de tamanho**
+:::
 
-- Tamanho máximo de arquivos é 25 Mb (browser)
-- Tamanho máximo de arquivos é 100 Mb (terminal)
-- Arquivos adicionados via terminal é limitado a 25 Mb
-- Se o arquivo exceder esse limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
+::: {style="font-size: 60%;"}
+- Arquivos **acima de 25 MB** causam erro e o envio ao GitHub é bloqueado
+- Para **arquivos maiores**, é necessário usar o [Git Large File Storage (LFS)](https://git-lfs.github.com/)
+- O repositório no GitHub tem limite de **5 GB** no total
+- É recomendável manter o repositório com menos de **1 GB**
+- O GitHub **envia avisos** quando o tamanho se aproxima do limite
+- Ao **exceder o limite**, o envio é bloqueado com uma mensagem de erro
+:::
 
-**O tamanho máximo de um repositório é 5 GB**
+![](img/gif_large_files.gif){.absolute width=45% right=550 top=400}
+![](img/github_limit.png){.absolute width=30% right=-50 top=50}
 
-- O tamanho total do repositório é limitado a 5 Gb
-- Idealmente um repositório dever ser menor que 1 Gb
-- Mensagens de aviso informam que o tamanho do repositório se aproxima do limite
-- Se o repositório exceder o limite, ocorrá uma mensagem de erro e o envio ao GitHub será bloqueado
-
-![](img/gif_large_files.gif)
+# E se eu quiser ver o que mudou no repositório remoto e trazer para o repositório local?
 
 ## 16. Remoto
 
-**Git Large File Storage (LFS)**
+![](img/git-fetch-git-pull.png){fig-align='center'}
 
-[Git Large File Storage (LFS)](https://git-lfs.github.com/) substitui arquivos grandes por ponteiros de texto dentro do git
+:::footer
+[Git Fetch vs Git Pull: Key Differences Every Developer Should Know](https://manitapanta.com.np/git-fetch-vs-git-pull/)
+:::
 
-Armazena o conteúdo desses arquivos em um servidor remoto como GitHub.com ou GitHub Enterprise
+## 16. Remoto
 
-# Por fim, fazermos a requisição da mudança do nosso repositório remoto para o repositório remoto original com o **Pull request** (pedimos para que "puxem" nossas mudanças)
+`git fetch`: busca atualizações do **repositório remoto** e as traz para o **repositório local**, mas não **altera** a branch atual
 
-![](img/git_push_pull_request.png)
+Função:
 
-# 17. Pull request
+::: {style="font-size: 80%;"}
+- Atualiza o histórico e as branches remotas
+- Permite que você veja o que mudou antes de aplicar
+- **Seguro**: não altera seus arquivos nem seu histórico local automaticamente
+:::
+
+![](img/git-fetch.png){fig-align='center'}
+
+## 16. Remoto
+
+`git fetch`: busca atualizações do **repositório remoto** e as traz para o **repositório local**, mas não **altera** a branch atual
+
+```{r eval=FALSE}
+$ git fetch origin
+# remote: Enumerating objects: 4, done.
+# remote: Counting objects: 100% (4/4), done.
+# remote: Compressing objects: 100% (2/2), done.
+# remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+# Unpacking objects: 100% (3/3), 934 bytes | 934.00 KiB/s, done.
+# From github.com:mauriciovancine/teste
+#    4029d2c..dfb960b  main       -> origin/main
+```
+
+![](img/git-fetch.png){fig-align='center'}
+
+## 16. Remoto
+
+`git fetch`: busca atualizações do **repositório remoto** e as traz para o **repositório local**, mas não **altera** a branch atual
+
+::: {style="font-size: 80%;"}
+- Se quiser atualizar a branch local com as mudanças use:
+  - `git merge`: para mesclar manualmente
+  - `git rebase`: para reescrever o histórico de forma linear 
+:::
+
+```{r eval=FALSE}
+$ git merge origin/main
+$ git rebase origin/main
+```
+
+![](img/git-fetch.png){fig-align='center'}
+
+## 16. Remoto
+
+`git pull`: busca atualizações do **repositório remoto** e as traz para o **repositório local**, **alterando** a branch atual
+
+![](img/git_pull.png){fig-align='center'}
+
+## 16. Remoto
+
+`git pull`: busca atualizações do **repositório remoto** e as traz para o **repositório local**, **alterando** a branch atual automativamente
+
+- Equivalente a rodar: `git fetch` + `git merge`
+
+Função:
+
+::: {style="font-size: 80%;"}
+- Sincronizar sua branch local com as alterações mais recentes do remoto
+- Trabalhar colaborativamente, mantendo o código sempre atualizado
+- Automatizar o processo de trazer e aplicar mudanças
+- **Cuidado**: pode causar conflitos se houver alterações locais incompatíveis com as mudanças remotas
+:::
+
+## 16. Remoto
+
+**Resumo**
+
+![](img/git_remote_total.png)
+
+:::footer
+[What's the Difference Between the Git Fetch and Git Pull Commands?](https://www.linkedin.com/pulse/whats-difference-between-git-fetch-pull-commands-omar-ismail/)
+:::
+
+# Por fim, requisição das alterações do nosso repositório remoto para o repositório remoto original: **Pull request**
+
+# 
+![](img/git_push_pull_request.png){fig-align='center'}
+
+## 17. Pull request
 
 `Pull Request`: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
 
-![](img/git_pull_request.png)
+![](img/git_pull_request.png){fig-align='center'}
 
-# 17. Pull request
+## 17. Pull request
 
 `Pull Request`: solicita que o repositório central (remoto) aceite (pull - 'puxe') as alterações realizadas do nosso fork
+
+![](img/git_pull_request_githu.png){fig-align='center'}
 
 # 18. Conflitos
 
 ## Conflitos
+
+![](img/git_conflitos){fig-align='center'}
 
 # 19. Interface Gráfica do RStudio
 
@@ -2072,6 +2911,7 @@ devtools::install_github("r-lib/usethis")
 - [Git e GitHub no RStudio](https://beatrizmilz.com/git_rstudio.html) - Beatriz Milz
 - [Torne-se um guru do git](https://www.atlassian.com/br/git/tutorials)
 - [RStudio e Github no dia a dia](https://blog.curso-r.com/posts/2017-07-17-rstudio-e-github/)
+- [GitFichas - Jéssica Temporal](https://gitfichas.com/)
 
 ## 20. Mais informações
 
