@@ -3036,6 +3036,7 @@ devtools::install_github("r-lib/usethis")
 - [Torne-se um guru do git](https://www.atlassian.com/br/git/tutorials)
 - [RStudio e Github no dia a dia](https://blog.curso-r.com/posts/2017-07-17-rstudio-e-github/)
 - [GitFichas - Jéssica Temporal](https://gitfichas.com/)
+- [Controle de versão](https://gabrielnakamura.github.io/USP_reproducibility_BIE5798/basics_git.html) - Gabriel Nakamura
 
 ## 20. Mais informações
 
