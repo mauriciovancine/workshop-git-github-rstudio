@@ -591,6 +591,9 @@ $ git config --list
 1. No `Terminal`, rodem: `git restore script.R`
 1. Testemunhem o poder do git...
 
+#
+![](img/gif_cat_ohh.gif){fig-align='center'}
+
 # 9. Iniciando remotamente
 
 ## 9. Iniciando remotamente
@@ -1690,9 +1693,10 @@ $ git diff test.txt
 
 ```{r eval=FALSE}
 $ git log --oneline
-```
+# dfefc85 (HEAD -> master) modificação do test.txt
+# 5a164d5 add test.txt
+# 50c520f first commit
 
-```{r eval=FALSE}
 $ git diff 5a164d5 50c520f
 # diff --git a/test.txt b/test.txt
 # deleted file mode 100644
@@ -1979,7 +1983,6 @@ $ git status
 
 ```{r eval=FALSE}
 $ git log --oneline
-
 # d0ad9d1 (HEAD -> main) correcao do ultimo commit
 # c1c596e update file test.txt
 # 4029d2c (origin/main, origin/HEAD) Create teste
@@ -2206,7 +2209,6 @@ $ git status
 
 ```{r eval=FALSE}
 $ git log --oneline
-
 # d0ad9d1 (HEAD -> main) correcao do ultimo commit
 # c1c596e  update file test.txt
 # 4029d2c (origin/main, origin/HEAD) Create teste
@@ -2254,6 +2256,9 @@ Quando usar:
 **Cuidado**: essa operação é irreversível (exceto `git reflog`)
 
 ![](img/general_butterfly_effect.png){fig-align='center'}
+
+# 
+![](img/break-time03.png){fig-align='center'}
 
 # 
 ![](img/git_branches.png){fig-align='center'}
