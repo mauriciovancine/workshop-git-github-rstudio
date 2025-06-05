@@ -222,7 +222,7 @@ Cada vez mais **necessário** em colaborações
 
 **GitHub**
 
-- Repositórios remotos  
+- Repositórios remotos
 - **Plataformas de hospedagem** e controle de versão de arquivos/códigos
 
 ![](img/github_logo2.png){.absolute width=50% right=600 top=350}
@@ -230,7 +230,23 @@ Cada vez mais **necessário** em colaborações
 ![](img/bitbucket.webp){.absolute width=28% right=0 top=350}
 
 :::footer
-[GitHub](https://www.kernel.org/), [GitLab](https://www.kernel.org/), [Bitbucket](https://bitbucket.org/)
+[GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Bitbucket](https://bitbucket.org/)
+:::
+
+## 3. git e GitHub
+
+**GitHub**
+
+::: {style="font-size: 80%;"}
+- Plataforma de hospedagem de código e arquivos com controle de versão usando o git
+- Desenvolvido em 2008 usando Ruby on Rails por 'computeiros' de São Francisco
+- Em 2018, a Microsoft anunciou a compra da plataforma por US$ 7,5 bilhões
+:::
+
+![](img/github_logo2.png){fig-align='center'}
+
+:::footer
+[GitHub](https://github.com)
 :::
 
 ## 3. git e GitHub
